@@ -21,4 +21,8 @@ public class ControllerIndex {
 	public String backindex(HttpServletRequest request) {
 		return "/WEB-INF/back/index.jsp";
 	}
+	@RequestMapping(value = "/backlogin")
+	public String backlogin(HttpServletRequest request) {
+		return "/WEB-INF/back/login.jsp";
+	}
 }
