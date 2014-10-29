@@ -1,4 +1,4 @@
-package com.etech.shiro;
+package cn.believeus.shiro;
 
 import org.apache.shiro.authc.UsernamePasswordToken;
 

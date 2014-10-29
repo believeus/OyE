@@ -1,4 +1,4 @@
-package com.believues.controller;
+package cn.believues.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.logging.Log;
@@ -17,12 +17,5 @@ public class ControllerIndex {
 	public String index(HttpServletRequest request) {
 		return "/WEB-INF/front/index.jsp";
 	}
-	@RequestMapping(value = "/backindex")
-	public String backindex(HttpServletRequest request) {
-		return "/WEB-INF/back/index.jsp";
-	}
-	@RequestMapping(value = "/backlogin")
-	public String backlogin(HttpServletRequest request) {
-		return "/WEB-INF/back/login.jsp";
-	}
+	
 }

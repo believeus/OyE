@@ -1,4 +1,4 @@
-package com.etech.shiro;
+package cn.believeus.shiro;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

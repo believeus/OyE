@@ -3,7 +3,7 @@
  * Support: http://www.shopxx.net
  * License: http://www.shopxx.net/license
  */
-package com.etech.shiro;
+package cn.believeus.shiro;
 
 import java.io.Serializable;
 

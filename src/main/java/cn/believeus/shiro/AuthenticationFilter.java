@@ -1,4 +1,4 @@
-package com.etech.shiro;
+package cn.believeus.shiro;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;

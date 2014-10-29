@@ -36,6 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  	<form action="/adminlogin.jhtml" method="post">
     <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
 	  <tr>
 	    <td><table width="962" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -50,16 +51,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	              <tr>
 	                <td width="16%" height="25"><div align="right"><span class="STYLE1">用户</span></div></td>
 	                <td width="57%" height="25"><div align="center">
-	                  <input type="text" name="textfield" style="width:105px; height:17px; background-color:#292929; border:solid 1px #7dbad7; font-size:12px; color:#6cd0ff">
+	                  <input type="text" name="username" style="width:105px; height:17px; background-color:#292929; border:solid 1px #7dbad7; font-size:12px; color:#6cd0ff">
 	                </div></td>
 	                <td width="27%" height="25">&nbsp;</td>
 	              </tr>
 	              <tr>
 	                <td height="25"><div align="right"><span class="STYLE1">密码</span></div></td>
 	                <td height="25"><div align="center">
-	                  <input type="password" name="textfield2" style="width:105px; height:17px; background-color:#292929; border:solid 1px #7dbad7; font-size:12px; color:#6cd0ff">
+	                  <input type="password" name="password" style="width:105px; height:17px; background-color:#292929; border:solid 1px #7dbad7; font-size:12px; color:#6cd0ff">
 	                </div></td>
-	                <td height="25"><div align="left"><a href="backindex.jhtml"><img src="/static/public/images/dl.gif" width="49" height="18" border="0"></a></div></td>
+	                <td height="25"><div align="left"><img src="/static/public/images/dl.gif" width="49" height="18" border="0"></div></td>
 	              </tr>
 	            </table></td>
 	            <td width="362" background="/static/public/images/login_07.gif">&nbsp;</td>
@@ -72,5 +73,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    </table></td>
 	  </tr>
 	</table>
+	</form>
   </body>
 </html>

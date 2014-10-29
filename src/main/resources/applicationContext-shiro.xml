@@ -30,7 +30,7 @@
 			</value>
 		</property>
 	</bean>
-	<bean id="authenticationFilter" class="com.etech.shiro.AuthenticationFilter" />
+	<bean id="authenticationFilter" class="cn.believeus.shiro.AuthenticationFilter" />
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="cacheManager" ref="shiroCacheManager" />
 		<property name="realm" ref="myRealm" />
@@ -40,7 +40,7 @@
 	<bean id="shiroCacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
 		<property name="cacheManager" ref="ehCacheManager" />
 	</bean>
-	<bean id="myRealm" class="com.etech.shiro.AuthenticationRealm">
+	<bean id="myRealm" class="cn.believeus.shiro.AuthenticationRealm">
 	    <property name="authorizationCacheName" value="authorizationCached" />
 	</bean>
 	<aop:aspectj-autoproxy proxy-target-class="true" />

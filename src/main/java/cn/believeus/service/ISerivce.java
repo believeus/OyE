@@ -1,4 +1,4 @@
-package com.believeus.service;
+package cn.believeus.service;
 
 import java.util.List;
 

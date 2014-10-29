@@ -11,7 +11,7 @@
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="baseDao" class="com.believeus.dao.BaseDao">
+	<bean id="baseDao" class="cn.believeus.dao.BaseDao">
 		<property name="hibernateTemplate" ref="hibernateTemplate"/>
 	</bean>
 	<bean id="believeusJDBC" class="org.springframework.jdbc.core.JdbcTemplate">

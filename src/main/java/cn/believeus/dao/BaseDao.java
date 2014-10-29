@@ -1,8 +1,10 @@
-package com.believeus.dao;
+package cn.believeus.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+
 import javax.annotation.Resource;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.HibernateException;
@@ -13,7 +15,9 @@ import org.junit.Assert;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class BaseDao extends HibernateDaoSupport {
 	private static final Log log = LogFactory.getLog(BaseDao.class);
 	@Resource
