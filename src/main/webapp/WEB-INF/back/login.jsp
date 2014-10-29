@@ -36,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  	<form action="/adminlogin.jhtml" method="post">
+  	<form action="/admin/manager.jhtml" method="post">
     <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
 	  <tr>
 	    <td><table width="962" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -60,7 +60,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	                <td height="25"><div align="center">
 	                  <input type="password" name="password" style="width:105px; height:17px; background-color:#292929; border:solid 1px #7dbad7; font-size:12px; color:#6cd0ff">
 	                </div></td>
-	                <td height="25"><div align="left"><img src="/static/public/images/dl.gif" width="49" height="18" border="0"></div></td>
+	               <!--  <td height="25"><div align="left"><img src="/static/public/images/dl.gif" width="49" height="18" border="0"></div></td> -->
+	              	<td><input type="submit" value="提交"/></td>
 	              </tr>
 	            </table></td>
 	            <td width="362" background="/static/public/images/login_07.gif">&nbsp;</td>
