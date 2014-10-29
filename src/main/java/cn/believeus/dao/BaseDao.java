@@ -17,7 +17,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
-@Repository
+
 public class BaseDao extends HibernateDaoSupport {
 	private static final Log log = LogFactory.getLog(BaseDao.class);
 	@Resource
