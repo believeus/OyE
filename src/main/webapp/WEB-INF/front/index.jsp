@@ -4,12 +4,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <head>
-<title>Believeus后台管理系统</title>
-
+<title>OYE首页</title>
+<style type="text/css">
+	body{
+		margin:0;
+		padding:0;
+	}
+</style>
 </head>
 <body>
-<div >
-	nihaolaoda
-</div>
+	<img src="/static/public/images/backgroud.png" width="1366" height="7000" alt="" />
 </body>
 </html>

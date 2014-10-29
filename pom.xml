@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>cn.believeus.info</groupId>
-	<artifactId>believeusINFO</artifactId>
+	<groupId>OYE</groupId>
+	<artifactId>OYE</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>believeusINFO</name>
+	<name>OYE</name>
 	<url>http://maven.apache.org</url>
 
 	<dependencies>
@@ -683,8 +683,8 @@
 					<deployer>
 						<deployables>
 							<deployable>
-								<groupId>cn.believeus.info</groupId>
-								<artifactId>believeusINFO</artifactId>
+								<groupId>OYE</groupId>
+								<artifactId>OYE</artifactId>
 								<type>war</type>
 								<properties>
 									<!-- deployer是部署时的相关配置，这个context是用来声明工程部署后的上下文，也就是 主机地址后面的一级目录位置。这个设置在maven构建中还是很必要的。因为maven默认打出 

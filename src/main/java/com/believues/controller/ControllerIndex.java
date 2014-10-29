@@ -17,4 +17,8 @@ public class ControllerIndex {
 	public String index(HttpServletRequest request) {
 		return "/WEB-INF/front/index.jsp";
 	}
+	@RequestMapping(value = "/backindex")
+	public String backindex(HttpServletRequest request) {
+		return "/WEB-INF/back/index.jsp";
+	}
 }
