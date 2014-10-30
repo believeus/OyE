@@ -1,6 +1,8 @@
 package cn.believeus.model;
 
+import java.util.ArrayList;
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -15,7 +17,7 @@ public class Role extends TbaseEntity{
 	
 	private String roleName;
 	private Admin admin;
-	private List<Authority> authoritys;
+	private List<Authority> authoritys=new ArrayList<Authority>();
 	
 	@OneToMany(mappedBy="role",cascade=CascadeType.ALL)
 	public List<Authority> getAuthoritys() {

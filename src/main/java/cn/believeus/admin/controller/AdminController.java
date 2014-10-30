@@ -1,7 +1,10 @@
 package cn.believeus.admin.controller;
 
 
+import java.util.List;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.believeus.model.Admin;
+import cn.believeus.model.Role;
 import cn.believeus.service.BaseService;
 
 @Controller
@@ -60,7 +64,10 @@ public class AdminController {
 	 * @return
 	 */
 	@RequestMapping(value="/admin/addAdmin")
-	public String addAdmin(){ 
+	public String addAdmin(HttpServletRequest request){ 
+		@SuppressWarnings("unchecked")
+		List<Role> roles = (List<Role>) baseService.findObjectList(Role.class);
+		request.setAttribute("roles", roles);
 		return "/WEB-INF/back/power/addAdmin.jsp";
 	}
 	/**
@@ -76,7 +83,10 @@ public class AdminController {
 	 * @return
 	 */
 	@RequestMapping(value="/admin/roleList")
-	public String roleList(){ 
+	public String roleList(HttpServletRequest request){ 
+		@SuppressWarnings("unchecked")
+		List<Role> roles = (List<Role>) baseService.findObjectList(Role.class);
+		request.setAttribute("roles", roles);
 		return "/WEB-INF/back/power/roleList.jsp";
 	}
 }

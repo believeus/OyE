@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -41,30 +41,16 @@ $().ready(function() {
 					<a href="javascript:;" class="sort">操作</a>
 				</th>
 			</tr>
-			<tr>
-				<td>
-					张三
-				</td>
-				<td>
-					<a href="/admin/power.jhtml">[编辑权限]</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					李四
-				</td>
-				<td>
-					<a href="/admin/power.jhtml">[编辑权限]</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					王武
-				</td>
-				<td>
-					<a href="/admin/power.jhtml">[编辑权限]</a>
-				</td>
-			</tr>
+			<c:forEach var="role" items="${roles}">
+				<tr>
+					<td>
+						${role.roleName}
+					</td>
+					<td>
+						<a href="/admin/power.jhtml">[编辑权限]</a>
+					</td>
+				</tr>
+			</c:forEach>
 		</table>
 	</form>
 </body>

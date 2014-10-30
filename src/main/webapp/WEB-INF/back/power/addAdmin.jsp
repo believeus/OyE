@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -56,8 +56,9 @@ $().ready(function() {
 				</th>
 				<td>
 					<select name="roleId">
-						 <option value="1">超级管理员</option>
-						 <option value="2">二级管理员</option>
+						<c:forEach var="role" items="${roles}">
+							 <option value="${role.id }">${role.roleName}</option>
+						</c:forEach>
 					</select>
 				</td>
 			</tr>

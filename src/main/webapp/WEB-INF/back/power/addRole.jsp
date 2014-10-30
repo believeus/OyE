@@ -26,8 +26,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </style>
 <script type="text/javascript">
 $().ready(function() {
-
-
+	$("#inputForm").submit(function() {
+		var roleName = $("#roleName").val();
+		if(roleName == ""){
+			alert("角色名必填");
+			return false;
+		}
+		return true;
+   });
 });
 </script>
 </head>
@@ -35,7 +41,7 @@ $().ready(function() {
 	<div class="path">
 		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 添加角色
 	</div>
-	<form id="inputForm" action="save.jhtml" method="post">
+	<form id="inputForm" action="/admin/addRoleLogic.jhtml" method="post">
 		<table class="input">
 			<tr>
 				<th colspan="2" style="text-align: left; font-size: 15px; padding-left: 120px;">
@@ -47,7 +53,7 @@ $().ready(function() {
 					<span class="requiredField">*</span>角色名:
 				</th>
 				<td>
-					<input type="text" name="loginName" value="" class="text" maxlength="200" />
+					<input type="text" id="roleName" name="roleName"  class="text" maxlength="200" />
 				</td>
 			</tr>
 			<tr>
