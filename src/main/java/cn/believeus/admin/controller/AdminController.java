@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -55,7 +56,8 @@ public class AdminController {
 	 * @return
 	 */
 	@RequestMapping(value="/admin/power")
-	public String power(){ 
+	public String power(HttpServletRequest request){
+		
 		return "/WEB-INF/back/power/powerEdit.jsp";
 	}
 	
@@ -64,18 +66,46 @@ public class AdminController {
 	 * @return
 	 */
 	@RequestMapping(value="/admin/addAdmin")
-	public String addAdmin(HttpServletRequest request){ 
+	public String addAdmin(HttpServletRequest request){
 		@SuppressWarnings("unchecked")
 		List<Role> roles = (List<Role>) baseService.findObjectList(Role.class);
 		request.setAttribute("roles", roles);
 		return "/WEB-INF/back/power/addAdmin.jsp";
 	}
+	
+	//ajax判断管理员用户名是否存在
+	@RequestMapping(value="/admin/ajaxValidateAdmin")
+	public @ResponseBody String ajaxValidateAdmin(String adminName){
+		Admin admin = (Admin)baseService.findObject(Admin.class, "username", adminName);
+		if(admin != null){
+			return "exist";
+		}
+		return "success";
+	}
+	
+	@RequestMapping(value="/admin/addRoleForAdmin")
+	public String addRoleForAdmin(HttpServletRequest request){
+		String adminName = request.getParameter("adminName");
+		String roleId = request.getParameter("roleId");
+		String description = request.getParameter("description");
+		String repass = request.getParameter("repass");
+		Admin admin = new Admin();
+		admin.setUsername(adminName);
+		admin.setPassword(repass);
+		admin.setDescription(description);
+		Role role = (Role) baseService.findObject(Role.class, Integer.valueOf(roleId));
+		role.setAdmin(admin);
+		baseService.saveOrUpdata(admin);
+		return null;
+		
+	}
+	
 	/**
 	 * 添加角色
 	 * @return
 	 */
 	@RequestMapping(value="/admin/addRole")
-	public String addRole(){ 
+	public String addRole(){
 		return "/WEB-INF/back/power/addRole.jsp";
 	}
 	/**
@@ -83,7 +113,7 @@ public class AdminController {
 	 * @return
 	 */
 	@RequestMapping(value="/admin/roleList")
-	public String roleList(HttpServletRequest request){ 
+	public String roleList(HttpServletRequest request){
 		@SuppressWarnings("unchecked")
 		List<Role> roles = (List<Role>) baseService.findObjectList(Role.class);
 		request.setAttribute("roles", roles);

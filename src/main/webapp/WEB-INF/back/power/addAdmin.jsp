@@ -26,8 +26,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </style>
 <script type="text/javascript">
 $().ready(function() {
-
-
+	$("#inputForm").submit(function() {
+		var adminName = $("#adminName").val();
+		if(adminName == ""){
+			alert("用户名必填");
+			return false;
+		}
+		return true;
+   });
+	
+	// 焦点离开时，发送ajax请求,交互式事件
+	$("#adminName").blur(function(){
+		$.post('/admin/ajaxValidateAdmin.jhtml?adminName=' + $("#adminName").val(), function(msg) {
+		if(msg == "exist"){
+				$("#adminName").val("");
+				alert("管理员名已被注册");
+			}
+		});
+	});
 });
 </script>
 </head>
@@ -35,7 +51,7 @@ $().ready(function() {
 	<div class="path">
 		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 添加管理员
 	</div>
-	<form id="inputForm" action="save.jhtml" method="post">
+	<form id="inputForm" action="/admin/addRoleForAdmin.jhtml" method="post">
 		<table class="input">
 			<tr>
 				<th colspan="2" style="text-align: left; font-size: 15px; padding-left: 120px;">
@@ -47,7 +63,7 @@ $().ready(function() {
 					<span class="requiredField">*</span>用户名:
 				</th>
 				<td>
-					<input type="text" name="loginName" value="" class="text" maxlength="200" />
+					<input type="text" id="adminName" name="adminName" value="" class="text" maxlength="200" />
 				</td>
 			</tr>
 			<tr>

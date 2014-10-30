@@ -13,6 +13,7 @@ public class Admin extends TbaseEntity {
 	
 	private String username;
 	private String password;
+	private String description;
 	private Role role;
 	
 	@OneToOne(mappedBy="admin",cascade=CascadeType.ALL)
@@ -35,5 +36,12 @@ public class Admin extends TbaseEntity {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }
