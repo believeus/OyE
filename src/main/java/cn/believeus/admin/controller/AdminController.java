@@ -119,4 +119,12 @@ public class AdminController {
 		request.setAttribute("roles", roles);
 		return "/WEB-INF/back/power/roleList.jsp";
 	}
+	/**
+	 * 管理员列表
+	 * @return
+	 */
+	@RequestMapping(value="/admin/adminList")
+	public String adminList(){ 
+		return "/WEB-INF/back/power/adminList.jsp";
+	}
 }

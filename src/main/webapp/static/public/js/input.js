@@ -30,7 +30,7 @@ $().ready( function() {
 	
 	// 返回上一页
 	$backButton.click( function() {
-		location.href = document.referrer;
+		location.href = window.history.back();
 		return false;
 	});
 

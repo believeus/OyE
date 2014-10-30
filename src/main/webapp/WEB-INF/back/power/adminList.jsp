@@ -3,12 +3,12 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>角色列表</title>
+<title>管理员列表</title>
 <meta name="author" content="Believeus Team" />
 <meta name="copyright" content="Believeus" />
 <link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
@@ -29,10 +29,10 @@ $().ready(function() {
 </head>
 <body>
 	<div class="path">
-		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 内容列表 <span>共${dataCenters.total}条记录</span>
+		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 管理员列表 <span>共${dataCenters.total}条记录</span>
 	</div>
 	<div class="bar">
-			<a href="/admin/addRole.jhtml" class="iconButton">
+			<a href="/admin/addAdmin.jhtml" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
 			</a>
 			<div class="buttonWrap">
@@ -59,7 +59,7 @@ $().ready(function() {
 		<table id="listTable" class="list">
 			<tr>
 				<th>
-					<a href="javascript:;" class="sort">角色名称</a>
+					<a href="javascript:;" class="sort">管理员名称</a>
 				</th>
 				<th>
 					<a href="javascript:;" class="sort">描述</a>
@@ -68,20 +68,42 @@ $().ready(function() {
 					<a href="javascript:;" class="sort">操作</a>
 				</th>
 			</tr>
-			<c:forEach var="role" items="${roles}">
-				<tr>
-					<td>
-						${role.roleName}
-					</td>
-					<td>
-						${role.description}
-					</td>
-					<td>
-						<a href="/admin/power.jhtml">[编辑权限]</a>
-						<a href="#" onclick="alert('删除');">[删除]</a>
-					</td>
-				</tr>
-			</c:forEach>
+			<tr>
+				<td>
+					张三
+				</td>
+				<td>
+					张三是个好人
+				</td>
+				<td>
+					<a href="/admin/power.jhtml">[编辑权限]</a>
+					<a href="#" onclick="alert('删除');">[删除]</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					李四
+				</td>
+				<td>
+					张三是个好人
+				</td>
+				<td>
+					<a href="/admin/power.jhtml">[编辑权限]</a>
+					<a href="#" onclick="alert('删除');">[删除]</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					王武
+				</td>
+				<td>
+					张三是个好人
+				</td>
+				<td>
+					<a href="/admin/power.jhtml">[编辑权限]</a>
+					<a href="#" onclick="alert('删除');">[删除]</a>
+				</td>
+			</tr>
 		</table>
 	</form>
 </body>

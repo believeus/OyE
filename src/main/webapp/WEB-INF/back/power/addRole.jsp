@@ -57,6 +57,14 @@ $().ready(function() {
 				</td>
 			</tr>
 			<tr>
+				<th>
+					<span class="requiredField">*</span>描述:
+				</th>
+				<td>
+					<input type="text" name="description" value="" class="text" maxlength="200" />
+				</td>
+			</tr>
+			<tr>
 				<th><span class="requiredField">*</span>请选择角色权限:</th>
 				<td colspan="4">&nbsp;</td>
 			</tr>
@@ -184,7 +192,7 @@ $().ready(function() {
 			<tr>
 				<td colspan="5">
 					<input type="submit" class="button" value="提交" />
-					<input type="button" id="backButton" class="button" value="返回" />
+					<input type="button" id="backButton" class="button" value="返回" onclick="javascript:window.history.back();"/>
 				</td>
 			</tr>
 		</table>
