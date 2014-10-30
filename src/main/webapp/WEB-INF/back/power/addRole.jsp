@@ -51,10 +51,132 @@ $().ready(function() {
 				</td>
 			</tr>
 			<tr>
-				<th>
-					&nbsp;
+				<th><span class="requiredField">*</span>请选择角色权限:</th>
+				<td colspan="4">&nbsp;</td>
+			</tr>
+		</table>
+		<table id="listTable" class="list">
+			<tr>
+				<th class="check">
+					<a href="javascript:;" class="sort">栏目</a>
 				</th>
-				<td colspan="3">
+				<th>
+					<a href="javascript:;" class="sort">查看</a>
+				</th>
+				<th>
+					<a href="javascript:;" class="sort">添加</a>
+				</th>
+				<th>
+					<a href="javascript:;" class="sort">修改</a>
+				</th>
+				<th>
+					<a href="javascript:;" class="sort">删除</a>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					内容管理系统
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="content:view" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="content:create" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="content:update" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="content:delete" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					新闻系统
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="newsDinamic:view" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="newsDinamic:create" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="newsDinamic:update" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="newsDinamic:delete" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					业务发布管理
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="business:view" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="business:create" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="business:update" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="business:delete" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					案例管理
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="example:view" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="example:create" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="example:update" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="example:delete" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					联系方式
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="contact:view" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="contact:create" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="contact:update" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="contact:delete" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					添加管理员
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="addAdmin:view" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="addAdmin:create" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="addAdmin:update" />
+				</td>
+				<td>
+					<input type="checkbox" name="authority" value="addAdmin:delete" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
 					<input type="submit" class="button" value="提交" />
 					<input type="button" id="backButton" class="button" value="返回" />
 				</td>
