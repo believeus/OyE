@@ -2,16 +2,12 @@ package cn.believeus.admin.controller;
 
 
 import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import cn.believeus.model.Admin;
 import cn.believeus.model.Role;
 import cn.believeus.service.BaseService;
@@ -73,7 +69,7 @@ public class AdminController {
 		return "/WEB-INF/back/power/addAdmin.jsp";
 	}
 	
-	//ajax判断管理员用户名是否存在
+	// ajax判断管理员用户名是否存在
 	@RequestMapping(value="/admin/ajaxValidateAdmin")
 	public @ResponseBody String ajaxValidateAdmin(String adminName){
 		Admin admin = (Admin)baseService.findObject(Admin.class, "username", adminName);
@@ -96,8 +92,7 @@ public class AdminController {
 		Role role = (Role) baseService.findObject(Role.class, Integer.valueOf(roleId));
 		role.setAdmin(admin);
 		baseService.saveOrUpdata(admin);
-		return null;
-		
+		return "redirect:/admin/adminList.jhtml";
 	}
 	
 	/**
@@ -124,7 +119,16 @@ public class AdminController {
 	 * @return
 	 */
 	@RequestMapping(value="/admin/adminList")
-	public String adminList(){ 
+	public String adminList(HttpServletRequest request){
+		@SuppressWarnings("unchecked")
+		List<Admin> admins = (List<Admin>) baseService.findObjectList(Admin.class);
+		request.setAttribute("admins", admins);
 		return "/WEB-INF/back/power/adminList.jsp";
+	}
+	
+	@RequestMapping(value="/admin/deleteAdmin")
+	public String deleteAdmin(Integer adminId){
+		baseService.delete(Admin.class, adminId);
+		return "redirect:/admin/adminList.jhtml";
 	}
 }

@@ -28,6 +28,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 $().ready(function() {
 	$("#inputForm").submit(function() {
 		var adminName = $("#adminName").val();
+		var password = $("#password").val();
+		var repass = $("#repass").val();
+		if(password == ""){
+			alert("密码必填");
+			return false;
+		}
+		if(repass == ""){
+			alert("确认密码必填");
+			return false;
+		}
+		if(password != repass){
+			alert("密码和确认密码不一致");
+			return false;
+		}
 		if(adminName == ""){
 			alert("用户名必填");
 			return false;
@@ -99,7 +113,7 @@ $().ready(function() {
 					<span class="requiredField">*</span>确认密码:
 				</th>
 				<td>
-					<input type="password" value="" name="repass" class="text" maxlength="200" />
+					<input type="password" value="" name="repass" id="repass" class="text" maxlength="200" />
 				</td>
 			</tr>
 			<tr>

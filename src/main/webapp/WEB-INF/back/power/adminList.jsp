@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -68,42 +68,31 @@ $().ready(function() {
 					<a href="javascript:;" class="sort">操作</a>
 				</th>
 			</tr>
-			<tr>
-				<td>
-					张三
-				</td>
-				<td>
-					张三是个好人
-				</td>
-				<td>
-					<a href="/admin/power.jhtml">[编辑权限]</a>
-					<a href="#" onclick="alert('删除');">[删除]</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					李四
-				</td>
-				<td>
-					张三是个好人
-				</td>
-				<td>
-					<a href="/admin/power.jhtml">[编辑权限]</a>
-					<a href="#" onclick="alert('删除');">[删除]</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					王武
-				</td>
-				<td>
-					张三是个好人
-				</td>
-				<td>
-					<a href="/admin/power.jhtml">[编辑权限]</a>
-					<a href="#" onclick="alert('删除');">[删除]</a>
-				</td>
-			</tr>
+			<c:forEach var="admin" items="${admins}">
+				<tr>
+					<td>
+						${admin.username}
+					</td>
+					<td>
+						${admin.description}
+					</td>
+					<td>
+					 <c:choose>
+					   <c:when test="${admin.id == 1}">
+					     	<a href="javascript:void(0);" onclick="alert('最高权限不可编辑')">[编辑权限]</a>
+							<a href="javascript:void(0);" onclick="alert('最高权限不可删除')">[删除]</a>
+					   </c:when>
+					   <c:otherwise>
+					        <a href="/admin/power.jhtml?adminId=${admin.id}">[编辑权限]</a>
+							<a href="/admin/deleteAdmin.jhtml?adminId=${admin.id}">[删除]</a>
+					   </c:otherwise>
+					 </c:choose>
+					</td>
+				</tr>
+			</c:forEach>
+			
+			
+			
 		</table>
 	</form>
 </body>

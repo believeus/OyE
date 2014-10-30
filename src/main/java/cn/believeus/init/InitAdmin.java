@@ -24,6 +24,7 @@ public class InitAdmin implements ApplicationListener<ApplicationEvent>{
 				 admin=new Admin();
 				 admin.setUsername("admin");
 				 admin.setPassword("admin");
+				 admin.setDescription("该管理员拥有所有权限");
 				 baseService.saveOrUpdata(admin);
 			}
 		}
