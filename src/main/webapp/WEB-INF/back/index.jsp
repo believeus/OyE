@@ -149,7 +149,7 @@
         <span style="padding-left:10px; font-size: 16px; "><img src="/static/public/images/blocks.gif" width="20" height="20" align="absmiddle" /> 睿软科技www.believeus.cn</span>
     </div>
     <div region="south" split="true" style="height: 30px; background: #D2E0F2; ">
-        <div class="footer">By Believeus Email:believeus@163.cn</div>
+        <div class="footer">By Believeus Email:believeus@126.com</div>
     </div>
     <div region="west" split="true" title="导航菜单" style="width:180px;" id="west">
 <div class="easyui-accordion" fit="true" border="false">

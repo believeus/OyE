@@ -13,6 +13,6 @@
 </style>
 </head>
 <body>
-	<img src="/static/public/images/backgroud.png" width="1366" height="7000" alt="" />
+	<img src="/static/public/images/backgroud.png" width="100%" alt="" />
 </body>
 </html>
