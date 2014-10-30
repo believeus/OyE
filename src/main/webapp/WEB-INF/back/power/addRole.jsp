@@ -52,33 +52,6 @@ $().ready(function() {
 			</tr>
 			<tr>
 				<th>
-					<span class="requiredField">*</span>角色权限:
-				</th>
-				<td>
-					<select name="roleId">
-						 <option value="1">角色一</option>
-						 <option value="2">角色二</option>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<th>
-					<span class="requiredField">*</span>密码:
-				</th>
-				<td>
-					<input type="password" value="" name="password" id="password" class="text" maxlength="200" />
-				</td>
-			</tr>
-			<tr>
-				<th>
-					<span class="requiredField">*</span>确认密码:
-				</th>
-				<td>
-					<input type="password" value="" name="repass" class="text" maxlength="200" />
-				</td>
-			</tr>
-			<tr>
-				<th>
 					&nbsp;
 				</th>
 				<td colspan="3">

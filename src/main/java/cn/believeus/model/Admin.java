@@ -1,26 +1,39 @@
 package cn.believeus.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table
 public class Admin extends TbaseEntity {
+	
 	private static final long serialVersionUID = 3261222397528062682L;
+	
 	private String username;
 	private String password;
+	private Role role;
+	
+	@OneToOne(mappedBy="admin",cascade=CascadeType.ALL)
+	public Role getRole() {
+		return role;
+	}
+	public void setRole(Role role) {
+		this.role = role;
+	}
+	
 	public String getUsername() {
 		return username;
 	}
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
 }
