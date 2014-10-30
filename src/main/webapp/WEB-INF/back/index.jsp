@@ -53,8 +53,9 @@
 									{"menuname":"业务发布管理","icon":"icon-users","url":"http://www.believeus.cn"},
 									{"menuname":"案例管理","icon":"icon-role","url":"http://www.believeus.cn"},
 									{"menuname":"联系方式","icon":"icon-set","url":"http://www.believeus.cn"},
-									{"menuname":"添加管理员","icon":"icon-log","url":"http://www.believeus.cn"},
-									{"menuname":"权限管理","icon":"icon-log","url":"/admin/power.jhtml"}
+									{"menuname":"添加管理员","icon":"icon-log","url":"/admin/addAdmin.jhtml"},
+									{"menuname":"添加角色","icon":"icon-log","url":"/admin/addRole.jhtml"},
+									{"menuname":"权限管理","icon":"icon-log","url":"/admin/roleList.jhtml"}
 								]
 						}
 				]};

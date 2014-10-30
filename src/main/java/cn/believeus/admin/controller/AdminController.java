@@ -52,6 +52,31 @@ public class AdminController {
 	 */
 	@RequestMapping(value="/admin/power")
 	public String power(){ 
-		return "/WEB-INF/back/power/list.jsp";
+		return "/WEB-INF/back/power/powerEdit.jsp";
+	}
+	
+	/**
+	 * 添加管理员
+	 * @return
+	 */
+	@RequestMapping(value="/admin/addAdmin")
+	public String addAdmin(){ 
+		return "/WEB-INF/back/power/addAdmin.jsp";
+	}
+	/**
+	 * 添加角色
+	 * @return
+	 */
+	@RequestMapping(value="/admin/addRole")
+	public String addRole(){ 
+		return "/WEB-INF/back/power/addRole.jsp";
+	}
+	/**
+	 * 角色列表
+	 * @return
+	 */
+	@RequestMapping(value="/admin/roleList")
+	public String roleList(){ 
+		return "/WEB-INF/back/power/roleList.jsp";
 	}
 }
