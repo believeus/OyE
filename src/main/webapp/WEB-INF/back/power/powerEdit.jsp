@@ -173,6 +173,15 @@ $().ready(function() {
 					<input type="checkbox" id="cv4" name="authority" value="contact:delete" disabled="disabled"/>
 				</td>
 			</tr>
+			<tr>
+				<td colspan="4">
+				&nbsp;
+				</td>
+				<td>
+					<input type="submit" class="button" value="确定" />
+					<input type="button" class="button" value="返回" onclick="javascript:window.history.back();"/>
+				</td>
+			</tr>
 		</table>
 	</form>
 </body>

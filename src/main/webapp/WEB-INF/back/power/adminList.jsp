@@ -77,11 +77,14 @@ $().ready(function() {
 						${admin.username}
 					</td>
 					<td>
+						${admin.password}
+					</td>
+					<td>
 						${admin.description}
 					</td>
 					<td>
 					 <c:choose>
-					   <c:when test="${admin.id == 1}">
+					   <c:when test="${admin.id == 0}">
 					     	<a href="javascript:void(0);" onclick="alert('最高权限不可编辑')">[编辑权限]</a>
 							<a href="javascript:void(0);" onclick="alert('最高权限不可删除')">[删除]</a>
 					   </c:when>

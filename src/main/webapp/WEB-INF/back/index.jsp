@@ -18,9 +18,9 @@
 	 var _menus = {"menus":[
 			{"menuid":"1","icon":"icon-sys","menuname":"内容管理",
 				"menus":[{"menuname":"新闻管理","icon":"icon-add","url":"/admin/newsList.jhtml"},
-						{"menuname":"业务发布管理","icon":"icon-users","url":"http://www.believeus.cn"},
-						{"menuname":"案例管理","icon":"icon-role","url":"http://www.believeus.cn"},
-						{"menuname":"留言管理","icon":"icon-set","url":"http://www.believeus.cn"},
+						{"menuname":"业务发布管理","icon":"icon-users","url":"/admin/businessList.jhtml"},
+						{"menuname":"案例管理","icon":"icon-role","url":"/admin/exampleList.jhtml"},
+						{"menuname":"留言管理","icon":"icon-set","url":"/admin/messageList.jhtml"},
 						{"menuname":"客户感言管理","icon":"icon-set","url":"http://www.believeus.cn"},
 						{"menuname":"企业信息管理","icon":"icon-set","url":"http://www.believeus.cn"},
 						{"menuname":"团队管理","icon":"icon-set","url":"http://www.believeus.cn"}
