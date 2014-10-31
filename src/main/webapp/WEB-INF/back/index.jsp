@@ -131,7 +131,11 @@
 			
         });
 		
-		
+		$(function(){
+			$(".panel div").each(function(){
+				//$(this).removeClass("accordion-header-selected");
+			});
+		});
 
     </script>
 

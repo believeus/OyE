@@ -63,7 +63,7 @@ $().ready(function() {
 </head>
 <body>
 	<div class="path">
-		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 编辑管理员
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 编辑管理员
 	</div>
 	<form id="inputForm" action="/admin/updateRoleForAdmin.jhtml" method="post">
 	   <input type="hidden" name="adminId" value="${adminId}"/>

@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="/static/public/js/common.js"></script>
 	<script type="text/javascript" src="/static/public/js/input.js"></script>
 	<style type="text/css">
-		table.input th {
+		table.input th ,td{
 		    font-size: 13px;
 		}
 	</style>
@@ -83,37 +83,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
      <div class="path">
-		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 回复留言
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 回复留言
 	</div>
 	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="type" value="${type}"/>
 		<table class="input">
 			<tr>
 				<th>
-					<span class="requiredField">*</span>收件人:
+					收件人:
 				</th>
 				<td>
-					<input type="text" name="name" class="text" maxlength="200" value="张三"/>
+					张三
 				</td>
 				<th>
-					<span class="requiredField">*</span>电话:
+					电话:
 				</th>
 				<td>
-					<input type="text" name="phone" class="text" maxlength="200" value="1324567890"/>
+					1324567890
 				</td>
 			</tr>
 			<tr>
 				<th>
-					<span class="requiredField">*</span>留言标题:
+					留言标题:
 				</th>
 				<td>
-					<input type="text" name="title" class="text" maxlength="200" value="aaa"/>
+					aaa
 				</td>
 				<th>
-					<span class="requiredField">*</span>电子邮件:
+					电子邮件:
 				</th>
 				<td>
-					<input type="text" name="email" class="text" maxlength="200" value="aaa@qq.com"/>
+					aaa@qq.com
 				</td>
 			</tr>
 			<tr>
@@ -121,7 +121,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					留言内容:
 				</th>
 				<td colspan="3">
-					<textarea name="content" class="editor" style="font-size: 13px;">你好不好</textarea>
+					<textarea class="editor" disabled="disabled" style="background-color: #fff;width: 800px; height:80px; border: 0px none; overflow: hidden;font-size:13px;">你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好好不好你好不好你好好不好你好不好你好好不好你好不好你好好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好你好不好
+					</textarea>
 				</td>
 			</tr>
 			<tr id="contentTr">

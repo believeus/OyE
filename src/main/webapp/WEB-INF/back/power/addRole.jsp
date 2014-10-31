@@ -39,7 +39,7 @@ $().ready(function() {
 </head>
 <body>
 	<div class="path">
-		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 添加角色
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 添加角色
 	</div>
 	<form id="inputForm" action="/admin/addRoleLogic.jhtml" method="post">
 		<table class="input">

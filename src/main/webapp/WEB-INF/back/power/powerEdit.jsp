@@ -30,7 +30,7 @@ $().ready(function() {
 </head>
 <body>
 	<div class="path">
-		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 内容列表 <span>共${dataCenters.total}条记录</span>
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 内容列表 <span>共${dataCenters.total}条记录</span>
 	</div>
 	<form id="listForm" action="/admin/updateRole.jhtml" method="post">
 	    <input type="hidden" name="roleId" value="${roleId}"/>

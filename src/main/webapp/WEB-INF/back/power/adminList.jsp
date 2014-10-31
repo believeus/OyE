@@ -29,7 +29,7 @@ $().ready(function() {
 </head>
 <body>
 	<div class="path">
-		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 管理员列表 <span>共${dataCenters.total}条记录</span>
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 管理员列表 <span>共${dataCenters.total}条记录</span>
 	</div>
 	<div class="bar">
 			<a href="/admin/addAdmin.jhtml" class="iconButton">

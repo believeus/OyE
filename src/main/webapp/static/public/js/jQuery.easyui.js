@@ -53,7 +53,7 @@
         }
         var _f = [];
         if (cc.find(">div[selected=true]").length == 0) {
-            cc.find(">div:first").attr("selected", "true");
+            cc.find(">div:first").attr("selected", "false");//原来为true，另外104行注释掉了。以便页面初始化菜单分类选项卡自动关闭。
         }
         cc.find(">div").each(function() {
             var pp = $(this);
@@ -101,7 +101,7 @@
             }
         }
         _17 = _9(_14);
-        _17.panel("header").addClass("accordion-header-selected");
+       // _17.panel("header").addClass("accordion-header-selected");
         function _18(_1a) {
             return $(_1a).panel("options").title;
         };
