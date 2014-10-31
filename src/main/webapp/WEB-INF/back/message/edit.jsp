@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>编辑留言 - Powered By believeus</title>
+	<title>回复留言 - Powered By believeus</title>
 	<meta name="author" content="believeus Team" />
 	<meta name="copyright" content="believeus" />
 	<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
@@ -114,6 +114,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</th>
 				<td>
 					<input type="text" name="email" class="text" maxlength="200" value="aaa@qq.com"/>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					留言内容:
+				</th>
+				<td colspan="3">
+					<textarea name="content" class="editor" style="font-size: 13px;">你好不好</textarea>
 				</td>
 			</tr>
 			<tr id="contentTr">

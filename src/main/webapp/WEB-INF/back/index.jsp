@@ -30,7 +30,7 @@
 						</shiro:hasPermission>
 						 
 						<shiro:hasPermission name="contact:view">  
-						{"menuname":"留言管理","icon":"icon-set","url":"/admin/messageList.jhtml"},
+						{"menuname":"留言管理","icon":"icon-log","url":"/admin/messageList.jhtml"},
 						</shiro:hasPermission>
 						
 						<shiro:hasPermission name="customer:view">  	
@@ -38,7 +38,7 @@
 						</shiro:hasPermission>
 						
 						<shiro:hasPermission name="companyMsg:view">  	
-						{"menuname":"企业信息管理","icon":"icon-set","url":"/admin/companyView.jhtml"},
+						{"menuname":"企业信息管理","icon":"icon-nav","url":"/admin/companyView.jhtml"},
 						</shiro:hasPermission>
 						
 						<shiro:hasPermission name="team:view">  	
