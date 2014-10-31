@@ -83,7 +83,7 @@ $().ready(function() {
 						${admin.description}
 					</td>
 					<td>
-					    <a href="/admin/power.jhtml?adminId=${admin.id}">[编辑权限]</a>
+					    <a href="/admin/editAdmin.jhtml?adminId=${admin.id}">[编辑]</a>
 						<a href="/admin/deleteAdmin.jhtml?adminId=${admin.id}">[删除]</a>
 					</td>
 				</tr>

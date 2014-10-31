@@ -65,6 +65,14 @@ public class AdminController {
 		request.setAttribute("roles", roles);
 		return "/WEB-INF/back/power/addAdmin.jsp";
 	}
+	/**
+	 * 编辑管理员
+	 * @return
+	 */
+	@RequestMapping(value="/admin/editAdmin")
+	public String editAdmin(HttpServletRequest request,Integer id){
+		return "/WEB-INF/back/power/editAdmin.jsp";
+	}
 	
 	// ajax判断管理员用户名是否存在
 	@RequestMapping(value="/admin/ajaxValidateAdmin")
