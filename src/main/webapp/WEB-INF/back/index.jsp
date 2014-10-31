@@ -42,7 +42,7 @@
 						</shiro:hasPermission>
 						
 						<shiro:hasPermission name="team:view">  	
-						{"menuname":"团队管理","icon":"icon-set","url":"/admin/teamView.jhtml"},
+						{"menuname":"团队管理","icon":"icon-set","url":"/admin/teamList.jhtml"},
 						</shiro:hasPermission>
 					]
 			}

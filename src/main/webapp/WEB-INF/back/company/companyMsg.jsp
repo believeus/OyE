@@ -13,29 +13,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta name="copyright" content="believeus" />
 	<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="/static/public/js/jquery.js"></script>
-	<script type="text/javascript" src="/static/public/js/jquery.validate.js"></script>
-	<script type="text/javascript" src="/static/public/js/admin/ueditor1_2_6_2/ueditor.config.js"></script>
-	<script type="text/javascript" src="/static/public/js/admin/ueditor1_2_6_2/ueditor.all.js"></script>
-	<script type="text/javascript" src="/static/public/js/common.js"></script>
-	<script type="text/javascript" src="/static/public/js/input.js"></script>
 	<style type="text/css">
 		table.input th,td {
 		    font-size: 13px;
 		}
 	</style>
-	<script type="text/javascript">
-	$().ready(function() {
-	
-		var editor = new UE.ui.Editor();
-	    editor.render('editor');
-	    editor.addListener('contentchange',function(){
-	        this.sync();
-	        $('textarea').valid();
-	    });
-		
-	});
-	
-	</script>
   </head>
   
   <body>
