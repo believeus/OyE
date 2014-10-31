@@ -36,7 +36,23 @@ public class BaseDao extends HibernateDaoSupport {
 		ht.flush();
 	}
 
+	public void delete(Class<?> clazz,List<?> idList){
+		if (idList==null||idList.isEmpty()) {
+			return;
+		}
+		String ids=idList.toString().replace("[", "(").replace("]", ")");
+		final String hql = "delete from " + clazz.getName()+ " as entity where entity.id in "+ids;
+		this.getHibernateTemplate().execute(
+				new HibernateCallback<Object>() {
 
+					@Override
+					public Object doInHibernate(Session session)
+							throws HibernateException, SQLException {
+						Query query = session.createQuery(hql);
+						return query.executeUpdate();
+					}
+				});
+	}
 	public void delete(Class<?> clazz, final Integer id) {
 		Object object = this.getHibernateTemplate().get(clazz, id);
 		getHibernateTemplate().delete(object);

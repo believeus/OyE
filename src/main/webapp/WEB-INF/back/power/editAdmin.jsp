@@ -95,7 +95,9 @@ $().ready(function() {
 				<td>
 					<select name="roleId">
 						<c:forEach var="role" items="${roles}">
+						   <c:if test="${role.roleName ne 'root' }">
 							 <option value="${role.id }">${role.roleName}</option>
+						   </c:if>
 						</c:forEach>
 					</select>
 				</td>

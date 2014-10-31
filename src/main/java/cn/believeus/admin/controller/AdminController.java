@@ -51,6 +51,7 @@ public class AdminController {
 		Role role=(Role)baseService.findObject(Role.class, roleId);
 		List<Authority> authoritys = role.getAuthoritys();
 		request.setAttribute("authoritys", authoritys);
+		request.setAttribute("roleId", roleId);
 		return "/WEB-INF/back/power/powerEdit.jsp";
 	}
 	
@@ -71,6 +72,9 @@ public class AdminController {
 	 */
 	@RequestMapping(value="/admin/editAdmin")
 	public String editAdmin(HttpServletRequest request,Integer id){
+		@SuppressWarnings("unchecked")
+		List<Role> roles = (List<Role>)baseService.findObjectList(Role.class);
+		request.setAttribute("roles", roles);
 		return "/WEB-INF/back/power/editAdmin.jsp";
 	}
 	

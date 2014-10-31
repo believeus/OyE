@@ -22,46 +22,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </style>
 <script type="text/javascript">
 $().ready(function() {
-	$("#c1").click(function(){
-		var checked=$("#c1").attr("checked");
-		if(checked){
-		   $("#c2,#c3,#c4").attr("disabled",false);
-	    }else{
-	       $("#c2,#c3,#c4").attr("disabled","disabled").attr("checked",false);
-	    }
-	});
-	$("#nv1").click(function(){
-		var checked=$("#nv1").attr("checked");
-		if(checked){
-		   $("#nv2,#nv3,#nv4").attr("disabled",false);
-	    }else{
-	    	$("#nv2,#nv3,#nv4").attr("disabled","disabled").attr("checked",false);
-	    }
-	});
-	$("#bv1").click(function(){
-		var checked=$("#bv1").attr("checked");
-		if(checked){
-		   $("#bv2,#bv3,#bv4").attr("disabled",false);
-	    }else{
-	       $("#bv2,#bv3,#bv4").attr("disabled","disabled").attr("checked",false);
-	    }
-	});
-	$("#ev1").click(function(){
-		var checked=$("#ev1").attr("checked");
-		if(checked){
-		   $("#ev2,#ev3,#ev4").attr("disabled",false);
-	    }else{
-	       $("#ev2,#ev3,#ev4").attr("disabled","disabled").attr("checked",false);
-	    }
-	});
-	$("#cv1").click(function(){
-		var checked=$("#cv1").attr("checked");
-		if(checked){
-		   $("#cv2,#cv3,#cv4").attr("disabled",false);
-	    }else{
-	       $("#cv2,#cv3,#cv4").attr("disabled","disabled").attr("checked",false);
-	    }
-	});
 	<c:forEach var="authority" items="${authoritys}">
 	   $("input[value='${authority.authorityName}']").attr("checked",true);
 	</c:forEach>
@@ -72,7 +32,8 @@ $().ready(function() {
 	<div class="path">
 		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 内容列表 <span>共${dataCenters.total}条记录</span>
 	</div>
-	<form id="listForm" action="list.jhtml" method="post">
+	<form id="listForm" action="/admin/updateRole.jhtml" method="post">
+	    <input type="hidden" name="roleId" value="${roleId}"/>
 		<table id="listTable" class="list">
 			<tr>
 				<th class="check">
@@ -100,13 +61,13 @@ $().ready(function() {
 					<input type="checkbox" id="c1" name="authority" value="content:view" />
 				</td>
 				<td>
-					<input type="checkbox" id="c2" name="authority" value="content:create" disabled="disabled"/>
+					<input type="checkbox" id="c2" name="authority" value="content:create" />
 				</td>
 				<td>
-					<input type="checkbox" id="c3" name="authority" value="content:update" disabled="disabled"/>
+					<input type="checkbox" id="c3" name="authority" value="content:update" />
 				</td>
 				<td>
-					<input type="checkbox" id="c4" name="authority" value="content:delete" disabled="disabled" />
+					<input type="checkbox" id="c4" name="authority" value="content:delete"  />
 				</td>
 			</tr>
 			<tr>
@@ -117,13 +78,13 @@ $().ready(function() {
 					<input type="checkbox" id="nv1" name="authority" value="newsDinamic:view" />
 				</td>
 				<td>
-					<input type="checkbox" id="nv2" name="authority" value="newsDinamic:create" disabled="disabled"/>
+					<input type="checkbox" id="nv2" name="authority" value="newsDinamic:create" />
 				</td>
 				<td>
-					<input type="checkbox" id="nv3" name="authority" value="newsDinamic:update" disabled="disabled" />
+					<input type="checkbox" id="nv3" name="authority" value="newsDinamic:update"  />
 				</td>
 				<td>
-					<input type="checkbox" id="nv4" name="authority" value="newsDinamic:delete" disabled="disabled"/>
+					<input type="checkbox" id="nv4" name="authority" value="newsDinamic:delete" />
 				</td>
 			</tr>
 			<tr>
@@ -134,13 +95,13 @@ $().ready(function() {
 					<input type="checkbox" id="bv1" name="authority" value="business:view" />
 				</td>
 				<td>
-					<input type="checkbox" id="bv2" name="authority" value="business:create" disabled="disabled"/>
+					<input type="checkbox" id="bv2" name="authority" value="business:create" />
 				</td>
 				<td>
-					<input type="checkbox" id="bv3" name="authority" value="business:update" disabled="disabled"/>
+					<input type="checkbox" id="bv3" name="authority" value="business:update" />
 				</td>
 				<td>
-					<input type="checkbox" id="bv4" name="authority" value="business:delete" disabled="disabled" />
+					<input type="checkbox" id="bv4" name="authority" value="business:delete"  />
 				</td>
 			</tr>
 			<tr>
@@ -151,13 +112,13 @@ $().ready(function() {
 					<input type="checkbox" id="ev1" name="authority" value="example:view" />
 				</td>
 				<td>
-					<input type="checkbox" id="ev2" name="authority" value="example:create" disabled="disabled"/>
+					<input type="checkbox" id="ev2" name="authority" value="example:create" />
 				</td>
 				<td>
-					<input type="checkbox" id="ev3" name="authority" value="example:update" disabled="disabled"/>
+					<input type="checkbox" id="ev3" name="authority" value="example:update" />
 				</td>
 				<td>
-					<input type="checkbox" id="ev4" name="authority" value="example:delete" disabled="disabled"/>
+					<input type="checkbox" id="ev4" name="authority" value="example:delete" />
 				</td>
 			</tr>
 			<tr>
@@ -168,13 +129,13 @@ $().ready(function() {
 					<input type="checkbox" id="cv1" name="authority" value="contact:view" />
 				</td>
 				<td>
-					<input type="checkbox" id="cv2" name="authority" value="contact:create" disabled="disabled"/>
+					<input type="checkbox" id="cv2" name="authority" value="contact:create" />
 				</td>
 				<td>
-					<input type="checkbox" id="cv3" name="authority" value="contact:update" disabled="disabled"/>
+					<input type="checkbox" id="cv3" name="authority" value="contact:update" />
 				</td>
 				<td>
-					<input type="checkbox" id="cv4" name="authority" value="contact:delete" disabled="disabled"/>
+					<input type="checkbox" id="cv4" name="authority" value="contact:delete" />
 				</td>
 			</tr>
 			<tr>

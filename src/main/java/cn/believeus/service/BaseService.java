@@ -27,7 +27,9 @@ public class BaseService{
 	public void delete(Object entity) {
 		baseDao.delete(entity);
 	}
-
+	public void delete(Class<?> clazz,List<?> ids){
+		baseDao.delete(clazz, ids);
+	}
 	public void delete(Class<?> clazz, String property, Object value) {
 		baseDao.delete(clazz, property, value);
 	}
