@@ -1,12 +1,13 @@
 package cn.believeus.init;
 
 import javax.annotation.Resource;
-
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 import cn.believeus.model.Admin;
+import cn.believeus.model.Authority;
+import cn.believeus.model.Role;
 import cn.believeus.service.BaseService;
 
 
@@ -26,6 +27,15 @@ public class InitAdmin implements ApplicationListener<ApplicationEvent>{
 				 admin.setPassword("admin");
 				 admin.setDescription("该管理员拥有所有权限");
 				 baseService.saveOrUpdata(admin);
+				 Role role=new Role();
+				 role.setDescription("该角色拥有所有权限");
+				 role.setRoleName("root");
+				 role.setAdmin(admin);
+				 baseService.saveOrUpdata(role);
+				 Authority authority=new Authority();
+				 authority.setAuthorityName("*");
+				 authority.setRole(role);
+				 baseService.saveOrUpdata(authority);
 			}
 		}
 	}

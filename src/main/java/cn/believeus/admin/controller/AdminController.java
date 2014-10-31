@@ -18,19 +18,8 @@ public class AdminController {
 	private BaseService baseService;
 
 	@RequestMapping(value = "/admin/manager")
-	public String manager(Admin formAdmin,HttpSession session) {
-		String username = formAdmin.getUsername();
-		Admin admin = (Admin) baseService.findObject(Admin.class, "username",username);
-		String password = formAdmin.getPassword();
-		if(admin==null){
-			return "redirect:/admin/login.jhtml";
-		}
-		if (password.equals(admin.getPassword())) {
-			session.setAttribute("sessionUser", admin);
-			return "/WEB-INF/back/index.jsp";
-		} else {
-			return "redirect:/admin/login.jhtml";
-		}
+	public String manager() {
+		return "/WEB-INF/back/index.jsp";
 	}
 	
 	@RequestMapping(value="/admin/login")

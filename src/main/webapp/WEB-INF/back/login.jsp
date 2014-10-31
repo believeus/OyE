@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+ <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>​
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -36,7 +36,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  	<form action="/admin/manager.jhtml" method="post">
+    <!-- Begin Name:wuqiwei 此处必须加：不加验证之后就不能表单提交了,所以如果已经验证直接跳转到/admin/manager.jhtml页面 -->
+     <shiro:authenticated>
+      <script type="text/javascript">
+        window.location.href ="/admin/manager.jhtml";
+      </script>
+	</shiro:authenticated>
+	<!-- End Name:wuqiwei 此处必须加：不加验证之后就不能表单提交了,所以如果已经验证直接跳转到/admin/manager.jhtml页面 -->
+	
+  	<form action="/admin/login.jhtml" method="post">
     <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
 	  <tr>
 	    <td><table width="962" border="0" align="center" cellpadding="0" cellspacing="0">

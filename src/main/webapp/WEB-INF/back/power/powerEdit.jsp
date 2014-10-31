@@ -22,7 +22,46 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </style>
 <script type="text/javascript">
 $().ready(function() {
-
+	$("#c1").click(function(){
+		var checked=$("#c1").attr("checked");
+		if(checked){
+		   $("#c2,#c3,#c4").attr("disabled",false);
+	    }else{
+	       $("#c2,#c3,#c4").attr("disabled","disabled").attr("checked",false);
+	    }
+	});
+	$("#nv1").click(function(){
+		var checked=$("#nv1").attr("checked");
+		if(checked){
+		   $("#nv2,#nv3,#nv4").attr("disabled",false);
+	    }else{
+	    	$("#nv2,#nv3,#nv4").attr("disabled","disabled").attr("checked",false);
+	    }
+	});
+	$("#bv1").click(function(){
+		var checked=$("#bv1").attr("checked");
+		if(checked){
+		   $("#bv2,#bv3,#bv4").attr("disabled",false);
+	    }else{
+	       $("#bv2,#bv3,#bv4").attr("disabled","disabled").attr("checked",false);
+	    }
+	});
+	$("#ev1").click(function(){
+		var checked=$("#ev1").attr("checked");
+		if(checked){
+		   $("#ev2,#ev3,#ev4").attr("disabled",false);
+	    }else{
+	       $("#ev2,#ev3,#ev4").attr("disabled","disabled").attr("checked",false);
+	    }
+	});
+	$("#cv1").click(function(){
+		var checked=$("#cv1").attr("checked");
+		if(checked){
+		   $("#cv2,#cv3,#cv4").attr("disabled",false);
+	    }else{
+	       $("#cv2,#cv3,#cv4").attr("disabled","disabled").attr("checked",false);
+	    }
+	});
 });
 </script>
 </head>
@@ -31,37 +70,6 @@ $().ready(function() {
 		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 内容列表 <span>共${dataCenters.total}条记录</span>
 	</div>
 	<form id="listForm" action="list.jhtml" method="post">
-		<%-- <div class="bar">
-		 ​
-			<a href="add.jhtml" class="iconButton">
-				<span class="addIcon">&nbsp;</span>添加
-			</a>
-		
-		<div class="buttonWrap">
-			
-			<a href="javascript:;" id="deleteButton" class="iconButton disabled">
-				<span class="deleteIcon">&nbsp;</span>删除
-			</a>
-			
-				<a href="javascript:;" id="refreshButton" class="iconButton">
-					<span class="refreshIcon">&nbsp;</span>刷新
-				</a>
-			</div>
-			<div class="menuWrap">
-				<div class="search">
-					<span id="searchPropertySelect" class="arrow">&nbsp;</span>
-					<input type="text" id="searchValue" name="searchValue" value="${searchValue}" maxlength="200" />
-					<button type="submit">&nbsp;</button>
-				</div>
-				<div class="popupMenu">
-					<ul id="searchPropertyOption">
-						<li>
-							<a href="javascript:;" class="current" val="title">标题</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div> --%>
 		<table id="listTable" class="list">
 			<tr>
 				<th class="check">
@@ -85,16 +93,16 @@ $().ready(function() {
 					内容管理系统
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="content:view" />
+					<input type="checkbox" id="c1" name="authority" value="content:view" />
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="content:create" />
+					<input type="checkbox" id="c2" name="authority" value="content:create" disabled="disabled"/>
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="content:update" />
+					<input type="checkbox" id="c3" name="authority" value="content:update" disabled="disabled"/>
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="content:delete" />
+					<input type="checkbox" id="c4" name="authority" value="content:delete" disabled="disabled" />
 				</td>
 			</tr>
 			<tr>
@@ -102,16 +110,16 @@ $().ready(function() {
 					新闻系统
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="newsDinamic:view" />
+					<input type="checkbox" id="nv1" name="authority" value="newsDinamic:view" />
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="newsDinamic:create" />
+					<input type="checkbox" id="nv2" name="authority" value="newsDinamic:create" disabled="disabled"/>
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="newsDinamic:update" />
+					<input type="checkbox" id="nv3" name="authority" value="newsDinamic:update" disabled="disabled" />
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="newsDinamic:delete" />
+					<input type="checkbox" id="nv4" name="authority" value="newsDinamic:delete" disabled="disabled"/>
 				</td>
 			</tr>
 			<tr>
@@ -119,16 +127,16 @@ $().ready(function() {
 					业务发布管理
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="business:view" />
+					<input type="checkbox" id="bv1" name="authority" value="business:view" />
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="business:create" />
+					<input type="checkbox" id="bv2" name="authority" value="business:create" disabled="disabled"/>
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="business:update" />
+					<input type="checkbox" id="bv3" name="authority" value="business:update" disabled="disabled"/>
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="business:delete" />
+					<input type="checkbox" id="bv4" name="authority" value="business:delete" disabled="disabled" />
 				</td>
 			</tr>
 			<tr>
@@ -136,16 +144,16 @@ $().ready(function() {
 					案例管理
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="example:view" />
+					<input type="checkbox" id="ev1" name="authority" value="example:view" />
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="example:create" />
+					<input type="checkbox" id="ev2" name="authority" value="example:create" disabled="disabled"/>
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="example:update" />
+					<input type="checkbox" id="ev3" name="authority" value="example:update" disabled="disabled"/>
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="example:delete" />
+					<input type="checkbox" id="ev4" name="authority" value="example:delete" disabled="disabled"/>
 				</td>
 			</tr>
 			<tr>
@@ -153,33 +161,16 @@ $().ready(function() {
 					联系方式
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="contact:view" />
+					<input type="checkbox" id="cv1" name="authority" value="contact:view" />
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="contact:create" />
+					<input type="checkbox" id="cv2" name="authority" value="contact:create" disabled="disabled"/>
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="contact:update" />
+					<input type="checkbox" id="cv3" name="authority" value="contact:update" disabled="disabled"/>
 				</td>
 				<td>
-					<input type="checkbox" name="authority" value="contact:delete" />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					添加管理员
-				</td>
-				<td>
-					<input type="checkbox" name="authority" value="addAdmin:view" />
-				</td>
-				<td>
-					<input type="checkbox" name="authority" value="addAdmin:create" />
-				</td>
-				<td>
-					<input type="checkbox" name="authority" value="addAdmin:update" />
-				</td>
-				<td>
-					<input type="checkbox" name="authority" value="addAdmin:delete" />
+					<input type="checkbox" id="cv4" name="authority" value="contact:delete" disabled="disabled"/>
 				</td>
 			</tr>
 		</table>

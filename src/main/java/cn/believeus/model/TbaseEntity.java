@@ -37,7 +37,6 @@ public class TbaseEntity implements Serializable {
 		this.status = status;
 	}
 
-	
 	public long getCreateTime() {
 		return createTime;
 	}
@@ -45,7 +44,8 @@ public class TbaseEntity implements Serializable {
 	public void setCreateTime(long createTime) {
 		this.createTime = createTime;
 	}
-	/*@OrderBy("editTime ASC")*/
+
+	/* @OrderBy("editTime ASC") */
 	public long getEditTime() {
 		return editTime;
 	}
