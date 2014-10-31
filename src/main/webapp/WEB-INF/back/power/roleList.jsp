@@ -78,7 +78,7 @@ $().ready(function() {
 					</td>
 					<td>
 						<a href="/admin/power.jhtml">[编辑权限]</a>
-						<a href="#" onclick="alert('删除');">[删除]</a>
+						<a href="/admin/deleteRole.jhtml?roleId=${role.id}">[删除]</a>
 					</td>
 				</tr>
 			</c:forEach>

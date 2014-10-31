@@ -19,7 +19,9 @@ public class AdminPowerController {
 		
 		Role role = new Role();
 		String roleName = request.getParameter("roleName");
+		String description = request.getParameter("description");
 		role.setRoleName(roleName);
+		role.setDescription(description);
 		baseService.saveOrUpdata(role);
 			
 		// 获取被选中的checkbook 并且name="authority"

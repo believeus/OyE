@@ -1,6 +1,5 @@
 package cn.believeus.admin.controller;
 
-
 import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +13,7 @@ import cn.believeus.service.BaseService;
 
 @Controller
 public class AdminController {
+	
 	@Resource
 	private BaseService baseService;
 
@@ -26,6 +26,7 @@ public class AdminController {
 	public String admin(){
 		return "/WEB-INF/back/login.jsp";
 	}
+	
 	// 更新管理员的密码
 	@RequestMapping(value="/admin/updatePwd")
 	public 	@ResponseBody String updatePwd(String newpass,HttpSession session){
@@ -92,6 +93,7 @@ public class AdminController {
 	public String addRole(){
 		return "/WEB-INF/back/power/addRole.jsp";
 	}
+	
 	/**
 	 * 角色列表
 	 * @return
@@ -103,6 +105,13 @@ public class AdminController {
 		request.setAttribute("roles", roles);
 		return "/WEB-INF/back/power/roleList.jsp";
 	}
+	
+	@RequestMapping(value="/admin/deleteRole")
+	public String deleteRole(Integer roleId){
+		baseService.delete(Role.class, roleId);
+		return "redirect:/admin/roleList.jhtml";
+	}
+	
 	/**
 	 * 管理员列表
 	 * @return
