@@ -41,7 +41,7 @@ public class AuthenticationFilter extends FormAuthenticationFilter {
 	}
 
 	@Override
-	protected boolean onLoginSuccess(org.apache.shiro.authc.AuthenticationToken token, Subject subject, ServletRequest servletRequest, ServletResponse servletResponse) throws Exception {
+	protected boolean onLoginSuccess(AuthenticationToken token, Subject subject, ServletRequest servletRequest, ServletResponse servletResponse) throws Exception {
 		Session session = subject.getSession();
 		TokenAuthentication authenticationToken = (TokenAuthentication) token;
 		String username = authenticationToken.getUsername();

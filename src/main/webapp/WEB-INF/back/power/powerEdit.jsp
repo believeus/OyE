@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -62,6 +62,9 @@ $().ready(function() {
 	       $("#cv2,#cv3,#cv4").attr("disabled","disabled").attr("checked",false);
 	    }
 	});
+	<c:forEach var="authority" items="${authoritys}">
+	   $("input[value='${authority.authorityName}']").attr("checked",true);
+	</c:forEach>
 });
 </script>
 </head>
@@ -88,6 +91,7 @@ $().ready(function() {
 					<a href="javascript:;" class="sort">删除</a>
 				</th>
 			</tr>
+			
 			<tr>
 				<td>
 					内容管理系统

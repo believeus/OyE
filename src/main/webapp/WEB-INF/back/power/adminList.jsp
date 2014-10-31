@@ -83,16 +83,8 @@ $().ready(function() {
 						${admin.description}
 					</td>
 					<td>
-					 <c:choose>
-					   <c:when test="${admin.id == 0}">
-					     	<a href="javascript:void(0);" onclick="alert('最高权限不可编辑')">[编辑权限]</a>
-							<a href="javascript:void(0);" onclick="alert('最高权限不可删除')">[删除]</a>
-					   </c:when>
-					   <c:otherwise>
-					        <a href="/admin/power.jhtml?adminId=${admin.id}">[编辑权限]</a>
-							<a href="/admin/deleteAdmin.jhtml?adminId=${admin.id}">[删除]</a>
-					   </c:otherwise>
-					 </c:choose>
+					    <a href="/admin/power.jhtml?adminId=${admin.id}">[编辑权限]</a>
+						<a href="/admin/deleteAdmin.jhtml?adminId=${admin.id}">[删除]</a>
 					</td>
 				</tr>
 			</c:forEach>

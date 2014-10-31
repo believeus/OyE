@@ -2,12 +2,17 @@ package cn.believeus.admin.controller;
 
 import java.util.List;
 import javax.annotation.Resource;
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import cn.believeus.model.Admin;
+import cn.believeus.model.Authority;
 import cn.believeus.model.Role;
 import cn.believeus.service.BaseService;
 
@@ -38,12 +43,14 @@ public class AdminController {
 	}
 	
 	/**
-	 * 权限管理
+	 * 权限管理:编辑角色权限
 	 * @return
 	 */
 	@RequestMapping(value="/admin/power")
-	public String power(HttpServletRequest request){
-		
+	public String power(Integer roleId,ServletRequest request){
+		Role role=(Role)baseService.findObject(Role.class, roleId);
+		List<Authority> authoritys = role.getAuthoritys();
+		request.setAttribute("authoritys", authoritys);
 		return "/WEB-INF/back/power/powerEdit.jsp";
 	}
 	
@@ -128,5 +135,17 @@ public class AdminController {
 	public String deleteAdmin(Integer adminId){
 		baseService.delete(Admin.class, adminId);
 		return "redirect:/admin/adminList.jhtml";
+	}
+	@RequestMapping(value="/admin/logout")
+	public String adminLogin(){
+		try {
+			Subject currentUser = SecurityUtils.getSubject();
+			if (SecurityUtils.getSubject().getSession() != null) {
+				currentUser.logout();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:/admin/login.jhtml";
 	}
 }

@@ -25,11 +25,16 @@
 						{"menuname":"企业信息管理","icon":"icon-set","url":"/admin/companyView.jhtml"},
 						{"menuname":"团队管理","icon":"icon-set","url":"/admin/teamView.jhtml"}
 					]
-			},{"menuid":"2","icon":"icon-sys","menuname":"系统管理",
-				"menus":[{"menuname":"角色列表","icon":"icon-log","url":"/admin/roleList.jhtml"},
+			}
+			,{"menuid":"2","icon":"icon-sys","menuname":"系统管理",
+				"menus":[
+						<c:if test="${sessionUser.id==1}">
+				        {"menuname":"角色列表","icon":"icon-log","url":"/admin/roleList.jhtml"},
+				        </c:if>
 						{"menuname":"管理员列表","icon":"icon-log","url":"/admin/adminList.jhtml"}
 					]
 			}
+			
 	]};
         //设置登录窗口
         function openPwd() {
@@ -96,7 +101,7 @@
                 $.messager.confirm('系统提示', '您确定要退出本次登录吗?', function(r) {
 
                     if (r) {
-                        location.href = '/ajax/loginout.ashx';
+                        location.href = '/admin/logout.jhtml';
                     }
                 });
 
