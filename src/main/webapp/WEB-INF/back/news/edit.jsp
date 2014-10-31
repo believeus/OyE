@@ -85,15 +85,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <div class="path">
 		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 编辑新闻
 	</div>
-	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="type" value="${type}"/>
+	<form id="inputForm" action="/admin/newsUpdate.jhtml" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="${news.id }"/>
 		<table class="input">
 			<tr>
 				<th>
 					<span class="requiredField">*</span>新闻标题:
 				</th>
 				<td>
-					<input type="text" name="title" class="text" maxlength="200" value="aaa"/>
+					<input type="text" name="title" class="text" maxlength="200" value="${news.title}"/>
 				</td>
 			</tr>
 			<tr id="pathTr">
@@ -101,7 +101,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span class="requiredField">*</span>选择分类:
 				</th>
 				<td colspan="3">
-					<select name="">
+					<select name="category">
 						<option value="1">分类111</option>
 						<option value="2">分类222</option>
 						<option value="3">分类333</option>
@@ -113,7 +113,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					内容:
 				</th>
 				<td colspan="3">
-					<textarea id="editor" name="content" class="editor">asdgfhedrfg</textarea>
+					<textarea id="editor" name="content" class="editor">${news.content}</textarea>
 				</td>
 			</tr>
 			<tr>

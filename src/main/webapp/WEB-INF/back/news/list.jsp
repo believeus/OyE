@@ -90,10 +90,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						${myNew.title}
 					</td>
 					<td>
-						<a href="/admin/news/newsTop.jhtml?id=${myNew.id}"><font color="red">点击置顶</font></a>
+						<a href="/admin/news/newsTop.jhtml?myNewId=${myNew.id}"><font color="red">点击置顶</font></a>
 					</td>
 					<td>
-						<a href="/admin/newsEdit.jhtml?id=${myNew.id}">[修改]</a>
+						<a href="/admin/newsEdit.jhtml?myNewId=${myNew.id}">[修改]</a>
 					</td>
 				</tr>
 			</c:forEach>

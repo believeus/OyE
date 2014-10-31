@@ -46,10 +46,20 @@ public class NewsController {
 	 * */
 	@RequiresPermissions("newsDinamic:create")
 	@RequestMapping(value="/admin/newsSave")
-	public String save(News news, HttpServletRequest request){
+	public String save(News news){
 		news.setCreateTime(System.currentTimeMillis());
-		
-		System.out.println(news.getCategory());
+		baseService.saveOrUpdata(news);
+		return "redirect:/admin/newsList.jhtml";
+	}
+	
+	/**
+	 * 新闻更新
+	 * @return
+	 */
+	@RequiresPermissions("newsDinamic:update")
+	@RequestMapping(value="/admin/newsUpdate")
+	public String newsUpdate(News news){
+		news.setEditTime(System.currentTimeMillis());
 		baseService.saveOrUpdata(news);
 		return "redirect:/admin/newsList.jhtml";
 	}
@@ -60,7 +70,9 @@ public class NewsController {
 	 */
 	@RequiresPermissions("newsDinamic:update")
 	@RequestMapping(value="/admin/newsEdit")
-	public String edit(){
+	public String edit(Integer myNewId, HttpServletRequest request){
+		News news = (News) baseService.findObject(News.class, myNewId);
+		request.setAttribute("news", news);
 		return "/WEB-INF/back/news/edit.jsp";
 	}
 	
