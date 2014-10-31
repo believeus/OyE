@@ -32,49 +32,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        this.sync();
 	        $('textarea').valid();
 	    });
-	
-		var $inputForm = $("#inputForm");
-		var $type = $("#type");
-		var $contentTr = $("#contentTr");
-		var $pathTr = $("#pathTr");
-		var $path = $("#path");
-		var $browserButton = $("#browserButton");
-		
-		
-		
-		// "类型"修改
-		$type.change(function() {
-			if ($type.val() == "text") {
-				$contentTr.show();
-				$pathTr.hide();
-				$path.prop("disabled", true)
-			} else {
-				$contentTr.hide();
-				$pathTr.show();
-				$path.prop("disabled", false)
-				$browserButton.unbind().browser({
-					type: $type.val()
-				});
-			}
-		});
-		
-		// 表单验证
-		$inputForm.validate({
-			rules: {
-				title: "required",
-				author: "required",
-				path: "required",
-				order: "digits"
-			}
-		});
-		
-		$("#checked_true").click(function(){
-			if($("#checked_true").attr("value") == 0){
-				$("#checked_true").attr("value","1");
-			}else{
-				$("#checked_true").attr("value","0");
-			}
-		});
 		
 	});
 	
@@ -86,7 +43,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 查看企业信息
 	</div>
 	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="type" value="${type}"/>
 		<table class="input">
 			<tr>
 				<td colspan="4">
@@ -95,26 +51,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr>
 				<th>
-					<span class="requiredField">*</span>企业电话:
+					企业电话:
 				</th>
 				<td>
-					13212345567
+					${companyInfo.phone }
 				</td>
 			</tr>
 			<tr>
 				<th>
-					<span class="requiredField">*</span>企业邮箱:
+					企业邮箱:
 				</th>
 				<td>
-					aaa@qq.com
+					${companyInfo.email }
 				</td>
 			</tr>
 			<tr>
 				<th>
-					<span class="requiredField">*</span>企业地址:
+					企业地址:
 				</th>
 				<td>
-					湖北武汉
+					${companyInfo.address }
 				</td>
 			</tr>
 			<tr id="contentTr">
@@ -122,7 +78,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					企业简介:
 				</th>
 				<td colspan="3">
-					你好
+					${companyInfo.content }
 				</td>
 			</tr>
 		</table>

@@ -3,10 +3,12 @@ package cn.believeus.admin.controller;
 
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import cn.believeus.model.CompanyInfo;
 import cn.believeus.service.BaseService;
 
 @Controller
@@ -19,7 +21,18 @@ public class CompanyController {
 	 * @return
 	 */
 	@RequestMapping(value="/admin/companyView")
-	public String companyView(){
+	public String companyView(HttpServletRequest request){
+		CompanyInfo companyInfo = (CompanyInfo)baseService.findObject(CompanyInfo.class, 1);
+		if (companyInfo==null) {
+			companyInfo=new CompanyInfo();
+			companyInfo.setPhone("400-xxxx-xxxx");
+			companyInfo.setEmail("xxxx@163.com");
+			companyInfo.setAddress("某市某省某区xxxxxxxx");
+			companyInfo.setContent("我们是搬家公司！");
+			companyInfo.setCreateTime(System.currentTimeMillis());
+			baseService.saveOrUpdata(companyInfo);
+		}
+		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/back/company/companyMsg.jsp";
 	}
 	/**
@@ -27,7 +40,21 @@ public class CompanyController {
 	 * @return
 	 */
 	@RequestMapping(value="/admin/companyEdit")
-	public String companyEdit(){
+	public String companyEdit(HttpServletRequest request){
+		CompanyInfo companyInfo = (CompanyInfo)baseService.findObject(CompanyInfo.class, 1);
+		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/back/company/edit.jsp";
+	}
+	
+	/**
+	 * 企业信息修改
+	 * @return
+	 */
+	@RequestMapping(value="/admin/companyUpdate")
+	public String companyUpdate(CompanyInfo companyInfo,HttpServletRequest request){
+		companyInfo.setEditTime(System.currentTimeMillis());
+		baseService.saveOrUpdata(companyInfo);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/back/company/companyMsg.jsp";
 	}
 }

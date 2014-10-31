@@ -34,45 +34,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    });
 	
 		var $inputForm = $("#inputForm");
-		var $type = $("#type");
-		var $contentTr = $("#contentTr");
-		var $pathTr = $("#pathTr");
-		var $path = $("#path");
-		var $browserButton = $("#browserButton");
-		
-		
-		
-		// "类型"修改
-		$type.change(function() {
-			if ($type.val() == "text") {
-				$contentTr.show();
-				$pathTr.hide();
-				$path.prop("disabled", true)
-			} else {
-				$contentTr.hide();
-				$pathTr.show();
-				$path.prop("disabled", false)
-				$browserButton.unbind().browser({
-					type: $type.val()
-				});
-			}
-		});
-		
 		// 表单验证
 		$inputForm.validate({
 			rules: {
-				title: "required",
-				author: "required",
-				path: "required",
-				order: "digits"
-			}
-		});
-		
-		$("#checked_true").click(function(){
-			if($("#checked_true").attr("value") == 0){
-				$("#checked_true").attr("value","1");
-			}else{
-				$("#checked_true").attr("value","0");
+				phone: "required",
+				email: "required",
+				address: "required",
+				content: "required"
 			}
 		});
 		
@@ -85,31 +53,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <div class="path">
 		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 编辑企业信息
 	</div>
-	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="type" value="${type}"/>
+	<form id="inputForm" action="/admin/companyUpdate.jhtml" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="${companyInfo.id}">
 		<table class="input">
 			<tr>
 				<th>
-					<span class="requiredField">*</span>企业电话:
+					企业电话:
 				</th>
 				<td>
-					<input type="text" name="phone" class="text" maxlength="200" value="13212345567"/>
+					<input type="text" name="phone" class="text" maxlength="200" value="${companyInfo.phone }"/>
 				</td>
 			</tr>
 			<tr>
 				<th>
-					<span class="requiredField">*</span>企业邮箱:
+					企业邮箱:
 				</th>
 				<td>
-					<input type="text" name="email" class="text" maxlength="200" value="aaa@qq.com"/>
+					<input type="text" name="email" class="text" maxlength="200" value="${companyInfo.email }"/>
 				</td>
 			</tr>
 			<tr>
 				<th>
-					<span class="requiredField">*</span>企业地址:
+					企业地址:
 				</th>
 				<td>
-					<input type="text" name="address" class="text" maxlength="200" value="湖北武汉"/>
+					<input type="text" name="address" class="text" maxlength="200" value="${companyInfo.address }"/>
 				</td>
 			</tr>
 			<tr id="contentTr">
@@ -117,7 +85,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					企业简介:
 				</th>
 				<td colspan="3">
-					<textarea id="editor" name="content" class="editor">你好</textarea>
+					<textarea id="editor" name="content" class="editor">${companyInfo.content }</textarea>
 				</td>
 			</tr>
 			<tr>
