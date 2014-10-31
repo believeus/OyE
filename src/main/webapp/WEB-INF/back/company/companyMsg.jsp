@@ -7,8 +7,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>添加客户感言 - Powered By believeus</title>
+     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>编辑企业信息 - Powered By believeus</title>
 	<meta name="author" content="believeus Team" />
 	<meta name="copyright" content="believeus" />
 	<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="/static/public/js/common.js"></script>
 	<script type="text/javascript" src="/static/public/js/input.js"></script>
 	<style type="text/css">
-		table.input th {
+		table.input th,td {
 		    font-size: 13px;
 		}
 	</style>
@@ -82,56 +82,47 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <div class="path">
-		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 添加客户感言
+     <div class="path">
+		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 查看企业信息
 	</div>
 	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="type" value="${type}"/>
 		<table class="input">
 			<tr>
-				<th>
-					<span class="requiredField">*</span>客户感言标题:
-				</th>
-				<td>
-					<input type="text" name="title" class="text" maxlength="200" />
-				</td>
-			</tr>
-			<tr id="pathTr">
-				<th>
-					<span class="requiredField">*</span>相关图片:
-				</th>
-				<td colspan="3">
-					<div>
-						<span style="float:left">
-							<div id="preview_wrapper">    
-						        <div id="preview_fake" >    
-						            <img id="preview" onload="onPreviewLoad(this,190,120)" src="/static/public/images/bg.png"/>
-						        </div>    
-						    </div>    
-						    <br/>    
-						    <input id="upload_img" type="file" name="upload_img" onchange="filename0.value=this.value;onUploadImgChange(this,190,120,'preview','preview_fake','preview_size_fake');"/>  
-						    <input type="hidden" id="filename0" name="filename0">
-						    <br/>    
-						    <img id="preview_size_fake"/> 
-						</span>
-					</div>
-				</td>
-			</tr>
-			<tr id="contentTr">
-				<th>
-					描述:
-				</th>
-				<td colspan="3">
-					<textarea id="editor" name="content" class="editor"></textarea>
+				<td colspan="4">
+					<input type="button" class="button" value="编辑企业信息" onclick="javascript:window.location.href='/admin/companyEdit.jhtml'"/>
 				</td>
 			</tr>
 			<tr>
 				<th>
-					&nbsp;
+					<span class="requiredField">*</span>企业电话:
+				</th>
+				<td>
+					13212345567
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<span class="requiredField">*</span>企业邮箱:
+				</th>
+				<td>
+					aaa@qq.com
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<span class="requiredField">*</span>企业地址:
+				</th>
+				<td>
+					湖北武汉
+				</td>
+			</tr>
+			<tr id="contentTr">
+				<th>
+					企业简介:
 				</th>
 				<td colspan="3">
-					<input type="submit" class="button" value="确定" />
-					<input type="button" class="button" value="返回"  onclick="javascript:window.history.back();"/>
+					你好
 				</td>
 			</tr>
 		</table>

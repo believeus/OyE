@@ -7,8 +7,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>添加客户感言 - Powered By believeus</title>
+     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>编辑团队信息 - Powered By believeus</title>
 	<meta name="author" content="believeus Team" />
 	<meta name="copyright" content="believeus" />
 	<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
@@ -82,30 +82,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <div class="path">
-		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 添加客户感言
+     <div class="path">
+		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 编辑团队信息
 	</div>
 	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="type" value="${type}"/>
 		<table class="input">
 			<tr>
 				<th>
-					<span class="requiredField">*</span>客户感言标题:
+					<span class="requiredField">*</span>团队名称:
 				</th>
-				<td>
-					<input type="text" name="title" class="text" maxlength="200" />
+				<td colspan="3">
+					<input type="text" name="teamName" class="text" maxlength="200" value="believeus"/>
 				</td>
 			</tr>
-			<tr id="pathTr">
+			<tr>
 				<th>
-					<span class="requiredField">*</span>相关图片:
+					<span class="requiredField">*</span>团队图片:
 				</th>
 				<td colspan="3">
 					<div>
 						<span style="float:left">
 							<div id="preview_wrapper">    
 						        <div id="preview_fake" >    
-						            <img id="preview" onload="onPreviewLoad(this,190,120)" src="/static/public/images/bg.png"/>
+						            <img id="preview" onload="onPreviewLoad(this,190,120)" src="http://www.believeus.cn/logo.gif"/>
 						        </div>    
 						    </div>    
 						    <br/>    
@@ -119,10 +119,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr id="contentTr">
 				<th>
-					描述:
+					团队简介:
 				</th>
 				<td colspan="3">
-					<textarea id="editor" name="content" class="editor"></textarea>
+					<textarea id="editor" name="content" class="editor">你好</textarea>
 				</td>
 			</tr>
 			<tr>
@@ -131,7 +131,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</th>
 				<td colspan="3">
 					<input type="submit" class="button" value="确定" />
-					<input type="button" class="button" value="返回"  onclick="javascript:window.history.back();"/>
+					<input type="button" class="button" value="返回" onclick="javascript:window.history.back();"/>
 				</td>
 			</tr>
 		</table>

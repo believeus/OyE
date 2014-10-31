@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>案例列表 - Powered By believeus</title>
+	<title>客户感言列表 - Powered By believeus</title>
 	<meta name="author" content="believeus Team" />
 	<meta name="copyright" content="believeus" />
 	<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
@@ -30,11 +30,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div class="path">
-		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 案例列表 <span>共${dataCenters.total}条记录</span>
+		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 客户感言列表 <span>共${dataCenters.total}条记录</span>
 	</div>
-	<form id="listForm" action="/admin/businessAdd.jhtml" method="post">
+	<form id="listForm" action="/admin/customerAdd.jhtml" method="post">
 		<div class="bar">
-			<a href="/admin/exampleAdd.jhtml" class="iconButton">
+			<a href="/admin/customerAdd.jhtml" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
 			</a>
 		<div class="buttonWrap">
@@ -92,7 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					${center.content}abcd
 				</td>
 				<td>
-					<a href="/admin/exampleEdit.jhtml?id=${center.id}">[修改]</a>
+					<a href="/admin/customerEdit.jhtml?id=${center.id}">[修改]</a>
 				</td>
 			</tr>
 		</table>

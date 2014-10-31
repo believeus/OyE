@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>编辑案例 - Powered By believeus</title>
+	<title>编辑客户感言 - Powered By believeus</title>
 	<meta name="author" content="believeus Team" />
 	<meta name="copyright" content="believeus" />
 	<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
@@ -83,14 +83,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
      <div class="path">
-		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 编辑案例
+		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 编辑客户感言
 	</div>
 	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="type" value="${type}"/>
 		<table class="input">
 			<tr>
 				<th>
-					<span class="requiredField">*</span>案例标题:
+					<span class="requiredField">*</span>客户感言标题:
 				</th>
 				<td>
 					<input type="text" name="title" class="text" maxlength="200" value="aaa"/>
