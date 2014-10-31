@@ -55,24 +55,7 @@ $().ready(function() {
 			
 			<tr>
 				<td>
-					内容管理系统
-				</td>
-				<td>
-					<input type="checkbox" id="c1" name="authority" value="content:view" />
-				</td>
-				<td>
-					<input type="checkbox" id="c2" name="authority" value="content:create" />
-				</td>
-				<td>
-					<input type="checkbox" id="c3" name="authority" value="content:update" />
-				</td>
-				<td>
-					<input type="checkbox" id="c4" name="authority" value="content:delete"  />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					新闻系统
+					新闻管理
 				</td>
 				<td>
 					<input type="checkbox" id="nv1" name="authority" value="newsDinamic:view" />
@@ -123,7 +106,7 @@ $().ready(function() {
 			</tr>
 			<tr>
 				<td>
-					联系方式
+					留言管理
 				</td>
 				<td>
 					<input type="checkbox" id="cv1" name="authority" value="contact:view" />
@@ -136,6 +119,57 @@ $().ready(function() {
 				</td>
 				<td>
 					<input type="checkbox" id="cv4" name="authority" value="contact:delete" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					客户感言管理
+				</td>
+				<td>
+					<input type="checkbox" id="cv1" name="authority" value="customer:view" />
+				</td>
+				<td>
+					<input type="checkbox" id="cv2" name="authority" value="customer:create" />
+				</td>
+				<td>
+					<input type="checkbox" id="cv3" name="authority" value="customer:update" />
+				</td>
+				<td>
+					<input type="checkbox" id="cv4" name="authority" value="customer:delete" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					企业信息管理
+				</td>
+				<td>
+					<input type="checkbox" id="cv1" name="authority" value="companyMsg:view" />
+				</td>
+				<td>
+					<input type="checkbox" id="cv2" name="authority" value="companyMsg:create" />
+				</td>
+				<td>
+					<input type="checkbox" id="cv3" name="authority" value="companyMsg:update" />
+				</td>
+				<td>
+					<input type="checkbox" id="cv4" name="authority" value="companyMsg:delete" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					团队管理
+				</td>
+				<td>
+					<input type="checkbox" id="cv1" name="authority" value="team:view" />
+				</td>
+				<td>
+					<input type="checkbox" id="cv2" name="authority" value="team:create" />
+				</td>
+				<td>
+					<input type="checkbox" id="cv3" name="authority" value="team:update" />
+				</td>
+				<td>
+					<input type="checkbox" id="cv4" name="authority" value="team:delete" />
 				</td>
 			</tr>
 			<tr>
