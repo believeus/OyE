@@ -62,6 +62,9 @@ $().ready(function() {
 					<a href="javascript:;" class="sort">管理员名称</a>
 				</th>
 				<th>
+					<a href="javascript:;" class="sort">密码</a>
+				</th>
+				<th>
 					<a href="javascript:;" class="sort">描述</a>
 				</th>
 				<th>
@@ -90,9 +93,6 @@ $().ready(function() {
 					</td>
 				</tr>
 			</c:forEach>
-			
-			
-			
 		</table>
 	</form>
 </body>

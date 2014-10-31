@@ -15,49 +15,22 @@
 	<script type="text/javascript" src='/static/public/js/outlook2.js'></script>
 
     <script type="text/javascript">
-    /* 
-    	var _menus = {"menus":[
-						{"menuid":"1","icon":"icon-sys","menuname":"系统管理",
-							"menus":[{"menuname":"菜单管理","icon":"icon-nav","url":"http://www.nongfuit.com"},
-									{"menuname":"添加用户","icon":"icon-add","url":"demo.html"},
-									{"menuname":"用户管理","icon":"icon-users","url":"demo2.html"},
-									{"menuname":"角色管理","icon":"icon-role","url":"demo2.html"},
-									{"menuname":"权限设置","icon":"icon-set","url":"demo.html"},
-									{"menuname":"系统日志","icon":"icon-log","url":"demo.html"}
-								]
-						},{"menuid":"8","icon":"icon-sys","menuname":"员工管理",
-							"menus":[{"menuname":"员工列表","icon":"icon-nav","url":"demo.html"},
-									{"menuname":"视频监控","icon":"icon-nav","url":"demo1.html"}
-								]
-						},{"menuid":"56","icon":"icon-sys","menuname":"部门管理",
-							"menus":[{"menuname":"添加部门","icon":"icon-nav","url":"demo1.html"},
-									{"menuname":"部门列表","icon":"icon-nav","url":"demo2.html"}
-								]
-						},{"menuid":"28","icon":"icon-sys","menuname":"财务管理",
-							"menus":[{"menuname":"收支分类","icon":"icon-nav","url":"demo.html"},
-									{"menuname":"报表统计","icon":"icon-nav","url":"demo1.html"},
-									{"menuname":"添加支出","icon":"icon-nav","url":"demo.html"}
-								]
-						},{"menuid":"39","icon":"icon-sys","menuname":"商城管理",
-							"menus":[{"menuname":"商品分","icon":"icon-nav","url":"/shop/productcatagory.aspx"},
-									{"menuname":"商品列表","icon":"icon-nav","url":"/shop/product.aspx"},
-									{"menuname":"商品订单","icon":"icon-nav","url":"/shop/orders.aspx"}
-								]
-						}
-				]};
-    */
 	 var _menus = {"menus":[
-						{"menuid":"1","icon":"icon-sys","menuname":"系统管理",
-							"menus":[{"menuname":"内容管理系统","icon":"icon-nav","url":"http://www.believeus.cn"},
-									{"menuname":"新闻系统","icon":"icon-add","url":"http://www.believeus.cn"},
-									{"menuname":"业务发布管理","icon":"icon-users","url":"http://www.believeus.cn"},
-									{"menuname":"案例管理","icon":"icon-role","url":"http://www.believeus.cn"},
-									{"menuname":"联系方式","icon":"icon-set","url":"http://www.believeus.cn"},
-									{"menuname":"角色列表","icon":"icon-log","url":"/admin/roleList.jhtml"},
-									{"menuname":"管理员列表","icon":"icon-log","url":"/admin/adminList.jhtml"}
-								]
-						}
-				]};
+			{"menuid":"1","icon":"icon-sys","menuname":"内容管理",
+				"menus":[{"menuname":"新闻管理","icon":"icon-add","url":"/admin/newsList.jhtml"},
+						{"menuname":"业务发布管理","icon":"icon-users","url":"http://www.believeus.cn"},
+						{"menuname":"案例管理","icon":"icon-role","url":"http://www.believeus.cn"},
+						{"menuname":"留言管理","icon":"icon-set","url":"http://www.believeus.cn"},
+						{"menuname":"客户感言管理","icon":"icon-set","url":"http://www.believeus.cn"},
+						{"menuname":"企业信息管理","icon":"icon-set","url":"http://www.believeus.cn"},
+						{"menuname":"团队管理","icon":"icon-set","url":"http://www.believeus.cn"}
+					]
+			},{"menuid":"2","icon":"icon-sys","menuname":"系统管理",
+				"menus":[{"menuname":"角色列表","icon":"icon-log","url":"/admin/roleList.jhtml"},
+						{"menuname":"管理员列表","icon":"icon-log","url":"/admin/adminList.jhtml"}
+					]
+			}
+	]};
         //设置登录窗口
         function openPwd() {
             $('#w').window({
