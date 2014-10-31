@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -22,7 +23,7 @@ public class NewsController {
 	 * @return
 	 */
 	@RequestMapping(value="/admin/newsList")
-	public String newsList(HttpServletRequest request){
+	public String list(HttpServletRequest request){
 		@SuppressWarnings("unchecked")
 		List<News> news = (List<News>) baseService.findObjectList(News.class);
 		request.setAttribute("news", news);
@@ -33,8 +34,9 @@ public class NewsController {
 	 * 新闻添加
 	 * @return
 	 */
+	@RequiresPermissions("newsDinamic:create")
 	@RequestMapping(value="/admin/newsAdd")
-	public String newsAdd(){
+	public String add(){
 		return "/WEB-INF/back/news/add.jsp";
 	}
 	
@@ -42,8 +44,9 @@ public class NewsController {
 	 * 新闻保存
 	 * @return
 	 * */
+	@RequiresPermissions("newsDinamic:create")
 	@RequestMapping(value="/admin/newsSave")
-	public String newsSave(News news, HttpServletRequest request){
+	public String save(News news, HttpServletRequest request){
 		news.setCreateTime(System.currentTimeMillis());
 		
 		System.out.println(news.getCategory());
@@ -55,8 +58,9 @@ public class NewsController {
 	 * 新闻修改
 	 * @return
 	 */
+	@RequiresPermissions("newsDinamic:update")
 	@RequestMapping(value="/admin/newsEdit")
-	public String newsEdit(){
+	public String edit(){
 		return "/WEB-INF/back/news/edit.jsp";
 	}
 	
@@ -64,8 +68,9 @@ public class NewsController {
 	 * 新闻删除
 	 * @return
 	 */
+	@RequiresPermissions("newsDinamic:delete")
 	@RequestMapping(value="/admin/newsDel")
-	public String newsDel(){
+	public String delete(){
 		return "/WEB-INF/back/news/list.jsp";
 	}
 }

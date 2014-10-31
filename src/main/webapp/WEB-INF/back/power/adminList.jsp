@@ -71,7 +71,26 @@ $().ready(function() {
 					<a href="javascript:;" class="sort">操作</a>
 				</th>
 			</tr>
-			<c:forEach var="admin" items="${admins}">
+			<c:choose>
+			  <c:when test="${sessionUser.id ne 1 }">
+			    <tr>
+					<td>
+						${sessionUser.username}
+					</td>
+					<td>
+						${sessionUser.password}
+					</td>
+					<td>
+						${sessionUser.description}
+					</td>
+					<td>
+					   <a href="/admin/editAdmin.jhtml?adminId=${sessionUser.id}">[编辑]</a>
+					   <a href="/admin/deleteAdmin.jhtml?adminId=${sessionUser.id}">[删除]</a>
+					</td>
+				</tr>
+			  </c:when>
+			  <c:otherwise>
+			    <c:forEach var="admin" items="${admins}">
 				<tr>
 					<td>
 						${admin.username}
@@ -82,12 +101,26 @@ $().ready(function() {
 					<td>
 						${admin.description}
 					</td>
-					<td>
+					<c:choose>
+					  <c:when test="${admin.id eq 1}">
+					    <td>
+					    <a href="/admin/editAdmin.jhtml?adminId=${admin.id}" >[编辑]</a>
+					    <a href="javascript:void(0);" onclick="alert('不允许删除最高权限管理员')">[删除]</a>
+					   </td>
+					  </c:when>
+					  <c:otherwise>
+					   <td>
 					    <a href="/admin/editAdmin.jhtml?adminId=${admin.id}">[编辑]</a>
-						<a href="/admin/deleteAdmin.jhtml?adminId=${admin.id}">[删除]</a>
-					</td>
+					    <a href="/admin/deleteAdmin.jhtml?adminId=${admin.id}">[删除]</a>
+					   </td>
+					  </c:otherwise>
+					</c:choose>
+					
 				</tr>
-			</c:forEach>
+			  </c:forEach>
+			  </c:otherwise>
+			</c:choose>
+			
 		</table>
 	</form>
 </body>

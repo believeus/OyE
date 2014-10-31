@@ -4,6 +4,7 @@ package cn.believeus.admin.controller;
 
 import javax.annotation.Resource;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -27,6 +28,7 @@ public class ExampleController {
 	 * 案例添加
 	 * @return
 	 */
+	@RequiresPermissions("example:create")
 	@RequestMapping(value="/admin/exampleAdd")
 	public String newsAdd(){
 		return "/WEB-INF/back/example/add.jsp";
@@ -35,6 +37,7 @@ public class ExampleController {
 	 * 案例修改
 	 * @return
 	 */
+	@RequiresPermissions("example:update")
 	@RequestMapping(value="/admin/exampleEdit")
 	public String newsEdit(){
 		return "/WEB-INF/back/example/edit.jsp";
@@ -43,6 +46,7 @@ public class ExampleController {
 	 * 案例删除
 	 * @return
 	 */
+	@RequiresPermissions("example:delete")
 	@RequestMapping(value="/admin/exampleDel")
 	public String newsDel(){
 		return "/WEB-INF/back/example/list.jsp";

@@ -50,7 +50,7 @@ $().ready(function() {
    });
 	
 	// 焦点离开时，发送ajax请求,交互式事件
-	$("#adminName").blur(function(){
+	$("#adminName").change(function(){
 		$.post('/admin/ajaxValidateAdmin.jhtml?adminName=' + $("#adminName").val(), function(msg) {
 		if(msg == "exist"){
 				$("#adminName").val("");
@@ -65,7 +65,8 @@ $().ready(function() {
 	<div class="path">
 		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 编辑管理员
 	</div>
-	<form id="inputForm" action="/admin/addRoleForAdmin.jhtml" method="post">
+	<form id="inputForm" action="/admin/updateRoleForAdmin.jhtml" method="post">
+	   <input type="hidden" name="adminId" value="${adminId}"/>
 		<table class="input">
 			<tr>
 				<th colspan="2" style="text-align: left; font-size: 15px; padding-left: 120px;">
@@ -77,7 +78,7 @@ $().ready(function() {
 					<span class="requiredField">*</span>用户名:
 				</th>
 				<td>
-					<input type="text" id="adminName" name="adminName" value="" class="text" maxlength="200" />
+					<input type="text" id="adminName" name="adminName" value="${admin.username}" class="text" maxlength="200" />
 				</td>
 			</tr>
 			<tr>
@@ -85,29 +86,29 @@ $().ready(function() {
 					<span class="requiredField">*</span>描述:
 				</th>
 				<td>
-					<input type="text" name="description" value="" class="text" maxlength="200" />
+					<input type="text" name="description" value="${admin.description}" class="text" maxlength="200" />
 				</td>
 			</tr>
+			<c:if test="${sessionUser.id eq 1 }">
 			<tr>
 				<th>
 					<span class="requiredField">*</span>角色权限:
 				</th>
 				<td>
 					<select name="roleId">
-						<c:forEach var="role" items="${roles}">
-						   <c:if test="${role.roleName ne 'root' }">
-							 <option value="${role.id }">${role.roleName}</option>
-						   </c:if>
-						</c:forEach>
+					<c:forEach var="role" items="${roles}">
+					  <option value="${role.id }">${role.roleName}</option>
+					</c:forEach>
 					</select>
 				</td>
 			</tr>
+			</c:if>
 			<tr>
 				<th>
 					<span class="requiredField">*</span>密码:
 				</th>
 				<td>
-					<input type="password" value="" name="password" id="password" class="text" maxlength="200" />
+					<input type="password" value="${admin.password }" name="password" id="password" class="text" maxlength="200" />
 				</td>
 			</tr>
 			<tr>
@@ -115,7 +116,7 @@ $().ready(function() {
 					<span class="requiredField">*</span>确认密码:
 				</th>
 				<td>
-					<input type="password" value="" name="repass" id="repass" class="text" maxlength="200" />
+					<input type="password" value="${admin.password }" name="repass" id="repass" class="text" maxlength="200" />
 				</td>
 			</tr>
 			<tr>

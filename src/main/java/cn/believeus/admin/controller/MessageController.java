@@ -4,6 +4,7 @@ package cn.believeus.admin.controller;
 
 import javax.annotation.Resource;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -27,6 +28,7 @@ public class MessageController {
 	 * 留言添加
 	 * @return
 	 */
+	@RequiresPermissions("contact:create")
 	@RequestMapping(value="/admin/messageAdd")
 	public String newsAdd(){
 		return "/WEB-INF/back/message/add.jsp";
@@ -35,6 +37,7 @@ public class MessageController {
 	 * 留言修改
 	 * @return
 	 */
+	@RequiresPermissions("contact:update")
 	@RequestMapping(value="/admin/messageEdit")
 	public String newsEdit(){
 		return "/WEB-INF/back/message/edit.jsp";
@@ -43,6 +46,7 @@ public class MessageController {
 	 * 留言删除
 	 * @return
 	 */
+	@RequiresPermissions("contact:delete")
 	@RequestMapping(value="/admin/messageDel")
 	public String newsDel(){
 		return "/WEB-INF/back/message/list.jsp";

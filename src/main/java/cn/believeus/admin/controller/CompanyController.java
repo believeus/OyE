@@ -5,6 +5,7 @@ package cn.believeus.admin.controller;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -39,6 +40,7 @@ public class CompanyController {
 	 * 企业信息修改
 	 * @return
 	 */
+	@RequiresPermissions("companyMsg:update")
 	@RequestMapping(value="/admin/companyEdit")
 	public String companyEdit(HttpServletRequest request){
 		CompanyInfo companyInfo = (CompanyInfo)baseService.findObject(CompanyInfo.class, 1);

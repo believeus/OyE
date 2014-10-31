@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <head id="Head1">
-    <title>Believeus后台管理系统</title>
+    <title>OYE后台管理系统</title>
     <meta http-equiv="Content-Type" content="text/html charset=gbk"/>
     <link href="/static/public/css/default.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="/static/public/js/themes/default/easyui.css" />
@@ -13,17 +13,37 @@
     <script type="text/javascript" src="/static/public/js/jQuery.easyui.js"></script>
 
 	<script type="text/javascript" src='/static/public/js/outlook2.js'></script>
-
     <script type="text/javascript">
 	 var _menus = {"menus":[
 			{"menuid":"1","icon":"icon-sys","menuname":"内容管理",
-				"menus":[{"menuname":"新闻管理","icon":"icon-add","url":"/admin/newsList.jhtml"},
-						{"menuname":"业务发布管理","icon":"icon-users","url":"/admin/businessList.jhtml"},
-						{"menuname":"案例管理","icon":"icon-role","url":"/admin/exampleList.jhtml"},
+				"menus":[
+						<shiro:hasPermission name="newsDinamic:view">
+				         {"menuname":"新闻管理","icon":"icon-add","url":"/admin/newsList.jhtml"},
+				        </shiro:hasPermission>
+				         
+				        <shiro:hasPermission name="business:view"> 
+						 {"menuname":"业务发布管理","icon":"icon-users","url":"/admin/businessList.jhtml"},
+						</shiro:hasPermission>
+						 
+						<shiro:hasPermission name="example:view"> 
+						 {"menuname":"案例管理","icon":"icon-role","url":"/admin/exampleList.jhtml"},
+						</shiro:hasPermission>
+						 
+						<shiro:hasPermission name="contact:view">  
 						{"menuname":"留言管理","icon":"icon-set","url":"/admin/messageList.jhtml"},
+						</shiro:hasPermission>
+						
+						<shiro:hasPermission name="customer:view">  	
 						{"menuname":"客户感言管理","icon":"icon-set","url":"/admin/customerList.jhtml"},
+						</shiro:hasPermission>
+						
+						<shiro:hasPermission name="companyMsg:view">  	
 						{"menuname":"企业信息管理","icon":"icon-set","url":"/admin/companyView.jhtml"},
-						{"menuname":"团队管理","icon":"icon-set","url":"/admin/teamView.jhtml"}
+						</shiro:hasPermission>
+						
+						<shiro:hasPermission name="team:view">  	
+						{"menuname":"团队管理","icon":"icon-set","url":"/admin/teamView.jhtml"},
+						</shiro:hasPermission>
 					]
 			}
 			,{"menuid":"2","icon":"icon-sys","menuname":"系统管理",

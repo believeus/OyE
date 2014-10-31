@@ -117,7 +117,7 @@
 		<url-pattern>/group/M00/*</url-pattern>
 	</servlet-mapping>
 	<error-page>
-		<error-code>500</error-code>
-		<location>/error.jhtml</location>
+		<exception-type>org.apache.shiro.authz.AuthorizationException</exception-type>
+		<location>/authorException.jhtml</location>
 	</error-page>
 </web-app>

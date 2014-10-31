@@ -71,10 +71,13 @@ public class AdminController {
 	 * @return
 	 */
 	@RequestMapping(value="/admin/editAdmin")
-	public String editAdmin(HttpServletRequest request,Integer id){
+	public String editAdmin(HttpServletRequest request,Integer adminId){
 		@SuppressWarnings("unchecked")
 		List<Role> roles = (List<Role>)baseService.findObjectList(Role.class);
+		Admin admin=(Admin)baseService.findObject(Admin.class,adminId);
 		request.setAttribute("roles", roles);
+		request.setAttribute("admin", admin);
+		request.setAttribute("adminId", adminId);
 		return "/WEB-INF/back/power/editAdmin.jsp";
 	}
 	
@@ -159,5 +162,9 @@ public class AdminController {
 			e.printStackTrace();
 		}
 		return "redirect:/admin/login.jhtml";
+	}
+	@RequestMapping(value="/authorException")
+	public String authorException(){
+		return "/WEB-INF/back/authorException.jsp";
 	}
 }

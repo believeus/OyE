@@ -4,6 +4,7 @@ package cn.believeus.admin.controller;
 
 import javax.annotation.Resource;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,6 +27,7 @@ public class TeamController {
 	 * 团队信息修改
 	 * @return
 	 */
+	@RequiresPermissions("team:update")
 	@RequestMapping(value="/admin/teamEdit")
 	public String teamEdit(){
 		return "/WEB-INF/back/team/edit.jsp";

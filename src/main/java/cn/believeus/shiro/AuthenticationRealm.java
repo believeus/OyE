@@ -61,15 +61,17 @@ public class AuthenticationRealm extends AuthorizingRealm{
 		String username=principal.getUsername();
 		log.debug("doGetAuthorizationInfo:"+principal.getUsername());
 		SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-		Admin admin=(Admin)baseService.findObject(Admin.class, Variables.SESSION_USER, username);
+		Admin admin=(Admin)baseService.findObject(Admin.class, Variables.USER_NAME, username);
 		// 从数据库获取用户角色
 		Role role = admin.getRole();
-		authorizationInfo.addRole(role.getRoleName());
-		List<Authority> authoritys = role.getAuthoritys();
-		for (Iterator<Authority> iterator = authoritys.iterator(); iterator.hasNext();) {
-			Authority authority = (Authority) iterator.next();
-			// 从数据获取角色权限
-			authorizationInfo.addStringPermission(authority.getAuthorityName());
+		if(role!=null){
+			authorizationInfo.addRole(role.getRoleName());
+			List<Authority> authoritys = role.getAuthoritys();
+			for (Iterator<Authority> iterator = authoritys.iterator(); iterator.hasNext();) {
+				Authority authority = (Authority) iterator.next();
+				// 从数据获取角色权限
+				authorizationInfo.addStringPermission(authority.getAuthorityName());
+			}
 		}
 		return authorizationInfo;
 	}
