@@ -18,7 +18,7 @@
 			{"menuid":"1","icon":"icon-sys","menuname":"内容管理",
 				"menus":[
 						<shiro:hasPermission name="newsDinamic:view">
-				         {"menuname":"新闻管理","icon":"icon-add","url":"/admin/newsList.jhtml"},
+				         {"menuname":"企业新闻管理","icon":"icon-add","url":"/admin/newsList.jhtml"},
 				        </shiro:hasPermission>
 				         
 				        <shiro:hasPermission name="business:view"> 
@@ -26,11 +26,11 @@
 						</shiro:hasPermission>
 						 
 						<shiro:hasPermission name="example:view"> 
-						 {"menuname":"案例管理","icon":"icon-role","url":"/admin/exampleList.jhtml"},
+						 {"menuname":"企业案例管理","icon":"icon-role","url":"/admin/exampleList.jhtml"},
 						</shiro:hasPermission>
 						 
 						<shiro:hasPermission name="contact:view">  
-						{"menuname":"留言管理","icon":"icon-log","url":"/admin/messageList.jhtml"},
+						{"menuname":"用户留言管理","icon":"icon-set","url":"/admin/messageList.jhtml"},
 						</shiro:hasPermission>
 						
 						<shiro:hasPermission name="customer:view">  	
@@ -42,7 +42,7 @@
 						</shiro:hasPermission>
 						
 						<shiro:hasPermission name="team:view">  	
-						{"menuname":"团队管理","icon":"icon-set","url":"/admin/teamList.jhtml"},
+						{"menuname":"企业团队管理","icon":"icon-set","url":"/admin/teamList.jhtml"},
 						</shiro:hasPermission>
 					]
 			}
@@ -161,8 +161,11 @@
         <div id="tabs" class="easyui-tabs"  fit="true" border="false" >
 			<div title="欢迎使用" style="padding:20px;overflow:hidden;" id="home">
 				
-			<h1>Welcome to the backstage management system for Believeus!</h1>
-
+			<h1>如有网站、android、软件外包、平面设计需求请联系我们</h1>
+			<h1>官方网站：  http://www.believeus.cn</h1>
+			<h1>QQ:1058633117 QQ:569009496</h1>
+			<h1>电话:155-2726-0395  小巫</h1>
+			<h1>电话:156-2345-4830 吴女士</h1>
 			</div>
 		</div>
     </div>
