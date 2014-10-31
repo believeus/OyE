@@ -16,7 +16,7 @@ public class Admin extends TbaseEntity {
 	private String description;
 	private Role role;
 	
-	@OneToOne(mappedBy="admin",cascade=CascadeType.ALL)
+	@OneToOne(mappedBy = "admin",cascade=CascadeType.ALL)
 	public Role getRole() {
 		return role;
 	}

@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -78,23 +78,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="#"  class="sort">操作</a>
 				</th>
 			</tr>
-			<tr>
-				<td>
-					<input type="checkbox" name="ids" value="${center.id}" />
-				</td>
-				<td>
-					<span title="${center.id}">${center.id}</span>
-				</td>
-				<td>
-					${center.title}
-				</td>
-				<td>
-					<a href="/admin/news/newsTop.jhtml?id=${center.id}"><font color="red">点击置顶</font></a>
-				</td>
-				<td>
-					<a href="/admin/newsEdit.jhtml?id=${center.id}">[修改]</a>
-				</td>
-			</tr>
+			<c:forEach var="myNew" items="${news}">
+				<tr>
+					<td>
+						<input type="checkbox" name="ids" value="${myNew.id}" />
+					</td>
+					<td>
+						<span title="${myNew.id}">${myNew.id}</span>
+					</td>
+					<td>
+						${myNew.title}
+					</td>
+					<td>
+						<a href="/admin/news/newsTop.jhtml?id=${myNew.id}"><font color="red">点击置顶</font></a>
+					</td>
+					<td>
+						<a href="/admin/newsEdit.jhtml?id=${myNew.id}">[修改]</a>
+					</td>
+				</tr>
+			</c:forEach>
 		</table>
 	</form>
   </body>

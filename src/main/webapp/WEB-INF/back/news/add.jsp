@@ -85,7 +85,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="path">
 		<a href="/admin/common/main.jhtml" target="_parent">首页</a> &raquo; 添加新闻
 	</div>
-	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
+	<form id="inputForm" action="/admin/newsSave.jhtml" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="type" value="${type}"/>
 		<table class="input">
 			<tr>
@@ -101,7 +101,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span class="requiredField">*</span>选择分类:
 				</th>
 				<td colspan="3">
-					<select name="">
+					<select name="category">
 						<option value="1">分类111</option>
 						<option value="2">分类222</option>
 						<option value="3">分类333</option>

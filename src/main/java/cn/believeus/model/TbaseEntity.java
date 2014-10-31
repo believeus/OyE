@@ -7,10 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OrderBy;
+import javax.persistence.PreUpdate;
 
 @MappedSuperclass
 public class TbaseEntity implements Serializable {
+	
 	private static final long serialVersionUID = -4017940130624140047L;
+	
 	private int id;
 	public short status;
 	public long createTime;
@@ -53,5 +56,4 @@ public class TbaseEntity implements Serializable {
 	public void setEditTime(long editTime) {
 		this.editTime = editTime;
 	}
-
 }

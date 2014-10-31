@@ -10,19 +10,20 @@ import cn.believeus.model.Authority;
 import cn.believeus.model.Role;
 import cn.believeus.service.BaseService;
 
-
 @Component
 public class InitAdmin implements ApplicationListener<ApplicationEvent>{
+	
 	@Resource
 	private BaseService baseService;
+	
 	// tomcat第一次启动会调用这个方法
 	@Override
 	public void onApplicationEvent(ApplicationEvent event) {
 		// tomcat启动完毕调用该方法
 		if(event instanceof ContextRefreshedEvent){
 			Admin admin = (Admin)baseService.findObject(Admin.class, "username", "admin");
-			if(admin==null){
-				 admin=new Admin();
+			if(admin == null){
+				 admin = new Admin();
 				 admin.setUsername("admin");
 				 admin.setPassword("admin");
 				 admin.setDescription("该管理员拥有所有权限");
@@ -39,5 +40,4 @@ public class InitAdmin implements ApplicationListener<ApplicationEvent>{
 			}
 		}
 	}
-
 }
