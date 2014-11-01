@@ -34,45 +34,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    });
 	
 		var $inputForm = $("#inputForm");
-		var $type = $("#type");
-		var $contentTr = $("#contentTr");
-		var $pathTr = $("#pathTr");
-		var $path = $("#path");
-		var $browserButton = $("#browserButton");
-		
-		
-		
-		// "类型"修改
-		$type.change(function() {
-			if ($type.val() == "text") {
-				$contentTr.show();
-				$pathTr.hide();
-				$path.prop("disabled", true)
-			} else {
-				$contentTr.hide();
-				$pathTr.show();
-				$path.prop("disabled", false)
-				$browserButton.unbind().browser({
-					type: $type.val()
-				});
-			}
-		});
 		
 		// 表单验证
 		$inputForm.validate({
 			rules: {
 				title: "required",
-				author: "required",
-				path: "required",
-				order: "digits"
-			}
-		});
-		
-		$("#checked_true").click(function(){
-			if($("#checked_true").attr("value") == 0){
-				$("#checked_true").attr("value","1");
-			}else{
-				$("#checked_true").attr("value","0");
+				upload_img: "required",
+				description: "required"
 			}
 		});
 		
@@ -85,15 +53,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <div class="path">
 		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 编辑业务发布
 	</div>
-	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="type" value="${type}"/>
+	<form id="inputForm" action="/admin/business/save.jhtml" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="${business.id}"/>
+		<input type="hidden" name="path" value="${business.path}"/>
 		<table class="input">
 			<tr>
 				<th>
 					<span class="requiredField">*</span>业务发布标题:
 				</th>
 				<td>
-					<input type="text" name="title" class="text" maxlength="200" value="aaa"/>
+					<input type="text" name="title" class="text" maxlength="200" value="${business.title}"/>
 				</td>
 			</tr>
 			<tr id="pathTr">
@@ -105,7 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span style="float:left">
 							<div id="preview_wrapper">    
 						        <div id="preview_fake" >    
-						            <img id="preview" onload="onPreviewLoad(this,190,120)" src="/static/public/images/bg.png"/>
+						            <img id="preview" onload="onPreviewLoad(this,190,120)" src="/${business.path}"/>
 						        </div>    
 						    </div>    
 						    <br/>    
@@ -122,7 +91,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					描述:
 				</th>
 				<td colspan="3">
-					<textarea id="editor" name="content" class="editor">abcd</textarea>
+					<textarea id="editor" name="description" class="editor">${business.description}</textarea>
 				</td>
 			</tr>
 			<tr>

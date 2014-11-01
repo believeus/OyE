@@ -13,9 +13,19 @@ public class News extends TbaseEntity{
 	private String title;
 	
 	/** 1:分类1 2:分类2 3:分类3 */
-	private String category;
+	private Short category;
 	
 	private String content;
+	
+	/** 0:置顶   1:非置顶   */
+	private Short top;
+	
+	public Short getTop() {
+		return top;
+	}
+	public void setTop(Short top) {
+		this.top = top;
+	}
 	
 	/** 新闻*/
 	public String getTitle() {
@@ -25,10 +35,10 @@ public class News extends TbaseEntity{
 		this.title = title;
 	}
 	
-	public String getCategory() {
+	public Short getCategory() {
 		return category;
 	}
-	public void setCategory(String category) {
+	public void setCategory(Short category) {
 		this.category = category;
 	}
 	

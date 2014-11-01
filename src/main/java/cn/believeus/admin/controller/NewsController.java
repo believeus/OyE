@@ -51,17 +51,6 @@ public class NewsController {
 	}
 	
 	/**
-	 * 新闻更新
-	 * @return
-	 */
-	@RequiresPermissions("newsDinamic:update")
-	@RequestMapping(value="/admin/news/update")
-	public String newsUpdate(News news){
-		baseService.saveOrUpdata(news);
-		return "redirect:/admin/news/list.jhtml";
-	}
-	
-	/**
 	 * 新闻修改
 	 * @return
 	 */
@@ -92,8 +81,12 @@ public class NewsController {
 	@RequestMapping(value="/admin/news/top")
 	public String newsTop(Integer myNewId, HttpServletRequest request){
 		News news = (News) baseService.findObject(News.class, myNewId);
-		long editTime = news.getEditTime();
-		request.setAttribute("editTime", editTime);
+		Short top = news.getTop();
+		if (top == 1) {
+			
+		}
+		
+		//request.setAttribute("editTime", editTime);
 		return "redirect:/admin/news/list.jhtml";
 	}
 }

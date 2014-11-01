@@ -22,7 +22,7 @@
 				        </shiro:hasPermission>
 				         
 				        <shiro:hasPermission name="business:view"> 
-						 {"menuname":"业务发布管理","icon":"icon-users","url":"/admin/businessList.jhtml"},
+						 {"menuname":"业务发布管理","icon":"icon-users","url":"/admin/business/list.jhtml"},
 						</shiro:hasPermission>
 						 
 						<shiro:hasPermission name="example:view"> 

@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -32,9 +32,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="path">
 		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 内容列表 <span>共${dataCenters.total}条记录</span>
 	</div>
-	<form id="listForm" action="/admin/businessAdd.jhtml" method="post">
+	<form id="listForm" action="/admin/business/add.jhtml" method="post">
 		<div class="bar">
-			<a href="/admin/businessAdd.jhtml" class="iconButton">
+			<a href="/admin/business/add.jhtml" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
 			</a>
 		<div class="buttonWrap">
@@ -78,23 +78,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="#"  class="sort">操作</a>
 				</th>
 			</tr>
-			<tr>
-				<td>
-					<input type="checkbox" name="ids" value="${center.id}" />
-				</td>
-				<td>
-					<span title="${center.id}">1${center.id}</span>
-				</td>
-				<td>
-					${center.title}aaa
-				</td>
-				<td>
-					${center.content}abcd
-				</td>
-				<td>
-					<a href="/admin/businessEdit.jhtml?id=${center.id}">[修改]</a>
-				</td>
-			</tr>
+			<c:forEach var="business" items="${business}" varStatus="status">
+				<tr>
+					<td>
+						<input type="checkbox" name="ids" value="${business.id}" />
+					</td>
+					<td>
+						<span>${status.index+1}</span>
+					</td>
+					<td>
+						${business.title}
+					</td>
+					<td>
+						${business.description}
+					</td>
+					<td>
+						<a href="/admin/business/edit.jhtml?businessId=${business.id}">[修改]</a>
+					</td>
+				</tr>
+			</c:forEach>
 		</table>
 	</form>
   </body>
