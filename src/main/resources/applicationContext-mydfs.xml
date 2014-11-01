@@ -15,6 +15,5 @@
 	<bean id="mydfsTrackerServer" class="mydfs.storage.server.MydfsTrackerServer" scope="prototype">
 		<property name="host" value="127.0.0.1"/>
 		<property name="port" value="9999"/>
-		<property name="mydfsStorageServer" ref="mydfsStorageServer"/>
 	</bean>
 </beans>
