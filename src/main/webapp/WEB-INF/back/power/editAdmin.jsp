@@ -109,6 +109,7 @@ $().ready(function() {
 				</th>
 				<td>
 					<input type="password" value="${admin.password }" name="password" id="password" class="text" maxlength="200" />
+					<input class="button" type="button" value="初始化密码" onclick="confirm('初始化密码?');"/>
 				</td>
 			</tr>
 			<tr>
