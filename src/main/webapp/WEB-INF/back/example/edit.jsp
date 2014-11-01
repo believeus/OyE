@@ -39,7 +39,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$inputForm.validate({
 			rules: {
 				title: "required",
-				upload_img: "required",
 				content: "required"
 			}
 		});
@@ -55,6 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<form id="inputForm" action="/admin/example/saveOrUpdate.jhtml" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="id" value="${example.id}"/>
+		<input type="hidden" name="path" value="${example.path}"/>
 		<table class="input">
 			<tr>
 				<th>

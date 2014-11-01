@@ -25,45 +25,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	$().ready(function() {
 	
 		var $inputForm = $("#inputForm");
-		var $type = $("#type");
-		var $contentTr = $("#contentTr");
-		var $pathTr = $("#pathTr");
-		var $path = $("#path");
-		var $browserButton = $("#browserButton");
-		
-		
-		
-		// "类型"修改
-		$type.change(function() {
-			if ($type.val() == "text") {
-				$contentTr.show();
-				$pathTr.hide();
-				$path.prop("disabled", true)
-			} else {
-				$contentTr.hide();
-				$pathTr.show();
-				$path.prop("disabled", false)
-				$browserButton.unbind().browser({
-					type: $type.val()
-				});
-			}
-		});
 		
 		// 表单验证
 		$inputForm.validate({
 			rules: {
-				title: "required",
-				author: "required",
-				path: "required",
-				order: "digits"
-			}
-		});
-		
-		$("#checked_true").click(function(){
-			if($("#checked_true").attr("value") == 0){
-				$("#checked_true").attr("value","1");
-			}else{
-				$("#checked_true").attr("value","0");
+				name: "required",
+				position: "required",
+				upload_img: "required"
 			}
 		});
 		
@@ -76,12 +44,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="path">
 		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 添加团队成员
 	</div>
-	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="type" value="${type}"/>
+	<form id="inputForm" action="/admin/team/SaveOrUpdate.jhtml" method="post" enctype="multipart/form-data">
 		<table class="input">
 			<tr>
 				<th>
-					<span class="requiredField">*</span>成员姓名:
+					成员姓名:
 				</th>
 				<td>
 					<input type="text" name="name" class="text" maxlength="200" />
@@ -89,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr>
 				<th>
-					<span class="requiredField">*</span>成员职位:
+					成员职位:
 				</th>
 				<td>
 					<input type="text" name="position" class="text" maxlength="200" />
@@ -97,7 +64,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr id="pathTr">
 				<th>
-					<span class="requiredField">*</span>成员图片:
+					成员图片:
 				</th>
 				<td colspan="3">
 					<div>
