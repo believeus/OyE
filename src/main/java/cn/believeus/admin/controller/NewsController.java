@@ -83,6 +83,7 @@ public class NewsController {
 	 * 新闻置顶
 	 * @return
 	 */
+	@RequiresPermissions("newsDinamic:update")
 	@RequestMapping(value="/admin/news/top")
 	public String newsTop(Integer myNewId, HttpServletRequest request){
 		News news = (News) baseService.findObject(News.class, myNewId);
@@ -90,6 +91,7 @@ public class NewsController {
 		baseService.saveOrUpdata(news);
 		return "redirect:/admin/news/list.jhtml";
 	}
+	@RequiresPermissions("newsDinamic:update")
 	@RequestMapping(value="/admin/news/down")
 	public String downTop(Integer myNewId){
 		News news = (News) baseService.findObject(News.class, myNewId);
