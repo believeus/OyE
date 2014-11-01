@@ -34,45 +34,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    });
 	
 		var $inputForm = $("#inputForm");
-		var $type = $("#type");
-		var $contentTr = $("#contentTr");
-		var $pathTr = $("#pathTr");
-		var $path = $("#path");
-		var $browserButton = $("#browserButton");
-		
-		
-		
-		// "类型"修改
-		$type.change(function() {
-			if ($type.val() == "text") {
-				$contentTr.show();
-				$pathTr.hide();
-				$path.prop("disabled", true)
-			} else {
-				$contentTr.hide();
-				$pathTr.show();
-				$path.prop("disabled", false)
-				$browserButton.unbind().browser({
-					type: $type.val()
-				});
-			}
-		});
 		
 		// 表单验证
 		$inputForm.validate({
 			rules: {
 				title: "required",
-				author: "required",
-				path: "required",
-				order: "digits"
-			}
-		});
-		
-		$("#checked_true").click(function(){
-			if($("#checked_true").attr("value") == 0){
-				$("#checked_true").attr("value","1");
-			}else{
-				$("#checked_true").attr("value","0");
+				upload_img: "required",
+				content: "required"
 			}
 		});
 		
@@ -85,12 +53,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="path">
 		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 添加案例
 	</div>
-	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="type" value="${type}"/>
+	<form id="inputForm" action="/admin/example/saveOrUpdate.jhtml" method="post" enctype="multipart/form-data">
 		<table class="input">
 			<tr>
 				<th>
-					<span class="requiredField">*</span>案例标题:
+					案例标题:
 				</th>
 				<td>
 					<input type="text" name="title" class="text" maxlength="200" />
@@ -98,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr id="pathTr">
 				<th>
-					<span class="requiredField">*</span>相关图片:
+					相关图片:
 				</th>
 				<td colspan="3">
 					<div>

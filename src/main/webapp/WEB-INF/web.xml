@@ -110,12 +110,18 @@
 	<!-- Begin Author:wuqiwei:Data:2014-06-05 AddReason:内嵌式小型分布式文件系统集成 -->
 	 <servlet>
 		<servlet-name>storageClient</servlet-name>
-		<servlet-class>mydfs.storage.server.MydfsHttpClient</servlet-class>
+		<servlet-class>mydfs.storage.server.MydfsServerServlet</servlet-class>
+		<!--127.0.0.1:9999 分别是指向dfsServer服务的ip和端口  -->
+		<init-param>
+			<param-name>mydfsServerHost:Port</param-name>
+			<param-value>127.0.0.1:9999</param-value>
+		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>storageClient</servlet-name>
 		<url-pattern>/group/M00/*</url-pattern>
 	</servlet-mapping>
+	<!-- End Author:wuqiwei:Data:2014-06-05 AddReason:内嵌式小型分布式文件系统集成 -->
 	<error-page>
 		<exception-type>org.apache.shiro.authz.AuthorizationException</exception-type>
 		<location>/authorException.jhtml</location>

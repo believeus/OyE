@@ -5,6 +5,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -32,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="path">
 		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 留言列表 <span>共${dataCenters.total}条记录</span>
 	</div>
-	<form id="listForm" action="newsList.jhtml" method="post">
+	<form id="listForm" action="list.jhtml" method="post">
 		<div class="bar">
 		<div class="buttonWrap">
 			<a href="javascript:;" id="deleteButton" class="iconButton disabled">
@@ -47,6 +48,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<tr>
 				<th class="check">
 					<input type="checkbox" id="selectAll" />
+				</th>
+				<th>
+					<a href="javascript:;" class="sort" name="id">排序编号</a>
 				</th>
 				<th>
 					<a href="javascript:;" class="sort" name="id">收件人</a>
@@ -64,10 +68,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;"  class="sort">操作</a>
 				</th>
 			</tr>
-			<c:forEach var="message" items="${messageList}">
+			<c:forEach var="message" items="${messageList}" varStatus="status">
 			<tr>
 				<td>
 					<input type="checkbox" name="ids" value="${message.id}" />
+				</td>
+				<td>
+					<span>${status.index+1}</span>
 				</td>
 				<td>
 					<span >${message.name}</span>
@@ -76,7 +83,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span title="${message.theme}">${message.theme}</span>
 				</td>
 				<td>
-					${message.content}
+				${fn:substring(message.content, 0, 38)}
+   				<c:if test="${fn:length(message.content) >38 }">
+	   					...
+   				</c:if>
 				</td>
 				<td>
 					${message.createTime}

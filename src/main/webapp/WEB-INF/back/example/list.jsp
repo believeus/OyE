@@ -3,7 +3,8 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -32,9 +33,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="path">
 		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 案例列表 <span>共${dataCenters.total}条记录</span>
 	</div>
-	<form id="listForm" action="/admin/businessAdd.jhtml" method="post">
+	<form id="listForm" action="list.jhtml" method="post">
 		<div class="bar">
-			<a href="/admin/exampleAdd.jhtml" class="iconButton">
+			<a href="/admin/example/add.jhtml" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
 			</a>
 		<div class="buttonWrap">
@@ -44,20 +45,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<a href="javascript:;" id="refreshButton" class="iconButton">
 					<span class="refreshIcon">&nbsp;</span>刷新
 				</a>
-			</div>
-			<div class="menuWrap">
-				<div class="search">
-					<span id="searchPropertySelect" class="arrow">&nbsp;</span>
-					<input type="text" id="searchValue" name="searchValue" value="${searchValue}" maxlength="200" />
-					<button type="submit">&nbsp;</button>
-				</div>
-				<div class="popupMenu">
-					<ul id="searchPropertyOption">
-						<li>
-							<a href="javascript:;" class="current" val="title">标题</a>
-						</li>
-					</ul>
-				</div>
 			</div>
 		</div>
 		<table id="listTable" class="list">
@@ -72,29 +59,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;" class="sort" name="title">标题</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="title">描述</a>
+					<a href="javascript:;" class="sort" name="content">描述</a>
 				</th>
 				<th>
-					<a href="#"  class="sort">操作</a>
+					<a href="javascript:;"  class="sort">操作</a>
 				</th>
 			</tr>
+			<c:forEach var="example" items="${exampleList}" varStatus="status">
 			<tr>
 				<td>
-					<input type="checkbox" name="ids" value="${center.id}" />
+					<input type="checkbox" name="ids" value="${example.id}" />
 				</td>
 				<td>
-					<span title="${center.id}">1${center.id}</span>
+					<span>${status.index+1 }</span>
 				</td>
 				<td>
-					${center.title}aaa
+					${example.title}
 				</td>
 				<td>
-					${center.content}abcd
+					${fn:substring(example.content, 0, 38)}
+	   				<c:if test="${fn:length(example.content) >38 }">
+		   					...
+	   				</c:if>
 				</td>
 				<td>
-					<a href="/admin/exampleEdit.jhtml?id=${center.id}">[修改]</a>
+					<a href="/admin/example/edit.jhtml?id=${example.id}">[修改]</a>
 				</td>
 			</tr>
+			</c:forEach>
 		</table>
 	</form>
   </body>
