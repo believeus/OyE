@@ -45,18 +45,23 @@ public class AdminPowerController {
 		Role role=(Role)baseService.findObject(Role.class, Integer.parseInt(roleId));
 		List<Authority> authoritys = role.getAuthoritys();
 		List<Integer> idList=new ArrayList<Integer>();
-		for (Authority authority : authoritys) {
+		if(authoritys!=null){
+		 for (Authority authority : authoritys) {
 			idList.add(authority.getId());
+		 }
 		}
 		baseService.delete(Authority.class, idList);
 		// 获取被选中的checkbook 并且name="authority"
 		String[] parameterValues = request.getParameterValues("authority");
-		for (String authorityName : parameterValues) {
-			Authority authority = new Authority();
-			authority.setAuthorityName(authorityName);
-			authority.setRole(role);
-			baseService.saveOrUpdata(authority);
+		if(parameterValues!=null){
+			for (String authorityName : parameterValues) {
+				Authority authority = new Authority();
+				authority.setAuthorityName(authorityName);
+				authority.setRole(role);
+				baseService.saveOrUpdata(authority);
+			}
 		}
+		
 		return "redirect:/admin/roleList.jhtml";
 	}
 	@RequestMapping(value="/admin/updateRoleForAdmin")
