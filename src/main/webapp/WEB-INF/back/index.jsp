@@ -18,7 +18,7 @@
 			{"menuid":"1","icon":"icon-sys","menuname":"内容管理",
 				"menus":[
 						<shiro:hasPermission name="newsDinamic:view">
-				         {"menuname":"企业新闻管理","icon":"icon-add","url":"/admin/newsList.jhtml"},
+				         {"menuname":"企业新闻管理","icon":"icon-add","url":"/admin/news/list.jhtml"},
 				        </shiro:hasPermission>
 				         
 				        <shiro:hasPermission name="business:view"> 

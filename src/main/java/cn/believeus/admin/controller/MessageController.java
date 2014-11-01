@@ -72,7 +72,7 @@ public class MessageController {
 	 */
 	@RequiresPermissions("contact:delete")
 	@RequestMapping(value="/admin/message/delete")
-	public @ResponseBody String messageDel(Integer[] ids,HttpServletRequest request){
+	public @ResponseBody String messageDel(Integer[] ids){
 		List<Integer> list = Arrays.asList(ids); 
 		baseService.delete(Message.class, list);
 		return "{\"type\":\"success\"}";

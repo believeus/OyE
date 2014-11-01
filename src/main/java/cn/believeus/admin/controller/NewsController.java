@@ -1,5 +1,6 @@
 package cn.believeus.admin.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -8,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.believeus.model.Message;
 import cn.believeus.model.News;
 import cn.believeus.service.BaseService;
 
@@ -22,7 +25,7 @@ public class NewsController {
 	 * 新闻列表
 	 * @return
 	 */
-	@RequestMapping(value="/admin/newsList")
+	@RequestMapping(value="/admin/news/list")
 	public String list(HttpServletRequest request){
 		@SuppressWarnings("unchecked")
 		List<News> news = (List<News>) baseService.findObjectList(News.class);
@@ -35,7 +38,7 @@ public class NewsController {
 	 * @return
 	 */
 	@RequiresPermissions("newsDinamic:create")
-	@RequestMapping(value="/admin/newsAdd")
+	@RequestMapping(value="/admin/news/add")
 	public String add(){
 		return "/WEB-INF/back/news/add.jsp";
 	}
@@ -45,11 +48,11 @@ public class NewsController {
 	 * @return
 	 * */
 	@RequiresPermissions("newsDinamic:create")
-	@RequestMapping(value="/admin/newsSave")
+	@RequestMapping(value="/admin/news/save")
 	public String save(News news){
 		news.setCreateTime(System.currentTimeMillis());
 		baseService.saveOrUpdata(news);
-		return "redirect:/admin/newsList.jhtml";
+		return "redirect:/admin/news/list.jhtml";
 	}
 	
 	/**
@@ -57,11 +60,11 @@ public class NewsController {
 	 * @return
 	 */
 	@RequiresPermissions("newsDinamic:update")
-	@RequestMapping(value="/admin/newsUpdate")
+	@RequestMapping(value="/admin/news/update")
 	public String newsUpdate(News news){
 		news.setEditTime(System.currentTimeMillis());
 		baseService.saveOrUpdata(news);
-		return "redirect:/admin/newsList.jhtml";
+		return "redirect:/admin/news/list.jhtml";
 	}
 	
 	/**
@@ -69,7 +72,7 @@ public class NewsController {
 	 * @return
 	 */
 	@RequiresPermissions("newsDinamic:update")
-	@RequestMapping(value="/admin/newsEdit")
+	@RequestMapping(value="/admin/news/edit")
 	public String edit(Integer myNewId, HttpServletRequest request){
 		News news = (News) baseService.findObject(News.class, myNewId);
 		request.setAttribute("news", news);
@@ -81,8 +84,23 @@ public class NewsController {
 	 * @return
 	 */
 	@RequiresPermissions("newsDinamic:delete")
-	@RequestMapping(value="/admin/newsDel")
-	public String delete(){
-		return "/WEB-INF/back/news/list.jsp";
+	@RequestMapping(value="/admin/news/delete")
+	public @ResponseBody String delete(Integer[] ids){
+		List<Integer> list = Arrays.asList(ids); 
+		System.out.println(list); 
+		baseService.delete(News.class, list);
+		return "{\"type\":\"success\"}";
+	}
+	
+	/**
+	 * 新闻置顶
+	 * @return
+	 */
+	@RequestMapping(value="/admin/news/top")
+	public String newsTop(Integer myNewId, HttpServletRequest request){
+		News news = (News) baseService.findObject(News.class, myNewId);
+		long editTime = news.getEditTime();
+		request.setAttribute("editTime", editTime);
+		return "redirect:/admin/news/list.jhtml";
 	}
 }

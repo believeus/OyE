@@ -32,9 +32,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="path">
 		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 内容列表 <span>共${dataCenters.total}条记录</span>
 	</div>
-	<form id="listForm" action="newsList.jhtml" method="post">
+	<form id="listForm" action="news/list.jhtml" method="post">
 		<div class="bar">
-			<a href="/admin/newsAdd.jhtml" class="iconButton">
+			<a href="/admin/news/add.jhtml" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
 			</a>
 		<div class="buttonWrap">
@@ -78,22 +78,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="#"  class="sort">操作</a>
 				</th>
 			</tr>
-			<c:forEach var="myNew" items="${news}">
+			<c:forEach var="myNew" items="${news}" varStatus="status">
 				<tr>
 					<td>
 						<input type="checkbox" name="ids" value="${myNew.id}" />
 					</td>
 					<td>
-						<span title="${myNew.id}">${myNew.id}</span>
+						<span>${status.index+1}</span>
 					</td>
 					<td>
 						${myNew.title}
 					</td>
 					<td>
-						<a href="/admin/news/newsTop.jhtml?myNewId=${myNew.id}"><font color="red">点击置顶</font></a>
+						<a href="/admin/news/top.jhtml?myNewId=${myNew.id}"><font color="red">点击置顶</font></a>
 					</td>
 					<td>
-						<a href="/admin/newsEdit.jhtml?myNewId=${myNew.id}">[修改]</a>
+						<a href="/admin/news/edit.jhtml?myNewId=${myNew.id}">[修改]</a>
 					</td>
 				</tr>
 			</c:forEach>
