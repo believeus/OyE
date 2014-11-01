@@ -46,6 +46,8 @@
 		<mapping class="cn.believeus.model.Role"/>
 		<mapping class="cn.believeus.model.News"/>
 		<mapping class="cn.believeus.model.CompanyInfo"/> 
+		<mapping class="cn.believeus.model.Message"/> 
+		
 	</session-factory>
 
 </hibernate-configuration>

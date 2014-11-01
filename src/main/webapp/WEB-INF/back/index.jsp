@@ -30,7 +30,7 @@
 						</shiro:hasPermission>
 						 
 						<shiro:hasPermission name="contact:view">  
-						{"menuname":"用户留言管理","icon":"icon-set","url":"/admin/messageList.jhtml"},
+						{"menuname":"用户留言管理","icon":"icon-set","url":"/admin/message/list.jhtml"},
 						</shiro:hasPermission>
 						
 						<shiro:hasPermission name="customer:view">  	

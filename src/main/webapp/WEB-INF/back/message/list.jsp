@@ -1,9 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -22,7 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</style>
 	<script type="text/javascript">
 	$().ready(function() {
-		
 	});
 	</script>
 
@@ -42,20 +42,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span class="refreshIcon">&nbsp;</span>刷新
 				</a>
 			</div>
-			<div class="menuWrap">
-				<div class="search">
-					<span id="searchPropertySelect" class="arrow">&nbsp;</span>
-					<input type="text" id="searchValue" name="searchValue" value="${searchValue}" maxlength="200" />
-					<button type="submit">&nbsp;</button>
-				</div>
-				<div class="popupMenu">
-					<ul id="searchPropertyOption">
-						<li>
-							<a href="javascript:;" class="current" val="title">标题</a>
-						</li>
-					</ul>
-				</div>
-			</div>
 		</div>
 		<table id="listTable" class="list">
 			<tr>
@@ -63,35 +49,43 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<input type="checkbox" id="selectAll" />
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="id">排序编号</a>
+					<a href="javascript:;" class="sort" name="id">收件人</a>
 				</th>
 				<th>
 					<a href="javascript:;" class="sort" name="title">标题</a>
 				</th>
 				<th>
+					<a href="javascript:;" class="sort" name="title">内容</a>
+				</th>
+				<th>
 					<a href="javascript:;" class="sort" name="top">留言时间</a>
 				</th>
 				<th>
-					<a href="#"  class="sort">操作</a>
+					<a href="javascript:;"  class="sort">操作</a>
 				</th>
 			</tr>
+			<c:forEach var="message" items="${messageList}">
 			<tr>
 				<td>
-					<input type="checkbox" name="ids" value="${center.id}" />
+					<input type="checkbox" name="ids" value="${message.id}" />
 				</td>
 				<td>
-					<span title="${center.id}">${center.id}1</span>
+					<span >${message.name}</span>
 				</td>
 				<td>
-					${center.title}asd
+					<span title="${message.theme}">${message.theme}</span>
 				</td>
 				<td>
-					2014年10月31日 15:13:21
+					${message.content}
 				</td>
 				<td>
-					<a href="/admin/messageEdit.jhtml?id=${center.id}">[回复]</a>
+					${message.createTime}
+				</td>
+				<td>
+					<a href="/admin/message/view.jhtml?id=${message.id}">[查看]</a>
 				</td>
 			</tr>
+			</c:forEach>
 		</table>
 	</form>
   </body>
