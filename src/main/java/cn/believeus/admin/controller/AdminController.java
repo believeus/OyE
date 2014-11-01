@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import cn.believeus.model.Admin;
@@ -101,8 +102,10 @@ public class AdminController {
 		admin.setUsername(adminName);
 		admin.setPassword(repass);
 		admin.setDescription(description);
-		Role role = (Role) baseService.findObject(Role.class, Integer.valueOf(roleId));
-		role.setAdmin(admin);
+		if(!StringUtils.isEmpty(roleId)){
+		 Role role = (Role) baseService.findObject(Role.class, Integer.valueOf(roleId));
+		 role.setAdmin(admin);
+		}
 		baseService.saveOrUpdata(admin);
 		return "redirect:/admin/adminList.jhtml";
 	}
