@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.CallbackException;
+import org.hibernate.Session;
+
 @Entity
 @Table
 public class Admin extends TbaseEntity {
@@ -43,5 +46,9 @@ public class Admin extends TbaseEntity {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	@Override
+	public boolean onUpdate(Session s) throws CallbackException {
+		return super.onUpdate(s);
 	}
 }

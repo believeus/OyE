@@ -49,7 +49,7 @@
 		<mapping class="cn.believeus.model.Message"/> 
 		<mapping class="cn.believeus.model.Example"/> 
 		<mapping class="cn.believeus.model.Team"/> 
-		
+
 		
 	</session-factory>
 

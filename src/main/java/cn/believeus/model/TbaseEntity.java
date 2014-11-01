@@ -7,10 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OrderBy;
-import javax.persistence.PreUpdate;
+import org.hibernate.CallbackException;
+import org.hibernate.Session;
+import org.hibernate.classic.Lifecycle;
 
 @MappedSuperclass
-public class TbaseEntity implements Serializable {
+public class TbaseEntity implements Serializable,Lifecycle {
 	
 	private static final long serialVersionUID = -4017940130624140047L;
 	
@@ -55,5 +57,28 @@ public class TbaseEntity implements Serializable {
 
 	public void setEditTime(long editTime) {
 		this.editTime = editTime;
+	}
+
+	//wuqiwei 当保存的时候自动设置editTime和createTime无需手工设置
+	@Override
+	public boolean onSave(Session s) throws CallbackException {
+		createTime=editTime=System.currentTimeMillis();
+		return false;
+	}
+	//wuqiwei 当更新的时候自动设置editTime无需手工设置
+	@Override
+	public boolean onUpdate(Session s) throws CallbackException {
+		this.editTime=System.currentTimeMillis();
+		return false;
+	}
+
+	@Override
+	public boolean onDelete(Session s) throws CallbackException {
+		return false;
+	}
+
+	@Override
+	public void onLoad(Session s, Serializable id) {
+		
 	}
 }

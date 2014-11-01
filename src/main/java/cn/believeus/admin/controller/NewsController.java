@@ -2,16 +2,12 @@ package cn.believeus.admin.controller;
 
 import java.util.Arrays;
 import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import cn.believeus.model.Message;
 import cn.believeus.model.News;
 import cn.believeus.service.BaseService;
 
@@ -50,7 +46,6 @@ public class NewsController {
 	@RequiresPermissions("newsDinamic:create")
 	@RequestMapping(value="/admin/news/save")
 	public String save(News news){
-		news.setCreateTime(System.currentTimeMillis());
 		baseService.saveOrUpdata(news);
 		return "redirect:/admin/news/list.jhtml";
 	}
@@ -62,7 +57,6 @@ public class NewsController {
 	@RequiresPermissions("newsDinamic:update")
 	@RequestMapping(value="/admin/news/update")
 	public String newsUpdate(News news){
-		news.setEditTime(System.currentTimeMillis());
 		baseService.saveOrUpdata(news);
 		return "redirect:/admin/news/list.jhtml";
 	}
@@ -87,7 +81,6 @@ public class NewsController {
 	@RequestMapping(value="/admin/news/delete")
 	public @ResponseBody String delete(Integer[] ids){
 		List<Integer> list = Arrays.asList(ids); 
-		System.out.println(list); 
 		baseService.delete(News.class, list);
 		return "{\"type\":\"success\"}";
 	}
