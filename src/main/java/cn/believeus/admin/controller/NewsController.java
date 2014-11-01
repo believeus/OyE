@@ -2,14 +2,18 @@ package cn.believeus.admin.controller;
 
 import java.util.Arrays;
 import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import cn.believeus.model.News;
 import cn.believeus.service.BaseService;
+import cn.believeus.variables.Variables;
 
 @Controller
 public class NewsController {
@@ -21,10 +25,11 @@ public class NewsController {
 	 * 新闻列表
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/admin/news/list")
 	public String list(HttpServletRequest request){
-		@SuppressWarnings("unchecked")
-		List<News> news = (List<News>) baseService.findObjectList(News.class);
+		String hql="From News news order by news.top desc,news.editTime desc";
+		List<News> news = (List<News>) baseService.findObjectList(hql, 20);
 		request.setAttribute("news", news);
 		return "/WEB-INF/back/news/list.jsp";
 	}
@@ -81,12 +86,15 @@ public class NewsController {
 	@RequestMapping(value="/admin/news/top")
 	public String newsTop(Integer myNewId, HttpServletRequest request){
 		News news = (News) baseService.findObject(News.class, myNewId);
-		Short top = news.getTop();
-		if (top == 1) {
-			
-		}
-		
-		//request.setAttribute("editTime", editTime);
+		news.setTop(Variables.newsUp);
+		baseService.saveOrUpdata(news);
+		return "redirect:/admin/news/list.jhtml";
+	}
+	@RequestMapping(value="/admin/news/down")
+	public String downTop(Integer myNewId){
+		News news = (News) baseService.findObject(News.class, myNewId);
+		news.setTop(Variables.newsDown);
+		baseService.saveOrUpdata(news);
 		return "redirect:/admin/news/list.jhtml";
 	}
 }

@@ -17,7 +17,7 @@ public class News extends TbaseEntity{
 	
 	private String content;
 	
-	/** 0:置顶   1:非置顶   */
+	/** 1:置顶   0:非置顶   */
 	private Short top;
 	
 	public Short getTop() {

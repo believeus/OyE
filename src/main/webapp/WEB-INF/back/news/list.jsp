@@ -90,7 +90,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						${myNew.title}
 					</td>
 					<td>
-						<a href="/admin/news/top.jhtml?myNewId=${myNew.id}"><font color="red">点击置顶</font></a>
+					    <c:choose>
+					       <c:when test="${myNew.top eq 1}"><a href="/admin/news/down.jhtml?myNewId=${myNew.id}"><font color="green">取消置顶</font></a></c:when>
+					       <c:otherwise><a href="/admin/news/top.jhtml?myNewId=${myNew.id}"><font color="red">点击置顶</font></a></c:otherwise>
+					    </c:choose>
 					</td>
 					<td>
 						<a href="/admin/news/edit.jhtml?myNewId=${myNew.id}">[修改]</a>
