@@ -68,6 +68,8 @@ public class TbaseEntity implements Serializable,Lifecycle {
 	//wuqiwei 当更新的时候自动设置editTime无需手工设置
 	@Override
 	public boolean onUpdate(Session s) throws CallbackException {
+		TbaseEntity entity=(TbaseEntity)s.get(this.getClass(), id);
+		this.createTime=entity.getCreateTime();
 		this.editTime=System.currentTimeMillis();
 		return false;
 	}
