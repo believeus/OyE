@@ -6,6 +6,8 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import cn.believeus.PaginationUtil.Page;
+import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.dao.BaseDao;
 
 @Service
@@ -75,6 +77,10 @@ public class BaseService{
 
 	public List<?> findObjectList(String hql, Integer num) {
 		return baseDao.findObjectList(hql,num);
+	}
+	
+	public Page<?> findObjectList(String hql, Pageable pageable) {
+		return (Page<?>) baseDao.getPageDateList(hql,pageable );
 	}
 
 }

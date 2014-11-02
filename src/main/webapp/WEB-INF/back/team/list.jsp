@@ -30,9 +30,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div class="path">
-		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 团队成员列表 <span>共${dataCenters.total}条记录</span>
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 团队成员列表 <span>共${size}条记录</span>
 	</div>
-	<form id="listForm" action="/admin/team/list.jhtml" method="post">
+	<div>
 		<div class="bar">
 			<a href="/admin/team/add.jhtml" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
@@ -84,6 +84,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			</c:forEach>
 		</table>
-	</form>
+	</div>
+	<div>
+		<form action="/admin/team/list.jhtml" id="listForm">
+			<jsp:include page="../include/pagination.jsp" flush="true" />
+		</form>
+	</div>
   </body>
 </html>

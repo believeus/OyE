@@ -18,10 +18,15 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.junit.Assert;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import cn.believeus.PaginationUtil.Page;
+import cn.believeus.PaginationUtil.Pageable;
+import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Team;
 import cn.believeus.service.BaseService;
 
@@ -92,11 +97,21 @@ public class TeamController {
 	 * 团队成员列表
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/admin/team/list")
 	public String teamList(HttpServletRequest request){
-		List<Team> teams = (List<Team>)baseService.findObjectList(Team.class);
-		request.setAttribute("teamList", teams);
+		String pageNumber = request.getParameter("pageNumber");
+		// 如果为空，则设置为1
+		if (StringUtils.isEmpty(pageNumber)) {
+			pageNumber="1";
+		}
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),2);
+		String hql= "from Team as entity order by id desc";;
+		Page<?> page = baseService.findObjectList(hql, pageable);
+		request.setAttribute("teamList", page.getContent());
+		request.setAttribute("size",page.getTotal());
+		// 分页
+		PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
+		
 		return "/WEB-INF/back/team/list.jsp";
 	}
 	/**
