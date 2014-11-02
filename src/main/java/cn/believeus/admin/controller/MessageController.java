@@ -10,9 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.believeus.PaginationUtil.Page;
+import cn.believeus.PaginationUtil.Pageable;
+import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Message;
 import cn.believeus.service.BaseService;
 
@@ -26,21 +30,21 @@ public class MessageController {
 	 *留言列表
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/admin/message/list")
 	public String messageList(HttpServletRequest request){
-		List<Message> messages = (List<Message>)baseService.findObjectList(Message.class);
-		/*if (messages.size()==0) {
-			Message message=new Message();
-			message.setTheme("Believeus睿软");
-			message.setEmail("569009496@qq.com");
-			message.setName("武汉睿软信息技术有限责任公司");
-			message.setContent("网站开发，请联系我们！了解我们(http://www.balieveus.cn) 电话：15623454830。谢谢！");
-			message.setCreateTime(System.currentTimeMillis());
-			baseService.saveOrUpdata(message);
-			messages.add(message);
-		}*/
-		request.setAttribute("messageList", messages);
+		String pageNumber = request.getParameter("pageNumber");
+		// 如果为空，则设置为1
+		if (StringUtils.isEmpty(pageNumber)) {
+			pageNumber="1";
+		}
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),20);
+		String hql= "from Message as entity order by editTime desc";
+		Page<?> page = baseService.findObjectList(hql, pageable);
+		request.setAttribute("messageList", page.getContent());
+		request.setAttribute("size",page.getTotal());
+		// 分页
+		PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
+		
 		return "/WEB-INF/back/message/list.jsp";
 	}
 	/**

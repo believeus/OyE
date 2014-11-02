@@ -104,8 +104,8 @@ public class TeamController {
 		if (StringUtils.isEmpty(pageNumber)) {
 			pageNumber="1";
 		}
-		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),2);
-		String hql= "from Team as entity order by id desc";;
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),20);
+		String hql= "from Team as entity order by editTime desc";
 		Page<?> page = baseService.findObjectList(hql, pageable);
 		request.setAttribute("teamList", page.getContent());
 		request.setAttribute("size",page.getTotal());

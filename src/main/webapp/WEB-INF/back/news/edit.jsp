@@ -34,47 +34,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    });
 	
 		var $inputForm = $("#inputForm");
-		var $type = $("#type");
-		var $contentTr = $("#contentTr");
-		var $pathTr = $("#pathTr");
-		var $path = $("#path");
-		var $browserButton = $("#browserButton");
-		
-		
-		
-		// "类型"修改
-		$type.change(function() {
-			if ($type.val() == "text") {
-				$contentTr.show();
-				$pathTr.hide();
-				$path.prop("disabled", true)
-			} else {
-				$contentTr.hide();
-				$pathTr.show();
-				$path.prop("disabled", false)
-				$browserButton.unbind().browser({
-					type: $type.val()
-				});
-			}
-		});
 		
 		// 表单验证
 		$inputForm.validate({
 			rules: {
 				title: "required",
-				author: "required",
-				path: "required",
-				order: "digits"
+				content: "required"
 			}
 		});
 		
-		$("#checked_true").click(function(){
-			if($("#checked_true").attr("value") == 0){
-				$("#checked_true").attr("value","1");
-			}else{
-				$("#checked_true").attr("value","0");
-			}
-		});
 		
 	});
 	

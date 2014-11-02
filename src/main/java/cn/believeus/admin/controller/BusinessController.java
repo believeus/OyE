@@ -16,13 +16,16 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.junit.Assert;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import cn.believeus.PaginationUtil.Page;
+import cn.believeus.PaginationUtil.Pageable;
+import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Business;
-import cn.believeus.model.News;
 import cn.believeus.service.BaseService;
 
 @Controller
@@ -42,9 +45,19 @@ public class BusinessController {
 	 */
 	@RequestMapping(value="/admin/business/list")
 	public String list(HttpServletRequest request){
-		@SuppressWarnings("unchecked")
-		List<Business> business = (List<Business>) baseService.findObjectList(Business.class);
-		request.setAttribute("business", business);
+		String pageNumber = request.getParameter("pageNumber");
+		// 如果为空，则设置为1
+		if (StringUtils.isEmpty(pageNumber)) {
+			pageNumber="1";
+		}
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),20);
+		String hql= "from Business as entity order by editTime desc";
+		Page<?> page = baseService.findObjectList(hql, pageable);
+		request.setAttribute("business", page.getContent());
+		request.setAttribute("size",page.getTotal());
+		// 分页
+		PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
+
 		return "/WEB-INF/back/business/list.jsp";
 	}
 	

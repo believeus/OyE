@@ -30,9 +30,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div class="path">
-		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 内容列表 <span>共${dataCenters.total}条记录</span>
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 内容列表 <span>共${size}条记录</span>
 	</div>
-	<form id="listForm" action="news/list.jhtml" method="post">
+	<div>
 		<div class="bar">
 			<a href="/admin/news/add.jhtml" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span class="refreshIcon">&nbsp;</span>刷新
 				</a>
 			</div>
-			<div class="menuWrap">
+			<%-- <div class="menuWrap">
 				<div class="search">
 					<span id="searchPropertySelect" class="arrow">&nbsp;</span>
 					<input type="text" id="searchValue" name="searchValue" value="${searchValue}" maxlength="200" />
@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li>
 					</ul>
 				</div>
-			</div>
+			</div> --%>
 		</div>
 		<table id="listTable" class="list">
 			<tr>
@@ -101,6 +101,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</tr>
 			</c:forEach>
 		</table>
-	</form>
+	</div>
+	<div>
+		<form action="/admin/news/list.jhtml" id="listForm">
+			<jsp:include page="../include/pagination.jsp" flush="true" />
+		</form>
+	</div>
   </body>
 </html>
