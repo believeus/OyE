@@ -95,13 +95,18 @@ $().ready(function() {
 					<span class="requiredField">*</span>角色权限:
 				</th>
 				<td>
-					<select name="roleId">
-					<c:forEach var="role" items="${roles}">
-					  <option value="${role.id }">${role.roleName}</option>
-					</c:forEach>
-					</select>
+					${admin.role.roleName}
 				</td>
 			</tr>
+			<tr>
+				<th>
+					<span class="requiredField">*</span>角色描述:
+				</th>
+				<td>
+					${admin.role.description}
+				</td>
+			</tr>
+			
 			</c:if>
 			<tr>
 				<th>
