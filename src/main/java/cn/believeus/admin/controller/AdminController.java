@@ -53,6 +53,7 @@ public class AdminController {
 		List<Authority> authoritys = role.getAuthoritys();
 		request.setAttribute("authoritys", authoritys);
 		request.setAttribute("roleId", roleId);
+		request.setAttribute("role", role);
 		return "/WEB-INF/back/power/powerEdit.jsp";
 	}
 	

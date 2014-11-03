@@ -49,9 +49,9 @@
 			,{"menuid":"2","icon":"icon-sys","menuname":"系统管理",
 				"menus":[
 						<c:if test="${sessionUser.id==1}">
-				        {"menuname":"角色列表","icon":"icon-log","url":"/admin/roleList.jhtml"},
+				        {"menuname":"角色管理","icon":"icon-log","url":"/admin/roleList.jhtml"},
 				        </c:if>
-						{"menuname":"管理员列表","icon":"icon-log","url":"/admin/adminList.jhtml"}
+						{"menuname":"管理员管理","icon":"icon-log","url":"/admin/adminList.jhtml"}
 					]
 			}
 			
@@ -152,7 +152,7 @@
         <span style="padding-left:10px; font-size: 16px; "><img src="/static/public/images/blocks.gif" width="20" height="20" align="absmiddle" /> 睿软科技www.believeus.cn</span>
     </div>
     <div region="south" split="true" style="height: 30px; background: #D2E0F2; ">
-        <div class="footer">By Believeus Email:believeus@126.com</div>
+        <div class="footer">By 朗悦</div>
     </div>
     <div region="west" split="true" title="导航菜单" style="width:180px;" id="west">
 <div class="easyui-accordion" fit="true" border="false">
@@ -165,11 +165,11 @@
         <div id="tabs" class="easyui-tabs"  fit="true" border="false" >
 			<div title="欢迎使用" style="padding:20px;overflow:hidden;" id="home">
 				
-			<h1>如有网站、android、软件外包、平面设计需求请联系我们</h1>
-			<h1>官方网站：  http://www.believeus.cn</h1>
-			<h1>QQ:1058633117 QQ:569009496</h1>
-			<h1>电话:155-2726-0395  小巫</h1>
-			<h1>电话:156-2345-4830 吴女士</h1>
+			<h1>联系方式:</h1>
+			<h1>地址:上海市长宁区中山西路179号E-F座</h1>
+			<h1>电话:+86 21-6259-0368</h1>
+			<h1>传真:+86 21-6215-3789</h1>
+			<h1>热线:+86 400-6358-8798</h1>
 			</div>
 		</div>
     </div>

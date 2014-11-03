@@ -30,10 +30,28 @@ $().ready(function() {
 </head>
 <body>
 	<div class="path">
-		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 内容列表 <span>共${dataCenters.total}条记录</span>
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 内容列表
 	</div>
 	<form id="listForm" action="/admin/updateRole.jhtml" method="post">
 	    <input type="hidden" name="roleId" value="${roleId}"/>
+	    <table class="input">
+		  <tr>
+			<th>
+				<span class="requiredField">*</span>角色名:
+			</th>
+			<td>
+				<input type="text" id="roleName" name="roleName" value="${role.roleName }"  class="text" maxlength="200" />
+			</td>
+		  </tr>
+		   <tr>
+			<th>
+				<span class="requiredField">*</span>角色描述:
+			</th>
+			<td>
+				<input type="text" id="description" name="description" value="${role.description }" class="text" maxlength="200" />
+			</td>
+		  </tr>
+	    </table>
 		<table id="listTable" class="list">
 			<tr>
 				<th class="check">
@@ -55,7 +73,7 @@ $().ready(function() {
 			
 			<tr>
 				<td>
-					新闻管理
+					企业新闻管理
 				</td>
 				<td>
 					<input type="checkbox" id="nv1" name="authority" value="newsDinamic:view" />
@@ -89,7 +107,7 @@ $().ready(function() {
 			</tr>
 			<tr>
 				<td>
-					案例管理
+					企业案例管理
 				</td>
 				<td>
 					<input type="checkbox" id="ev1" name="authority" value="example:view" />
@@ -106,7 +124,7 @@ $().ready(function() {
 			</tr>
 			<tr>
 				<td>
-					留言管理
+					客户留言管理
 				</td>
 				<td>
 					<input type="checkbox" id="cv1" name="authority" value="contact:view" />
@@ -157,7 +175,7 @@ $().ready(function() {
 			</tr>
 			<tr>
 				<td>
-					团队管理
+					企业团队管理
 				</td>
 				<td>
 					<input type="checkbox" id="cv1" name="authority" value="team:view" />

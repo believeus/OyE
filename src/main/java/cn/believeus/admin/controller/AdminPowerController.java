@@ -42,7 +42,12 @@ public class AdminPowerController {
 	@RequestMapping(value="/admin/updateRole")
 	public String editRoleLogic(ServletRequest request){
 		String roleId = request.getParameter("roleId");
+		String roleName=request.getParameter("roleName");
+		String description = request.getParameter("description");
 		Role role=(Role)baseService.findObject(Role.class, Integer.parseInt(roleId));
+		role.setRoleName(roleName);
+		role.setDescription(description);
+		baseService.saveOrUpdata(role);
 		List<Authority> authoritys = role.getAuthoritys();
 		List<Integer> idList=new ArrayList<Integer>();
 		if(authoritys!=null){
@@ -50,6 +55,7 @@ public class AdminPowerController {
 			idList.add(authority.getId());
 		 }
 		}
+		// 更新权限之前首先删除之前的权限
 		baseService.delete(Authority.class, idList);
 		// 获取被选中的checkbook 并且name="authority"
 		String[] parameterValues = request.getParameterValues("authority");
