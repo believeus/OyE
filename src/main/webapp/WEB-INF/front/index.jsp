@@ -51,14 +51,14 @@
 	</div>
 	<div class="main">
 		<div class="main-img">
-			<img src="/static/public/images/img1.png" width="100%">
+			<img src="/static/public/images/img1.png" width="100%" />
 		</div>
 		<div class="main-service">
 			<p class="">服务范围Our Business</p>
 			<div class="main-service-list">
 				<div class="main-service-cont">
 					<div class="main-service-cont-img">
-						<img src="/static/public/images/phone.png">
+						<img src="/static/public/images/phone.png" />
 					</div>
 					<div class="main-service-cont-name">
 						办公室搬迁
@@ -69,10 +69,10 @@
 				</div>
 				<div class="main-service-cont">
 					<div class="main-service-cont-img">
-						<img src="/static/public/images/phone.png">
+						<img src="/static/public/images/people.png" />
 					</div>
 					<div class="main-service-cont-name">
-						办公室搬迁
+						国内室内私人搬迁
 					</div>
 					<div class="main-service-cont-dis">
 						黑龙江网络广播电视台讯（通讯员金钢 记者姚以斌）11月3日晚，哈尔滨警方经近24小时连续奋战，成功将公安部B级通缉令逃犯王庆新抓捕归案。
@@ -80,10 +80,24 @@
 				</div>
 				<div class="main-service-cont" style="margin-right: 0;">
 					<div class="main-service-cont-img">
-						<img src="/static/public/images/phone.png" />
+						<img src="/static/public/images/sys.png" />
 					</div>
 					<div class="main-service-cont-name">
-						办公室搬迁
+						实验室搬迁
+					</div>
+					<div class="main-service-cont-dis">
+						黑龙江网络广播电视台讯（通讯员金钢 记者姚以斌）11月3日晚，哈尔滨警方经近24小时连续奋战，成功将公安部B级通缉令逃犯王庆新抓捕归案。
+					</div>
+				</div>
+				<!--  -->
+				<!-- <img src="/static/public/images/jt00.png" style="position: absolute; top: 808px; left: 78px;"/>
+				<img src="/static/public/images/jt01.png" style="position: absolute; top: 935px; left: 78px;"/> -->
+				<div class="main-service-cont">
+					<div class="main-service-cont-img">
+						<img src="/static/public/images/cc.png" />
+					</div>
+					<div class="main-service-cont-name">
+						仓储
 					</div>
 					<div class="main-service-cont-dis">
 						黑龙江网络广播电视台讯（通讯员金钢 记者姚以斌）11月3日晚，哈尔滨警方经近24小时连续奋战，成功将公安部B级通缉令逃犯王庆新抓捕归案。
@@ -91,21 +105,10 @@
 				</div>
 				<div class="main-service-cont">
 					<div class="main-service-cont-img">
-						<img src="/static/public/images/phone.png" />
+						<img src="/static/public/images/es.png" />
 					</div>
 					<div class="main-service-cont-name">
-						办公室搬迁
-					</div>
-					<div class="main-service-cont-dis">
-						黑龙江网络广播电视台讯（通讯员金钢 记者姚以斌）11月3日晚，哈尔滨警方经近24小时连续奋战，成功将公安部B级通缉令逃犯王庆新抓捕归案。
-					</div>
-				</div>
-				<div class="main-service-cont">
-					<div class="main-service-cont-img">
-						<img src="/static/public/images/phone.png" />
-					</div>
-					<div class="main-service-cont-name">
-						办公室搬迁
+						二手家具回收及出售
 					</div>
 					<div class="main-service-cont-dis">
 						黑龙江网络广播电视台讯（通讯员金钢 记者姚以斌）11月3日晚，哈尔滨警方经近24小时连续奋战，成功将公安部B级通缉令逃犯王庆新抓捕归案。
@@ -113,16 +116,17 @@
 				</div>
 				<div class="main-service-cont" style="margin-right: 0;">
 					<div class="main-service-cont-img">
-						<img src="/static/public/images/phone.png" />
+						<img src="/static/public/images/bgs.png" />
 					</div>
 					<div class="main-service-cont-name">
-						办公室搬迁
+						办公室整体清洁及空气治理
 					</div>
 					<div class="main-service-cont-dis">
 						黑龙江网络广播电视台讯（通讯员金钢 记者姚以斌）11月3日晚，哈尔滨警方经近24小时连续奋战，成功将公安部B级通缉令逃犯王庆新抓捕归案。
 					</div>
 				</div>
 			</div>
+			<img src="/static/public/images/jt02.png" style="position: absolute; top: 965px; right: 290px;"/>
 		</div>
 		<div class="main-comp-const">
 			<div class="main-comp-const-title">
@@ -140,26 +144,30 @@
 			<div class="main-comps">
 				<div class="main-comps-list">
 					<img src="/static/public/images/cry.png" />
+					<img src="/static/public/images/lenovo.png" style="position: relative; top: -65px;"/>
 				</div>
 				<div class="main-comps-list">
 					<img src="/static/public/images/cry.png" />
+					<img src="/static/public/images/lenovo.png" style="position: relative; top: -65px;"/>
 				</div>
 				<div class="main-comps-list">
-					<img src="/static/public/images/cry.png">
+					<img src="/static/public/images/cry.png" />
+					<img src="/static/public/images/lenovo.png" style="position: relative; top: -65px;"/>
 				</div>
 				<div class="main-comps-list">
-					<img src="/static/public/images/cry.png">
+					<img src="/static/public/images/cry.png" />
+					<img src="/static/public/images/lenovo.png" style="position: relative; top: -65px;"/>
 				</div>
 			</div>
 		</div>
 		<div class="main-partner">
-			<img src="/static/public/images/img03.jpg" width="100%">
+			<img src="/static/public/images/img03.jpg" width="100%" />
 		</div>
 		<div class="main-evaluation">
 			<div class="main-evaluation-list">
 				<div class="main-evaluation-list-cont">
 					<div class="main-evaluation-list-cont-img">
-						<img src="/static/public/images/philips.jpg" width="" height="" style="margin-top: 50px;">
+						<img src="/static/public/images/philips.jpg" width="" height="" style="margin-top: 50px;" />
 					</div>
 					<div class="main-evaluation-list-cont-dis">
 						<p class="main-cont-dis-title">来自飞利浦的评价</p>
