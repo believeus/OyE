@@ -24,6 +24,70 @@
         background: url(/static/public/images/zy.png) no-repeat -200px -24px; }
     .banner_slider .bx-wrapper .bx-controls-direction a:hover{opacity: .6}
 </style>
+<style type="">
+#product {
+	width:1250px;
+	height:auto;
+	overflow:hidden;
+	margin:0 5px 5px 0;
+	float:left;
+}
+#product div#content {
+	position:relative;
+	width:1170px;
+	height:280px;
+	/* display:inline-block; */
+	overflow:hidden;
+	/* float:left; */
+	margin: 0 auto;
+	left: -15px;
+}
+#product div#content_list {
+	position:absolute;
+	width:4000px;
+}
+#product dl{
+	width:280px;
+	height:260px;
+	float:left;
+	margin:10px 4px;
+	padding:2px 2px;
+	border:1px solid #F1F4F9;
+}
+#product dl:hover {
+	border:1px solid #F94C54;
+	/* background:#ccc; */
+}
+#product dl dt {
+	
+}
+#product dl dt img {
+	width:280px;
+	height:260px;
+	border:none;
+}
+#product dl dd {
+	text-align:center;
+}
+#product span.prev{
+	cursor:pointer;
+	display:inline-block;
+	width:25px;
+	height:42px;
+	background:url(/static/public/images/zuo.png) no-repeat left center;
+	float:left;
+	margin-top: 130px;
+}
+#product span.next{
+	cursor:pointer;
+	display:inline-block;
+	width:25px;
+	height:42px;
+	background:url(/static/public/images/you.png) no-repeat left center;
+	float:right;
+	margin-top: -150px;
+}
+</style>
 <script type="text/javascript">
 	$(function(){
 		$(".nav a").click(function(){
@@ -40,6 +104,46 @@
 			var left = $(this).offset().left + 78;
 			//$("#xx_img").css("left" , left);
 			$("#xx_img").animate({left:left});
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(function(){
+		var page = 1;
+		var i = 4; //每版放4个图片
+		//向后 按钮
+		$("span.next").click(function(){    //绑定click事件
+			 var content = $("div#content"); 
+			 var content_list = $("div#content_list");
+			 var v_width = content.width();
+			 var len = content.find("dl").length;
+			 var page_count = Math.ceil(len / i) ;   //只要不是整数，就往大的方向取最小的整数
+			 if( !content_list.is(":animated") ){    //判断“内容展示区域”是否正在处于动画
+				  if( page == page_count ){  //已经到最后一个版面了,如果再向后，必须跳转到第一个版面。
+					content_list.animate({ left : '0px'}, "slow"); //通过改变left值，跳转到第一个版面
+					page = 1;
+				  }else{
+					content_list.animate({ left : '-='+v_width }, "slow");  //通过改变left值，达到每次换一个版面
+					page++;
+				 }
+			 }
+	   });
+		//往前 按钮
+		$("span.prev").click(function(){
+			 var content = $("div#content"); 
+			 var content_list = $("div#content_list");
+			 var v_width = content.width();
+			 var len = content.find("dl").length;
+			 var page_count = Math.ceil(len / i) ;   //只要不是整数，就往大的方向取最小的整数
+			 if(!content_list.is(":animated") ){    //判断“内容展示区域”是否正在处于动画
+				 if(page == 1 ){  //已经到第一个版面了,如果再向前，必须跳转到最后一个版面。
+					content_list.animate({ left : '-='+v_width*(page_count-1) }, "slow");
+					page = page_count;
+				}else{
+					content_list.animate({ left : '+='+v_width }, "slow");
+					page--;
+				}
+			}
 		});
 	});
 </script>
@@ -177,7 +281,39 @@
 				<div class="main-comp-const-title-list">私有企业</div>
 			</div>
 			<div class="main-comp-const-img">
-				<img src="/static/public/images/img2.jpg"/>
+				<!-- <img src="/static/public/images/img2.jpg"/> -->
+				<div id="product">
+					<span class="prev"></span>
+					<div id="content">
+						<div id="content_list">
+							<dl>
+								<dt><img src="/static/public/images/b1.jpg"/></dt>
+							</dl>
+							<dl>
+								<dt><img src="/static/public/images/b2.jpg"/></dt>
+							</dl>
+							<dl>
+								<dt><img src="/static/public/images/b3.jpg"/></dt>
+							</dl>
+							<dl>
+								<dt><img src="/static/public/images/b4.jpg"/></dt>
+							</dl>
+							<dl>
+								<dt><img src="/static/public/images/b1.jpg"/></dt>
+							</dl>
+							<dl>
+								<dt><img src="/static/public/images/b2.jpg"/></dt>
+							</dl>
+							<dl>
+								<dt><img src="/static/public/images/b3.jpg"/></dt>
+							</dl>
+							<dl>
+								<dt><img src="/static/public/images/b4.jpg"/></dt>
+							</dl>
+						</div>
+					</div>
+					<span class="next"></span>
+				</div>
 			</div>
 			<div class="ico">
 				<!-- <img src="/static/public/images/jiantou.jpg" width="100%" /> -->

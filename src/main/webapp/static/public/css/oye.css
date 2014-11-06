@@ -188,6 +188,7 @@ html,body,ul,li,a,p{
 	height: 115px;
 	text-align: center;
 	float: left;
+	cursor:pointer;
 }
 .main-evaluation{
 	margin-top: 30px;
