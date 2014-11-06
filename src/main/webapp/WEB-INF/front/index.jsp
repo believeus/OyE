@@ -35,7 +35,12 @@
             autoHover:true,
              pager:false,
              touch:false
-         });
+        });
+		$(".main-comps-list").click(function(){
+			var left = $(this).offset().left + 78;
+			//$("#xx_img").css("left" , left);
+			$("#xx_img").animate({left:left});
+		});
 	});
 </script>
 </head>
@@ -172,10 +177,13 @@
 				<div class="main-comp-const-title-list">私有企业</div>
 			</div>
 			<div class="main-comp-const-img">
-				<img src="/static/public/images/img2.jpg" />
+				<img src="/static/public/images/img2.jpg"/>
 			</div>
 			<div class="ico">
-				<img src="/static/public/images/jiantou.jpg" width="100%" />
+				<!-- <img src="/static/public/images/jiantou.jpg" width="100%" /> -->
+				<div style="width:100%;height:28px;border-top:5px solid #000;margin-top: 30px;">
+					<img id="xx_img" src="/static/public/images/xx.png" style="position: relative; top: -5px; left: 356.5px;"/>
+				</div>
 			</div>
 			<div class="main-comps">
 				<div class="main-comps-list">
@@ -197,9 +205,6 @@
 			</div>
 		</div>
 		<div class="main-partner">
-			<div class="main-ourteam-cont-title" style="position: absolute; left: 120px;">
-				我们的合作伙伴
-			</div>
 			<img src="/static/public/images/img03.jpg" width="100%" />
 		</div>
 		<div class="main-evaluation">
@@ -306,19 +311,112 @@
 				</p>
 				<div style="">
 					<img src="/static/public/images/img06.png" style="position: relative; left: 500px;" />
-					<img src="/static/public/images/a1.jpg"  style="position: relative; left: 507px; top: -881px;"/>
+					<img src="/static/public/images/a1.jpg"  style="position: relative; left: 507px; top: -875px;"/>
 					<img src="/static/public/images/a2.jpg"  style="position: absolute; left: 200px;margin-top: 50px;"/>
-					<img src="/static/public/images/a3.jpg"  style="position: relative; left: 125px; top: -490px;"/>
+					<img src="/static/public/images/a3.jpg"  style="position: relative; left: 125px; top: -470px;"/>
 			 		<img src="/static/public/images/a4.jpg"  style="position: relative; top: -600px; left: 97px;"/>
-					<img src="/static/public/images/a5.jpg"  style="position: relative; top: -400px; left: 150px;"/>
+					<img src="/static/public/images/a5.jpg"  style="position: relative; top: -370px; left: 150px;"/>
 				</div>
 			</div>
 		</div>
 		<div class="main-cust">
-			<div class="main-ourteam-cont-title" style="position: absolute; left: 120px;">
-				我们的客户
+			<div style="width:1100px;height:auto;overflow:hidden;margin:0 auto;">
+				<div class="main-ourteam-cont-title">
+					<i style="width: 37px; height: 28px; background: url(/static/public/images/3333.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
+					我们的客户
+				</div>
+				<div class="main-ourteam-cont-list">
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/55.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/22.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/33.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/44.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/55.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/66.jpg" />
+						</div>
+					</div>
+				</div>
+				<div class="main-ourteam-cont-list" style="margin-top: -20px; width: 735px;">
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/77.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/66.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/55.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/22.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/33.jpg" />
+						</div>
+					</div>
+				</div>
+				<div class="main-ourteam-cont-list" style="margin-top: -20px;">
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/44.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/55.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/66.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/77.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/88.jpg" />
+						</div>
+					</div>
+					<div class="ot">
+						<div class="main-ourteam-cont-list-img">
+							<img src="/static/public/images/99.jpg" />
+						</div>
+					</div>
+				</div>
 			</div>
-			<img src="/static/public/images/Customer.jpg" width="100%"/>
 		</div>
 		<div class="main-aboutus" style="background: #505050;height: auto;">
 			<div style="width: 1180px;height: auto;overflow: hidden;margin: 0 auto;">
@@ -437,7 +535,7 @@
 					<img src="/static/public/images/footer-img.png" />
 				</div>
 				<div class="footer-main-3">
-					<h1 style="font-family: 宋体; font-weight: bold;letter-spacing: 5px;">恭候您的垂询</h1>
+					<h1 style="font-family: 黑体; font-weight: bold;letter-spacing: 5px;">恭候您的垂询</h1>
 					<p>NO.179 West Zhongshan Road,Changning,5F,Block E</p>
 					<p>T:+86 21 6259 0368</p>
 					<p>+86 21 5032 1196</p>

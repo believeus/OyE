@@ -236,8 +236,38 @@ html,body,ul,li,a,p{
     height: 60px;
     line-height: 60px;
 }
+.main-cust{
+	background: #F1F4F9;
+	width: 100%;
+	height:auto;
+	overflow: hidden;
+}
+.main-ourteam-cont-list{
+	width:875px;
+	height:auto;
+	overflow:hidden;
+	margin:0 auto;
+}
 .main-ourteam-cont-const{
 	
+}
+.main-ourteam-cont-list-img{
+	background: url(/static/public/images/yuan.png);
+	width:130px;
+	height:129px;
+	text-align: center;
+	vertical-align: middle;
+	margin-right: 15px;
+	display: table-cell;
+	/* border-collapse:separate;
+ 	border-spacing: 5px; */
+}
+.ot{
+	width:140px;
+	float:left;
+}
+.main-ourteam-cont-list-img img{
+	/* margin-top: 55px; */
 }
 .main-ourteam-cont-const-list{
 	width: 250px;height: 485px;border-radius: 20px;background: #FC6C6C;color: #f2f2f2;float: left;margin-right: 53px;
