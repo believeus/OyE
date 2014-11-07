@@ -5,6 +5,7 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <head>
 <title>OYE首页</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
 <link rel="stylesheet" href="/static/public/css/jquery.bxslider.css"/>
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
@@ -185,10 +186,10 @@
 			<!-- <img src="/static/public/images/img1.png" width="100%" /> -->
 			<div class="banner_slider">
                 <ul>
-                    <li><img src="/static/public/images/img1.png" width="100%"/></li>
-                    <li><img src="/static/public/images/img1.png" width="100%"/></li>
-                    <li><img src="/static/public/images/img1.png" width="100%"/></li>
-                    <li><img src="/static/public/images/img1.png" width="100%"/></li>
+                    <li><img src="/static/public/images/img1.jpg" width="100%"/></li>
+                    <li><img src="/static/public/images/img1.jpg" width="100%"/></li>
+                    <li><img src="/static/public/images/img1.jpg" width="100%"/></li>
+                    <li><img src="/static/public/images/img1.jpg" width="100%"/></li>
                 </ul>
             </div>
 		</div>
@@ -272,6 +273,7 @@
 		</div>
 		<div class="main-comp-const">
 			<div class="main-ourteam-cont-title" style="position: absolute; left: 120px;">
+				<i style="width: 37px; height: 28px; background: url(/static/public/images/al.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
 				我们的案例
 			</div>
 			<div class="main-comp-const-title">
@@ -456,7 +458,7 @@
 			</div>
 		</div>
 		<div class="main-cust">
-			<div style="width:1100px;height:auto;overflow:hidden;margin:0 auto;">
+			<div style="width:1100px;height:auto;overflow:hidden;margin:0 auto 30px;">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 37px; height: 28px; background: url(/static/public/images/3333.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
 					我们的客户
@@ -575,7 +577,11 @@
 							<div style="float: left;width: 240px;margin-top: 10px;">
 								<p style="color: #FBFBFB;font-size: 15px;">价来自飞利浦的评价来自飞利浦</p>
 								<p style="color: #FBFBFB;font-size: 14px;">价来自飞利浦的评价来自飞利浦评价来自飞利浦</p>
-								<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;">MORE>></div>
+								<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;float: right;margin-right: 20px;">
+									<a href="#" title="更多">
+										<img src="/static/public/images/more.jpg" height="27"/>
+									</a>
+								</div>
 							</div>
 						</div>
 						<div style="width: 365px; height: auto; overflow: hidden; margin-top: 8px;">
@@ -583,7 +589,11 @@
 							<div style="float: left;width: 240px;margin-top: 10px;">
 								<p style="color: #FBFBFB;font-size: 15px;">价来自飞利浦的评价来自飞利浦</p>
 								<p style="color: #FBFBFB;font-size: 14px;">价来自飞利浦的评价来自飞利浦评价来自飞利浦</p>
-								<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;">MORE>></div>
+								<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;float: right;margin-right: 20px;">
+									<a href="#" title="更多">
+										<img src="/static/public/images/more.jpg" height="27"/>
+									</a>
+								</div>
 							</div>
 						</div>
 						<div style="width: 365px; height: auto; overflow: hidden; margin-top: 8px;">
@@ -591,7 +601,11 @@
 							<div style="float: left;width: 240px;margin-top: 10px;">
 								<p style="color: #FBFBFB;font-size: 15px;">价来自飞利浦的评价来自飞利浦</p>
 								<p style="color: #FBFBFB;font-size: 14px;">价来自飞利浦的评价来自飞利浦评价来自飞利浦</p>
-								<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;">MORE>></div>
+								<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;float: right;margin-right: 20px;">
+									<a href="#" title="更多">
+										<img src="/static/public/images/more.jpg" height="27"/>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -605,8 +619,8 @@
 							<input class="input" type="text" placeholder="姓名" style="margin-top: 10px;" />
 							<input class="input" type="text" placeholder="手机" />
 							<input class="input" type="text" placeholder="邮箱" />
-							<textarea class="input" style="height: 160px;resize: none;" placeholder="内容填写"></textarea>
-							<input class="botton" type="submit" value="SUBMIT>>" />
+							<textarea class="input" style="height: 160px;resize: none;overflow-y: hidden;" placeholder="内容填写"></textarea>
+							<input class="botton" type="submit" value="提交" />
 						</form>
 					</div>
 				</div>
