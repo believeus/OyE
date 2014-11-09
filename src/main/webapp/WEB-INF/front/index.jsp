@@ -101,6 +101,7 @@
              pager:false,
              touch:false
         });
+		$("#xx_img").css("left",$("#list01").offset().left+78);
 		$(".main-comps-list").click(function(){
 			var left = $(this).offset().left + 78;
 			//$("#xx_img").css("left" , left);
@@ -320,11 +321,11 @@
 			<div class="ico">
 				<!-- <img src="/static/public/images/jiantou.jpg" width="100%" /> -->
 				<div style="width:100%;height:28px;border-top:5px solid #000;margin-top: 30px;">
-					<img id="xx_img" src="/static/public/images/xx.png" style="position: relative; top: -5px; left: 356.5px;"/>
+					<img id="xx_img" src="/static/public/images/xx.png" style="position: relative; top: -5px;"/>
 				</div>
 			</div>
 			<div class="main-comps">
-				<div class="main-comps-list">
+				<div class="main-comps-list" id="list01">
 					<img src="/static/public/images/cry.png" />
 					<img src="/static/public/images/lenovo.png" style="position: relative; top: -65px;"/>
 				</div>
