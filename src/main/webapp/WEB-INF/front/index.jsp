@@ -451,10 +451,10 @@
 				<div style="">
 					<img src="/static/public/images/img06.png" style="position: relative; left: 500px;" />
 					<img src="/static/public/images/a1.jpg"  style="position: relative; left: 507px; top: -875px;"/>
-					<img src="/static/public/images/a2.jpg"  style="position: absolute; left: 200px;margin-top: 50px;"/>
-					<img src="/static/public/images/a3.jpg"  style="position: relative; left: 125px; top: -470px;"/>
-			 		<img src="/static/public/images/a4.jpg"  style="position: relative; top: -600px; left: 97px;"/>
-					<img src="/static/public/images/a5.jpg"  style="position: relative; top: -370px; left: 150px;"/>
+					<img src="/static/public/images/a2.jpg"  style="margin-top: 50px; position: relative; top: -650px; left: -355px;"/>
+					<img src="/static/public/images/a3.jpg"  style="position: relative; left: 560px; top: -770px;"/>
+			 		<img src="/static/public/images/a4.jpg"  style="position: relative; left: -315px; top: -575px;"/>
+					<img src="/static/public/images/a5.jpg"  style="position: relative; top: -675px; left: 555px;"/>
 				</div>
 			</div>
 		</div>
