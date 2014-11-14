@@ -44,6 +44,10 @@
 						<shiro:hasPermission name="team:view">  	
 						{"menuname":"企业团队管理","icon":"icon-set","url":"/admin/team/list.jhtml"},
 						</shiro:hasPermission>
+						
+						<shiro:hasPermission name="banner:view">  	
+						{"menuname":"banner 管理","icon":"icon-set","url":"/admin/banner/list.jhtml"},
+						</shiro:hasPermission>
 					]
 			}
 			,{"menuid":"2","icon":"icon-sys","menuname":"系统管理",
