@@ -50,6 +50,8 @@
 		<mapping class="cn.believeus.model.Example"/> 
 		<mapping class="cn.believeus.model.Team"/> 
 		<mapping class="cn.believeus.model.Business"/>
+		<mapping class="cn.believeus.model.Processs"/>
+		<mapping class="cn.believeus.model.Customers"/>
 		
 	</session-factory>
 

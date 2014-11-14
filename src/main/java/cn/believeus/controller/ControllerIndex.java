@@ -16,5 +16,13 @@ public class ControllerIndex {
 	public String index(HttpServletRequest request) {
 		return "/WEB-INF/front/index.jsp";
 	}
+	@RequestMapping(value = "/news")
+	public String news(HttpServletRequest request) {
+		return "/WEB-INF/front/news.jsp";
+	}
+	@RequestMapping(value = "/cust")
+	public String cust(HttpServletRequest request) {
+		return "/WEB-INF/front/cust.jsp";
+	}
 	
 }

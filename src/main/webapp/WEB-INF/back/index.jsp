@@ -48,6 +48,14 @@
 						<shiro:hasPermission name="banner:view">  	
 						{"menuname":"banner 管理","icon":"icon-set","url":"/admin/banner/list.jhtml"},
 						</shiro:hasPermission>
+						
+						<shiro:hasPermission name="process:view">  	
+						{"menuname":"企业流程管理","icon":"icon-set","url":"/admin/process/list.jhtml"},
+						</shiro:hasPermission>
+						
+						<shiro:hasPermission name="process:view">  	
+						{"menuname":"企业客户管理","icon":"icon-set","url":"/admin/ourcustomer/list.jhtml"},
+						</shiro:hasPermission>
 					]
 			}
 			,{"menuid":"2","icon":"icon-sys","menuname":"系统管理",
