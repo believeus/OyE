@@ -55,7 +55,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table class="input">
 			<tr>
 				<th>
-					业务发布标题:
+					服务名称:
 				</th>
 				<td>
 					<input type="text" name="title" class="text" maxlength="200" />

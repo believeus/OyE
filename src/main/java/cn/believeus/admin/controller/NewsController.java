@@ -1,17 +1,23 @@
 package cn.believeus.admin.controller;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
-
+import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-
+import mydfs.storage.server.MydfsTrackerServer;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.junit.Assert;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import cn.believeus.PaginationUtil.Page;
 import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
@@ -21,6 +27,11 @@ import cn.believeus.variables.Variables;
 
 @Controller
 public class NewsController {
+	
+	private static final Log log=LogFactory.getLog(NewsController.class);
+	
+	@Resource
+	private MydfsTrackerServer mydfsTrackerServer;
 	
 	@Resource
 	private BaseService baseService;
@@ -63,7 +74,29 @@ public class NewsController {
 	 * */
 	@RequiresPermissions("newsDinamic:create")
 	@RequestMapping(value="/admin/news/save")
-	public String save(News news){
+	public String save(News news,HttpServletRequest request){
+		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+		String storepath = "";
+		Map<String, MultipartFile> files = multipartRequest.getFileMap();
+		for (MultipartFile file : files.values()) {
+			InputStream inputStream;
+			try {
+				inputStream = file.getInputStream();
+				if(inputStream.available()==0){
+					break;
+				}
+				Assert.assertNotNull("upload file InputStream is null", inputStream);
+				String originName=file.getOriginalFilename();
+				String extention = originName.substring(originName.lastIndexOf(".") + 1);
+				log.debug("upload file stuffix:"+extention);
+				storepath += mydfsTrackerServer.upload(inputStream, extention);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		if (!storepath.equals("")) {
+			news.setPath(storepath);
+		}
 		baseService.saveOrUpdata(news);
 		return "redirect:/admin/news/list.jhtml";
 	}

@@ -53,8 +53,12 @@
 						{"menuname":"企业流程管理","icon":"icon-set","url":"/admin/process/list.jhtml"},
 						</shiro:hasPermission>
 						
-						<shiro:hasPermission name="process:view">  	
+						<shiro:hasPermission name="ourcustomer:view">  	
 						{"menuname":"企业客户管理","icon":"icon-set","url":"/admin/ourcustomer/list.jhtml"},
+						</shiro:hasPermission>
+						
+						<shiro:hasPermission name="contactus:view">  	
+						{"menuname":"关于我们管理","icon":"icon-nav","url":"/admin/contactusView.jhtml"},
 						</shiro:hasPermission>
 					]
 			}

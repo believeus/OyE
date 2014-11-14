@@ -55,6 +55,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="id" value="${news.id }"/>
+		<input type="hidden" name="path" value="${news.path}"/>
 		<table class="input">
 			<tr>
 				<th>
@@ -76,6 +77,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</select>
 				</td>
 			</tr>
+			
+			<tr id="pathTr">
+				<th>
+					<span class="requiredField">*</span>相关图片:
+				</th>
+				<td colspan="3">
+					<div>
+						<span style="float:left">
+							<div id="preview_wrapper">    
+						        <div id="preview_fake" >    
+						            <img id="preview" onload="onPreviewLoad(this,190,120)" src="/${news.path}"/>
+						        </div>    
+						    </div>    
+						    <br/>    
+						    <input id="upload_img" type="file" name="upload_img" onchange="filename0.value=this.value;onUploadImgChange(this,190,120,'preview','preview_fake','preview_size_fake');"/>  
+						    <input type="hidden" id="filename0" name="filename0">
+						    <br/>    
+						    <img id="preview_size_fake"/> 
+						</span>
+					</div>
+				</td>
+			</tr>
+			
 			<tr id="contentTr">
 				<th>
 					内容:

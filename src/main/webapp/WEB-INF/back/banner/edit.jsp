@@ -52,16 +52,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <div class="path">
 		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 编辑banner
 	</div>
-	<form id="inputForm" action="/admin/example/saveOrUpdate.jhtml" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="id" value="${example.id}"/>
-		<input type="hidden" name="path" value="${example.path}"/>
+	<form id="inputForm" action="/admin/banner/saveOrUpdate.jhtml" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="${banner.id}"/>
+		<input type="hidden" name="path" value="${banner.path}"/>
 		<table class="input">
 			<tr>
 				<th>
 					链接:
 				</th>
 				<td>
-					<input type="text" name="link" class="text" maxlength="200" value="${example.title }"/>
+					<input type="text" name="link" class="text" maxlength="200" value="${banner.link }"/>
 				</td>
 			</tr>
 			<tr id="pathTr">
@@ -73,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span style="float:left">
 							<div id="preview_wrapper">    
 						        <div id="preview_fake" >    
-						            <img id="preview" onload="onPreviewLoad(this,190,120)" src="/${example.path }"/>
+						            <img id="preview" onload="onPreviewLoad(this,190,120)" src="/${banner.path }"/>
 						        </div>    
 						    </div>    
 						    <br/>    

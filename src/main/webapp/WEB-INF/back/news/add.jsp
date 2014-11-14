@@ -38,6 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$inputForm.validate({
 			rules: {
 				title: "required",
+				upload_img: "required",
 				content: "required"
 			}
 		});
@@ -74,6 +75,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</select>
 				</td>
 			</tr>
+			
+			<tr id="pathTr">
+				<th>
+					相关图片:
+				</th>
+				<td colspan="3">
+					<div>
+						<span style="float:left">
+							<div id="preview_wrapper">    
+						        <div id="preview_fake" >    
+						            <img id="preview" onload="onPreviewLoad(this,190,120)" src="/static/public/images/bg.png"/>
+						        </div>    
+						    </div>    
+						    <br/>    
+						    <input id="upload_img" type="file" name="upload_img" onchange="filename0.value=this.value;onUploadImgChange(this,190,120,'preview','preview_fake','preview_size_fake');"/>  
+						    <input type="hidden" id="filename0" name="filename0">
+						    <br/>    
+						    <img id="preview_size_fake"/> 
+						</span>
+					</div>
+				</td>
+			</tr>
+			
 			<tr id="contentTr">
 				<th>
 					内容:

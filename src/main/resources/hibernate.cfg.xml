@@ -52,6 +52,8 @@
 		<mapping class="cn.believeus.model.Business"/>
 		<mapping class="cn.believeus.model.Processs"/>
 		<mapping class="cn.believeus.model.Customers"/>
+		<mapping class="cn.believeus.model.ContactusInfo"/>
+		<mapping class="cn.believeus.model.Banner"/>
 		
 	</session-factory>
 

@@ -12,6 +12,8 @@ public class News extends TbaseEntity{
 	/** 新闻*/
 	private String title;
 	
+	private String path;
+	
 	/** 1:分类1 2:分类2 3:分类3 */
 	private Short category;
 	
@@ -49,4 +51,10 @@ public class News extends TbaseEntity{
 		this.content = content;
 	}
 	
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
+	}
 }

@@ -62,21 +62,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;"  class="sort">操作</a>
 				</th>
 			</tr>
-			<c:forEach var="example" items="${exampleList}" varStatus="status">
-			<tr>
-				<td>
-					<input type="checkbox" name="ids" value="${example.id}" />
-				</td>
-				<td>
-					<span>${status.index+1 }</span>
-				</td>
-				<td>
-					${example.title}
-				</td>
-				<td>
-					<a href="/admin/example/edit.jhtml?id=${example.id}">[修改]</a>
-				</td>
-			</tr>
+			<c:forEach var="banner" items="${banner}" varStatus="status">
+				<tr>
+					<td>
+						<input type="checkbox" name="ids" value="${banner.id}" />
+					</td>
+					<td>
+						<span>${status.index+1 }</span>
+					</td>
+					<td>
+						${banner.link}
+					</td>
+					<td>
+						<a href="/admin/example/edit.jhtml?id=${banner.id}">[修改]</a>
+					</td>
+				</tr>
 			</c:forEach>
 		</table>
 	</div>
