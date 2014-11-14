@@ -2,10 +2,15 @@ package cn.believeus.admin.controller;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import mydfs.storage.server.MydfsTrackerServer;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -15,7 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+
 import cn.believeus.model.Banner;
+import cn.believeus.model.Business;
 import cn.believeus.service.BaseService;
 
 @Controller
@@ -35,7 +42,9 @@ public class BannerController {
 	 */
 	@RequestMapping(value="/admin/banner/list")
 	public String bannerList(HttpServletRequest request){
-		
+		@SuppressWarnings("unchecked")
+		List<Banner> banners = (List<Banner>) baseService.findObjectList(Banner.class);
+		request.setAttribute("banners", banners);
 		return "/WEB-INF/back/banner/list.jsp";
 	}
 	
@@ -43,7 +52,7 @@ public class BannerController {
 	 * banner添加
 	 * @return
 	 */
-	@RequiresPermissions("example:create")
+	@RequiresPermissions("banner:create")
 	@RequestMapping(value="/admin/banner/add")
 	public String bannerAdd(){
 		return "/WEB-INF/back/banner/add.jsp";
@@ -53,7 +62,7 @@ public class BannerController {
 	 * banner保存或更新
 	 * @return
 	 */
-	@RequiresPermissions("example:update")
+	@RequiresPermissions("banner:update")
 	@RequestMapping(value="/admin/banner/saveOrUpdate")
 	public String saveOrUpdate(Banner banner,HttpServletRequest request){
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
@@ -86,10 +95,11 @@ public class BannerController {
 	 * banner修改
 	 * @return
 	 */
-	@RequiresPermissions("example:update")
+	@RequiresPermissions("banner:update")
 	@RequestMapping(value="/admin/banner/edit")
-	public String bannerEdit(Integer id,HttpServletRequest request){
-		
+	public String bannerEdit(Integer bannerId, HttpServletRequest request){
+		Banner banner = (Banner) baseService.findObject(Banner.class, bannerId);
+		request.setAttribute("banner", banner);
 		return "/WEB-INF/back/banner/edit.jsp";
 	}
 	
@@ -97,9 +107,12 @@ public class BannerController {
 	 * banner删除
 	 * @return
 	 */
-	@RequiresPermissions("example:delete")
+	@RequiresPermissions("banner:delete")
 	@RequestMapping(value="/admin/banner/delete")
-	public @ResponseBody String example(Integer[] ids){
+	public @ResponseBody String delete(Integer[] ids){
+		List<Integer> list = Arrays.asList(ids); 
+		System.out.println(list); 
+		baseService.delete(Banner.class, list);
 		return "{\"type\":\"success\"}";
 	}
 }

@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;"  class="sort">操作</a>
 				</th>
 			</tr>
-			<c:forEach var="banner" items="${banner}" varStatus="status">
+			<c:forEach var="banner" items="${banners}" varStatus="status">
 				<tr>
 					<td>
 						<input type="checkbox" name="ids" value="${banner.id}" />
@@ -74,14 +74,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						${banner.link}
 					</td>
 					<td>
-						<a href="/admin/example/edit.jhtml?id=${banner.id}">[修改]</a>
+						<a href="/admin/banner/edit.jhtml?bannerId=${banner.id}">[修改]</a>
 					</td>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
 	<div>
-		<form action="/admin/example/list.jhtml" id="listForm">
+		<form action="/admin/banner/list.jhtml" id="listForm">
 			<jsp:include page="../include/pagination.jsp" flush="true" />
 		</form>
 	</div>

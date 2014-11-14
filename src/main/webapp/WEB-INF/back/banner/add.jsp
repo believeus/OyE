@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="path">
 		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 添加案例
 	</div>
-	<form id="inputForm" action="/admin/example/saveOrUpdate.jhtml" method="post" enctype="multipart/form-data">
+	<form id="inputForm" action="/admin/banner/saveOrUpdate.jhtml" method="post" enctype="multipart/form-data">
 		<table class="input">
 			<tr>
 				<th>
