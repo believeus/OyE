@@ -27,6 +27,8 @@ public class CompanyController {
 		if (companyInfo==null) {
 			companyInfo=new CompanyInfo();
 			companyInfo.setPhone("400-xxxx-xxxx");
+			companyInfo.setFax("+86 21 6259 0368 - 805");
+			companyInfo.setMobile("+86 13524728911");
 			companyInfo.setEmail("xxxx@163.com");
 			companyInfo.setAddress("某市某省某区xxxxxxxx");
 			companyInfo.setContent("我们是搬家公司！");

@@ -41,6 +41,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr>
 				<th>
+					企业传真:
+				</th>
+				<td>
+					${companyInfo.fax }
+				</td>
+			</tr>
+			<tr>
+				<th>
+					企业移动电话:
+				</th>
+				<td>
+					${companyInfo.mobile }
+				</td>
+			</tr>
+			<tr>
+				<th>
 					企业邮箱:
 				</th>
 				<td>

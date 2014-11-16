@@ -88,13 +88,28 @@
 	float:right;
 	margin-top: -150px;
 }
+.img_a1{
+	border: 1px solid #000;
+    height: 127px;
+    left: 557px;
+    position: relative;
+    top: -1637px;
+    width: 374px;
+}
+.img_a1 span {
+    color: #888;
+    font-size: 16px;
+    left: 30px;
+    position: relative;
+    top: 60px;
+}
 </style>
 <script type="text/javascript">
 	$(function(){
-		$(".nav a").click(function(){
+		/* $(".nav a").click(function(){
 			$(this).parent().parent().find("a").removeClass("current");
 			$(this).addClass("current");
-		});
+		}); */
 		$('.banner_slider ul').bxSlider({
             auto:true,
             autoHover:true,
@@ -157,31 +172,7 @@
        	时间：2014-11-04
        	描述：页头
        -->
-	<div class="header">
-		<div class="sel-languages">
-			<a href="#">中文</a> |
-			<a href="#" style="margin-right: 70px;">English</a>
-		</div>
-		<div class="logo">
-			<div style="width:1300px;height: auto;overflow: hidden;margin: 0 auto;">
-				<div class="logo-img">
-					<img src="/static/public/images/logo.png" width="160" />
-				</div>
-				<div class="nav">
-					<ul>
-						<li><a class="current" href="/">首页</a></li>
-						<li><a href="#">业务范围</a></li>
-						<li><a href="#">案例展示</a></li>
-						<li><a href="#">企业资质</a></li>
-						<li><a href="/cust.jhtml">客户感言</a></li>
-						<li><a href="#">服务流程</a></li>
-						<li><a href="/news.jhtml">站内新闻</a></li>
-						<li><a href="#">联系我们</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+	<jsp:include page="header.jsp" />
 	<div class="main">
 		<div class="main-img">
 			<!-- <img src="/static/public/images/img1.png" width="100%" /> -->
@@ -456,6 +447,9 @@
 			 		<img src="/static/public/images/a4.jpg"  style="position: relative; left: -315px; top: -575px;"/>
 					<img src="/static/public/images/a5.jpg"  style="position: relative; top: -675px; left: 555px;"/>
 				</div>
+				<div class="img_a1">
+					<span>流程控制</span>
+				</div>
 			</div>
 		</div>
 		<div class="main-cust">
@@ -633,71 +627,6 @@
        	时间：2014-11-04
        	描述：页尾
        -->
-	<div class="footer">
-		<div class="footer-dis">
-			<div class="footer-main">
-				<div class="footer-main-1">
-					<table class="f-table">
-						<tr>
-							<th>业务范围</th>
-							<th>服务案例</th>
-							<th>客户见证</th>
-							<th>信息中心</th>
-							<th>关于我们</th>
-						</tr>
-						<tr>
-							<td><a href="#">整体搬迁</a></td>
-							<td><a href="#">整体搬迁</a></td>
-							<td><a href="#">视频见证</a></td>
-							<td><a href="#">最新动态</a></td>
-							<td><a href="#">公司介绍</a></td>
-						</tr>
-						<tr>
-							<td><a href="#">仓储服务</a></td>
-							<td><a href="#">仓储服务</a></td>
-							<td><a href="#">合作见证</a></td>
-							<td><a href="#">媒体报道</a></td>
-							<td><a href="#">企业资质</a></td>
-						</tr>
-						<tr>
-							<td><a href="#">家具回收</a></td>
-							<td><a href="#">家具回收</a></td>
-							<td><a href="#">客户感言</a></td>
-							<td><a href="#">常见问题</a></td>
-							<td><a href="#">我们特色</a></td>
-						</tr>
-						<tr>
-							<td><a href="#">环境保洁</a></td>
-							<td><a href="#">环境保洁</a></td>
-							<td><a href="#">感谢状</a></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td><a href="#">绿化服务</a></td>
-							<td><a href="#">绿化服务</a></td>
-							<td><a href="#">服务流程</a></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</table>
-				</div>
-				<div class="footer-main-2">
-					<img src="/static/public/images/footer-img.png" />
-				</div>
-				<div class="footer-main-3">
-					<h1 style="font-family: 黑体; font-weight: bold;letter-spacing: 5px;">恭候您的垂询</h1>
-					<p>NO.179 West Zhongshan Road,Changning,5F,Block E</p>
-					<p>T:+86 21 6259 0368</p>
-					<p>+86 21 5032 1196</p>
-					<p>F:+86 21 6259 0368 - 805</p>
-					<p>M:+86 13524728911</p>
-				</div>
-			</div>
-		</div>
-		<div class="footer-cn">
-			Copyright &copy; 2014 上海欧耶办公有限公司 All Rights Reserved 沪ICP备11000511号-34
-		</div>
-	</div>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

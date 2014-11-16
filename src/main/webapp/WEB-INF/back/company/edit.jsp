@@ -66,6 +66,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr>
 				<th>
+					企业传真:
+				</th>
+				<td>
+					<input type="text" name="fax" class="text" maxlength="200" value="${companyInfo.fax }"/>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					企业移动电话:
+				</th>
+				<td>
+					<input type="text" name="mobile" class="text" maxlength="200" value="${companyInfo.mobile }"/>
+				</td>
+			</tr>
+			<tr>
+				<th>
 					企业邮箱:
 				</th>
 				<td>
