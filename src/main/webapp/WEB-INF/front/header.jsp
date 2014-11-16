@@ -10,9 +10,10 @@
 		$(".nav a").each(function(){
 			//alert($(this).attr("href"));
 			if(href == $(this).attr("href")){
-				//alert("nihao");
 				$(this).parent().parent().find("a").removeClass("current");
 				$(this).addClass("current");
+			}else{
+				//$(this).parent().parent().find("a").removeClass("current");
 			}
 		});
 		
@@ -36,7 +37,7 @@
 					<li><a href="#">企业资质</a></li>
 					<li><a href="/cust.jhtml">客户感言</a></li>
 					<li><a href="#">服务流程</a></li>
-					<li><a href="/news.jhtml">站内新闻</a></li>
+					<li><a href="/newsList.jhtml">站内新闻</a></li>
 					<li><a href="#">联系我们</a></li>
 				</ul>
 			</div>
