@@ -27,10 +27,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table class="input">
 			<tr>
 				<th>
-					收件人:
+					姓名:
 				</th>
 				<td>
 					${message.name }
+				</td>
+				<th>
+					手机:
+				</th>
+				<td>
+					${message.phone }
 				</td>
 				<th>
 					邮箱:
@@ -44,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					留言标题:
 				</th>
 				<td>
-					${message.theme }
+					${message.title }
 				</td>
 			</tr>
 			<tr>

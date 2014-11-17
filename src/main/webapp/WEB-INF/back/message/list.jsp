@@ -53,16 +53,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;" class="sort" name="id">排序编号</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="id">收件人</a>
+					<a href="javascript:;" class="sort" name="id">姓名</a>
+				</th>
+				<th>
+					<a href="javascript:;" class="sort" name="title">手机</a>
+				</th>
+				<th>
+					<a href="javascript:;" class="sort" name="title">邮箱</a>
 				</th>
 				<th>
 					<a href="javascript:;" class="sort" name="title">标题</a>
 				</th>
 				<th>
 					<a href="javascript:;" class="sort" name="title">内容</a>
-				</th>
-				<th>
-					<a href="javascript:;" class="sort" name="top">留言时间</a>
 				</th>
 				<th>
 					<a href="javascript:;"  class="sort">操作</a>
@@ -80,16 +83,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span >${message.name}</span>
 				</td>
 				<td>
-					<span title="${message.theme}">${message.theme}</span>
+					<span >${message.phone}</span>
+				</td>
+				<td>
+					<span >${message.email}</span>
+				</td>
+				<td>
+					<span title="${message.title}">${message.title}</span>
 				</td>
 				<td>
 				${fn:substring(message.content, 0, 38)}
    				<c:if test="${fn:length(message.content) >38 }">
 	   					...
    				</c:if>
-				</td>
-				<td>
-					${message.createTime}
 				</td>
 				<td>
 					<a href="/admin/message/view.jhtml?id=${message.id}">[查看]</a>
