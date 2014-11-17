@@ -54,15 +54,15 @@
 				</div>
 				<div class="footer-main-3">
 					<h1 style="font-family: 黑体; font-weight: bold;letter-spacing: 5px;">恭候您的垂询</h1>
-					<p>NO.179 West Zhongshan Road,Changning,5F,Block E</p>
-					<p>T:+86 21 6259 0368</p>
-					<p>+86 21 5032 1196</p>
-					<p>F:+86 21 6259 0368 - 805</p>
-					<p>M:+86 13524728911</p>
+					<p>${companyInfo.address }</p>
+					<p>T:${companyInfo.phone }</p>
+					<!-- <p>+86 21 5032 1196</p> -->
+					<p>F:${companyInfo.fax }</p>
+					<p>M:${companyInfo.mobile }</p>
 				</div>
 			</div>
 		</div>
 		<div class="footer-cn">
-			Copyright &copy; 2014 上海欧耶办公有限公司 All Rights Reserved 沪ICP备11000511号-34
+			Copyright &copy; 2014 ${companyInfo.name } All Rights Reserved 沪ICP备11000511号-34
 		</div>
 	</div>

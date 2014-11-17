@@ -33,6 +33,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr>
 				<th>
+					企业名称:
+				</th>
+				<td>
+					${companyInfo.name }
+				</td>
+			</tr>
+			<tr>
+				<th>
 					企业电话:
 				</th>
 				<td>

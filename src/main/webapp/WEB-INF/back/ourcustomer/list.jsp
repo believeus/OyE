@@ -58,6 +58,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;" class="sort" name="cn">链接</a>
 				</th>
 				<th>
+					<a href="javascript:;" class="sort" name="type">类型</a>
+				</th>
+				<th>
 					<a href="#"  class="sort">操作</a>
 				</th>
 			</tr>
@@ -71,6 +74,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</td>
 					<td>
 						${myNew.clink}
+					</td>
+					<td>
+						${myNew.type}
 					</td>
 					<td>
 						<a href="/admin/ourcustomer/edit.jhtml?id=${myNew.id}">[修改]</a>

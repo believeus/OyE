@@ -58,6 +58,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table class="input">
 			<tr>
 				<th>
+					企业名称:
+				</th>
+				<td>
+					<input type="text" name="name" class="text" maxlength="200" value="${companyInfo.name }"/>
+				</td>
+			</tr>
+			<tr>
+				<th>
 					企业电话:
 				</th>
 				<td>

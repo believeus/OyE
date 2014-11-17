@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -14,8 +14,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="/static/public/js/jquery.js"></script>
 	<script type="text/javascript" src="/static/public/js/jquery.validate.js"></script>
-	<script type="text/javascript" src="/static/public/js/admin/ueditor1_2_6_2/ueditor.config.js"></script>
-	<script type="text/javascript" src="/static/public/js/admin/ueditor1_2_6_2/ueditor.all.js"></script>
 	<script type="text/javascript" src="/static/public/js/common.js"></script>
 	<script type="text/javascript" src="/static/public/js/input.js"></script>
 	<style type="text/css">
@@ -30,20 +28,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript">
 	$().ready(function() {
 	
-		var editor = new UE.ui.Editor();
-	    editor.render('editor');
-	    editor.addListener('contentchange',function(){
-	        this.sync();
-	        $('textarea').valid();
-	    });
-	
 		var $inputForm = $("#inputForm");
 		
 		// 表单验证
 		$inputForm.validate({
 			rules: {
-				cn: "required",
-				en: "required"
+				clink: "required",
+				filename0: "required"
 			}
 		});
 		
@@ -60,6 +51,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<form id="inputForm" action="/admin/ourcustomer/save.jhtml" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="id" value="${customers.id }"/>
 		<table class="input">
+			<tr>
+				<th>类型：</th>
+				<td>
+					<select name="type">
+						<c:if test="${customers.type ==1}">
+							<option value="">--请选择--</option>
+							<option value="1" selected="selected">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</c:if>
+						<c:if test="${customers.type ==2}">
+							<option value="">--请选择--</option>
+							<option value="1">1</option>
+							<option value="2" selected="selected">2</option>
+							<option value="3">3</option>
+						</c:if>
+						<c:if test="${customers.type ==3}">
+							<option value="">--请选择--</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3" selected="selected">3</option>
+						</c:if>
+						<c:if test="${customers.type !=3 &&customers.type !=2 &&customers.type !=1}">
+							<option value="">--请选择--</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</c:if>
+					</select>
+				</td>
+			</tr>
 			<tr id="pathTr">
 				<th>
 					<span class="requiredField">*</span>相关图片:
@@ -67,14 +89,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<td colspan="3">
 					<div>
 						<span style="float:left">
-							<div id="preview_wrapper">    
-						        <div id="preview_fake" >    
+							<div id="preview_wrapper">
+						        <div id="preview_fake"> 
 						            <img id="preview" onload="onPreviewLoad(this,190,120)" src="/${customers.url }"/>
 						        </div>    
 						    </div>    
 						    <br/>    
-						    <input id="upload_img" type="file" name="upload_img" onchange="filename0.value=this.value;onUploadImgChange(this,190,120,'preview','preview_fake','preview_size_fake');"/>  
-						    <input type="hidden" id="filename0" name="filename0">
+						    <input id="upload_img" type="file" name="upload_img" value="${customers.url }" onchange="filename0.value=this.value;onUploadImgChange(this,190,120,'preview','preview_fake','preview_size_fake');"/>  
+						    <input type="hidden" id="filename0" name="filename0" value="${customers.url }">
 						    <br/>    
 						    <img id="preview_size_fake"/> 
 						</span>
@@ -86,7 +108,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					链接:
 				</th>
 				<td colspan="3">
-					<textarea name="clink" class="editor">${customers.clink }</textarea>
+					<input type="text" name="clink" value="${customers.clink }" style="width:192px;">
 				</td>
 			</tr>
 			<tr>

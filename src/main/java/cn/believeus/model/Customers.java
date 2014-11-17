@@ -14,6 +14,18 @@ public class Customers extends TbaseEntity{
 	
 	/** 链接*/
 	private String clink;
+	
+	/**	类型 */
+	private Integer type;
+	
+
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+	}
 
 	public String getUrl() {
 		return url;

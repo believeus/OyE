@@ -6,9 +6,9 @@ public class Variables {
 	public static final Object USER_NAME = "username";
 	public static final Short newsUp=1;
 	public static final Short newsDown=0;
-	public static final Short  worldTop500=1;
-	public static final Short  worldEnterprise=2;
-	public static final Short  institution =3;
-	public static final Short  privateEnterprises =4;
+	public static final Integer compinfoId=1;
+	public static final Integer ourCtustomer1=1;
+	public static final Integer ourCtustomer2=2;
+	public static final Integer ourCtustomer3=3;
 
 }

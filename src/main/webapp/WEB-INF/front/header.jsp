@@ -16,7 +16,6 @@
 				//$(this).parent().parent().find("a").removeClass("current");
 			}
 		});
-		
 	});
 </script>
 <div class="header">
@@ -31,7 +30,7 @@
 			</div>
 			<div class="nav">
 				<ul>
-					<li><a class="current" href="/">首页</a></li>
+					<li><a href="/">首页</a></li>
 					<li><a href="#">业务范围</a></li>
 					<li><a href="#">案例展示</a></li>
 					<li><a href="#">企业资质</a></li>

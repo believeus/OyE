@@ -1,14 +1,19 @@
 package cn.believeus.admin.controller;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import cn.believeus.PaginationUtil.Page;
 import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
@@ -46,12 +51,20 @@ public class MessageController {
 	 * 留言添加
 	 * @return
 	 */
-	@RequiresPermissions("contact:create")
-	@RequestMapping(value="/admin/message/add")
-	public String messageAdd(Message message){
+//	@RequiresPermissions("contact:create")
+	@RequestMapping(value="/message/add")
+	public @ResponseBody Map<String, Object> messageAdd(String name,String phone,String email,String title,String content){
+		Message message = new Message();
 		message.setCreateTime(System.currentTimeMillis());
+		message.setName(name);
+		message.setContent(content);
+		message.setEmail(email);
+		message.setPhone(phone);
+		message.setTitle(title);
 		baseService.saveOrUpdata(message);
-		return "/WEB-INF/back/message/add.jsp";
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("msg", "留言成功，等待审核！");
+		return map;
 	}
 	/**
 	 * 留言查看

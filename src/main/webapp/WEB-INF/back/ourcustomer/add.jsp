@@ -31,19 +31,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript">
 	$().ready(function() {
 	
-		var editor = new UE.ui.Editor();
-	    editor.render('editor');
-	    editor.addListener('contentchange',function(){
-	        this.sync();
-	        $('textarea').valid();
-	    });
-	
 		var $inputForm = $("#inputForm");
 		// 表单验证
 		$inputForm.validate({
 			rules: {
 				upload_img: "required",
-				clink: "required"
+				clink: "required",
+				type: "required"
 			}
 		});
 		
@@ -57,8 +51,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 添加客户
 	</div>
 	<form id="inputForm" action="/admin/ourcustomer/save.jhtml" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="type" value="${type}"/>
 		<table class="input">
+			<tr>
+				<th>类型：</th>
+				<td>
+					<select name="type">
+						<option value="">--请选择--</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select>
+				</td>
+			</tr>
 			<tr id="pathTr">
 				<th>
 					<span class="requiredField">*</span>相关图片:
@@ -85,7 +89,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					链接:
 				</th>
 				<td colspan="3">
-					<textarea name="clink" class="editor"></textarea>
+					<input type="text" name="clink" value="" style="width:192px;">
 				</td>
 			</tr>
 			<tr>

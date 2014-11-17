@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
 <title>OYE首页</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -89,7 +90,6 @@
 	margin-top: -150px;
 }
 .img_a1{
-	border: 1px solid #000;
     height: 127px;
     left: 557px;
     position: relative;
@@ -103,24 +103,224 @@
     position: relative;
     top: 60px;
 }
+.img_a2{
+    height: 305px;
+    left: 73px;
+    position: relative;
+    top: -1719px;
+    width: 410px;
+}
+.img_a2 span {
+    color: #888;
+    font-size: 16px;
+    left: 90px;
+    position: relative;
+    top: 100px;
+}
+.img_a3{
+    height: 299px;
+    left: 559px;
+    position: relative;
+    top: -1837px;
+    width: 402px;
+}
+.img_a3 span {
+    color: #888;
+    font-size: 16px;
+    left: 90px;
+    position: relative;
+    top: 100px;
+}
+.img_a4{
+    height: 285px;
+    left: 90px;
+    position: relative;
+    top: -1929px;
+    width: 394px;
+}
+.img_a4 span {
+    color: #888;
+    font-size: 16px;
+    left: 90px;
+    position: relative;
+    top: 100px;
+}
+.img_a5{
+    height: 327px;
+    left: 554px;
+    position: relative;
+    top: -2027px;
+    width: 531px;
+}
+.img_a5 span {
+    color: #888;
+    font-size: 16px;
+    left: 60px;
+    position: relative;
+    top: 110px;
+}
 </style>
 <script type="text/javascript">
 	$(function(){
-		/* $(".nav a").click(function(){
-			$(this).parent().parent().find("a").removeClass("current");
+		$(".main-comp-const-title-list").click(function(){
+			$(this).parent().find("div").removeClass("current");
 			$(this).addClass("current");
-		}); */
+		});
 		$('.banner_slider ul').bxSlider({
             auto:true,
             autoHover:true,
              pager:false,
              touch:false
         });
-		$("#xx_img").css("left",$("#list01").offset().left+78);
-		$(".main-comps-list").click(function(){
+		$("#xx_img01").css("left",$("#list01").offset().left+78);
+		$("#xx_img02").css("left",$("#list01").offset().left+78);
+		$("#xx_img03").css("left",$("#list01").offset().left+78);
+		$("#xx_img04").css("left",$("#list01").offset().left+78);
+		/* $(".main-comps-list").click(function(){
 			var left = $(this).offset().left + 78;
-			//$("#xx_img").css("left" , left);
 			$("#xx_img").animate({left:left});
+			$("#xx_img").animate({left:$(this).offset().left + 78});
+		}); */
+		
+		$("#shijie").click(function(){
+			$("#shijie500qiang").show();
+			$("#guoyouqiye").hide();
+			$("#shiyedanwei").hide();
+			$("#siyouqiye").hide();
+		});
+		$("#guoyou").click(function(){
+			$("#shijie500qiang").hide();
+			$("#guoyouqiye").show();
+			$("#shiyedanwei").hide();
+			$("#siyouqiye").hide();
+		});
+		$("#shiye").click(function(){
+			$("#shijie500qiang").hide();
+			$("#guoyouqiye").hide();
+			$("#shiyedanwei").show();
+			$("#siyouqiye").hide();
+		});
+		$("#siyou").click(function(){
+			$("#shijie500qiang").hide();
+			$("#guoyouqiye").hide();
+			$("#shiyedanwei").hide();
+			$("#siyouqiye").show();
+		});
+		//-----------------------------
+		$("#list01").click(function(){
+			$("#compimg01").show();
+			$("#compimg02").hide();
+			$("#compimg03").hide();
+			$("#compimg04").hide();
+			$("#xx_img01").animate({left:$(this).offset().left + 78});
+		});
+		$("#list02").click(function(){
+			$("#compimg01").hide();
+			$("#compimg02").show();
+			$("#compimg03").hide();
+			$("#compimg04").hide();
+			$("#xx_img01").animate({left:$(this).offset().left + 78});
+		});
+		$("#list03").click(function(){
+			$("#compimg01").hide();
+			$("#compimg02").hide();
+			$("#compimg03").show();
+			$("#compimg04").hide();
+			$("#xx_img01").animate({left:$(this).offset().left + 78});
+		});
+		$("#list04").click(function(){
+			$("#compimg01").hide();
+			$("#compimg02").hide();
+			$("#compimg03").hide();
+			$("#compimg04").show();
+			$("#xx_img01").animate({left:$(this).offset().left + 78});
+		});
+		//-----------------------------
+		$("#2list01").click(function(){
+			$("#2compimg01").show();
+			$("#2compimg02").hide();
+			$("#2compimg03").hide();
+			$("#2compimg04").hide();
+			$("#xx_img02").animate({left:$(this).offset().left + 78});
+		});
+		$("#2list02").click(function(){
+			$("#2compimg01").hide();
+			$("#2compimg02").show();
+			$("#2compimg03").hide();
+			$("#2compimg04").hide();
+			$("#xx_img02").animate({left:$(this).offset().left + 78});
+		});
+		$("#2list03").click(function(){
+			$("#2compimg01").hide();
+			$("#2compimg02").hide();
+			$("#2compimg03").show();
+			$("#2compimg04").hide();
+			$("#xx_img02").animate({left:$(this).offset().left + 78});
+		});
+		$("#2list04").click(function(){
+			$("#2compimg01").hide();
+			$("#2compimg02").hide();
+			$("#2compimg03").hide();
+			$("#2compimg04").show();
+			$("#xx_img02").animate({left:$(this).offset().left + 78});
+		});
+		//-------------------------------
+		$("#3list01").click(function(){
+			$("#3compimg01").show();
+			$("#3compimg02").hide();
+			$("#3compimg03").hide();
+			$("#3compimg04").hide();
+			$("#xx_img03").animate({left:$(this).offset().left + 78});
+		});
+		$("#3list02").click(function(){
+			$("#3compimg01").hide();
+			$("#3compimg02").show();
+			$("#3compimg03").hide();
+			$("#3compimg04").hide();
+			$("#xx_img03").animate({left:$(this).offset().left + 78});
+		});
+		$("#3list03").click(function(){
+			$("#3compimg01").hide();
+			$("#3compimg02").hide();
+			$("#3compimg03").show();
+			$("#3compimg04").hide();
+			$("#xx_img03").animate({left:$(this).offset().left + 78});
+		});
+		$("#3list04").click(function(){
+			$("#3compimg01").hide();
+			$("#3compimg02").hide();
+			$("#3compimg03").hide();
+			$("#3compimg04").show();
+			$("#xx_img03").animate({left:$(this).offset().left + 78});
+		});
+		//-------------------------------------
+		$("#4list01").click(function(){
+			$("#4compimg01").show();
+			$("#4compimg02").hide();
+			$("#4compimg03").hide();
+			$("#4compimg04").hide();
+			$("#xx_img04").animate({left:$(this).offset().left + 78});
+		});
+		$("#4list02").click(function(){
+			$("#4compimg01").hide();
+			$("#4compimg02").show();
+			$("#4compimg03").hide();
+			$("#4compimg04").hide();
+			$("#xx_img04").animate({left:$(this).offset().left + 78});
+		});
+		$("#4list03").click(function(){
+			$("#4compimg01").hide();
+			$("#4compimg02").hide();
+			$("#4compimg03").show();
+			$("#4compimg04").hide();
+			$("#xx_img04").animate({left:$(this).offset().left + 78});
+		});
+		$("#4list04").click(function(){
+			$("#4compimg01").hide();
+			$("#4compimg02").hide();
+			$("#4compimg03").hide();
+			$("#4compimg04").show();
+			$("#xx_img04").animate({left:$(this).offset().left + 78});
 		});
 	});
 </script>
@@ -268,71 +468,149 @@
 				<i style="width: 37px; height: 28px; background: url(/static/public/images/al.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
 				我们的案例
 			</div>
-			<div class="main-comp-const-title">
-				<div class="main-comp-const-title-list current" style="width: 130px;">世界500强</div>
-				<div class="main-comp-const-title-list">国有企业</div>
-				<div class="main-comp-const-title-list">事业单位</div>
-				<div class="main-comp-const-title-list">私有企业</div>
+			<div class="main-comp-const-title" style="width:460px;">
+				<div id="shijie" class="main-comp-const-title-list current" style="width: 130px;">世界500强</div>
+				<div id="guoyou" class="main-comp-const-title-list">国有企业</div>
+				<div id="shiye" class="main-comp-const-title-list">事业单位</div>
+				<div id="siyou" class="main-comp-const-title-list">私有企业</div>
 			</div>
-			<div class="main-comp-const-img">
-				<!-- <img src="/static/public/images/img2.jpg"/> -->
-				<div id="product">
-					<span class="prev"></span>
-					<div id="content">
-						<div id="content_list">
-							<dl>
-								<dt><img src="/static/public/images/b1.jpg"/></dt>
-							</dl>
-							<dl>
-								<dt><img src="/static/public/images/b2.jpg"/></dt>
-							</dl>
-							<dl>
-								<dt><img src="/static/public/images/b3.jpg"/></dt>
-							</dl>
-							<dl>
-								<dt><img src="/static/public/images/b4.jpg"/></dt>
-							</dl>
-							<dl>
-								<dt><img src="/static/public/images/b1.jpg"/></dt>
-							</dl>
-							<dl>
-								<dt><img src="/static/public/images/b2.jpg"/></dt>
-							</dl>
-							<dl>
-								<dt><img src="/static/public/images/b3.jpg"/></dt>
-							</dl>
-							<dl>
-								<dt><img src="/static/public/images/b4.jpg"/></dt>
-							</dl>
+			<div id="shijie500qiang">
+				<c:forEach items="${examples1 }" var="example" varStatus="status">
+					<div class="main-comp-const-img" id="compimg0${status.index+1 }" <c:if test="${status.index>0 }">style="display:none;"</c:if>>
+						<div id="product">
+							<span class="prev"></span>
+							<div id="content">
+								<div id="content_list">
+									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
+										<dl>
+											<dt><img src="${url }"/></dt>
+										</dl>
+									</c:forEach>
+								</div>
+							</div>
+							<span class="next"></span>
 						</div>
 					</div>
-					<span class="next"></span>
+				</c:forEach>
+				<div class="ico">
+					<div style="width:100%;height:28px;border-top:5px solid #000;margin-top: 30px;">
+						<img id="xx_img01" src="/static/public/images/xx.png" style="position: relative; top: -5px;"/>
+					</div>
+				</div>
+				<div class="main-comps">
+					<c:forEach items="${examples1 }" var="example" varStatus="status">
+						<c:if test="${status.index<5 }">
+							<div class="main-comps-list" id="list0${status.index+1 }">
+								<img src="/static/public/images/cry.png" />
+								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
+							</div>
+						</c:if>
+					</c:forEach>
 				</div>
 			</div>
-			<div class="ico">
-				<!-- <img src="/static/public/images/jiantou.jpg" width="100%" /> -->
-				<div style="width:100%;height:28px;border-top:5px solid #000;margin-top: 30px;">
-					<img id="xx_img" src="/static/public/images/xx.png" style="position: relative; top: -5px;"/>
+			<div id="guoyouqiye" style="display:none;">
+				<c:forEach items="${examples2 }" var="example" varStatus="status">
+					<div class="main-comp-const-img" id="2compimg0${status.index+1 }" <c:if test="${status.index>0 }">style="display:none;"</c:if>>
+						<div id="product">
+							<span class="prev"></span>
+							<div id="content">
+								<div id="content_list">
+									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
+										<dl>
+											<dt><img src="${url }"/></dt>
+										</dl>
+									</c:forEach>
+								</div>
+							</div>
+							<span class="next"></span>
+						</div>
+					</div>
+				</c:forEach>
+				<div class="ico">
+					<div style="width:100%;height:28px;border-top:5px solid #000;margin-top: 30px;">
+						<img id="xx_img02" src="/static/public/images/xx.png" style="position: relative; top: -5px;"/>
+					</div>
+				</div>
+				<div class="main-comps">
+					<c:forEach items="${examples2 }" var="example" varStatus="status">
+						<c:if test="${status.index<5 }">
+							<div class="main-comps-list" id="2list0${status.index+1 }">
+								<img src="/static/public/images/cry.png" />
+								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
+							</div>
+						</c:if>
+					</c:forEach>
 				</div>
 			</div>
-			<div class="main-comps">
-				<div class="main-comps-list" id="list01">
-					<img src="/static/public/images/cry.png" />
-					<img src="/static/public/images/lenovo.png" style="position: relative; top: -65px;"/>
+			<div id="shiyedanwei" style="display:none;">
+				<c:forEach items="${examples3 }" var="example" varStatus="status">
+					<div class="main-comp-const-img" id="3compimg0${status.index+1 }" <c:if test="${status.index>0 }">style="display:none;"</c:if>>
+						<div id="product">
+							<span class="prev"></span>
+							<div id="content">
+								<div id="content_list">
+									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
+										<dl>
+											<dt><img src="${url }"/></dt>
+										</dl>
+									</c:forEach>
+								</div>
+							</div>
+							<span class="next"></span>
+						</div>
+					</div>
+				</c:forEach>
+				<div class="ico">
+					<div style="width:100%;height:28px;border-top:5px solid #000;margin-top: 30px;">
+						<img id="xx_img03" src="/static/public/images/xx.png" style="position: relative; top: -5px;"/>
+					</div>
 				</div>
-				<div class="main-comps-list">
-					<img src="/static/public/images/cry.png" />
-					<img src="/static/public/images/lenovo.png" style="position: relative; top: -65px;"/>
+				<div class="main-comps">
+					<c:forEach items="${examples3 }" var="example" varStatus="status">
+						<c:if test="${status.index<5 }">
+							<div class="main-comps-list" id="3list0${status.index+1 }">
+								<img src="/static/public/images/cry.png" />
+								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
+							</div>
+						</c:if>
+					</c:forEach>
+			</div>
+			</div>
+			<div id="siyouqiye" style="display:none;">
+				<c:forEach items="${examples4 }" var="example" varStatus="status">
+					<div class="main-comp-const-img" id="4compimg0${status.index+1 }" <c:if test="${status.index>0 }">style="display:none;"</c:if>>
+						<div id="product">
+							<span class="prev"></span>
+							<div id="content">
+								<div id="content_list">
+									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
+										<dl>
+											<dt><img src="${url }"/></dt>
+										</dl>
+									</c:forEach>
+								</div>
+							</div>
+							<span class="next"></span>
+						</div>
+					</div>
+				</c:forEach>
+				<div class="ico">
+					<div style="width:100%;height:28px;border-top:5px solid #000;margin-top: 30px;">
+						<img id="xx_img04" src="/static/public/images/xx.png" style="position: relative; top: -5px;"/>
+					</div>
 				</div>
-				<div class="main-comps-list">
-					<img src="/static/public/images/cry.png" />
-					<img src="/static/public/images/lenovo.png" style="position: relative; top: -65px;"/>
-				</div>
-				<div class="main-comps-list">
-					<img src="/static/public/images/cry.png" />
-					<img src="/static/public/images/lenovo.png" style="position: relative; top: -65px;"/>
+				<div class="main-comps">
+					<c:forEach items="${examples4 }" var="example" varStatus="status">
+						<c:if test="${status.index<5 }">
+							<div class="main-comps-list" id="4list0${status.index+1 }">
+								<img src="/static/public/images/cry.png" />
+								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
+							</div>
+						</c:if>
+					</c:forEach>
 				</div>
 			</div>
+			
 		</div>
 		<div class="main-partner">
 			<img src="/static/public/images/img03.jpg" width="100%" />
@@ -450,6 +728,18 @@
 				<div class="img_a1">
 					<span>流程控制</span>
 				</div>
+				<div class="img_a2">
+					<span>第一步</span>
+				</div>
+				<div class="img_a3">
+					<span>第二步</span>
+				</div>
+				<div class="img_a4">
+					<span>第三步</span>
+				</div>
+				<div class="img_a5">
+					<span>第四步</span>
+				</div>
 			</div>
 		</div>
 		<div class="main-cust">
@@ -459,95 +749,43 @@
 					我们的客户
 				</div>
 				<div class="main-ourteam-cont-list">
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/55.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/22.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/33.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/44.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/55.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/66.jpg" />
-						</div>
-					</div>
+					<c:forEach items="${customerType1}" var="cust1" varStatus="status">
+						<c:if test="${status.index < 6 }">
+							<div class="ot">
+								<div class="main-ourteam-cont-list-img">
+									<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
+										<img src="${cust1.url }" width="75"/>
+									</a>
+								</div>
+							</div>
+						</c:if>
+					</c:forEach>
 				</div>
 				<div class="main-ourteam-cont-list" style="margin-top: -20px; width: 735px;">
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/77.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/66.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/55.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/22.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/33.jpg" />
-						</div>
-					</div>
+					<c:forEach items="${customerType2}" var="cust1" varStatus="status">
+						<c:if test="${status.index < 5 }">
+							<div class="ot">
+								<div class="main-ourteam-cont-list-img">
+									<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
+										<img src="${cust1.url }" width="75"/>
+									</a>
+								</div>
+							</div>
+						</c:if>
+					</c:forEach>
 				</div>
 				<div class="main-ourteam-cont-list" style="margin-top: -20px;">
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/44.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/55.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/66.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/77.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/88.jpg" />
-						</div>
-					</div>
-					<div class="ot">
-						<div class="main-ourteam-cont-list-img">
-							<img src="/static/public/images/99.jpg" />
-						</div>
-					</div>
+					<c:forEach items="${customerType3}" var="cust1" varStatus="status">
+						<c:if test="${status.index < 6 }">
+							<div class="ot">
+								<div class="main-ourteam-cont-list-img">
+									<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
+										<img src="${cust1.url }" width="75"/>
+									</a>
+								</div>
+							</div>
+						</c:if>
+					</c:forEach>
 				</div>
 			</div>
 		</div>
@@ -610,13 +848,29 @@
 						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">在线咨询</div>
 					</div>
 					<div style="text-align: center;">
-						<form action="">
-							<input class="input" type="text" placeholder="姓名" style="margin-top: 10px;" />
-							<input class="input" type="text" placeholder="手机" />
-							<input class="input" type="text" placeholder="邮箱" />
-							<textarea class="input" style="height: 160px;resize: none;overflow-y: hidden;" placeholder="内容填写"></textarea>
+						<!-- <form action="/message/add.jhtml" method="post"> -->
+							<input class="input" type="text" id="name" name="name" placeholder="姓名" style="margin-top: 10px;" />
+							<input class="input" type="text" id="phone" name="phone" placeholder="手机" />
+							<input class="input" type="text" id="email" name="email" placeholder="邮箱" />
+							<input class="input" type="text" id="title" name="title" placeholder="标题" />
+							<textarea class="input" id="content_a" name="content" style="height: 125px;resize: none;overflow-y: hidden;" placeholder="内容填写"></textarea>
 							<input class="botton" type="submit" value="提交" />
-						</form>
+							<script type="text/javascript">
+								$(function(){
+									$("input[type=submit]").click(function(){
+										$.ajax({
+											type : "get",
+											url : "/message/add.jhtml",
+											dataType : "json",
+											data :{"name":$("#name").val(),"phone":$("#phone").val(),"email":$("#email").val(),"title":$("#title").val(),"content":$("#content_a").val()} ,
+											success : function(msg) {
+												alert(msg);
+											}
+										});
+									});
+								});
+							</script>
+						<!-- </form> -->
 					</div>
 				</div>
 			</div>

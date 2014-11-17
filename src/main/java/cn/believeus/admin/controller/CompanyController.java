@@ -30,8 +30,9 @@ public class CompanyController {
 			companyInfo.setFax("+86 21 6259 0368 - 805");
 			companyInfo.setMobile("+86 13524728911");
 			companyInfo.setEmail("xxxx@163.com");
-			companyInfo.setAddress("某市某省某区xxxxxxxx");
+			companyInfo.setAddress("NO.179 West Zhongshan Road,Changning,5F,Block E");
 			companyInfo.setContent("我们是搬家公司！");
+			companyInfo.setName("上海欧耶");
 			companyInfo.setCreateTime(System.currentTimeMillis());
 			baseService.saveOrUpdata(companyInfo);
 		}

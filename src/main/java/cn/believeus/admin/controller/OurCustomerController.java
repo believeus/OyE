@@ -64,7 +64,7 @@ public class OurCustomerController {
 		return "/WEB-INF/back/ourcustomer/list.jsp";
 	}
 	/** 
-	 * 流程添加
+	 * 我们的客户添加
 	 * @return 
 	 */
 	@RequiresPermissions("ourcustomer:create")
@@ -73,13 +73,14 @@ public class OurCustomerController {
 		return "/WEB-INF/back/ourcustomer/add.jsp";
 	}
 	/**
-	 * 流程保存或更新
+	 * 我们的客户保存或更新
 	 * @return
 	 */
 	@RequiresPermissions("ourcustomer:update")
 	@RequestMapping(value="/admin/ourcustomer/save")
 	public String saveOrUpdate(Customers customers,HttpServletRequest request){
 		String clink = request.getParameter("clink");
+		String type = request.getParameter("type");
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		String storepath = "";
 		Map<String, MultipartFile> files = multipartRequest.getFileMap();
@@ -101,14 +102,18 @@ public class OurCustomerController {
 		}
 		if (!storepath.equals("")) {
 			customers.setUrl(storepath);			
+		}else {
+			customers.setUrl(request.getParameter("filename0"));
 		}
+		System.out.println(request.getParameter("filename0"));
 		customers.setClink(clink);
+		customers.setType(Integer.parseInt(type));
 		baseService.saveOrUpdata(customers);
 		return "redirect:/admin/ourcustomer/list.jhtml";
 	}
 	 
 	/**
-	 * 流程修改
+	 * 我们的客户修改
 	 * @return
 	 */
 	@RequiresPermissions("ourcustomer:update")
@@ -120,7 +125,7 @@ public class OurCustomerController {
 	}
 	
 	/**
-	 * 流程删除
+	 * 我们的客户删除
 	 * @return
 	 */
 	@RequiresPermissions("ourcustomer:delete")

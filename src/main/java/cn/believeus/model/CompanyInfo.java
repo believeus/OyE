@@ -26,6 +26,19 @@ public class CompanyInfo extends TbaseEntity{
 	
 	/** 企业移动电话 */
 	private String mobile;
+	
+	/**	企业名称 */
+	private String name;
+
+	
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public String getFax() {
 		return fax;
