@@ -87,7 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					描述:
 				</th>
 				<td colspan="3">
-					<textarea id="editor" name="description" class="editor"></textarea>
+					<textarea id="" name="description" class="editor"></textarea>
 				</td>
 			</tr>
 			<tr>

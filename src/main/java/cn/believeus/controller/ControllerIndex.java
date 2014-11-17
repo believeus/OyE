@@ -9,9 +9,14 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import cn.believeus.model.Banner;
+import cn.believeus.model.Business;
 import cn.believeus.model.CompanyInfo;
 import cn.believeus.model.Customers;
 import cn.believeus.model.Example;
+import cn.believeus.model.Partners;
+import cn.believeus.model.Processs;
+import cn.believeus.model.Team;
 import cn.believeus.service.BaseService;
 import cn.believeus.variables.Variables;
 
@@ -28,6 +33,9 @@ public class ControllerIndex {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/index")
 	public String index(HttpServletRequest request) {
+		//banner
+		List<Banner> banners = (List<Banner>) baseService.findObjectList(Banner.class);
+		request.setAttribute("banners", banners);
 		//企业信息
 		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
@@ -47,6 +55,18 @@ public class ControllerIndex {
 		request.setAttribute("examples2", examples2);
 		request.setAttribute("examples3", examples3);
 		request.setAttribute("examples4", examples4);
+		//团队管理
+		List<Team> teams = (List<Team>) baseService.findObjectList(Team.class);
+		request.setAttribute("teams", teams);
+		//服务范围
+		List<Business> businesses = (List<Business>) baseService.findObjectList(Business.class);
+		request.setAttribute("businesses", businesses);
+		//流程控制
+		List<Processs> pros = (List<Processs>) baseService.findObjectList(Processs.class);
+		request.setAttribute("pros", pros);
+		//合作伙伴
+		List<Partners> partners = (List<Partners>) baseService.findObjectList(Partners.class);
+		request.setAttribute("partners", partners);
 		
 		return "/WEB-INF/front/index.jsp";
 	}

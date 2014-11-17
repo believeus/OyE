@@ -15,8 +15,8 @@
 <style type="text/css">
 	.banner_main{width:100%;margin:0 auto;position: relative;}
     .banner_nav{width:210px;height:370px;position:absolute;top:0;left:0;z-index:100;background:#cccccc}
-    .banner_slider{position: relative;overflow: hidden;height:370px;z-index: 50;}
-    .banner_slider img{width:100%;height:370px;}
+    .banner_slider{position: relative;overflow: hidden;height:500px;z-index: 50;}
+    .banner_slider img{width:100%;height:500px;}
     .banner_slider .bx-wrapper .bx-controls-direction a{width:40px;height: 40px;background:#000000;opacity: .3;}
     .banner_slider .bx-wrapper .bx-controls-direction a.bx-prev:before{
         content:'';position: absolute;top:8px;left:12px; width: 16px; height: 24px;
@@ -111,7 +111,7 @@
     width: 410px;
 }
 .img_a2 span {
-    color: #888;
+    color: #ffffff;
     font-size: 16px;
     left: 90px;
     position: relative;
@@ -125,9 +125,9 @@
     width: 402px;
 }
 .img_a3 span {
-    color: #888;
+    color: #ffffff;
     font-size: 16px;
-    left: 90px;
+    left: 30px;
     position: relative;
     top: 100px;
 }
@@ -139,9 +139,9 @@
     width: 394px;
 }
 .img_a4 span {
-    color: #888;
+    color: #ffffff;
     font-size: 16px;
-    left: 90px;
+    left: 70px;
     position: relative;
     top: 100px;
 }
@@ -153,11 +153,17 @@
     width: 531px;
 }
 .img_a5 span {
-    color: #888;
+    color: #ffffff;
     font-size: 16px;
-    left: 60px;
+    left: 35px;
     position: relative;
-    top: 110px;
+    top: 120px;
+}
+.img {
+    text-align: center;
+}
+.img img{
+    border-radius:100px;
 }
 </style>
 <script type="text/javascript">
@@ -378,10 +384,9 @@
 			<!-- <img src="/static/public/images/img1.png" width="100%" /> -->
 			<div class="banner_slider">
                 <ul>
-                    <li><img src="/static/public/images/img1.jpg" width="100%"/></li>
-                    <li><img src="/static/public/images/img1.jpg" width="100%"/></li>
-                    <li><img src="/static/public/images/img1.jpg" width="100%"/></li>
-                    <li><img src="/static/public/images/img1.jpg" width="100%"/></li>
+                	<c:forEach items="${banners }" var="banner">
+	                    <li><img src="${banner.path }" width="100%"/></li>
+                	</c:forEach>
                 </ul>
             </div>
 		</div>
@@ -391,77 +396,20 @@
 				服务范围Our Business
 			</p>
 			<div class="main-service-list">
-				<div class="main-service-cont">
-					<div class="main-service-cont-img">
-						<img src="/static/public/images/phone.png" />
+				<c:forEach items="${businesses }" var="bus" varStatus="status">
+					<div class="main-service-cont" <c:if test="${(status.index+1)%3==0 }">style="margin-right:0;"</c:if>>
+						<div class="main-service-cont-img">
+							<img src="${bus.path }" width="99" height="99"/>
+						</div>
+						<div class="main-service-cont-name">
+							${bus.title }
+						</div>
+						<div class="main-service-cont-dis">
+							${bus.description }
+						</div>
 					</div>
-					<div class="main-service-cont-name">
-						办公室搬迁
-					</div>
-					<div class="main-service-cont-dis">
-						黑龙江网络广播电视台讯（通讯员金钢 记者姚以斌）11月3日晚，哈尔滨警方经近24小时连续奋战，成功将公安部B级通缉令逃犯王庆新抓捕归案。
-					</div>
-				</div>
-				<div class="main-service-cont">
-					<div class="main-service-cont-img">
-						<img src="/static/public/images/people.png" />
-					</div>
-					<div class="main-service-cont-name">
-						国内室内私人搬迁
-					</div>
-					<div class="main-service-cont-dis">
-						黑龙江网络广播电视台讯（通讯员金钢 记者姚以斌）11月3日晚，哈尔滨警方经近24小时连续奋战，成功将公安部B级通缉令逃犯王庆新抓捕归案。
-					</div>
-				</div>
-				<div class="main-service-cont" style="margin-right: 0;">
-					<div class="main-service-cont-img">
-						<img src="/static/public/images/sys.png" />
-					</div>
-					<div class="main-service-cont-name">
-						实验室搬迁
-					</div>
-					<div class="main-service-cont-dis">
-						黑龙江网络广播电视台讯（通讯员金钢 记者姚以斌）11月3日晚，哈尔滨警方经近24小时连续奋战，成功将公安部B级通缉令逃犯王庆新抓捕归案。
-					</div>
-				</div>
-				<!--  -->
-				<!-- <img src="/static/public/images/jt00.png" style="position: absolute; top: 808px; left: 78px;"/>
-				<img src="/static/public/images/jt01.png" style="position: absolute; top: 935px; left: 78px;"/> -->
-				<div class="main-service-cont">
-					<div class="main-service-cont-img">
-						<img src="/static/public/images/cc.png" />
-					</div>
-					<div class="main-service-cont-name">
-						仓储
-					</div>
-					<div class="main-service-cont-dis">
-						黑龙江网络广播电视台讯（通讯员金钢 记者姚以斌）11月3日晚，哈尔滨警方经近24小时连续奋战，成功将公安部B级通缉令逃犯王庆新抓捕归案。
-					</div>
-				</div>
-				<div class="main-service-cont">
-					<div class="main-service-cont-img">
-						<img src="/static/public/images/es.png" />
-					</div>
-					<div class="main-service-cont-name">
-						二手家具回收及出售
-					</div>
-					<div class="main-service-cont-dis">
-						黑龙江网络广播电视台讯（通讯员金钢 记者姚以斌）11月3日晚，哈尔滨警方经近24小时连续奋战，成功将公安部B级通缉令逃犯王庆新抓捕归案。
-					</div>
-				</div>
-				<div class="main-service-cont" style="margin-right: 0;">
-					<div class="main-service-cont-img">
-						<img src="/static/public/images/bgs.png" />
-					</div>
-					<div class="main-service-cont-name">
-						办公室整体清洁及空气治理
-					</div>
-					<div class="main-service-cont-dis">
-						黑龙江网络广播电视台讯（通讯员金钢 记者姚以斌）11月3日晚，哈尔滨警方经近24小时连续奋战，成功将公安部B级通缉令逃犯王庆新抓捕归案。
-					</div>
-				</div>
+				</c:forEach>
 			</div>
-			<!-- <img src="/static/public/images/jt02.png" style="position: absolute; top: 965px; right: 290px;"/> -->
 		</div>
 		<div class="main-comp-const">
 			<div class="main-ourteam-cont-title" style="position: absolute; left: 120px;">
@@ -613,37 +561,30 @@
 			
 		</div>
 		<div class="main-partner">
-			<img src="/static/public/images/img03.jpg" width="100%" />
+			<img src="/static/public/images/img03.jpg" width="1366" />
 		</div>
 		<div class="main-evaluation">
 			<div class="main-evaluation-list">
-				<div class="main-evaluation-list-cont">
-					<div class="main-evaluation-list-cont-img">
-						<img src="/static/public/images/philips.jpg" width="" height="" style="margin-top: 50px;" />
+				<c:forEach items="${partners }" var="partner" varStatus="status">
+					<div class="main-evaluation-list-cont">
+						<div class="main-evaluation-list-cont-img">
+							<img src="${partner.logo }" width="" height="" style="margin-top: 50px;" />
+						</div>
+						<div class="main-evaluation-list-cont-dis">
+							<p class="main-cont-dis-title">${partner.name }</p>
+							<p class="main-cont-dis-conts">${partner.content }</p>
+						</div>
 					</div>
-					<div class="main-evaluation-list-cont-dis">
-						<p class="main-cont-dis-title">来自飞利浦的评价</p>
-						<p class="main-cont-dis-conts">来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价</p>
+					<div style="width: 372px; height: 215px; left: 662px; position: absolute; top: 1952px;">
+						<embed align="middle" width="372" height="215" 	
+							type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" 
+							quality="high" flashvars="f=http://localhost:8080/${partner.video }" 
+							src="http://www.ckplayer.com/ckplayer6.1/ckplayer.swf" />
 					</div>
-				</div>
-				<div class="main-evaluation-list-cont">
-					<div class="main-evaluation-list-cont-img">
-						<img src="/static/public/images/lotus.jpg" width="" height="" style="margin-top: 40px;" />
+					<div style="width: 132px; height: 174px; position: absolute; top: 2121px; left: 1045px;">
+						<img src="${partner.path }" width="132" height="174"/>
 					</div>
-					<div class="main-evaluation-list-cont-dis">
-						<p class="main-cont-dis-title">来自飞利浦的评价</p>
-						<p class="main-cont-dis-conts">来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价</p>
-					</div>
-				</div>
-				<div class="main-evaluation-list-cont">
-					<div class="main-evaluation-list-cont-img">
-						<img src="/static/public/images/philips.jpg" width="" height="" style="margin-top: 50px;" />
-					</div>
-					<div class="main-evaluation-list-cont-dis">
-						<p class="main-cont-dis-title">来自飞利浦的评价</p>
-						<p class="main-cont-dis-conts">来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价</p>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 		<div class="main-ourteam">
@@ -653,58 +594,22 @@
 					我们的核心团队
 				</div>
 				<div class="main-ourteam-cont-const">
-					<div class="main-ourteam-cont-const-list">
-						<div class="img">
-							<img src="/static/public/images/img04.jpg" width="250" height="165" style="margin-top: 35px;" />
-						</div>
-						<div class="name">
-							<span style="font-size: 18px;">孙磊 | Jeremy</span>
-							<p>项目经理</p>
-							
-						</div>
-						<div class="dis">
-							价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价
-						</div>
-					</div>
-					<div class="main-ourteam-cont-const-list">
-						<div class="img">
-							<img src="/static/public/images/img04.jpg" width="250" height="165" style="margin-top: 35px;" />
-						</div>
-						<div class="name">
-							<span style="font-size: 18px;">孙磊 | Jeremy</span>
-							<p>项目经理</p>
-							
-						</div>
-						<div class="dis">
-							价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价
-						</div>
-					</div>
-					<div class="main-ourteam-cont-const-list">
-						<div class="img">
-							<img src="/static/public/images/img04.jpg" width="250" height="165" style="margin-top: 35px;" />
-						</div>
-						<div class="name">
-							<span style="font-size: 18px;">孙磊 | Jeremy</span>
-							<p>项目经理</p>
-							
-						</div>
-						<div class="dis">
-							价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价
-						</div>
-					</div>
-					<div class="main-ourteam-cont-const-list" style="margin-right: 0;">
-						<div class="img">
-							<img src="/static/public/images/img04.jpg" width="250" height="165" style="margin-top: 35px;" />
-						</div>
-						<div class="name">
-							<span style="font-size: 18px;">孙磊 | Jeremy</span>
-							<p>项目经理</p>
-							
-						</div>
-						<div class="dis">
-							价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价
-						</div>
-					</div>
+					<c:forEach items="${teams }" var="team" varStatus="status">
+						<c:if test="${status.index < 4 }">
+							<div class="main-ourteam-cont-const-list" <c:if test="${status.index ==3 }">style="margin-right:0;"</c:if>>
+								<div class="img">
+									<img src="${team.path }" width="165" height="165" style="margin-top: 35px;" />
+								</div>
+								<div class="name">
+									<span style="font-size: 18px;">${team.name } | ${team.ehName }</span>
+									<p>${team.position }</p>
+								</div>
+								<div class="dis">
+									${team.content }
+								</div>
+							</div>
+						</c:if>
+					</c:forEach>
 					<img src="/static/public/images/a.png" style="position: relative; top: -81px; left: 69px;" />
 					<img src="/static/public/images/b.png" style="position: relative; top: -81px; left: 950px;" />
 					<div style="background: #ffa7a9;height: 34px;left: 105px;position: relative;top: -136px;width: 925px;" ></div>
@@ -725,21 +630,12 @@
 			 		<img src="/static/public/images/a4.jpg"  style="position: relative; left: -315px; top: -575px;"/>
 					<img src="/static/public/images/a5.jpg"  style="position: relative; top: -675px; left: 555px;"/>
 				</div>
-				<div class="img_a1">
-					<span>流程控制</span>
-				</div>
-				<div class="img_a2">
-					<span>第一步</span>
-				</div>
-				<div class="img_a3">
-					<span>第二步</span>
-				</div>
-				<div class="img_a4">
-					<span>第三步</span>
-				</div>
-				<div class="img_a5">
-					<span>第四步</span>
-				</div>
+				<c:forEach items="${pros }" var="pro" varStatus="status">
+					<div class="img_a${status.index+1 }">
+						<span>${pro.cn }</span><br /><br />
+						<span>${pro.en }</span>
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 		<div class="main-cust">
