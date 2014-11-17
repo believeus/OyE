@@ -38,8 +38,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		// 表单验证
 		$inputForm.validate({
 			rules: {
-				//name: "required"
-				
+				name: "required"
+				,content: "required"
 			}
 		});
 	});

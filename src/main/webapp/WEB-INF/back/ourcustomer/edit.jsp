@@ -34,7 +34,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$inputForm.validate({
 			rules: {
 				clink: "required",
-				filename0: "required"
+				filename0: "required",
+				type: "required"
 			}
 		});
 		
@@ -46,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
      <div class="path">
-		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 编辑流程
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 编辑客户
 	</div>
 	<form id="inputForm" action="/admin/ourcustomer/save.jhtml" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="id" value="${customers.id }"/>

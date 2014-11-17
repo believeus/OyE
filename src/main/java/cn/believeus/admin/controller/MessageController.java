@@ -60,7 +60,6 @@ public class MessageController {
 		message.setContent(content);
 		message.setEmail(email);
 		message.setPhone(phone);
-		message.setTitle(title);
 		baseService.saveOrUpdata(message);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("msg", "留言成功，等待审核！");

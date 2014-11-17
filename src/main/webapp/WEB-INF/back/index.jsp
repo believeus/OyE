@@ -22,18 +22,18 @@
 				        </shiro:hasPermission>
 				         
 				        <shiro:hasPermission name="business:view"> 
-						 {"menuname":"业务发布管理","icon":"icon-users","url":"/admin/business/list.jhtml"},
+						 {"menuname":"服务范围管理","icon":"icon-users","url":"/admin/business/list.jhtml"},
 						</shiro:hasPermission>
 						 
 						<shiro:hasPermission name="example:view"> 
 						 {"menuname":"企业案例管理","icon":"icon-role","url":"/admin/example/list.jhtml"},
 						</shiro:hasPermission>
 						 
-						<shiro:hasPermission name="contact:view">  
+						<shiro:hasPermission name="message:view">  
 						{"menuname":"用户咨询管理","icon":"icon-set","url":"/admin/message/list.jhtml"},
 						</shiro:hasPermission>
 						
-						<shiro:hasPermission name="customer:view">  	
+						<shiro:hasPermission name="partners:view">  	
 						{"menuname":"合作伙伴管理","icon":"icon-set","url":"/admin/partners/list.jhtml"},
 						</shiro:hasPermission>
 						

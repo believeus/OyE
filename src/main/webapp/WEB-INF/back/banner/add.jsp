@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div class="path">
-		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 添加案例
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 添加banner
 	</div>
 	<form id="inputForm" action="/admin/banner/saveOrUpdate.jhtml" method="post" enctype="multipart/form-data">
 		<table class="input">

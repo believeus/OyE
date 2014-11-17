@@ -40,6 +40,7 @@ public class BannerController {
 		@SuppressWarnings("unchecked")
 		List<Banner> banners = (List<Banner>) baseService.findObjectList(Banner.class);
 		request.setAttribute("banners", banners);
+		request.setAttribute("size", banners.size());
 		return "/WEB-INF/back/banner/list.jsp";
 	}
 	

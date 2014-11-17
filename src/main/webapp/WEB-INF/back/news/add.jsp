@@ -57,22 +57,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table class="input">
 			<tr>
 				<th>
-					<span class="requiredField">*</span>新闻标题:
+					新闻标题:
 				</th>
 				<td>
 					<input type="text" name="title" class="text" maxlength="200" />
-				</td>
-			</tr>
-			<tr id="pathTr">
-				<th>
-					<span class="requiredField">*</span>选择分类:
-				</th>
-				<td colspan="3">
-					<select name="category">
-						<option value="1">分类111</option>
-						<option value="2">分类222</option>
-						<option value="3">分类333</option>
-					</select>
 				</td>
 			</tr>
 			

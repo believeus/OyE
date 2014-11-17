@@ -14,9 +14,6 @@ public class News extends TbaseEntity{
 	
 	private String path;
 	
-	/** 1:分类1 2:分类2 3:分类3 */
-	private Short category;
-	
 	private String content;
 	
 	/** 1:置顶   0:非置顶   */
@@ -37,12 +34,6 @@ public class News extends TbaseEntity{
 		this.title = title;
 	}
 	
-	public Short getCategory() {
-		return category;
-	}
-	public void setCategory(Short category) {
-		this.category = category;
-	}
 	
 	public String getContent() {
 		return content;

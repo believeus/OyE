@@ -18,8 +18,6 @@ public class Message extends TbaseEntity{
 	/** 邮箱*/
 	private String email;
 	
-	/** 主题*/
-	private String title;
 	
 	/** 留言内容*/
 	private String content;
@@ -52,15 +50,6 @@ public class Message extends TbaseEntity{
 		this.email = email;
 	}
 	
-	/** 获取标题*/
-	public String getTitle() {
-		return title;
-	}
-	/** 设置标题 */
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
 	/** 获取留言 */
 	public String getContent() {
 		return content;

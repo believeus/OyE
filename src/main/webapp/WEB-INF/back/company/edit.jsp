@@ -40,7 +40,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				phone: "required",
 				email: "required",
 				address: "required",
-				content: "required"
+				content: "required",
+				fax: "required",
+				mobile: "required"
+				
 			}
 		});
 		

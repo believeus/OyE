@@ -30,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div class="path">
-		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 客户感言列表 <span>共${size}条记录</span>
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 合作伙伴列表 <span>共${size}条记录</span>
 	</div>
 		<div class="bar">
 			<a href="/admin/partners/add.jhtml" class="iconButton">

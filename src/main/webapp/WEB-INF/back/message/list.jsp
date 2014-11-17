@@ -62,9 +62,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;" class="sort" name="title">邮箱</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="title">标题</a>
-				</th>
-				<th>
 					<a href="javascript:;" class="sort" name="title">内容</a>
 				</th>
 				<th>
@@ -87,9 +84,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</td>
 				<td>
 					<span >${message.email}</span>
-				</td>
-				<td>
-					<span title="${message.title}">${message.title}</span>
 				</td>
 				<td>
 				${fn:substring(message.content, 0, 38)}
