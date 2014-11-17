@@ -56,10 +56,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;" class="sort" name="id">排序编号</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="title">标题</a>
+					<a href="javascript:;" class="sort" name="category">分类信息</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="content">描述</a>
+					<a href="javascript:;" class="sort" name="content">LOGO链接</a>
 				</th>
 				<th>
 					<a href="javascript:;"  class="sort">操作</a>
@@ -74,13 +74,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span>${status.index+1 }</span>
 				</td>
 				<td>
-					${example.title}
+					<c:if test="${example.category==1 }">
+		   					世界500强
+	   				</c:if>
+	   				<c:if test="${example.category==2 }">
+		   					国有企业
+	   				</c:if>
+	   				<c:if test="${example.category==3 }">
+		   					事业单位
+	   				</c:if>
+	   				<c:if test="${example.category==4 }">
+		   					私有企业
+	   				</c:if>
 				</td>
 				<td>
-					${fn:substring(example.content, 0, 38)}
-	   				<c:if test="${fn:length(example.content) >38 }">
-		   					...
-	   				</c:if>
+	   				<a href="/${example.logo }" target="_blank">点击查看logo</a>
 				</td>
 				<td>
 					<a href="/admin/example/edit.jhtml?id=${example.id}">[修改]</a>

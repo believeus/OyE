@@ -4,6 +4,7 @@ package cn.believeus.admin.controller;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -79,27 +80,55 @@ public class ExampleController {
 	@RequiresPermissions("example:update")
 	@RequestMapping(value="/admin/example/saveOrUpdate")
 	public String saveOrUpdate(Example example,HttpServletRequest request){
+		String deleteImgs = request.getParameter("deleteImgs");
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		String storepath = "";
+		String logoUrl="";
 		Map<String, MultipartFile> files = multipartRequest.getFileMap();
 		for (MultipartFile file : files.values()) {
 			InputStream inputStream;
 			try {
 				inputStream = file.getInputStream();
-				if(inputStream.available()==0){
-					break;
+				if(inputStream.available()!=0){
+					Assert.assertNotNull("upload file InputStream is null", inputStream);
+					String originName=file.getOriginalFilename();
+					String extention = originName.substring(originName.lastIndexOf(".") + 1);
+					log.debug("upload file stuffix:"+extention);
+	  				if (file.getName().equals("upload_img1")) {
+						logoUrl=mydfsTrackerServer.upload(inputStream, extention);
+					}else {
+						storepath += mydfsTrackerServer.upload(inputStream, extention)+"#";					
+					}
 				}
-				Assert.assertNotNull("upload file InputStream is null", inputStream);
-				String originName=file.getOriginalFilename();
-				String extention = originName.substring(originName.lastIndexOf(".") + 1);
-				log.debug("upload file stuffix:"+extention);
-				storepath += mydfsTrackerServer.upload(inputStream, extention);
+				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		if (!storepath.equals("")) {
-			example.setPath(storepath);			
+		if (deleteImgs!=null&&!deleteImgs.equals("")) {
+			List<String> deleteList=Arrays.asList(deleteImgs.split("#")) ;
+			List<String> list = Arrays.asList(example.getPaths().split("#"));
+			List<String> paths=new ArrayList<String>();
+			for (String s : list) {
+				if (!deleteList.contains(s)) {
+					paths.add(s);
+				}
+			}
+			for (String path : paths) {
+				storepath+="#"+path;
+			}
+			example.setPaths(storepath);
+			
+		}else if(!storepath.equals("")){
+			if (example.getPaths()!=null) {
+				example.setPaths(example.getPaths()+"#"+storepath);				
+			}else {
+				example.setPaths(storepath);
+			}
+		}
+		
+		if (!logoUrl.equals("")) {
+			example.setLogo(logoUrl);
 		}
 		baseService.saveOrUpdata(example);
 		return "redirect:/admin/example/list.jhtml";
@@ -112,7 +141,17 @@ public class ExampleController {
 	@RequiresPermissions("example:update")
 	@RequestMapping(value="/admin/example/edit")
 	public String exampleEdit(Integer id,HttpServletRequest request){
+		List<String> list = new  ArrayList<String>();
 		Example example  = (Example) baseService.findObject(Example.class, id);
+		String paths = example.getPaths();
+		String[] split = paths.split("#");
+		for (String s : split) {
+			if (!s.equals("")) {
+				list.add(s);
+			}
+		}
+		request.setAttribute("paths", list);
+		request.setAttribute("size", list.size());
 		request.setAttribute("example", example);
 		return "/WEB-INF/back/example/edit.jsp";
 	}
