@@ -26,13 +26,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript">
 	$().ready(function() {
 
-		var editor = new UE.ui.Editor();
-	    editor.render('editor');
-	    editor.addListener('contentchange',function(){
-	        this.sync();
-	        $('textarea').valid();
-	    });
-	
 		var $inputForm = $("#inputForm");
 		
 		// 表单验证
@@ -107,7 +100,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					描述:
 				</th>
 				<td colspan="3">
-					<textarea id="editor" name="content" class="editor"></textarea>
+					<textarea id="" name="content" class="editor"></textarea>
 				</td>
 			</tr>
 			<tr>

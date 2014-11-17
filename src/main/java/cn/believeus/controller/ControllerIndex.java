@@ -97,5 +97,4 @@ public class ControllerIndex {
 		request.setAttribute("partners", Partners);
 		return "/WEB-INF/front/cust.jsp";
 	}
-	
 }

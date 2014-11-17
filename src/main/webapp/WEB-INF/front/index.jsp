@@ -49,7 +49,7 @@
 	width:4000px;
 }
 #product dl{
-	width:280px;
+	width:279px;
 	height:260px;
 	float:left;
 	margin:10px 4px;
@@ -568,7 +568,7 @@
 				<c:forEach items="${partners }" var="partner" varStatus="status">
 					<div class="main-evaluation-list-cont">
 						<div class="main-evaluation-list-cont-img">
-							<img src="${partner.logo }" width="" height="" style="margin-top: 50px;" />
+							<img src="${partner.logo }" width="115" height="50" style="margin-top: 40px;" />
 						</div>
 						<div class="main-evaluation-list-cont-dis">
 							<p class="main-cont-dis-title">${partner.name }</p>
@@ -576,10 +576,9 @@
 						</div>
 					</div>
 					<div style="width: 372px; height: 215px; left: 662px; position: absolute; top: 1952px;">
-						<embed align="middle" width="372" height="215" 	
-							type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" 
-							quality="high" flashvars="f=http://localhost:8080/${partner.video }" 
-							src="http://www.ckplayer.com/ckplayer6.1/ckplayer.swf" />
+						<embed type="application/x-shockwave-flash" width="372" height="215" 
+							src="http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf" allowfullscreen="true" 
+							quality="high" allowscriptaccess="always" align="middle" />
 					</div>
 					<div style="width: 132px; height: 174px; position: absolute; top: 2121px; left: 1045px;">
 						<img src="${partner.path }" width="132" height="174"/>
