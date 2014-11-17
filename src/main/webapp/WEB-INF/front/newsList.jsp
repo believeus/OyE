@@ -74,30 +74,11 @@
 					<img src="/static/public/images/newslist_img.jpg" width="600"/>
 				</div>
 				<div class="main_content_body_link">
+				<c:forEach var="newx" items="${news}" varStatus="status">
 					<p class="link_title">
-						<a href="/newsInfo.jhtml" style="color:#000;">基于服务器今日开始交付 为客户提供大数据平台</a>
-					</p>					
-					<p class="link_title">
-						<a href="/newsInfo.jhtml">基于服务器今日开始交付 为客户提供大数据平台</a>
-					</p>					
-					<p class="link_title">
-						<a href="/newsInfo.jhtml">基于服务器今日开始交付 为客户提供大数据平台提供大数据平台提供大数据平台</a>
-					</p>					
-					<p class="link_title">
-						<a href="#">基于服务器今日开始交付 为客户提供大数据平台</a>
-					</p>					
-					<p class="link_title">
-						<a href="#">基于服务器今日开始交付 为客户提供大数据平台提供大数据平台</a>
-					</p>					
-					<p class="link_title">
-						<a href="#">基于服务器今日开始交付 为客户提供大数据平台</a>
-					</p>					
-					<p class="link_title">
-						<a href="#">基于服务器今日开始交付 为客户提供大数据平台提供大数据平台</a>
-					</p>					
-					<p class="link_title">
-						<a href="#">基于服务器今日开始交付 为客户提供大数据平台</a>
-					</p>					
+						<a href="/newsInfo.jhtml?id=${newx.id }" style="color:#000;">${newx.title }</a>
+					</p>									
+				</c:forEach>				
 				</div>
 				<div class="main_content_body_list">
 					<div class="list_date">

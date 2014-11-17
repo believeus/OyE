@@ -105,10 +105,15 @@ public class PartnersController {
 				e.printStackTrace();
 			}
 		}
-		
-		partners.setLogo(logoUrl);
-		partners.setPath(path);
-		partners.setVideo(video);
+		if (!logoUrl.equals("")) {
+			partners.setLogo(logoUrl);			
+		}
+		if (!path.equals("")) {
+			partners.setPath(path);			
+		}
+		if (!video.equals("")) {
+			partners.setVideo(video);			
+		}
 		baseService.saveOrUpdata(partners);
 		return "redirect:/admin/partners/list.jhtml";
 	}

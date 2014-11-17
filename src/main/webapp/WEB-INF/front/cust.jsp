@@ -29,87 +29,17 @@
 	<div class="main" style="background: #eaeaea;">
 		<img src="/static/public/images/customer_img.jpg" width="100%"/>
 		<div class="main-evaluation-list" style="margin:30px auto;">
-			<div class="main-evaluation-list-cont">
+			<c:forEach var="partners" items="${partners}" varStatus="status">
+				<div class="main-evaluation-list-cont">
 				<div class="main-evaluation-list-cont-img">
-					<img src="/static/public/images/philips.jpg" width="" height="" style="margin-top: 50px;" />
+					<img src="/${partners.path }" width="120px" height="50px" style="margin-top: 40px;" />
 				</div>
 				<div class="main-evaluation-list-cont-dis">
-					<p class="main-cont-dis-title">来自飞利浦的评价</p>
-					<p class="main-cont-dis-conts">来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价</p>
+					<p class="main-cont-dis-title">${partners.name }</p>
+					<p class="main-cont-dis-conts">${partners.content }</p>
 				</div>
 			</div>
-			<div class="main-evaluation-list-cont">
-				<div class="main-evaluation-list-cont-img">
-					<img src="/static/public/images/lotus.jpg" width="" height="" style="margin-top: 40px;" />
-				</div>
-				<div class="main-evaluation-list-cont-dis">
-					<p class="main-cont-dis-title">来自飞利浦的评价</p>
-					<p class="main-cont-dis-conts">来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价</p>
-				</div>
-			</div>
-			<div class="main-evaluation-list-cont">
-				<div class="main-evaluation-list-cont-img">
-					<img src="/static/public/images/philips.jpg" width="" height="" style="margin-top: 50px;" />
-				</div>
-				<div class="main-evaluation-list-cont-dis">
-					<p class="main-cont-dis-title">来自飞利浦的评价</p>
-					<p class="main-cont-dis-conts">来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价</p>
-				</div>
-			</div>
-			<div class="main-evaluation-list-cont">
-				<div class="main-evaluation-list-cont-img">
-					<img src="/static/public/images/philips.jpg" width="" height="" style="margin-top: 50px;" />
-				</div>
-				<div class="main-evaluation-list-cont-dis">
-					<p class="main-cont-dis-title">来自飞利浦的评价</p>
-					<p class="main-cont-dis-conts">来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价</p>
-				</div>
-			</div>
-			<div class="main-evaluation-list-cont">
-				<div class="main-evaluation-list-cont-img">
-					<img src="/static/public/images/lotus.jpg" width="" height="" style="margin-top: 40px;" />
-				</div>
-				<div class="main-evaluation-list-cont-dis">
-					<p class="main-cont-dis-title">来自飞利浦的评价</p>
-					<p class="main-cont-dis-conts">来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价</p>
-				</div>
-			</div>
-			<div class="main-evaluation-list-cont">
-				<div class="main-evaluation-list-cont-img">
-					<img src="/static/public/images/philips.jpg" width="" height="" style="margin-top: 50px;" />
-				</div>
-				<div class="main-evaluation-list-cont-dis">
-					<p class="main-cont-dis-title">来自飞利浦的评价</p>
-					<p class="main-cont-dis-conts">来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价</p>
-				</div>
-			</div>
-			<div class="main-evaluation-list-cont">
-				<div class="main-evaluation-list-cont-img">
-					<img src="/static/public/images/philips.jpg" width="" height="" style="margin-top: 50px;" />
-				</div>
-				<div class="main-evaluation-list-cont-dis">
-					<p class="main-cont-dis-title">来自飞利浦的评价</p>
-					<p class="main-cont-dis-conts">来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价</p>
-				</div>
-			</div>
-			<div class="main-evaluation-list-cont">
-				<div class="main-evaluation-list-cont-img">
-					<img src="/static/public/images/lotus.jpg" width="" height="" style="margin-top: 40px;" />
-				</div>
-				<div class="main-evaluation-list-cont-dis">
-					<p class="main-cont-dis-title">来自飞利浦的评价</p>
-					<p class="main-cont-dis-conts">来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价</p>
-				</div>
-			</div>
-			<div class="main-evaluation-list-cont">
-				<div class="main-evaluation-list-cont-img">
-					<img src="/static/public/images/philips.jpg" width="" height="" style="margin-top: 50px;" />
-				</div>
-				<div class="main-evaluation-list-cont-dis">
-					<p class="main-cont-dis-title">来自飞利浦的评价</p>
-					<p class="main-cont-dis-conts">来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价</p>
-				</div>
-			</div>
+			</c:forEach>
 		</div>
 	</div>
 	<!--

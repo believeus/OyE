@@ -1,4 +1,6 @@
 package cn.believeus.controller;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -14,6 +16,7 @@ import cn.believeus.model.Business;
 import cn.believeus.model.CompanyInfo;
 import cn.believeus.model.Customers;
 import cn.believeus.model.Example;
+import cn.believeus.model.News;
 import cn.believeus.model.Partners;
 import cn.believeus.model.Processs;
 import cn.believeus.model.Team;
@@ -70,16 +73,28 @@ public class ControllerIndex {
 		
 		return "/WEB-INF/front/index.jsp";
 	}
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/newsList")
 	public String news(HttpServletRequest request) {
+		List<News> news = (List<News>)baseService.findObjectList(News.class);
+		request.setAttribute("news", news);
 		return "/WEB-INF/front/newsList.jsp";
 	}
 	@RequestMapping(value = "/newsInfo")
-	public String newsInfo(HttpServletRequest request) {
+	public String newsInfo(Integer id,HttpServletRequest request) {
+		News news = (News)baseService.findObject(News.class, id);
+		request.setAttribute("news", news);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+		request.setAttribute("time", sdf.format(news.getCreateTime()));
 		return "/WEB-INF/front/newsInfo.jsp";
 	}
+	
+	
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/cust")
 	public String cust(HttpServletRequest request) {
+		List<Partners> Partners = (List<Partners>)baseService.findObjectList(Partners.class);
+		request.setAttribute("partners", Partners);
 		return "/WEB-INF/front/cust.jsp";
 	}
 	
