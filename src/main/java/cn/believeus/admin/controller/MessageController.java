@@ -69,7 +69,7 @@ public class MessageController {
 	 * 留言查看
 	 * @return
 	 */
-	@RequiresPermissions("contact:update")
+	@RequiresPermissions("contact:view")
 	@RequestMapping(value="/admin/message/view")
 	public String messageView(Integer id,HttpServletRequest request){
 		Message message = (Message)baseService.findObject(Message.class,id);

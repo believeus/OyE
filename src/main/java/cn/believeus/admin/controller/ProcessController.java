@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import mydfs.storage.server.MydfsTrackerServer;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -22,14 +20,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import cn.believeus.PaginationUtil.Page;
 import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
-import cn.believeus.model.News;
 import cn.believeus.model.Processs;
 import cn.believeus.service.BaseService;
 
 @Controller
 public class ProcessController {
 	
-	private static final Log log=LogFactory.getLog(ProcessController.class);
 	@Resource
 	private MydfsTrackerServer mydfsTrackerServer;
 	

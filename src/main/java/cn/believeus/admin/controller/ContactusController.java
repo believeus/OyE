@@ -11,6 +11,7 @@ import mydfs.storage.server.MydfsTrackerServer;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.junit.Assert;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,6 +53,7 @@ public class ContactusController {
 	 * 关于我们信息修改
 	 * @return
 	 */
+	@RequiresPermissions("contactus:update")
 	@RequestMapping(value="/admin/contactusEdit")
 	public String contactusEdit(HttpServletRequest request){
 		ContactusInfo contactusInfo = (ContactusInfo)baseService.findObject(ContactusInfo.class, 1);
@@ -63,6 +65,7 @@ public class ContactusController {
 	 * 关于我们信息修改
 	 * @return
 	 */
+	@RequiresPermissions("contactus:update")
 	@RequestMapping(value="/admin/contactusUpdate")
 	public String contactusUpdate(ContactusInfo contactusInfo,HttpServletRequest request){
 		contactusInfo.setEditTime(System.currentTimeMillis());

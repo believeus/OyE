@@ -67,6 +67,7 @@ $().ready(function() {
 	</div>
 	<form id="inputForm" action="/admin/updateRoleForAdmin.jhtml" method="post">
 	   <input type="hidden" name="adminId" value="${adminId}"/>
+	   <input type="hidden" name="roleId" value="${admin.role.id}"/>
 		<table class="input">
 			<tr>
 				<th colspan="2" style="text-align: left; font-size: 15px; padding-left: 120px;">
@@ -78,7 +79,7 @@ $().ready(function() {
 					<span class="requiredField">*</span>用户名:
 				</th>
 				<td>
-					<input type="text" id="adminName" name="adminName" value="${admin.username}" class="text" maxlength="200" />
+					<input onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" type="text" id="adminName" name="adminName" value="${admin.username}" class="text" maxlength="200" />
 				</td>
 			</tr>
 			<tr>

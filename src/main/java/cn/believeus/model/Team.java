@@ -20,6 +20,9 @@ public class Team extends TbaseEntity{
 
 	/** 职位*/
 	private String position;
+	
+	/** 描述*/
+	private String content;
 
 	/** 获取图片链接*/
 	public String getPath() {
@@ -59,6 +62,16 @@ public class Team extends TbaseEntity{
 	/** 设置英文名称 */
 	public void setEhName(String ehName) {
 		this.ehName = ehName;
+	}
+	
+	/** 获取内容 */
+	public String getContent() {
+		return content;
+	}
+	
+	/** 设置内容 */
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 }

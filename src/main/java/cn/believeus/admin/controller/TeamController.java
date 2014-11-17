@@ -44,6 +44,7 @@ public class TeamController {
 	 * 添加团队成员
 	 * @return
 	 */
+	@RequiresPermissions("team:create")
 	@RequestMapping(value="/admin/team/add")
 	public String teamAdd(){
 		return "/WEB-INF/back/team/add.jsp";
@@ -53,7 +54,7 @@ public class TeamController {
 	 * 团队成员保存和更新
 	 * @return
 	 */
-	@RequiresPermissions("team:update")
+	@RequiresPermissions("team:create")
 	@RequestMapping(value="/admin/team/SaveOrUpdate")
 	public String teamSaveOrUpdate(Team team,HttpServletRequest request){
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;

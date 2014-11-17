@@ -40,6 +40,7 @@ public class NewsController {
 	 * 新闻列表
 	 * @return
 	 */
+	@RequiresPermissions("newsDinamic:view")
 	@RequestMapping(value="/admin/news/list")
 	public String list(HttpServletRequest request){
 		String pageNumber = request.getParameter("pageNumber");

@@ -77,7 +77,7 @@ $().ready(function() {
 					<span class="requiredField">*</span>用户名:
 				</th>
 				<td>
-					<input type="text" id="adminName" name="adminName" value="" class="text" maxlength="200" />
+					<input onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" type="text" id="adminName" name="adminName" class="text" maxlength="200" />
 				</td>
 			</tr>
 			<tr>

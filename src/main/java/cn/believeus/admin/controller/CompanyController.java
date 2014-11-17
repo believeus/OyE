@@ -55,6 +55,7 @@ public class CompanyController {
 	 * 企业信息修改
 	 * @return
 	 */
+	@RequiresPermissions("companyMsg:update")
 	@RequestMapping(value="/admin/companyUpdate")
 	public String companyUpdate(CompanyInfo companyInfo,HttpServletRequest request){
 		companyInfo.setEditTime(System.currentTimeMillis());

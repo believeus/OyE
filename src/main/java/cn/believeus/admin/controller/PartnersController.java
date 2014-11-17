@@ -15,6 +15,7 @@ import mydfs.storage.server.MydfsTrackerServer;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.junit.Assert;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -64,6 +65,7 @@ public class PartnersController {
 	 * 合作伙伴添加
 	 * @return
 	 */
+	@RequiresPermissions("partners:create")
 	@RequestMapping(value="/admin/partners/add")
 	public String partnersAdd(){
 		return "/WEB-INF/back/partners/add.jsp";
@@ -73,6 +75,7 @@ public class PartnersController {
 	 * 合作伙伴保存或更新
 	 * @return
 	 */
+	@RequiresPermissions("partners:create")
 	@RequestMapping(value="/admin/partners/saveOrUpdate")
 	public String saveOrUpdate(Partners partners,HttpServletRequest request){
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
@@ -114,6 +117,7 @@ public class PartnersController {
 	 * 合作伙伴修改
 	 * @return
 	 */
+	@RequiresPermissions("partners:update")
 	@RequestMapping(value="/admin/partners/edit")
 	public String partnersEdit(Integer id,HttpServletRequest request){
 		Partners partners = (Partners)baseService.findObject(Partners.class, id);
@@ -124,6 +128,7 @@ public class PartnersController {
 	 * 合作伙伴删除
 	 * @return
 	 */
+	@RequiresPermissions("partners:delete")
 	@RequestMapping(value="/admin/partners/delete")
 	public @ResponseBody String partnersDelete(Integer[] ids){
 		List<Integer> list = Arrays.asList(ids); 

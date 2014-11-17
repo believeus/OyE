@@ -14,6 +14,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="/static/public/js/jquery.js"></script>
 	<script type="text/javascript" src="/static/public/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="/static/public/js/admin/ueditor1_2_6_2/ueditor.config.js"></script>
+	<script type="text/javascript" src="/static/public/js/admin/ueditor1_2_6_2/ueditor.all.js"></script>
 	<script type="text/javascript" src="/static/public/js/common.js"></script>
 	<script type="text/javascript" src="/static/public/js/input.js"></script>
 	<style type="text/css">
@@ -23,6 +25,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</style>
 	<script type="text/javascript">
 	$().ready(function() {
+
+		var editor = new UE.ui.Editor();
+	    editor.render('editor');
+	    editor.addListener('contentchange',function(){
+	        this.sync();
+	        $('textarea').valid();
+	    });
 	
 		var $inputForm = $("#inputForm");
 		
@@ -32,7 +41,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				name: "required",
 				ehName: "required",
 				position: "required",
-				upload_img: "required"
+				upload_img: "required",
+				content: "required"
 			}
 		});
 		
@@ -90,6 +100,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						    <img id="preview_size_fake"/> 
 						</span>
 					</div>
+				</td>
+			</tr>
+			<tr id="contentTr">
+				<th>
+					描述:
+				</th>
+				<td colspan="3">
+					<textarea id="editor" name="content" class="editor"></textarea>
 				</td>
 			</tr>
 			<tr>
