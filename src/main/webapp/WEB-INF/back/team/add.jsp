@@ -30,6 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$inputForm.validate({
 			rules: {
 				name: "required",
+				ehName: "required",
 				position: "required",
 				upload_img: "required"
 			}
@@ -48,10 +49,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table class="input">
 			<tr>
 				<th>
-					成员姓名:
+					中文姓名:
 				</th>
 				<td>
 					<input type="text" name="name" class="text" maxlength="200" />
+				</td>
+			</tr>
+			<tr>
+				<th>
+					英文姓名:
+				</th>
+				<td>
+					<input type="text" name="ehName" class="text" maxlength="200" />
 				</td>
 			</tr>
 			<tr>

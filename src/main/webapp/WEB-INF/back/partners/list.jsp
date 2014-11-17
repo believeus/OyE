@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -30,11 +30,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div class="path">
-		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 客户感言列表 <span>共${dataCenters.total}条记录</span>
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 客户感言列表 <span>共${size}条记录</span>
 	</div>
-	<form id="listForm" action="/admin/customerAdd.jhtml" method="post">
 		<div class="bar">
-			<a href="/admin/customerAdd.jhtml" class="iconButton">
+			<a href="/admin/partners/add.jhtml" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
 			</a>
 		<div class="buttonWrap">
@@ -44,20 +43,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<a href="javascript:;" id="refreshButton" class="iconButton">
 					<span class="refreshIcon">&nbsp;</span>刷新
 				</a>
-			</div>
-			<div class="menuWrap">
-				<div class="search">
-					<span id="searchPropertySelect" class="arrow">&nbsp;</span>
-					<input type="text" id="searchValue" name="searchValue" value="${searchValue}" maxlength="200" />
-					<button type="submit">&nbsp;</button>
-				</div>
-				<div class="popupMenu">
-					<ul id="searchPropertyOption">
-						<li>
-							<a href="javascript:;" class="current" val="title">标题</a>
-						</li>
-					</ul>
-				</div>
 			</div>
 		</div>
 		<table id="listTable" class="list">
@@ -69,33 +54,46 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;" class="sort" name="id">排序编号</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="title">标题</a>
+					<a href="javascript:;" class="sort" name="title">合作伙伴名称</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="title">描述</a>
+					<a href="javascript:;" class="sort" name="title">LOGO图片</a>
+				</th>
+				<th>
+					<a href="javascript:;" class="sort" name="title">人物图片</a>
+				</th>
+				<th>
+					<a href="javascript:;" class="sort" name="title">视频</a>
 				</th>
 				<th>
 					<a href="#"  class="sort">操作</a>
 				</th>
 			</tr>
-			<tr>
-				<td>
-					<input type="checkbox" name="ids" value="${center.id}" />
-				</td>
-				<td>
-					<span title="${center.id}">1${center.id}</span>
-				</td>
-				<td>
-					${center.title}aaa
-				</td>
-				<td>
-					${center.content}abcd
-				</td>
-				<td>
-					<a href="/admin/customerEdit.jhtml?id=${center.id}">[修改]</a>
-				</td>
-			</tr>
+			<c:forEach var="partners" items="${partnersList}" varStatus="status">
+				<tr>
+					<td>
+						<input type="checkbox" name="ids" value="${partners.id}" />
+					</td>
+					<td>
+						<span>${status.index+1 }</span>
+					</td>
+					<td>
+						${partners.name}
+					</td>
+					<td>
+	   					<a href="/${partners.logo }" target="_blank">点击查看logo</a>
+					</td>
+					<td>
+	   					<a href="/${partners.path }" target="_blank">点击查看人物图片</a>
+					</td>
+					<td>
+	   					<a href="/${partners.video }" target="_blank">点击查看视频</a>
+					</td>
+					<td>
+						<a href="/admin/partners/edit.jhtml?id=${partners.id}">[修改]</a>
+					</td>
+				</tr>
+			</c:forEach>
 		</table>
-	</form>
   </body>
 </html>

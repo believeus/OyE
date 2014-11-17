@@ -7,8 +7,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>编辑客户感言 - Powered By believeus</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>添加客户感言 - Powered By believeus</title>
 	<meta name="author" content="believeus Team" />
 	<meta name="copyright" content="believeus" />
 	<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
@@ -34,71 +34,61 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    });
 	
 		var $inputForm = $("#inputForm");
-		var $type = $("#type");
-		var $contentTr = $("#contentTr");
-		var $pathTr = $("#pathTr");
-		var $path = $("#path");
-		var $browserButton = $("#browserButton");
-		
-		
-		
-		// "类型"修改
-		$type.change(function() {
-			if ($type.val() == "text") {
-				$contentTr.show();
-				$pathTr.hide();
-				$path.prop("disabled", true)
-			} else {
-				$contentTr.hide();
-				$pathTr.show();
-				$path.prop("disabled", false)
-				$browserButton.unbind().browser({
-					type: $type.val()
-				});
-			}
-		});
 		
 		// 表单验证
 		$inputForm.validate({
 			rules: {
-				title: "required",
-				author: "required",
-				path: "required",
-				order: "digits"
+				name: "required"
+				,upload_img1: "required"
+				,upload_img2: "required"
+				,upload_img3: "required"
+				,content: "required"
 			}
 		});
-		
-		$("#checked_true").click(function(){
-			if($("#checked_true").attr("value") == 0){
-				$("#checked_true").attr("value","1");
-			}else{
-				$("#checked_true").attr("value","0");
-			}
-		});
-		
 	});
+	
+	 // 检查视频格式
+	  function checkV(file) {
+	   if(!(/(?:flv)$/i.test(file.value))) {
+		  alert("只允许上传flv 格式的视频");
+		  if(window.ActiveXObject) {//for IE
+				file.select();//select the file ,and clear selection
+			    document.selection.clear();
+			} else if(window.opera) {//for opera
+				file.type="text";file.type="file";
+			} else file.value="";//for FF,Chrome,Safari
+		} 
+	  }
 	
 	</script>
   </head>
   
   <body>
-     <div class="path">
-		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 编辑客户感言
+    <div class="path">
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 添加合作伙伴
 	</div>
-	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="type" value="${type}"/>
+	<form id="inputForm" action="/admin/partners/saveOrUpdate.jhtml" method="post" enctype="multipart/form-data">
 		<table class="input">
 			<tr>
 				<th>
-					<span class="requiredField">*</span>客户感言标题:
+					合作伙伴名称:
 				</th>
 				<td>
-					<input type="text" name="title" class="text" maxlength="200" value="aaa"/>
+					<input type="text" name="name" class="text" maxlength="200" />
+				</td>
+			</tr>
+			<tr>
+				<th>
+					视频:
+				</th>
+				<td>
+					<input type="file" name="upload_img3" onchange="checkV(this)"/>
+					<font size="2" color="#999999">只能上传 .flv 格式的视频。</font>
 				</td>
 			</tr>
 			<tr id="pathTr">
 				<th>
-					<span class="requiredField">*</span>相关图片:
+					LOGO图片:
 				</th>
 				<td colspan="3">
 					<div>
@@ -109,10 +99,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						        </div>    
 						    </div>    
 						    <br/>    
-						    <input id="upload_img" type="file" name="upload_img" onchange="filename0.value=this.value;onUploadImgChange(this,190,120,'preview','preview_fake','preview_size_fake');"/>  
+						    <input id="upload_img1" type="file" name="upload_img1" onchange="filename0.value=this.value;onUploadImgChange(this,190,120,'preview','preview_fake','preview_size_fake');"/>  
 						    <input type="hidden" id="filename0" name="filename0">
 						    <br/>    
 						    <img id="preview_size_fake"/> 
+						</span>
+					</div>
+				</td>
+			</tr>
+			<tr id="pathTr">
+				<th>
+					人物图片:
+				</th>
+				<td colspan="3">
+					<div>
+						<span style="float:left">
+							<div id="preview_wrapper">    
+						        <div id="preview_fake2" >    
+						            <img id="preview2" onload="onPreviewLoad(this,190,120)" src="/static/public/images/bg.png"/>
+						        </div>    
+						    </div>    
+						    <br/>    
+						    <input id="upload_img2" type="file" name="upload_img2" onchange="filename0.value=this.value;onUploadImgChange(this,190,120,'preview2','preview_fake2','preview_size_fake2');"/>  
+						    <input type="hidden" id="filename0" name="filename0">
+						    <br/>    
+						    <img id="preview_size_fake2"/> 
 						</span>
 					</div>
 				</td>
@@ -122,7 +133,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					描述:
 				</th>
 				<td colspan="3">
-					<textarea id="editor" name="content" class="editor">abcd</textarea>
+					<textarea id="editor" name="content" class="editor"></textarea>
 				</td>
 			</tr>
 			<tr>
@@ -131,7 +142,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</th>
 				<td colspan="3">
 					<input type="submit" class="button" value="确定" />
-					<input type="button" class="button" value="返回" onclick="javascript:window.history.back();"/>
+					<input type="button" class="button" value="返回"  onclick="javascript:window.history.back();"/>
 				</td>
 			</tr>
 		</table>

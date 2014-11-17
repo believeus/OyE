@@ -9,8 +9,11 @@ public class Team extends TbaseEntity{
 
 	private static final long serialVersionUID = -5770298886416112741L;
 
-	/** 名称*/
+	/** 中文名称*/
 	private String name;
+	
+	/** 英文名称 */
+	private String ehName;
 	
 	/** 图片链接 */
 	private String path;
@@ -28,12 +31,12 @@ public class Team extends TbaseEntity{
 		this.path = path;
 	}
 
-	/** 获取名称*/
+	/** 获取中文名称*/
 	public String getName() {
 		return name;
 	}
 
-	/** 设置名称 */
+	/** 设置中文名称 */
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -46,6 +49,16 @@ public class Team extends TbaseEntity{
 	/** 设置职位 */
 	public void setPosition(String position) {
 		this.position = position;
+	}
+
+	/** 获取英文名称*/
+	public String getEhName() {
+		return ehName;
+	}
+
+	/** 设置英文名称 */
+	public void setEhName(String ehName) {
+		this.ehName = ehName;
 	}
 
 }
