@@ -328,6 +328,22 @@
 			$("#4compimg04").show();
 			$("#xx_img04").animate({left:$(this).offset().left + 78});
 		});
+		//-------------------
+		$("#cont-img01").click(function(){
+			$("#m_img01").css("z-index","99");
+			$("#m_img02").css("z-index","88");
+			$("#m_img03").css("z-index","77");
+		});
+		$("#cont-img02").click(function(){
+			$("#m_img02").css("z-index","99");
+			$("#m_img01").css("z-index","88");
+			$("#m_img03").css("z-index","77");
+		});
+		$("#cont-img03").click(function(){
+			$("#m_img01").css("z-index","77");
+			$("#m_img02").css("z-index","88");
+			$("#m_img03").css("z-index","99");
+		});
 	});
 </script>
 <script type="text/javascript">
@@ -567,7 +583,7 @@
 			<div class="main-evaluation-list">
 				<c:forEach items="${partners }" var="partner" varStatus="status">
 					<div class="main-evaluation-list-cont">
-						<div class="main-evaluation-list-cont-img">
+						<div id="cont-img0${status.index+1 }" class="main-evaluation-list-cont-img">
 							<img src="${partner.logo }" width="115" height="50" style="margin-top: 40px;" />
 						</div>
 						<div class="main-evaluation-list-cont-dis">
@@ -575,12 +591,12 @@
 							<p class="main-cont-dis-conts">${partner.content }</p>
 						</div>
 					</div>
-					<div style="width: 372px; height: 215px; left: 662px; position: absolute; top: 1952px;">
+					<div id="embed0${status.index+1 }" style="width: 372px; height: 215px; left: 662px; position: absolute; top: 1952px;">
 						<embed type="application/x-shockwave-flash" width="372" height="215" 
 							src="http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf" allowfullscreen="true" 
 							quality="high" allowscriptaccess="always" align="middle" />
 					</div>
-					<div style="width: 132px; height: 174px; position: absolute; top: 2121px; left: 1045px;">
+					<div id="m_img0${status.index+1 }" style="width: 132px; height: 174px; position: absolute; top: 2121px; left: 1045px;">
 						<img src="${partner.path }" width="132" height="174"/>
 					</div>
 				</c:forEach>
