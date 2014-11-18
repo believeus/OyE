@@ -55,6 +55,13 @@
 		<mapping class="cn.believeus.model.ContactusInfo"/>
 		<mapping class="cn.believeus.model.Banner"/>
 		<mapping class="cn.believeus.model.Partners"/>
+		<mapping class="cn.believeus.model.en.ENBusiness"/>
+		<mapping class="cn.believeus.model.en.ENCompanyInfo"/>
+		<mapping class="cn.believeus.model.en.ENContactusInfo"/>
+		<mapping class="cn.believeus.model.en.ENNews"/>
+		<mapping class="cn.believeus.model.en.ENPartners"/>
+		<mapping class="cn.believeus.model.en.ENProcesss"/>
+		<mapping class="cn.believeus.model.en.ENTeam"/>
 		
 	</session-factory>
 

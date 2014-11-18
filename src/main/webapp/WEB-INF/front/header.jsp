@@ -20,8 +20,8 @@
 </script>
 <div class="header">
 	<div class="sel-languages">
-		<a href="#">中文</a> |
-		<a href="#" style="margin-right: 70px;">English</a>
+		<a href="/">中文</a> |
+		<a href="/english.jhtml" style="margin-right: 70px;">English</a>
 	</div>
 	<div class="logo">
 		<div style="width:1300px;height: auto;overflow: hidden;margin: 0 auto;">
