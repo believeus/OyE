@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.believeus.model.CompanyInfo;
+import cn.believeus.model.en.ENCompanyInfo;
 import cn.believeus.service.BaseService;
 
 @Controller
@@ -24,19 +25,27 @@ public class CompanyController {
 	@RequestMapping(value="/admin/companyView")
 	public String companyView(HttpServletRequest request){
 		CompanyInfo companyInfo = (CompanyInfo)baseService.findObject(CompanyInfo.class, 1);
-		if (companyInfo==null) {
+		ENCompanyInfo enCompanyInfo = (ENCompanyInfo)baseService.findObject(ENCompanyInfo.class, 1);
+		if (companyInfo==null&&enCompanyInfo==null) {
 			companyInfo=new CompanyInfo();
 			companyInfo.setPhone("400-xxxx-xxxx");
 			companyInfo.setFax("+86 21 6259 0368 - 805");
 			companyInfo.setMobile("+86 13524728911");
 			companyInfo.setEmail("xxxx@163.com");
-			companyInfo.setAddress("NO.179 West Zhongshan Road,Changning,5F,Block E");
-			companyInfo.setContent("我们是搬家公司！");
+			companyInfo.setAddress("第179号西中山路，长宁，5F，E座");
 			companyInfo.setName("上海欧耶");
-			companyInfo.setCreateTime(System.currentTimeMillis());
+			enCompanyInfo=new ENCompanyInfo();
+			enCompanyInfo.setPhone("400-xxxx-xxxx");
+			enCompanyInfo.setFax("+86 21 6259 0368 - 805");
+			enCompanyInfo.setMobile("+86 13524728911");
+			enCompanyInfo.setEmail("xxxx@163.com");
+			enCompanyInfo.setAddress("NO.179 West Zhongshan Road,Changning,5F,Block E");
+			enCompanyInfo.setName("Shanghai Ouye");
 			baseService.saveOrUpdata(companyInfo);
+			baseService.saveOrUpdata(enCompanyInfo);
 		}
 		request.setAttribute("companyInfo", companyInfo);
+		request.setAttribute("encompanyInfo", enCompanyInfo);
 		return "/WEB-INF/back/company/companyMsg.jsp";
 	}
 	/**
@@ -48,6 +57,8 @@ public class CompanyController {
 	public String companyEdit(HttpServletRequest request){
 		CompanyInfo companyInfo = (CompanyInfo)baseService.findObject(CompanyInfo.class, 1);
 		request.setAttribute("companyInfo", companyInfo);
+		ENCompanyInfo enCompanyInfo = (ENCompanyInfo)baseService.findObject(ENCompanyInfo.class, 1);
+		request.setAttribute("encompanyInfo", enCompanyInfo);
 		return "/WEB-INF/back/company/edit.jsp";
 	}
 	
@@ -58,9 +69,19 @@ public class CompanyController {
 	@RequiresPermissions("companyMsg:update")
 	@RequestMapping(value="/admin/companyUpdate")
 	public String companyUpdate(CompanyInfo companyInfo,HttpServletRequest request){
-		companyInfo.setEditTime(System.currentTimeMillis());
+		String enname = request.getParameter("enname");
+		String enaddress = request.getParameter("enaddress");
+		ENCompanyInfo enCompanyInfo = (ENCompanyInfo)baseService.findObject(ENCompanyInfo.class, companyInfo.getId());
+		enCompanyInfo.setName(enname);
+		enCompanyInfo.setAddress(enaddress);
+		enCompanyInfo.setEmail(companyInfo.getEmail());
+		enCompanyInfo.setFax(companyInfo.getFax());
+		enCompanyInfo.setPhone(companyInfo.getPhone());
+		enCompanyInfo.setMobile(companyInfo.getMobile());
 		baseService.saveOrUpdata(companyInfo);
+		baseService.saveOrUpdata(enCompanyInfo);
 		request.setAttribute("companyInfo", companyInfo);
+		request.setAttribute("encompanyInfo", enCompanyInfo);
 		return "/WEB-INF/back/company/companyMsg.jsp";
 	}
 }

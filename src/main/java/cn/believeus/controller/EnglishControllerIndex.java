@@ -78,8 +78,8 @@ public class EnglishControllerIndex {
 		}
 		request.setAttribute("news", news);
 		//关于我们
-		List<ENContactusInfo> contactusInfos = (List<ENContactusInfo>) baseService.findObjectList(ENContactusInfo.class);
-		request.setAttribute("contactusInfos", contactusInfos);
+		ENContactusInfo enContactusInfo = (ENContactusInfo)baseService.findObject(ENContactusInfo.class, 1);
+		request.setAttribute("contactusInfo", enContactusInfo);
 		
 		return "/WEB-INF/front/index.jsp";
 	}

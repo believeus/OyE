@@ -33,13 +33,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        $('textarea').valid();
 	    });
 	
+	    var editor1 = new UE.ui.Editor();
+	    editor1.render('editor1');
+	    editor1.addListener('contentchange',function(){
+	        this.sync();
+	        $('#editor1').valid();
+	    });
+	    
 		var $inputForm = $("#inputForm");
 		
 		// 表单验证
 		$inputForm.validate({
 			rules: {
 				title: "required",
-				content: "required"
+				content: "required",
+				entitle: "required",
+				encontent: "required"
 			}
 		});
 		
@@ -59,10 +68,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table class="input">
 			<tr>
 				<th>
-					新闻标题:
+					新闻中文标题:
 				</th>
 				<td>
 					<input type="text" name="title" class="text" maxlength="200" value="${news.title}"/>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					新闻英文标题:
+				</th>
+				<td>
+					<input type="text" name="entitle" class="text" maxlength="200" value="${ennews.title}"/>
 				</td>
 			</tr>
 			<tr id="pathTr">
@@ -93,6 +110,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</th>
 				<td colspan="3">
 					<textarea id="editor" name="content" class="editor">${news.content}</textarea>
+				</td>
+			</tr>
+			<tr id="contentTr">
+				<th>
+					内容:
+				</th>
+				<td colspan="3">
+					<textarea id="editor1" name="encontent" class="editor">${ennews.content}</textarea>
 				</td>
 			</tr>
 			<tr>

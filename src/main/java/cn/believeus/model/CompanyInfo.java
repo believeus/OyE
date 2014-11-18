@@ -18,9 +18,6 @@ public class CompanyInfo extends TbaseEntity{
 	/** 企业地址*/
 	private String address;
 	
-	/** 企业简介*/
-	private String content;
-	
 	/** 企业传真 */
 	private String fax;
 	
@@ -84,17 +81,6 @@ public class CompanyInfo extends TbaseEntity{
 	/** 设置企业地址 */
 	public void setAddress(String address) {
 		this.address = address;
-	}
-
-
-	/** 获取企业简介 */
-	public String getContent() {
-		return content;
-	}
-
-	/** 设置企业简介 */
-	public void setContent(String content) {
-		this.content = content;
 	}
 
 }

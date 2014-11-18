@@ -783,17 +783,13 @@
 				<div class="aboutus" style="width: 380px;height: auto;overflow: hidden;float: left; margin-bottom: 50px;">
 					<div style="height: 45px;line-height: 45px;color: #EF738B;border-bottom: 1px solid #868686;">
 						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
-							关于我们
+							${contactusInfo.title }
 						</div>
 					</div>
-					<c:forEach items="${contactusInfos }" var="contactusInfo" varStatus="status">
-						<c:if test="${status.index ==0 }">
-							<div style="">
-								<img src="${contactusInfo.path }" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />
-								<span style="color: #d6d6d6;line-height: 27px;">${contactusInfo.content }</span>
-							</div>
-						</c:if>
-					</c:forEach>
+						<div style="">
+							<img src="${contactusInfo.path }" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />
+							<span style="color: #d6d6d6;line-height: 27px;">${contactusInfo.content }</span>
+						</div>
 				</div>
 				<div class="aboutus" style="width: 360px;height: auto;overflow: hidden;float: left;">
 					<div style="height: 45px;line-height: 45px;color: #EF738B;border-bottom: 1px solid #868686;">

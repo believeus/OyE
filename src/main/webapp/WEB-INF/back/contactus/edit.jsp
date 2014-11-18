@@ -38,7 +38,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$inputForm.validate({
 			rules: {
 				title: "required",
-				content: "required"
+				content: "required",
+				entitle: "required",
+				encontent: "required"
 			}
 		});
 		
@@ -54,16 +56,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<form id="inputForm" action="/admin/contactusUpdate.jhtml" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="id" value="${contactusInfo.id}">
 		<input type="hidden" name="path" value="${contactusInfo.path}"/>
+		<input type="hidden" name="enpath" value="${enontactusInfo.path}"/>
 		<table class="input">
 			<tr>
 				<th>
-					标题:
+					中文标题:
 				</th>
 				<td>
 					<input type="text" name="title" class="text" maxlength="200" value="${contactusInfo.title }"/>
 				</td>
 			</tr>
-			
+			<tr>
+				<th>
+					英文标题:
+				</th>
+				<td>
+					<input type="text" name="entitle" class="text" maxlength="200" value="${encontactusInfo.title }"/>
+				</td>
+			</tr>
 			<tr id="pathTr">
 				<th>
 					<span class="requiredField"></span>相关图片:
@@ -88,10 +98,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			<tr id="contentTr">
 				<th>
-					内容:
+					中文内容:
 				</th>
 				<td colspan="3">
-					<textarea id="editor" name="content" class="editor">${contactusInfo.content }</textarea>
+					<textarea name="content" style="width: 400px;height: 100px">${contactusInfo.content }</textarea>
+				</td>
+			</tr>
+			<tr id="contentTr">
+				<th>
+					英文内容:
+				</th>
+				<td colspan="3">
+					<textarea name="encontent" style="width: 400px;height: 100px">${encontactusInfo.content }</textarea>
 				</td>
 			</tr>
 			<tr>

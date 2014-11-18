@@ -78,7 +78,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr id="pathTr">
 				<th>
-					<span class="requiredField">*</span>相关图片:
+					相关图片:
 				</th>
 				<td colspan="3">
 					<div>

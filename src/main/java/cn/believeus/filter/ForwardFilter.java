@@ -34,10 +34,12 @@ public class ForwardFilter implements Filter {
 			if (currenturi.equals("/" + english + ".jhtml")) {
 				session.setAttribute(english, english);
 			} else if (!StringUtils.isEmpty(sessionDialect)) {
-				String url = "/english" + currenturi;
-				httpRequest.getRequestDispatcher(url).forward(httpRequest,
-						httpResponse);
-				return;
+				if (!currenturi.contains("UEupload")) {
+					String url = "/english" + currenturi;
+					httpRequest.getRequestDispatcher(url).forward(httpRequest,
+							httpResponse);
+					return;
+				}
 			} else {
 				session.removeAttribute("english");
 			}

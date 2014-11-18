@@ -33,10 +33,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr>
 				<th>
-					标题:
+					中文标题:
 				</th>
 				<td>
 					${contactusInfo.title }
+				</td>
+			</tr>
+			<tr>
+				<th>
+					英文标题:
+				</th>
+				<td>
+					${encontactusInfo.title }
 				</td>
 			</tr>
 			
@@ -68,10 +76,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			<tr id="contentTr">
 				<th>
-					内容:
+					中文内容:
 				</th>
 				<td colspan="3">
 					${contactusInfo.content }
+				</td>
+			</tr>
+			<tr id="contentTr">
+				<th>
+					英文内容:
+				</th>
+				<td colspan="3">
+					${encontactusInfo.content }
 				</td>
 			</tr>
 		</table>

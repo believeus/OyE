@@ -22,6 +22,7 @@ import cn.believeus.PaginationUtil.Page;
 import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.News;
+import cn.believeus.model.en.ENNews;
 import cn.believeus.service.BaseService;
 import cn.believeus.variables.Variables;
 
@@ -76,6 +77,16 @@ public class NewsController {
 	@RequiresPermissions("newsDinamic:create")
 	@RequestMapping(value="/admin/news/save")
 	public String save(News news,HttpServletRequest request){
+		//英文表
+		ENNews enNews=null;
+		if (news.getId()==0) {
+			enNews=new ENNews();
+		}else {
+			enNews = (ENNews)baseService.findObject(ENNews.class, news.getId());
+		}
+		enNews.setTitle(request.getParameter("entitle"));
+		enNews.setContent(request.getParameter("encontent"));
+		enNews.setPath(request.getParameter("path"));
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		String storepath = "";
 		Map<String, MultipartFile> files = multipartRequest.getFileMap();
@@ -97,8 +108,10 @@ public class NewsController {
 		}
 		if (!storepath.equals("")) {
 			news.setPath(storepath);
+			enNews.setPath(storepath);
 		}
 		baseService.saveOrUpdata(news);
+		baseService.saveOrUpdata(enNews);
 		return "redirect:/admin/news/list.jhtml";
 	}
 	
@@ -111,6 +124,8 @@ public class NewsController {
 	public String edit(Integer myNewId, HttpServletRequest request){
 		News news = (News) baseService.findObject(News.class, myNewId);
 		request.setAttribute("news", news);
+		ENNews enNews = (ENNews) baseService.findObject(ENNews.class, myNewId);
+		request.setAttribute("ennews", enNews);
 		return "/WEB-INF/back/news/edit.jsp";
 	}
 	
@@ -123,6 +138,7 @@ public class NewsController {
 	public @ResponseBody String delete(Integer[] ids){
 		List<Integer> list = Arrays.asList(ids); 
 		baseService.delete(News.class, list);
+		baseService.delete(ENNews.class, list);
 		return "{\"type\":\"success\"}";
 	}
 	
@@ -136,14 +152,21 @@ public class NewsController {
 		News news = (News) baseService.findObject(News.class, myNewId);
 		news.setTop(Variables.newsUp);
 		baseService.saveOrUpdata(news);
+		ENNews enNews = (ENNews) baseService.findObject(ENNews.class, myNewId);
+		enNews.setTop(Variables.newsUp);
+		baseService.saveOrUpdata(enNews);
 		return "redirect:/admin/news/list.jhtml";
 	}
+	
 	@RequiresPermissions("newsDinamic:update")
 	@RequestMapping(value="/admin/news/down")
 	public String downTop(Integer myNewId){
 		News news = (News) baseService.findObject(News.class, myNewId);
 		news.setTop(Variables.newsDown);
 		baseService.saveOrUpdata(news);
+		ENNews enNews = (ENNews) baseService.findObject(ENNews.class, myNewId);
+		enNews.setTop(Variables.newsDown);
+		baseService.saveOrUpdata(enNews);
 		return "redirect:/admin/news/list.jhtml";
 	}
 }

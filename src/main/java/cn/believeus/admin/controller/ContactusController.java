@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import cn.believeus.model.ContactusInfo;
+import cn.believeus.model.en.ENContactusInfo;
 import cn.believeus.service.BaseService;
 
 @Controller
@@ -39,14 +40,19 @@ public class ContactusController {
 	@RequestMapping(value="/admin/contactusView")
 	public String contactusView(HttpServletRequest request){
 		ContactusInfo contactusInfo = (ContactusInfo)baseService.findObject(ContactusInfo.class, 1);
-		if (contactusInfo==null) {
+		ENContactusInfo encontactusInfo = (ENContactusInfo)baseService.findObject(ENContactusInfo.class, 1);
+		if (contactusInfo==null&&encontactusInfo==null) {
 			contactusInfo=new ContactusInfo();
 			contactusInfo.setTitle("关于我们");
 			contactusInfo.setContent("我们是搬家公司，不管你是办公室搬迁还是实验室搬迁，你都可以找我们！");
-			contactusInfo.setCreateTime(System.currentTimeMillis());
+			encontactusInfo=new ENContactusInfo();
+			encontactusInfo.setTitle("About us");
+			encontactusInfo.setContent("We are moving company, no matter you are moving office or laboratory moved, you can find us!");
 			baseService.saveOrUpdata(contactusInfo);
+			baseService.saveOrUpdata(encontactusInfo);
 		}
 		request.setAttribute("contactusInfo", contactusInfo);
+		request.setAttribute("encontactusInfo", encontactusInfo);
 		return "/WEB-INF/back/contactus/contactusMsg.jsp";
 	}
 	/**
@@ -58,6 +64,8 @@ public class ContactusController {
 	public String contactusEdit(HttpServletRequest request){
 		ContactusInfo contactusInfo = (ContactusInfo)baseService.findObject(ContactusInfo.class, 1);
 		request.setAttribute("contactusInfo", contactusInfo);
+		ENContactusInfo encontactusInfo = (ENContactusInfo)baseService.findObject(ENContactusInfo.class, 1);
+		request.setAttribute("encontactusInfo", encontactusInfo);
 		return "/WEB-INF/back/contactus/edit.jsp";
 	}
 	
@@ -68,7 +76,10 @@ public class ContactusController {
 	@RequiresPermissions("contactus:update")
 	@RequestMapping(value="/admin/contactusUpdate")
 	public String contactusUpdate(ContactusInfo contactusInfo,HttpServletRequest request){
-		contactusInfo.setEditTime(System.currentTimeMillis());
+		ENContactusInfo enContactusInfo =(ENContactusInfo)baseService.findObject(ENContactusInfo.class, contactusInfo.getId());
+		enContactusInfo.setTitle(request.getParameter("entitle"));
+		enContactusInfo.setContent(request.getParameter("encontent"));
+		enContactusInfo.setPath(request.getParameter("enpath"));
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		String storepath = "";
 		Map<String, MultipartFile> files = multipartRequest.getFileMap();
@@ -90,9 +101,12 @@ public class ContactusController {
 		}
 		if (!storepath.equals("")) {
 			contactusInfo.setPath(storepath);
+			enContactusInfo.setPath(storepath);
 		}
 		baseService.saveOrUpdata(contactusInfo);
+		baseService.saveOrUpdata(enContactusInfo);
 		request.setAttribute("contactusInfo", contactusInfo);
+		request.setAttribute("encontactusInfo", enContactusInfo);
 		return "/WEB-INF/back/contactus/contactusMsg.jsp";
 	}
 }

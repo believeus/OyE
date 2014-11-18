@@ -32,18 +32,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        this.sync();
 	        $('textarea').valid();
 	    });
-	
+	    
 		var $inputForm = $("#inputForm");
 		// 表单验证
 		$inputForm.validate({
 			rules: {
+				name: "required",
 				phone: "required",
 				email: "required",
 				address: "required",
 				content: "required",
 				fax: "required",
-				mobile: "required"
-				
+				mobile: "required",
+				enname: "required",
+				enaddress: "required"
 			}
 		});
 		
@@ -58,13 +60,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<form id="inputForm" action="/admin/companyUpdate.jhtml" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="id" value="${companyInfo.id}">
+		<input type="hidden" name="enid" value="${encompanyInfo.id}">
 		<table class="input">
 			<tr>
 				<th>
-					企业名称:
+					企业中文名称:
 				</th>
 				<td>
 					<input type="text" name="name" class="text" maxlength="200" value="${companyInfo.name }"/>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					企业英文名称:
+				</th>
+				<td>
+					<input type="text" name="enname" class="text" maxlength="200" value="${encompanyInfo.name }"/>
 				</td>
 			</tr>
 			<tr>
@@ -101,18 +112,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr>
 				<th>
-					企业地址:
+					企业中文地址:
 				</th>
 				<td>
 					<input type="text" name="address" class="text" maxlength="200" value="${companyInfo.address }"/>
 				</td>
 			</tr>
-			<tr id="contentTr">
+			<tr>
 				<th>
-					企业简介:
+					企业英文地址:
 				</th>
-				<td colspan="3">
-					<textarea id="editor" name="content" class="editor">${companyInfo.content }</textarea>
+				<td>
+					<input type="text" name="enaddress" class="text" maxlength="200" value="${encompanyInfo.address }"/>
 				</td>
 			</tr>
 			<tr>

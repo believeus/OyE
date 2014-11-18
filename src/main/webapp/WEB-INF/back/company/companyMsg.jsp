@@ -33,10 +33,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr>
 				<th>
-					企业名称:
+					企业中文名称:
 				</th>
 				<td>
 					${companyInfo.name }
+				</td>
+			</tr>
+			<tr>
+				<th>
+					企业英文名称:
+				</th>
+				<td>
+					${encompanyInfo.name }
 				</td>
 			</tr>
 			<tr>
@@ -73,18 +81,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr>
 				<th>
-					企业地址:
+					企业中文地址:
 				</th>
 				<td>
 					${companyInfo.address }
 				</td>
 			</tr>
-			<tr id="contentTr">
+			<tr>
 				<th>
-					企业简介:
+					企业英文地址:
 				</th>
-				<td colspan="3">
-					${companyInfo.content }
+				<td>
+					${encompanyInfo.address }
 				</td>
 			</tr>
 		</table>
