@@ -14,9 +14,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.util.StringUtils;
 
-
 public class ForwardFilter implements Filter {
-	private String english="english";
+	private String english = "english";
+
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 
@@ -25,19 +25,22 @@ public class ForwardFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
-		HttpServletRequest httpRequest=(HttpServletRequest)request;
-		HttpServletResponse httpResponse=(HttpServletResponse)response;
+		HttpServletRequest httpRequest = (HttpServletRequest) request;
+		HttpServletResponse httpResponse = (HttpServletResponse) response;
 		HttpSession session = httpRequest.getSession();
 		String currenturi = httpRequest.getRequestURI();
-		String sessionDialect=(String)session.getAttribute(english);
-		if(currenturi.equals("/"+english+".jhtml")){
-			session.setAttribute(english, english);
-		}else if (!StringUtils.isEmpty(sessionDialect)) {
-			String url="/english"+currenturi;
-			httpRequest.getRequestDispatcher(url).forward(httpRequest, httpResponse);
-		  return;	
-		}else {
-			session.removeAttribute("english");
+		if (!currenturi.contains("admin")) {
+			String sessionDialect = (String) session.getAttribute(english);
+			if (currenturi.equals("/" + english + ".jhtml")) {
+				session.setAttribute(english, english);
+			} else if (!StringUtils.isEmpty(sessionDialect)) {
+				String url = "/english" + currenturi;
+				httpRequest.getRequestDispatcher(url).forward(httpRequest,
+						httpResponse);
+				return;
+			} else {
+				session.removeAttribute("english");
+			}
 		}
 		chain.doFilter(request, response);
 	}
@@ -47,5 +50,4 @@ public class ForwardFilter implements Filter {
 
 	}
 
-	
 }
