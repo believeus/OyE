@@ -165,6 +165,9 @@
 .img img{
     border-radius:100px;
 }
+.em_video{
+	width: 372px; height: 215px; left: 662px; position: absolute; top: 1952px;
+}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -218,28 +221,44 @@
 			$("#compimg02").hide();
 			$("#compimg03").hide();
 			$("#compimg04").hide();
-			$("#xx_img01").animate({left:$(this).offset().left + 78});
+			$("#xx_img01").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img01").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img01").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img01").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img01").animate({left:$(this).offset().left + 78},100);
 		});
 		$("#list02").click(function(){
 			$("#compimg01").hide();
 			$("#compimg02").show();
 			$("#compimg03").hide();
 			$("#compimg04").hide();
-			$("#xx_img01").animate({left:$(this).offset().left + 78});
+			$("#xx_img01").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img01").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img01").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img01").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img01").animate({left:$(this).offset().left + 78},100);
 		});
 		$("#list03").click(function(){
 			$("#compimg01").hide();
 			$("#compimg02").hide();
 			$("#compimg03").show();
 			$("#compimg04").hide();
-			$("#xx_img01").animate({left:$(this).offset().left + 78});
+			$("#xx_img01").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img01").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img01").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img01").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img01").animate({left:$(this).offset().left + 78},100);
 		});
 		$("#list04").click(function(){
 			$("#compimg01").hide();
 			$("#compimg02").hide();
 			$("#compimg03").hide();
 			$("#compimg04").show();
-			$("#xx_img01").animate({left:$(this).offset().left + 78});
+			$("#xx_img01").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img01").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img01").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img01").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img01").animate({left:$(this).offset().left + 78},100);
 		});
 		//-----------------------------
 		$("#2list01").click(function(){
@@ -247,28 +266,44 @@
 			$("#2compimg02").hide();
 			$("#2compimg03").hide();
 			$("#2compimg04").hide();
-			$("#xx_img02").animate({left:$(this).offset().left + 78});
+			$("#xx_img02").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img02").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img02").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img02").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img02").animate({left:$(this).offset().left + 78},100);
 		});
 		$("#2list02").click(function(){
 			$("#2compimg01").hide();
 			$("#2compimg02").show();
 			$("#2compimg03").hide();
 			$("#2compimg04").hide();
-			$("#xx_img02").animate({left:$(this).offset().left + 78});
+			$("#xx_img02").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img02").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img02").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img02").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img02").animate({left:$(this).offset().left + 78},100);
 		});
 		$("#2list03").click(function(){
 			$("#2compimg01").hide();
 			$("#2compimg02").hide();
 			$("#2compimg03").show();
 			$("#2compimg04").hide();
-			$("#xx_img02").animate({left:$(this).offset().left + 78});
+			$("#xx_img02").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img02").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img02").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img02").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img02").animate({left:$(this).offset().left + 78},100);
 		});
 		$("#2list04").click(function(){
 			$("#2compimg01").hide();
 			$("#2compimg02").hide();
 			$("#2compimg03").hide();
 			$("#2compimg04").show();
-			$("#xx_img02").animate({left:$(this).offset().left + 78});
+			$("#xx_img02").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img02").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img02").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img02").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img02").animate({left:$(this).offset().left + 78},100);
 		});
 		//-------------------------------
 		$("#3list01").click(function(){
@@ -276,28 +311,44 @@
 			$("#3compimg02").hide();
 			$("#3compimg03").hide();
 			$("#3compimg04").hide();
-			$("#xx_img03").animate({left:$(this).offset().left + 78});
+			$("#xx_img03").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img03").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img03").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img03").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img03").animate({left:$(this).offset().left + 78},100);
 		});
 		$("#3list02").click(function(){
 			$("#3compimg01").hide();
 			$("#3compimg02").show();
 			$("#3compimg03").hide();
 			$("#3compimg04").hide();
-			$("#xx_img03").animate({left:$(this).offset().left + 78});
+			$("#xx_img03").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img03").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img03").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img03").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img03").animate({left:$(this).offset().left + 78},100);
 		});
 		$("#3list03").click(function(){
 			$("#3compimg01").hide();
 			$("#3compimg02").hide();
 			$("#3compimg03").show();
 			$("#3compimg04").hide();
-			$("#xx_img03").animate({left:$(this).offset().left + 78});
+			$("#xx_img03").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img03").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img03").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img03").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img03").animate({left:$(this).offset().left + 78},100);
 		});
 		$("#3list04").click(function(){
 			$("#3compimg01").hide();
 			$("#3compimg02").hide();
 			$("#3compimg03").hide();
 			$("#3compimg04").show();
-			$("#xx_img03").animate({left:$(this).offset().left + 78});
+			$("#xx_img03").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img03").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img03").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img03").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img03").animate({left:$(this).offset().left + 78},100);
 		});
 		//-------------------------------------
 		$("#4list01").click(function(){
@@ -305,44 +356,69 @@
 			$("#4compimg02").hide();
 			$("#4compimg03").hide();
 			$("#4compimg04").hide();
-			$("#xx_img04").animate({left:$(this).offset().left + 78});
+			$("#xx_img04").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img04").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img04").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img04").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img04").animate({left:$(this).offset().left + 78},100);
 		});
 		$("#4list02").click(function(){
 			$("#4compimg01").hide();
 			$("#4compimg02").show();
 			$("#4compimg03").hide();
 			$("#4compimg04").hide();
-			$("#xx_img04").animate({left:$(this).offset().left + 78});
+			$("#xx_img04").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img04").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img04").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img04").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img04").animate({left:$(this).offset().left + 78},100);
 		});
 		$("#4list03").click(function(){
 			$("#4compimg01").hide();
 			$("#4compimg02").hide();
 			$("#4compimg03").show();
 			$("#4compimg04").hide();
-			$("#xx_img04").animate({left:$(this).offset().left + 78});
+			$("#xx_img04").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img04").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img04").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img04").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img04").animate({left:$(this).offset().left + 78},100);
 		});
 		$("#4list04").click(function(){
 			$("#4compimg01").hide();
 			$("#4compimg02").hide();
 			$("#4compimg03").hide();
 			$("#4compimg04").show();
-			$("#xx_img04").animate({left:$(this).offset().left + 78});
+			$("#xx_img04").animate({left:$(this).offset().left + 78},"fast");
+			$("#xx_img04").animate({left:$(this).offset().left + 88},100);
+			$("#xx_img04").animate({left:$(this).offset().left + 78},100);
+			$("#xx_img04").animate({left:$(this).offset().left + 83},100);
+			$("#xx_img04").animate({left:$(this).offset().left + 78},100);
 		});
 		//-------------------
 		$("#cont-img01").click(function(){
 			$("#m_img01").css("z-index","99");
 			$("#m_img02").css("z-index","88");
 			$("#m_img03").css("z-index","77");
+			$("#embed01").show();
+			$("#embed02").hide();
+			$("#embed03").hide();
 		});
 		$("#cont-img02").click(function(){
 			$("#m_img02").css("z-index","99");
 			$("#m_img01").css("z-index","88");
 			$("#m_img03").css("z-index","77");
+			$("#embed01").hide();
+			$("#embed02").show();
+			$("#embed03").hide();
 		});
 		$("#cont-img03").click(function(){
 			$("#m_img01").css("z-index","77");
 			$("#m_img02").css("z-index","88");
 			$("#m_img03").css("z-index","99");
+			$("#embed01").hide();
+			$("#embed02").hide();
+			$("#embed03").show();
 		});
 	});
 </script>
@@ -371,7 +447,7 @@
 		$("span.prev").click(function(){
 			 var content = $("div#content"); 
 			 var content_list = $("div#content_list");
-			 var v_width = content.width();
+			 var v_width = content.width();//1170px
 			 var len = content.find("dl").length;
 			 var page_count = Math.ceil(len / i) ;   //只要不是整数，就往大的方向取最小的整数
 			 if(!content_list.is(":animated") ){    //判断“内容展示区域”是否正在处于动画
@@ -409,7 +485,7 @@
 		<div class="main-service">
 			<p class="">
 				<i style="width: 22px; height: 26px; background: url(/static/public/images/ser.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-				服务范围Our Business
+				<a id="bus" style="font-size: 24px;">服务范围Our Business</a>
 			</p>
 			<div class="main-service-list">
 				<c:forEach items="${businesses }" var="bus" varStatus="status">
@@ -430,7 +506,7 @@
 		<div class="main-comp-const">
 			<div class="main-ourteam-cont-title" style="position: absolute; left: 120px;">
 				<i style="width: 37px; height: 28px; background: url(/static/public/images/al.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-				我们的案例
+				<a id="anli" style="font-size: 24px;">我们的案例</a>
 			</div>
 			<div class="main-comp-const-title" style="width:460px;">
 				<div id="shijie" class="main-comp-const-title-list current" style="width: 130px;">世界500强</div>
@@ -581,6 +657,7 @@
 		</div>
 		<div class="main-evaluation">
 			<div class="main-evaluation-list">
+				<div style="width: 130px; height: 38px; position: absolute; left: 319px; top: 2150px;cursor:pointer;" title="更多" onclick="javascript:window.location.href='/cust.jhtml'"></div>
 				<c:forEach items="${partners }" var="partner" varStatus="status">
 					<div class="main-evaluation-list-cont">
 						<div id="cont-img0${status.index+1 }" class="main-evaluation-list-cont-img">
@@ -591,10 +668,11 @@
 							<p class="main-cont-dis-conts">${partner.content }</p>
 						</div>
 					</div>
-					<div id="embed0${status.index+1 }" style="width: 372px; height: 215px; left: 662px; position: absolute; top: 1952px;">
+					<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
 						<embed type="application/x-shockwave-flash" width="372" height="215" 
-							src="http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf" allowfullscreen="true" 
+							src="${partner.video }" allowfullscreen="true" 
 							quality="high" allowscriptaccess="always" align="middle" />
+							<!-- http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf -->
 					</div>
 					<div id="m_img0${status.index+1 }" style="width: 132px; height: 174px; position: absolute; top: 2121px; left: 1045px;">
 						<img src="${partner.path }" width="132" height="174"/>
@@ -606,7 +684,7 @@
 			<div class="main-ourteam-cont">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 28px; height: 28px; background: url(/static/public/images/hxtd.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					我们的核心团队
+					<a id="zhizhi" style="font-size: 24px;">我们的核心团队</a>
 				</div>
 				<div class="main-ourteam-cont-const">
 					<c:forEach items="${teams }" var="team" varStatus="status">
@@ -635,7 +713,7 @@
 			<div class="main-tp-cont">
 				<p class="main-tp-title">
 					<i style="width: 31px; height: 28px; background: url(/static/public/images/lc.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					我们的流程
+					<a id="liucheng" style="font-size: 24px;">我们的流程</a>
 				</p>
 				<div style="">
 					<img src="/static/public/images/img06.png" style="position: relative; left: 500px;" />
@@ -657,7 +735,7 @@
 			<div style="width:1100px;height:auto;overflow:hidden;margin:0 auto 30px;">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 37px; height: 28px; background: url(/static/public/images/3333.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					我们的客户
+					<a id="cust" style="font-size: 24px;">我们的客户</a>
 				</div>
 				<div class="main-ourteam-cont-list">
 					<c:forEach items="${customerType1}" var="cust1" varStatus="status">
@@ -702,86 +780,92 @@
 		</div>
 		<div class="main-aboutus" style="background: #505050;height: auto;">
 			<div style="width: 1180px;height: auto;overflow: hidden;margin: 0 auto;">
-				<div class="aboutus" style="width: 380px;height: auto;overflow: hidden;float: left;">
+				<div class="aboutus" style="width: 380px;height: auto;overflow: hidden;float: left; margin-bottom: 50px;">
 					<div style="height: 45px;line-height: 45px;color: #EF738B;border-bottom: 1px solid #868686;">
-						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">关于我们</div>
+						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
+							关于我们
+						</div>
 					</div>
-					<div style="">
-						<img src="/static/public/images/img07.jpg" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />
-						<span style="color: #d6d6d6;line-height: 27px;">价来自飞利浦的评价来自飞利浦的评价价来自飞利浦的评价来自飞利浦的评价价来自飞利浦的评价来自飞利浦的评价价来自飞利浦的评价来自飞利浦的评价价来自飞利浦的评价来自飞利浦的评价价来自飞利浦的评价来自飞利浦的评价来自飞利浦的评价浦的评价来自飞利浦的评价浦的评价来自飞利浦的评价浦的评价来自飞利浦的评价浦的评价来自飞利浦的评价浦的评价来自飞利浦的评价浦的评价来自飞利浦的评价浦的评价来自飞利浦的评价浦的评价来自飞利浦的评价浦的评价来自飞利浦的评价浦的评价来自飞利浦的评价。</span>
-					</div>
+					<c:forEach items="${contactusInfos }" var="contactusInfo" varStatus="status">
+						<c:if test="${status.index ==0 }">
+							<div style="">
+								<img src="${contactusInfo.path }" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />
+								<span style="color: #d6d6d6;line-height: 27px;">${contactusInfo.content }</span>
+							</div>
+						</c:if>
+					</c:forEach>
 				</div>
 				<div class="aboutus" style="width: 360px;height: auto;overflow: hidden;float: left;">
 					<div style="height: 45px;line-height: 45px;color: #EF738B;border-bottom: 1px solid #868686;">
-						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">最新动态</div>
+						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
+							<a id="news" style="color:#ef738b;">最新动态</a>
+						</div>
+						<a href="/newsList.jhtml" style="float:right;">更多&lg;&lg;</a>
 					</div>
 					<div style="">
-						<div style="width: 365px;height: auto;overflow: hidden;">
-							<img src="/static/public/images/img08.jpg" width="100" height="80" style="float: left; margin: 15px 20px 10px 0px;"/>
-							<div style="float: left;width: 240px;margin-top: 10px;">
-								<p style="color: #FBFBFB;font-size: 15px;">价来自飞利浦的评价来自飞利浦</p>
-								<p style="color: #FBFBFB;font-size: 14px;">价来自飞利浦的评价来自飞利浦评价来自飞利浦</p>
-								<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;float: right;margin-right: 20px;">
-									<a href="#" title="更多">
-										<img src="/static/public/images/more.jpg" height="27"/>
-									</a>
+						<c:forEach items="${news }" var="news" varStatus="status">
+							<c:if test="${status.index < 3 }">
+								<div style="width: 365px;height: auto;overflow: hidden;">
+									<img src="${news.path }" width="100" height="80" style="float: left; margin: 15px 20px 10px 0px;"/>
+									<div style="float: left;width: 240px;margin-top: 10px;">
+										<p style="color: #FBFBFB;font-size: 15px;">${news.title }</p>
+										<p style="color: #FBFBFB;font-size: 14px;">
+											<%-- ${news.content } --%>
+											${fn:substring(news.content, 0, 30)}...
+										</p>
+										<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;float: right;margin-right: 20px;">
+											<a href="/newsInfo.jhtml?id=${news.id }" title="更多">
+												<img src="/static/public/images/more.jpg" height="27"/>
+											</a>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div style="width: 365px; height: auto; overflow: hidden; margin-top: 8px;">
-							<img src="/static/public/images/img08.jpg" width="100" height="80" style="float: left; margin: 15px 20px 10px 0px;"/>
-							<div style="float: left;width: 240px;margin-top: 10px;">
-								<p style="color: #FBFBFB;font-size: 15px;">价来自飞利浦的评价来自飞利浦</p>
-								<p style="color: #FBFBFB;font-size: 14px;">价来自飞利浦的评价来自飞利浦评价来自飞利浦</p>
-								<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;float: right;margin-right: 20px;">
-									<a href="#" title="更多">
-										<img src="/static/public/images/more.jpg" height="27"/>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div style="width: 365px; height: auto; overflow: hidden; margin-top: 8px;">
-							<img src="/static/public/images/img08.jpg" width="100" height="80" style="float: left; margin: 15px 20px 10px 0px;"/>
-							<div style="float: left;width: 240px;margin-top: 10px;">
-								<p style="color: #FBFBFB;font-size: 15px;">价来自飞利浦的评价来自飞利浦</p>
-								<p style="color: #FBFBFB;font-size: 14px;">价来自飞利浦的评价来自飞利浦评价来自飞利浦</p>
-								<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;float: right;margin-right: 20px;">
-									<a href="#" title="更多">
-										<img src="/static/public/images/more.jpg" height="27"/>
-									</a>
-								</div>
-							</div>
-						</div>
+							</c:if>
+						</c:forEach>
 					</div>
 				</div>
 				<div class="aboutus" style="width: 380px;height: auto;overflow: hidden;float: left;margin-right: 0;">
 					<div style="height: 45px;line-height: 45px;color: #EF738B;border-bottom: 1px solid #868686;">
-						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">在线咨询</div>
+						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
+							<a id="zixun" style="color:#ef738b;">在线咨询</a>
+						</div>
 					</div>
 					<div style="text-align: center;">
-						<!-- <form action="/message/add.jhtml" method="post"> -->
-							<input class="input" type="text" id="name" name="name" placeholder="姓名" style="margin-top: 10px;" />
-							<input class="input" type="text" id="phone" name="phone" placeholder="手机" />
-							<input class="input" type="text" id="email" name="email" placeholder="邮箱" />
-							<input class="input" type="text" id="title" name="title" placeholder="标题" />
-							<textarea class="input" id="content_a" name="content" style="height: 125px;resize: none;overflow-y: hidden;" placeholder="内容填写"></textarea>
-							<input class="botton" type="submit" value="提交" />
-							<script type="text/javascript">
-								$(function(){
-									$("input[type=submit]").click(function(){
+						<input class="input" type="text" id="name" name="name" placeholder="姓名" style="margin-top: 10px;" />
+						<input class="input" type="text" id="phone" name="phone" placeholder="手机" />
+						<input class="input" type="text" id="email" name="email" placeholder="邮箱" />
+						<input class="input" type="text" id="title" name="title" placeholder="标题" />
+						<textarea class="input" id="content_a" name="content" style="height: 125px;resize: none;overflow-y: hidden;" placeholder="内容填写"></textarea>
+						<input class="botton" type="submit" value="提交" />
+						<script type="text/javascript">
+							$(function(){
+								$("input[type=submit]").click(function(){
+									if($("#name").val() ==""){
+										alert("请输入姓名");
+									}else if($("#phone").val() == ""){
+										alert("请输入手机号");
+									}else if($("#email").val() == ""){
+										alert("请输入邮箱");
+									}else if($("#title").val() == ""){
+										alert("请输入标题");
+									}else if($("#content_a").val() == ""){
+										alert("请输入内容");
+									}else{
 										$.ajax({
-											type : "get",
+											type : "post",
 											url : "/message/add.jhtml",
 											dataType : "json",
+											contentType:"application/x-www-form-urlencoded",
 											data :{"name":$("#name").val(),"phone":$("#phone").val(),"email":$("#email").val(),"title":$("#title").val(),"content":$("#content_a").val()} ,
-											success : function(msg) {
-												alert(msg);
+											success : function(map) {
+												alert(map.msg);
 											}
 										});
-									});
+										alert("提交成功，等待审核!");
+									}
 								});
-							</script>
-						<!-- </form> -->
+							});
+						</script>
 					</div>
 				</div>
 			</div>

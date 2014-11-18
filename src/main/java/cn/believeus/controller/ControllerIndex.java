@@ -1,5 +1,6 @@
 package cn.believeus.controller;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -11,9 +12,11 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import cn.believeus.model.Banner;
 import cn.believeus.model.Business;
 import cn.believeus.model.CompanyInfo;
+import cn.believeus.model.ContactusInfo;
 import cn.believeus.model.Customers;
 import cn.believeus.model.Example;
 import cn.believeus.model.News;
@@ -70,6 +73,18 @@ public class ControllerIndex {
 		//合作伙伴
 		List<Partners> partners = (List<Partners>) baseService.findObjectList(Partners.class);
 		request.setAttribute("partners", partners);
+		//最新动态
+		List<News> news = (List<News>) baseService.findObjectList(News.class, "top", (short)1);
+		for (News tnews : news) {
+			String content = tnews.getContent();
+			String content2 = content.replaceAll("<[^>]+>", "");
+			String content3 = content2.replaceAll("&nbsp;", "");
+			tnews.setContent(content3);
+		}
+		request.setAttribute("news", news);
+		//关于我们
+		List<ContactusInfo> contactusInfos = (List<ContactusInfo>) baseService.findObjectList(ContactusInfo.class);
+		request.setAttribute("contactusInfos", contactusInfos);
 		
 		return "/WEB-INF/front/index.jsp";
 	}
@@ -78,6 +93,12 @@ public class ControllerIndex {
 	public String news(HttpServletRequest request) {
 		List<News> news = (List<News>)baseService.findObjectList(News.class);
 		request.setAttribute("news", news);
+		for (News news2 : news) {
+			SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
+			List<String> dates =  new ArrayList<String>();
+			dates.add(sdf.format(news2.getCreateTime()));
+			request.setAttribute("times", dates);
+		}
 		return "/WEB-INF/front/newsList.jsp";
 	}
 	@RequestMapping(value = "/newsInfo")

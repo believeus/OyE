@@ -297,7 +297,7 @@ img{
 	width: 1120px;height: 1065px;overflow: hidden;margin: 0 auto;
 }
 .main-tp-title{
-	text-align: left; font-size: 30px; margin: 20px 0px; letter-spacing: 5px;
+	text-align: left; font-size: 30px; margin: 20px 0px;/*  letter-spacing: 5px; */
 }
 .aboutus{
 	float: left;
@@ -312,5 +312,5 @@ img{
     color: #858585;
 }
 .botton{
-	background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;text-align: center;border-radius: 4px;float: right;border: 1px solid #ff6569;margin-right: 20px;margin-top: 5px;cursor: pointer;
+	background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;text-align: center;border-radius: 4px;float: right;border: 1px solid #ff6569;margin-right: 20px;margin-top: 10px;cursor: pointer;
 }

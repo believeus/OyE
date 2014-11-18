@@ -12,6 +12,7 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.believeus.PaginationUtil.Page;
@@ -52,7 +53,7 @@ public class MessageController {
 	 * @return
 	 */
 //	@RequiresPermissions("contact:create")
-	@RequestMapping(value="/message/add")
+	@RequestMapping(value="/message/add",method=RequestMethod.POST)
 	public @ResponseBody Map<String, Object> messageAdd(String name,String phone,String email,String title,String content){
 		Message message = new Message();
 		message.setCreateTime(System.currentTimeMillis());

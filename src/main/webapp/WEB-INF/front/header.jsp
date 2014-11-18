@@ -31,13 +31,13 @@
 			<div class="nav">
 				<ul>
 					<li><a href="/">首页</a></li>
-					<li><a href="#">业务范围</a></li>
-					<li><a href="#">案例展示</a></li>
-					<li><a href="#">企业资质</a></li>
-					<li><a href="/cust.jhtml">客户感言</a></li>
-					<li><a href="#">服务流程</a></li>
-					<li><a href="/newsList.jhtml">站内新闻</a></li>
-					<li><a href="#">联系我们</a></li>
+					<li><a href="#bus">业务范围</a></li>
+					<li><a href="#anli">案例展示</a></li>
+					<li><a href="#zhizhi">企业资质</a></li>
+					<li><a href="#cust" target="_blank">客户感言</a></li>
+					<li><a href="#liucheng">服务流程</a></li>
+					<li><a href="#news" target="_blank">站内新闻</a></li>
+					<li><a href="#zixun">联系我们</a></li>
 				</ul>
 			</div>
 		</div>
