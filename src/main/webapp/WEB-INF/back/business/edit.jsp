@@ -39,7 +39,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$inputForm.validate({
 			rules: {
 				title: "required",
-				description: "required"
+				description: "required",
+				entitle: "required",
+				endescription: "required"
 			}
 		});
 		
@@ -54,14 +56,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<form id="inputForm" action="/admin/business/save.jhtml" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="id" value="${business.id}"/>
+		<input type="hidden" name="enid" value="${enbusiness.id}"/>
 		<input type="hidden" name="path" value="${business.path}"/>
+		<input type="hidden" name="enpath" value="${enbusiness.path}"/>
 		<table class="input">
 			<tr>
 				<th>
-					<span class="requiredField">*</span>服务名称:
+					服务中文名称:
 				</th>
 				<td>
 					<input type="text" name="title" class="text" maxlength="200" value="${business.title}"/>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					服务英文名称:
+				</th>
+				<td>
+					<input type="text" name="entitle" class="text" maxlength="200" value="${enbusiness.title}"/>
 				</td>
 			</tr>
 			<tr id="pathTr">
@@ -87,10 +99,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr id="contentTr">
 				<th>
-					描述:
+					中文描述:
 				</th>
 				<td colspan="3">
-					<textarea id="" name="description" class="editor">${business.description}</textarea>
+					<textarea name="description" class="editor" style="height: 100px;width: 400px">${business.description}</textarea>
+				</td>
+			</tr>
+			<tr id="contentTr">
+				<th>
+					英文描述:
+				</th>
+				<td colspan="3">
+					<textarea name="endescription" class="editor" style="height: 100px;width: 400px">${enbusiness.description}</textarea>
 				</td>
 			</tr>
 			<tr>

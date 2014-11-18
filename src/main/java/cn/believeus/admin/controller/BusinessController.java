@@ -26,6 +26,7 @@ import cn.believeus.PaginationUtil.Page;
 import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Business;
+import cn.believeus.model.en.ENBusiness;
 import cn.believeus.service.BaseService;
 
 @Controller
@@ -78,6 +79,17 @@ public class BusinessController {
 	@RequiresPermissions("business:create")
 	@RequestMapping(value="/admin/business/save")
 	public String save(Business business,HttpServletRequest request){
+		String enid = request.getParameter("enid"); 
+		//英文表
+		ENBusiness  enBusiness=null;
+		if (enid!=null&&!enid.equals("")) {
+			enBusiness=(ENBusiness)baseService.findObject(ENBusiness.class, Integer.valueOf(enid));
+		}else {
+			enBusiness=new ENBusiness();
+		}
+		enBusiness.setTitle(request.getParameter("entitle"));
+		enBusiness.setDescription(request.getParameter("endescription"));
+		
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		String storepath = "";
 		Map<String, MultipartFile> files = multipartRequest.getFileMap();
@@ -98,9 +110,11 @@ public class BusinessController {
 			}
 		}
 		if (!storepath.equals("")) {
-			business.setPath(storepath);			
+			business.setPath(storepath);	
+			enBusiness.setPath(storepath);
 		}
 		baseService.saveOrUpdata(business);
+		baseService.saveOrUpdata(enBusiness);
 		return "redirect:/admin/business/list.jhtml";
 	}
 	
@@ -113,6 +127,8 @@ public class BusinessController {
 	public String edit(Integer businessId, HttpServletRequest request){
 		Business business = (Business) baseService.findObject(Business.class, businessId);
 		request.setAttribute("business", business);
+		ENBusiness enBusiness = (ENBusiness) baseService.findObject(ENBusiness.class, businessId);
+		request.setAttribute("enbusiness", enBusiness);
 		return "/WEB-INF/back/business/edit.jsp";
 	}
 	
@@ -124,8 +140,8 @@ public class BusinessController {
 	@RequestMapping(value="/admin/business/delete")
 	public @ResponseBody String delete(Integer[] ids){
 		List<Integer> list = Arrays.asList(ids); 
-		System.out.println(list); 
 		baseService.delete(Business.class, list);
+		baseService.delete(ENBusiness.class,list);
 		return "{\"type\":\"success\"}";
 	}
 }
