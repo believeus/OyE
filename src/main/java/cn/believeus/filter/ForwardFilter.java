@@ -28,13 +28,13 @@ public class ForwardFilter implements Filter {
 		HttpServletRequest httpRequest=(HttpServletRequest)request;
 		HttpServletResponse httpResponse=(HttpServletResponse)response;
 		HttpSession session = httpRequest.getSession();
-		String requestURI = httpRequest.getRequestURI();
-		String en=(String)session.getAttribute(english);
-		if(requestURI.contains(english)){
+		String currenturi = httpRequest.getRequestURI();
+		String sessionDialect=(String)session.getAttribute(english);
+		if(currenturi.equals("/"+english+".jhtml")){
 			session.setAttribute(english, english);
-		}else if (!StringUtils.isEmpty(en)) {
-			String url="english/"+requestURI;
-			httpResponse.sendRedirect(url);
+		}else if (!StringUtils.isEmpty(sessionDialect)) {
+			String url="/english"+currenturi;
+			httpRequest.getRequestDispatcher(url).forward(httpRequest, httpResponse);
 		  return;	
 		}else {
 			session.removeAttribute("english");
