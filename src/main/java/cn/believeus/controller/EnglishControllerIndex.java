@@ -19,7 +19,7 @@ import cn.believeus.model.en.ENCompanyInfo;
 import cn.believeus.model.en.ENContactusInfo;
 import cn.believeus.model.en.ENNews;
 import cn.believeus.model.en.ENPartners;
-import cn.believeus.model.en.ENProcesss;
+import cn.believeus.model.Processs;
 import cn.believeus.model.en.ENTeam;
 import cn.believeus.service.BaseService;
 import cn.believeus.variables.Variables;
@@ -71,7 +71,7 @@ public class EnglishControllerIndex {
 		request.setAttribute("businesses", businesses);
 		request.setAttribute("bsize", businesses.size());
 		//流程控制
-		List<ENProcesss> pros = (List<ENProcesss>) baseService.findObjectList(ENProcesss.class);
+		List<Processs> pros = (List<Processs>) baseService.findObjectList(Processs.class);
 		request.setAttribute("pros", pros);
 		request.setAttribute("prosSize", pros.size());
 		//合作伙伴

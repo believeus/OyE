@@ -33,7 +33,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				name: "required",
 				ehName: "required",
 				position: "required",
-				content: "required"
+				content: "required",
+				encontent: "required"
 			}
 		});
 		
@@ -101,7 +102,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					内容:
 				</th>
 				<td colspan="3">
-					<textarea id="" name="content" class="editor">${team.content}</textarea>
+					<textarea id="" name="content" class="editor" style="width: 400px;height: 100px">${team.content}</textarea>
+				</td>
+			</tr>
+			<tr id="contentTr">
+				<th>
+					内容:
+				</th>
+				<td colspan="3">
+					<textarea id="" name="encontent" class="editor" style="width: 400px;height: 100px">${enteam.content}</textarea>
 				</td>
 			</tr>
 			<tr>

@@ -60,7 +60,6 @@
 		<mapping class="cn.believeus.model.en.ENContactusInfo"/>
 		<mapping class="cn.believeus.model.en.ENNews"/>
 		<mapping class="cn.believeus.model.en.ENPartners"/>
-		<mapping class="cn.believeus.model.en.ENProcesss"/>
 		<mapping class="cn.believeus.model.en.ENTeam"/>
 		
 	</session-factory>

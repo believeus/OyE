@@ -28,6 +28,7 @@ import cn.believeus.PaginationUtil.Page;
 import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Team;
+import cn.believeus.model.en.ENTeam;
 import cn.believeus.service.BaseService;
 
 @Controller
@@ -57,6 +58,18 @@ public class TeamController {
 	@RequiresPermissions("team:create")
 	@RequestMapping(value="/admin/team/SaveOrUpdate")
 	public String teamSaveOrUpdate(Team team,HttpServletRequest request){
+		//英文表
+		ENTeam enTeam=null;
+		if (team.getId()==0) {
+			enTeam=new ENTeam();
+		}else {
+			enTeam = (ENTeam)baseService.findObject(ENTeam.class, team.getId());
+		}
+		enTeam.setContent(request.getParameter("encontent"));
+		enTeam.setEhName(team.getEhName());
+		enTeam.setName(team.getName());
+		enTeam.setPosition(team.getPosition());
+		enTeam.setStatus(team.getStatus());
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		String storepath = "";
 		Map<String, MultipartFile> files = multipartRequest.getFileMap();
@@ -77,9 +90,11 @@ public class TeamController {
 			}
 		}
 		if (!storepath.equals("")) {
-			team.setPath(storepath);			
+			team.setPath(storepath);
+			enTeam.setPath(storepath);
 		}
 		baseService.saveOrUpdata(team);
+		baseService.saveOrUpdata(enTeam);
 		return "redirect:/admin/team/list.jhtml";
 	}
 	
@@ -92,6 +107,8 @@ public class TeamController {
 	public String teamEdit(Integer id,HttpServletRequest request){
 		Team team = (Team)baseService.findObject(Team.class, id);
 		request.setAttribute("team", team);
+		ENTeam enteam = (ENTeam)baseService.findObject(ENTeam.class, id);
+		request.setAttribute("enteam", enteam);
 		return "/WEB-INF/back/team/edit.jsp";
 	}
 	/**
@@ -123,6 +140,7 @@ public class TeamController {
 	public @ResponseBody String teamDelete(Integer[] ids){
 		List<Integer> list = Arrays.asList(ids); 
 		baseService.delete(Team.class, list);
+		baseService.delete(ENTeam.class, list);
 		return "{\"type\":\"success\"}";
 	}
 }

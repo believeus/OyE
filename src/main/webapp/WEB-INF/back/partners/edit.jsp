@@ -33,6 +33,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			rules: {
 				name: "required"
 				,content: "required"
+				,enname: "required"
+				,encontent: "required"
 			}
 		});
 	});
@@ -63,10 +65,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table class="input">
 			<tr>
 				<th>
-					合作伙伴名称:
+					合作伙伴中文名称:
 				</th>
 				<td>
 					<input type="text" name="name" class="text" maxlength="200"  value="${partners.name }"/>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					合作伙伴英文名称:
+				</th>
+				<td>
+					<input type="text" name="enname" class="text" maxlength="200"  value="${enpartners.name }"/>
 				</td>
 			</tr>
 			<tr>
@@ -125,10 +135,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr id="contentTr">
 				<th>
-					描述:
+					中文描述:
 				</th>
 				<td colspan="3">
 					<textarea name="content" maxlength="72" class="editor" style="width: 400px;height: 100px">${partners.content }</textarea>
+				</td>
+			</tr>
+			<tr id="contentTr">
+				<th>
+					英文描述:
+				</th>
+				<td colspan="3">
+					<textarea name="encontent" maxlength="72" class="editor" style="width: 400px;height: 100px">${enpartners.content }</textarea>
 				</td>
 			</tr>
 			<tr>

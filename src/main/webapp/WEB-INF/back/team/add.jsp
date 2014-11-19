@@ -35,7 +35,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				ehName: "required",
 				position: "required",
 				upload_img: "required",
-				content: "required"
+				content: "required",
+				encontent: "required"
 			}
 		});
 		
@@ -97,10 +98,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr id="contentTr">
 				<th>
-					描述:
+					中文描述:
 				</th>
 				<td colspan="3">
-					<textarea id="" name="content" class="editor"></textarea>
+					<textarea id="" name="content" class="editor" style="width: 400px;height: 100px"></textarea>
+				</td>
+			</tr>
+			<tr id="contentTr">
+				<th>
+					英文描述:
+				</th>
+				<td colspan="3">
+					<textarea id="" name="encontent" class="editor" style="width: 400px;height: 100px"></textarea>
 				</td>
 			</tr>
 			<tr>

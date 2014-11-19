@@ -28,6 +28,7 @@ import cn.believeus.PaginationUtil.Page;
 import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Partners;
+import cn.believeus.model.en.ENPartners;
 import cn.believeus.service.BaseService;
 
 @Controller
@@ -78,6 +79,15 @@ public class PartnersController {
 	@RequiresPermissions("partners:create")
 	@RequestMapping(value="/admin/partners/saveOrUpdate")
 	public String saveOrUpdate(Partners partners,HttpServletRequest request){
+		//英文表
+		ENPartners enPartners=null;
+		if (partners.getId()==0) {
+			enPartners=new ENPartners();
+		}else {
+			enPartners = (ENPartners)baseService.findObject(ENPartners.class, partners.getId());
+		}
+		enPartners.setName(request.getParameter("enname"));
+		enPartners.setContent((request.getParameter("encontent")));
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		String logoUrl="";
 		String path = "";
@@ -106,15 +116,19 @@ public class PartnersController {
 			}
 		}
 		if (!logoUrl.equals("")) {
-			partners.setLogo(logoUrl);			
+			partners.setLogo(logoUrl);	
+			enPartners.setLogo(logoUrl);
 		}
 		if (!path.equals("")) {
-			partners.setPath(path);			
+			partners.setPath(path);		
+			enPartners.setPath(path);		
 		}
 		if (!video.equals("")) {
-			partners.setVideo(video);			
+			partners.setVideo(video);	
+			enPartners.setVideo(video);	
 		}
 		baseService.saveOrUpdata(partners);
+		baseService.saveOrUpdata(enPartners);
 		return "redirect:/admin/partners/list.jhtml";
 	}
 	
@@ -127,6 +141,8 @@ public class PartnersController {
 	public String partnersEdit(Integer id,HttpServletRequest request){
 		Partners partners = (Partners)baseService.findObject(Partners.class, id);
 		request.setAttribute("partners", partners);
+		ENPartners enpartners = (ENPartners)baseService.findObject(ENPartners.class, id);
+		request.setAttribute("enpartners", enpartners);
 		return "/WEB-INF/back/partners/edit.jsp";
 	}
 	/**
@@ -138,6 +154,7 @@ public class PartnersController {
 	public @ResponseBody String partnersDelete(Integer[] ids){
 		List<Integer> list = Arrays.asList(ids); 
 		baseService.delete(Partners.class, list);
+		baseService.delete(ENPartners.class, list);
 		return "{\"type\":\"success\"}";
 	}
 }

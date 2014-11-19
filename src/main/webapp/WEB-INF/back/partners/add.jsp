@@ -32,10 +32,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$inputForm.validate({
 			rules: {
 				name: "required"
+				,enname: "required"
 				,upload_img1: "required"
 				,upload_img2: "required"
 				,upload_img3: "required"
 				,content: "required"
+				,encontent: "required"
 			}
 		});
 	});
@@ -64,10 +66,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table class="input">
 			<tr>
 				<th>
-					合作伙伴名称:
+					合作伙伴中文名称:
 				</th>
 				<td>
 					<input type="text" name="name" class="text" maxlength="200" />
+				</td>
+			</tr>
+			<tr>
+				<th>
+					合作伙伴英文名称:
+				</th>
+				<td>
+					<input type="text" name="enname" class="text" maxlength="200" />
 				</td>
 			</tr>
 			<tr>
@@ -123,10 +133,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr id="contentTr">
 				<th>
-					描述:
+					中文描述:
 				</th>
 				<td colspan="3">
 					<textarea name="content" class="editor"  maxlength="72" style="width: 400px;height: 100px"></textarea>
+				</td>
+			</tr>
+			<tr id="contentTr">
+				<th>
+					英文描述:
+				</th>
+				<td colspan="3">
+					<textarea name="encontent" class="editor"  maxlength="72" style="width: 400px;height: 100px"></textarea>
 				</td>
 			</tr>
 			<tr>
