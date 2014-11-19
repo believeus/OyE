@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import cn.believeus.model.Banner;
 import cn.believeus.model.Customers;
 import cn.believeus.model.Example;
+import cn.believeus.model.News;
 import cn.believeus.model.en.ENBusiness;
 import cn.believeus.model.en.ENCompanyInfo;
 import cn.believeus.model.en.ENContactusInfo;
@@ -37,6 +38,7 @@ public class EnglishControllerIndex {
 		//banner
 		List<Banner> banners = (List<Banner>) baseService.findObjectList(Banner.class);
 		request.setAttribute("banners", banners);
+		request.setAttribute("bannersSize", banners.size());
 		//企业信息
 		ENCompanyInfo companyInfo = (ENCompanyInfo) baseService.findObject(ENCompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
@@ -47,6 +49,8 @@ public class EnglishControllerIndex {
 		request.setAttribute("customerType1", customerType1);
 		request.setAttribute("customerType2", customerType2);
 		request.setAttribute("customerType3", customerType3);
+		List<Customers> customers = (List<Customers>) baseService.findObjectList(Customers.class);
+		request.setAttribute("customersSize", customers.size());
 		//案例
 		List<Example> examples1 = (List<Example>) baseService.findObjectList(Example.class, "category", (short)1);
 		List<Example> examples2 = (List<Example>) baseService.findObjectList(Example.class, "category", (short)2);
@@ -56,18 +60,24 @@ public class EnglishControllerIndex {
 		request.setAttribute("examples2", examples2);
 		request.setAttribute("examples3", examples3);
 		request.setAttribute("examples4", examples4);
+		List<Example> examples = (List<Example>) baseService.findObjectList(Example.class);
+		request.setAttribute("examplesSize", examples.size());
 		//团队管理
 		List<ENTeam> teams = (List<ENTeam>) baseService.findObjectList(ENTeam.class);
 		request.setAttribute("teams", teams);
+		request.setAttribute("tsize", teams.size());
 		//服务范围
 		List<ENBusiness> businesses = (List<ENBusiness>) baseService.findObjectList(ENBusiness.class);
 		request.setAttribute("businesses", businesses);
+		request.setAttribute("bsize", businesses.size());
 		//流程控制
 		List<ENProcesss> pros = (List<ENProcesss>) baseService.findObjectList(ENProcesss.class);
 		request.setAttribute("pros", pros);
+		request.setAttribute("prosSize", pros.size());
 		//合作伙伴
 		List<ENPartners> partners = (List<ENPartners>) baseService.findObjectList(ENPartners.class);
 		request.setAttribute("partners", partners);
+		request.setAttribute("partnersSize", partners.size());
 		//最新动态
 		List<ENNews> news = (List<ENNews>) baseService.findObjectList(ENNews.class, "top", (short)1);
 		for (ENNews tnews : news) {
@@ -77,11 +87,13 @@ public class EnglishControllerIndex {
 			tnews.setContent(content3);
 		}
 		request.setAttribute("news", news);
+		List<News> news2 = (List<News>) baseService.findObjectList(News.class);
+		request.setAttribute("newsSize", news2.size());
 		//关于我们
 		ENContactusInfo enContactusInfo = (ENContactusInfo)baseService.findObject(ENContactusInfo.class, 1);
 		request.setAttribute("contactusInfo", enContactusInfo);
 		
-		return "/WEB-INF/front/index.jsp";
+		return "/WEB-INF/front/enIndex.jsp";
 	}
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/english/newsList")
@@ -94,23 +106,33 @@ public class EnglishControllerIndex {
 			dates.add(sdf.format(news2.getCreateTime()));
 			request.setAttribute("times", dates);
 		}
-		return "/WEB-INF/front/newsList.jsp";
+		//企业信息
+		ENCompanyInfo companyInfo = (ENCompanyInfo) baseService.findObject(ENCompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/enNewsList.jsp";
 	}
+	
 	@RequestMapping(value = "/english/newsInfo")
 	public String newsInfo(Integer id,HttpServletRequest request) {
 		ENNews news = (ENNews)baseService.findObject(ENNews.class, id);
 		request.setAttribute("news", news);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
 		request.setAttribute("time", sdf.format(news.getCreateTime()));
+		//企业信息
+		ENCompanyInfo companyInfo = (ENCompanyInfo) baseService.findObject(ENCompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/newsInfo.jsp";
 	}
 	
 	
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "/english/cust")
+	@RequestMapping(value = "/english/enCust")
 	public String cust(HttpServletRequest request) {
 		List<ENPartners> Partners = (List<ENPartners>)baseService.findObjectList(ENPartners.class);
 		request.setAttribute("partners", Partners);
-		return "/WEB-INF/front/cust.jsp";
+		//企业信息
+		ENCompanyInfo companyInfo = (ENCompanyInfo) baseService.findObject(ENCompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/enCust.jsp";
 	}
 }

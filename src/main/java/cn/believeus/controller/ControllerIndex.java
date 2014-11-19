@@ -53,6 +53,7 @@ public class ControllerIndex {
 		//banner
 		List<Banner> banners = (List<Banner>) baseService.findObjectList(Banner.class);
 		request.setAttribute("banners", banners);
+		request.setAttribute("bannersSize", banners.size());
 		//企业信息
 		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
@@ -63,6 +64,8 @@ public class ControllerIndex {
 		request.setAttribute("customerType1", customerType1);
 		request.setAttribute("customerType2", customerType2);
 		request.setAttribute("customerType3", customerType3);
+		List<Customers> customers = (List<Customers>) baseService.findObjectList(Customers.class);
+		request.setAttribute("customersSize", customers.size());
 		//案例
 		List<Example> examples1 = (List<Example>) baseService.findObjectList(Example.class, "category", (short)1);
 		List<Example> examples2 = (List<Example>) baseService.findObjectList(Example.class, "category", (short)2);
@@ -72,18 +75,24 @@ public class ControllerIndex {
 		request.setAttribute("examples2", examples2);
 		request.setAttribute("examples3", examples3);
 		request.setAttribute("examples4", examples4);
+		List<Example> examples = (List<Example>) baseService.findObjectList(Example.class);
+		request.setAttribute("examplesSize", examples.size());
 		//团队管理
 		List<Team> teams = (List<Team>) baseService.findObjectList(Team.class);
 		request.setAttribute("teams", teams);
+		request.setAttribute("tsize", teams.size());
 		//服务范围
 		List<Business> businesses = (List<Business>) baseService.findObjectList(Business.class);
 		request.setAttribute("businesses", businesses);
-		//流程控制
+		request.setAttribute("bsize", businesses.size());
+		//流程控制 
 		List<Processs> pros = (List<Processs>) baseService.findObjectList(Processs.class);
 		request.setAttribute("pros", pros);
+		request.setAttribute("prosSize", pros.size());
 		//合作伙伴
 		List<Partners> partners = (List<Partners>) baseService.findObjectList(Partners.class);
 		request.setAttribute("partners", partners);
+		request.setAttribute("partnersSize", partners.size());
 		//最新动态
 		List<News> news = (List<News>) baseService.findObjectList(News.class, "top", (short)1);
 		for (News tnews : news) {
@@ -93,6 +102,8 @@ public class ControllerIndex {
 			tnews.setContent(content3);
 		}
 		request.setAttribute("news", news);
+		List<News> news2 = (List<News>) baseService.findObjectList(News.class);
+		request.setAttribute("newsSize", news2.size());
 		//关于我们
 		ContactusInfo contactusInfo = (ContactusInfo)baseService.findObject(ContactusInfo.class, 1);
 		request.setAttribute("contactusInfo", contactusInfo);
@@ -110,6 +121,9 @@ public class ControllerIndex {
 			dates.add(sdf.format(news2.getCreateTime()));
 			request.setAttribute("times", dates);
 		}
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/newsList.jsp";
 	}
 	@RequestMapping(value = "/newsInfo")
@@ -118,6 +132,9 @@ public class ControllerIndex {
 		request.setAttribute("news", news);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
 		request.setAttribute("time", sdf.format(news.getCreateTime()));
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/newsInfo.jsp";
 	}
 	
@@ -127,6 +144,9 @@ public class ControllerIndex {
 	public String cust(HttpServletRequest request) {
 		List<Partners> Partners = (List<Partners>)baseService.findObjectList(Partners.class);
 		request.setAttribute("partners", Partners);
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/cust.jsp";
 	}
 	

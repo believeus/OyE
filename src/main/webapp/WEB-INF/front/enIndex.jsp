@@ -5,7 +5,7 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
-<title>OYE首页</title>
+<title>OYE home page</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
 <link rel="stylesheet" href="/static/public/css/jquery.bxslider.css"/>
@@ -470,7 +470,7 @@
        	时间：2014-11-04
        	描述：页头
        -->
-	<jsp:include page="header.jsp" />
+	<jsp:include page="enHeader.jsp" />
 	<div class="main">
 		<div class="main-img">
 			<!-- <img src="/static/public/images/img1.png" width="100%" /> -->
@@ -513,7 +513,7 @@
 		<div class="main-service">
 			<p class="">
 				<i style="width: 22px; height: 26px; background: url(/static/public/images/ser.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-				<a id="bus" style="font-size: 24px;">服务范围Our Business</a>
+				<a id="bus" style="font-size: 24px;">Our Business</a>
 			</p>
 			<div class="main-service-list">
 				<c:if test="${bsize!=0 }">
@@ -537,10 +537,10 @@
 							<img src="/static/public/images/bgs.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							办公室搬迁
+							office move
 						</div>
 						<div class="main-service-cont-dis">
-							谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破
+							aaaaafdsg dsgfdsgfd fds d fdsaf das fdasfd fdasf 
 						</div>
 					</div>
 					<div class="main-service-cont">
@@ -548,10 +548,10 @@
 							<img src="/static/public/images/bgs.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							办公室搬迁
+							office move
 						</div>
 						<div class="main-service-cont-dis">
-							谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破
+							aaaaafdsg dsgfdsgfd fds d fdsaf das fdasfd fdasf 
 						</div>
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
@@ -559,10 +559,10 @@
 							<img src="/static/public/images/bgs.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							办公室搬迁
+							office move
 						</div>
 						<div class="main-service-cont-dis">
-							谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破
+							aaaaafdsg dsgfdsgfd fds d fdsaf das fdasfd fdasf 
 						</div>
 					</div>
 					<div class="main-service-cont">
@@ -570,10 +570,10 @@
 							<img src="/static/public/images/bgs.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							办公室搬迁
+							office move
 						</div>
 						<div class="main-service-cont-dis">
-							谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破
+							aaaaafdsg dsgfdsgfd fds d fdsaf das fdasfd fdasf 
 						</div>
 					</div>
 					<div class="main-service-cont">
@@ -581,10 +581,10 @@
 							<img src="/static/public/images/bgs.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							办公室搬迁
+							office move
 						</div>
 						<div class="main-service-cont-dis">
-							谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破
+							aaaaafdsg dsgfdsgfd fds d fdsaf das fdasfd fdasf 
 						</div>
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
@@ -592,10 +592,10 @@
 							<img src="/static/public/images/bgs.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							办公室搬迁
+							office move
 						</div>
 						<div class="main-service-cont-dis">
-							谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破
+							aaaaafdsg dsgfdsgfd fds d fdsaf das fdasfd fdasf 
 						</div>
 					</div>
 				</c:if>
@@ -604,13 +604,13 @@
 		<div class="main-comp-const">
 			<div class="main-ourteam-cont-title" style="position: absolute; left: 120px;">
 				<i style="width: 37px; height: 28px; background: url(/static/public/images/al.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-				<a id="anli" style="font-size: 24px;">我们的案例</a>
+				<a id="anli" style="font-size: 24px;">CaseShow</a>
 			</div>
-			<div class="main-comp-const-title" style="width:460px;">
-				<div id="shijie" class="main-comp-const-title-list current" style="width: 130px;">世界500强</div>
-				<div id="guoyou" class="main-comp-const-title-list">国有企业</div>
-				<div id="shiye" class="main-comp-const-title-list">事业单位</div>
-				<div id="siyou" class="main-comp-const-title-list">私有企业</div>
+			<div class="main-comp-const-title" style="width:790px;">
+				<div id="shijie" class="main-comp-const-title-list current" style="width: 230px;">The World 500 Strong</div>
+				<div id="guoyou" class="main-comp-const-title-list" style="width: 230px;">StateOwned Enterprise</div>
+				<div id="shiye" class="main-comp-const-title-list" style="width: 130px;">Institution</div>
+				<div id="siyou" class="main-comp-const-title-list" style="width: 200px;">Private Enterprises</div>
 			</div>
 			
 			<c:if test="${examplesSize!=0 }">
@@ -1201,13 +1201,14 @@
 					</div>
 				</div>
 			</c:if>
+			
 		</div>
 		<div class="main-partner">
 			<img src="/static/public/images/img03.jpg" width="1366" />
 		</div>
 		<div class="main-evaluation">
 			<div class="main-evaluation-list">
-				<div style="width: 130px; height: 38px; position: absolute; left: 319px; top: 2150px;cursor:pointer;" title="更多" onclick="javascript:window.location.href='/cust.jhtml'"></div>
+				<div style="width: 130px; height: 38px; position: absolute; left: 319px; top: 2150px;cursor:pointer;" title="more" onclick="javascript:window.location.href='/enCust.jhtml'"></div>
 				<c:if test="${partnersSize!=0 }">
 					<c:forEach items="${partners }" var="partner" varStatus="status">
 						<div class="main-evaluation-list-cont">
@@ -1236,8 +1237,8 @@
 							<img src="/static/public/images/66.jpg" width="115" height="50" style="margin-top: 40px;" />
 						</div>
 						<div class="main-evaluation-list-cont-dis">
-							<p class="main-cont-dis-title"> 而阿强发生范德萨发大水</p>
-							<p class="main-cont-dis-conts">分公司范德萨罚多少高峰时段罚多少过分的是</p>
+							<p class="main-cont-dis-title"> dfsa dsa fsda fdsa </p>
+							<p class="main-cont-dis-conts">fdsaf g dafds dqwdA DSGHTRW </p>
 						</div>
 					</div>
 					<div id="embed01" class="em_video">
@@ -1253,8 +1254,8 @@
 							<img src="/static/public/images/44.jpg" width="115" height="50" style="margin-top: 40px;" />
 						</div>
 						<div class="main-evaluation-list-cont-dis">
-							<p class="main-cont-dis-title"> 而阿强发生范德萨发大水</p>
-							<p class="main-cont-dis-conts">分公司范德萨罚多少高峰时段罚多少过分的是</p>
+							<p class="main-cont-dis-title"> dfsa dsa fsda fdsa </p>
+							<p class="main-cont-dis-conts">fdsaf g dafds dqwdA DSGHTRW </p>
 						</div>
 					</div>
 					<div id="embed02" class="em_video">
@@ -1270,8 +1271,8 @@
 							<img src="/static/public/images/55.jpg" width="115" height="50" style="margin-top: 40px;" />
 						</div>
 						<div class="main-evaluation-list-cont-dis">
-							<p class="main-cont-dis-title"> 而阿强发生范德萨发大水</p>
-							<p class="main-cont-dis-conts">分公司范德萨罚多少高峰时段罚多少过分的是</p>
+							<p class="main-cont-dis-title"> dfsa dsa fsda fdsa </p>
+							<p class="main-cont-dis-conts">fdsaf g dafds dqwdA DSGHTRW </p>
 						</div>
 					</div>
 					<div id="embed03" class="em_video">
@@ -1289,7 +1290,7 @@
 			<div class="main-ourteam-cont">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 28px; height: 28px; background: url(/static/public/images/hxtd.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="zhizhi" style="font-size: 24px;">我们的核心团队</a>
+					<a id="zhizhi" style="font-size: 24px;">CompanyTeam</a>
 				</div>
 				<div class="main-ourteam-cont-const">
 					<c:if test="${tsize!=0 }">
@@ -1320,7 +1321,7 @@
 								<p>总经理</p>
 							</div>
 							<div class="dis">
-								大厦范德萨范德萨房东宾馆饭店你会感到该罚的
+								vdsaffeda gdasfga fds dsadsadsa dsa ds
 							</div>
 						</div>
 						<div class="main-ourteam-cont-const-list">
@@ -1332,7 +1333,7 @@
 								<p>总经理</p>
 							</div>
 							<div class="dis">
-								大厦范德萨范德萨房东宾馆饭店你会感到该罚的
+								vdsaffeda gdasfga fds dsadsadsa dsa ds
 							</div>
 						</div>
 						<div class="main-ourteam-cont-const-list">
@@ -1344,7 +1345,7 @@
 								<p>总经理</p>
 							</div>
 							<div class="dis">
-								大厦范德萨范德萨房东宾馆饭店你会感到该罚的
+								vdsaffeda gdasfga fds dsadsadsa dsa ds
 							</div>
 						</div>
 						<div class="main-ourteam-cont-const-list" style="margin-right:0;">
@@ -1356,7 +1357,7 @@
 								<p>总经理</p>
 							</div>
 							<div class="dis">
-								大厦范德萨范德萨房东宾馆饭店你会感到该罚的
+								vdsaffeda gdasfga fds dsadsadsa dsa ds
 							</div>
 						</div>
 					</c:if>
@@ -1370,7 +1371,7 @@
 			<div class="main-tp-cont">
 				<p class="main-tp-title">
 					<i style="width: 31px; height: 28px; background: url(/static/public/images/lc.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="liucheng" style="font-size: 24px;">我们的流程</a>
+					<a id="liucheng" style="font-size: 24px;">ServiceProcess</a>
 				</p>
 				<div style="">
 					<img src="/static/public/images/img06.png" style="position: relative; left: 500px;" />
@@ -1405,6 +1406,10 @@
 						<span>第三步</span><br /><br />
 						<span>the third step</span>
 					</div>
+					<div class="img_a5">
+						<span>第四步</span><br /><br />
+						<span>the four step</span>
+					</div>
 				</c:if>
 			</div>
 		</div>
@@ -1412,7 +1417,7 @@
 			<div style="width:1100px;height:auto;overflow:hidden;margin:0 auto 30px;">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 37px; height: 28px; background: url(/static/public/images/3333.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="cust" style="font-size: 24px;">我们的客户</a>
+					<a id="cust" style="font-size: 24px;">OurCustomers</a>
 				</div>
 				<c:if test="${customersSize!=0 }">
 					<div class="main-ourteam-cont-list">
@@ -1465,7 +1470,7 @@
 				<div class="aboutus" style="width: 380px;height: auto;overflow: hidden;float: left; margin-bottom: 50px;">
 					<div style="height: 45px;line-height: 45px;color: #EF738B;border-bottom: 1px solid #868686;">
 						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
-							关于我们
+							AboutUs
 						</div>
 					</div>
 						<div style="">
@@ -1475,16 +1480,16 @@
 							</c:if>
 							<c:if test="${contactusInfo==null }">
 								<img src="/static/public/images/img08.jpg" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />
-								<span style="color: #d6d6d6;line-height: 27px;">萨芬的该罚的过分的是光的反射热二期飞洒范德萨发大水地方撒电范德萨发大水芬的该罚的过分的是光的反射热二期飞洒范德萨发大水地方撒电范德萨发大水芬的该罚的过分的是光的反射热二期飞洒范德萨发大水地方撒电范德萨发大水芬的该萨发大水地方撒电范德萨发大水地方撒电范德萨发大水地方撒电范德萨发大水地方撒电范德萨发大水地方撒电风扇</span>
+								<span style="color: #d6d6d6;line-height: 27px;">cs gd gfdsgfsfa  efeafdasfefeafdasfefeaf dasfe feafdasfcs gd gfdsgfsfa  efeafdasfefeafdasfefeaf dasfe feafdasfcs gd gfdsgfsfa  efeafdasfefeafdasfefeaf dasfe feafdasfcs gd gfdsgfsfa  efeafdasfefeafdasfefeaf dasfe feafdasfcs gd gfdsgfsfa  efeafdasfefeafdasfefeaf dasfe feafdasfcs gd gfdsgfsfa  efeafdasfefeafdasfefeaf dasfe feafdasfcs gd gfdsgfsfa  efeafdasfefeafdasfefeaf dasfe feafdasfcs gd gfdsgfsfa  efeafdasfefeafdasfefeaf dasfe feafdasfcs gd gfdsgfsfa  efeafdasfefeafdasfefeaf dasfe feafdasf</span>
 							</c:if>
 						</div>
 				</div>
 				<div class="aboutus" style="width: 360px;height: auto;overflow: hidden;float: left;">
 					<div style="height: 45px;line-height: 45px;color: #EF738B;border-bottom: 1px solid #868686;">
 						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
-							<a id="news" style="color:#ef738b;">最新动态</a>
+							<a id="news" style="color:#ef738b;">StationNews</a>
 						</div>
-						<a href="/newsList.jhtml" style="float: right; position: relative; top: -46px;color:#fff;">更多&gt;&gt;</a>
+						<a href="/english/newsList.jhtml" style="float: right; position: relative; top: -46px;color:#fff;">MORE&gt;&gt;</a>
 					</div>
 					<div style="">
 						<c:if test="${newsSize!=0 }">
@@ -1512,9 +1517,9 @@
 							<div style="width: 365px;height: auto;overflow: hidden;">
 								<img src="/static/public/images/img08.jpg" width="100" height="80" style="float: left; margin: 15px 20px 10px 0px;"/>
 								<div style="float: left;width: 240px;margin-top: 10px;">
-									<p style="color: #FBFBFB;font-size: 15px;">房贷首付是的萨芬</p>
+									<p style="color: #FBFBFB;font-size: 15px;">fcdsdsa gfdas fdsa fds</p>
 									<p style="color: #FBFBFB;font-size: 14px;">
-										三大法该罚的好地方法倒萨范德萨放大发大水的萨芬打算范德萨萨芬...
+										gas fda dfsa fds  fgffsada fdsafdas fdas...
 									</p>
 									<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;float: right;margin-right: 20px;">
 										<a href="#" title="更多">
@@ -1526,9 +1531,9 @@
 							<div style="width: 365px;height: auto;overflow: hidden;">
 								<img src="/static/public/images/img08.jpg" width="100" height="80" style="float: left; margin: 15px 20px 10px 0px;"/>
 								<div style="float: left;width: 240px;margin-top: 10px;">
-									<p style="color: #FBFBFB;font-size: 15px;">房贷首付是的萨芬</p>
+									<p style="color: #FBFBFB;font-size: 15px;">fcdsdsa gfdas fdsa fds</p>
 									<p style="color: #FBFBFB;font-size: 14px;">
-										三大法该罚的好地方法倒萨范德萨放大发大水的萨芬打算范德萨萨芬...
+										gas fda dfsa fds  fgffsada fdsafdas fdas...
 									</p>
 									<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;float: right;margin-right: 20px;">
 										<a href="#" title="更多">
@@ -1540,9 +1545,9 @@
 							<div style="width: 365px;height: auto;overflow: hidden;">
 								<img src="/static/public/images/img08.jpg" width="100" height="80" style="float: left; margin: 15px 20px 10px 0px;"/>
 								<div style="float: left;width: 240px;margin-top: 10px;">
-									<p style="color: #FBFBFB;font-size: 15px;">房贷首付是的萨芬</p>
+									<p style="color: #FBFBFB;font-size: 15px;">fcdsdsa gfdas fdsa fds</p>
 									<p style="color: #FBFBFB;font-size: 14px;">
-										三大法该罚的好地方法倒萨范德萨放大发大水的萨芬打算范德萨萨芬...
+										gas fda dfsa fds  fgffsada fdsafdas fdas...
 									</p>
 									<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;float: right;margin-right: 20px;">
 										<a href="#" title="更多">
@@ -1557,29 +1562,29 @@
 				<div class="aboutus" style="width: 380px;height: auto;overflow: hidden;float: left;margin-right: 0;">
 					<div style="height: 45px;line-height: 45px;color: #EF738B;border-bottom: 1px solid #868686;">
 						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
-							<a id="zixun" style="color:#ef738b;">在线咨询</a>
+							<a id="zixun" style="color:#ef738b;">ContactUs</a>
 						</div>
 					</div>
-					<div style="text-align: center;">
-						<input class="input" type="text" id="name" name="name" placeholder="姓名" style="margin-top: 10px;" />
-						<input class="input" type="text" id="phone" name="phone" placeholder="手机" />
-						<input class="input" type="text" id="email" name="email" placeholder="邮箱" />
-						<input class="input" type="text" id="title" name="title" placeholder="标题" />
-						<textarea class="input" id="content_a" name="content" style="height: 125px;resize: none;overflow-y: hidden;" placeholder="内容填写"></textarea>
-						<input class="botton" type="submit" value="提交" />
+					<div style="text-align: center;height: auto; overflow: hidden;">
+						<input class="input" type="text" id="name" name="name" placeholder="name" style="margin-top: 10px;" />
+						<input class="input" type="text" id="phone" name="phone" placeholder="phone" />
+						<input class="input" type="text" id="email" name="email" placeholder="email" />
+						<input class="input" type="text" id="title" name="title" placeholder="title" />
+						<textarea class="input" id="content_a" name="content" style="height: 125px;resize: none;overflow-y: hidden;" placeholder="content"></textarea>
+						<input class="botton" type="submit" value="SUBMIT" />
 						<script type="text/javascript">
 							$(function(){
 								$("input[type=submit]").click(function(){
 									if($("#name").val() ==""){
-										alert("请输入姓名");
+										alert("place enter name");
 									}else if($("#phone").val() == ""){
-										alert("请输入手机号");
+										alert("place enter phone");
 									}else if($("#email").val() == ""){
-										alert("请输入邮箱");
+										alert("place enter email");
 									}else if($("#title").val() == ""){
-										alert("请输入标题");
+										alert("place enter title");
 									}else if($("#content_a").val() == ""){
-										alert("请输入内容");
+										alert("place enter content");
 									}else{
 										$.ajax({
 											type : "post",
@@ -1606,6 +1611,6 @@
        	时间：2014-11-04
        	描述：页尾
        -->
-	<jsp:include page="footer.jsp" />
+	<jsp:include page="enFooter.jsp" />
 </body>
 </html>

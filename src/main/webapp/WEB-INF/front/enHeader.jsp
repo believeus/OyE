@@ -1,4 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<style type="text/css">
+	.nav a {
+	    color: #999;
+	    font-size: 20px;
+	    padding: 8px 10px;
+	}
+</style>
 <script type="text/javascript">
 	$(function(){
 		/* $(".nav a").click(function(){
@@ -30,14 +37,14 @@
 			</div>
 			<div class="nav">
 				<ul>
-					<li><a href="/">首页</a></li>
-					<li><a href="#bus">业务范围</a></li>
-					<li><a href="#anli">案例展示</a></li>
-					<li><a href="#zhizhi">企业资质</a></li>
-					<li><a href="#cust">客户感言</a></li>
-					<li><a href="#liucheng">服务流程</a></li>
-					<li><a href="#news">站内新闻</a></li>
-					<li><a href="#zixun">联系我们</a></li>
+					<li><a href="/english.jhtml">Home</a></li>
+					<li><a href="#bus">BusinessScope</a></li>
+					<li><a href="#anli">CaseShow</a></li>
+					<li><a href="#zhizhi">CompanyTeam</a></li>
+					<li><a href="#cust">Testimonials</a></li>
+					<li><a href="#liucheng">ServiceProcess</a></li>
+					<li><a href="#news">StationNews</a></li>
+					<li><a href="#zixun">ContactUs</a></li>
 				</ul>
 			</div>
 		</div>

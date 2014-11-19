@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <head>
-<title>客户感言</title>
+<title>Testimonials</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
@@ -59,7 +59,7 @@
        	时间：2014-11-04
        	描述：页头
        -->
-	<jsp:include page="header.jsp" />
+	<jsp:include page="enHeader.jsp" />
 	
 	<div class="main" style="background: #eaeaea;">
 		<img src="/static/public/images/customer_img.jpg" width="100%"/>
@@ -91,6 +91,6 @@
        	时间：2014-11-04
        	描述：页尾
        -->
-	<jsp:include page="footer.jsp" />
+	<jsp:include page="enFooter.jsp" />
 </body>
 </html>
