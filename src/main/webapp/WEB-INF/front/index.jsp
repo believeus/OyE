@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="/static/public/css/jquery.bxslider.css"/>
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
 <script src="/static/public/js/jquery.bxslider.min.js"></script>
+<!-- <script src="/static/public/js/ckplayer.js"></script> -->
+
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
 <style type="text/css">
 	.banner_main{width:100%;margin:0 auto;position: relative;}
@@ -167,6 +169,17 @@
 }
 .em_video{
 	width: 372px; height: 215px; left: 662px; position: absolute; top: 1952px;
+}
+.anli_class {
+    height: 460px;
+    width: 100%;
+}
+.more_partner{
+	width: 130px; height: 38px; position: absolute; left: 319px; top: 2151px;cursor:pointer;
+}
+.main-ourteam-cont-title a:hover{
+	color:#ff5900;
+	text-decoration: underline;
 }
 </style>
 <script type="text/javascript">
@@ -460,6 +473,28 @@
 				}
 			}
 		});
+		//------------锚点滚动
+		$("#busId").click(function(){
+			$("html,body").animate({scrollTop: $("#bus").offset().top}, 500);
+		});
+		$("#anliId").click(function(){
+			$("html,body").animate({scrollTop: $("#anli").offset().top}, 500);
+		});
+		$("#zhizhiId").click(function(){
+			$("html,body").animate({scrollTop: $("#zhizhi").offset().top}, 500);
+		});
+		$("#custId").click(function(){
+			$("html,body").animate({scrollTop: $("#cust").offset().top}, 500);
+		});
+		$("#liuchengId").click(function(){
+			$("html,body").animate({scrollTop: $("#liucheng").offset().top}, 500);
+		});
+		$("#newsId").click(function(){
+			$("html,body").animate({scrollTop: $("#news").offset().top}, 500);
+		});
+		$("#zixunId").click(function(){
+			$("html,body").animate({scrollTop: $("#zixun").offset().top}, 500);
+		});
 	});
 </script>
 </head>
@@ -545,7 +580,7 @@
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/bgs.png" width="99" height="99"/>
+							<img src="/static/public/images/cc.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
 							办公室搬迁
@@ -556,7 +591,7 @@
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/bgs.png" width="99" height="99"/>
+							<img src="/static/public/images/es.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
 							办公室搬迁
@@ -567,7 +602,7 @@
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/bgs.png" width="99" height="99"/>
+							<img src="/static/public/images/people.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
 							办公室搬迁
@@ -578,7 +613,7 @@
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/bgs.png" width="99" height="99"/>
+							<img src="/static/public/images/phone.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
 							办公室搬迁
@@ -589,7 +624,7 @@
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/bgs.png" width="99" height="99"/>
+							<img src="/static/public/images/sys.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
 							办公室搬迁
@@ -604,7 +639,7 @@
 		<div class="main-comp-const">
 			<div class="main-ourteam-cont-title" style="position: absolute; left: 120px;">
 				<i style="width: 37px; height: 28px; background: url(/static/public/images/al.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-				<a id="anli" style="font-size: 24px;">我们的案例</a>
+				<a id="anli" href="/caseList.jhtml" style="font-size: 24px;" target="_blank">我们的案例</a>
 			</div>
 			<div class="main-comp-const-title" style="width:460px;">
 				<div id="shijie" class="main-comp-const-title-list current" style="width: 130px;">世界500强</div>
@@ -614,7 +649,7 @@
 			</div>
 			
 			<c:if test="${examplesSize!=0 }">
-			<div id="shijie500qiang">
+			<div id="shijie500qiang" class="anli_class">
 				<c:forEach items="${examples1 }" var="example" varStatus="status">
 					<div class="main-comp-const-img" id="compimg0${status.index+1 }" <c:if test="${status.index>0 }">style="display:none;"</c:if>>
 						<div id="product">
@@ -648,7 +683,7 @@
 					</c:forEach>
 				</div>
 			</div>
-			<div id="guoyouqiye" style="display:none;">
+			<div id="guoyouqiye" style="display:none;" class="anli_class">
 				<c:forEach items="${examples2 }" var="example" varStatus="status">
 					<div class="main-comp-const-img" id="2compimg0${status.index+1 }" <c:if test="${status.index>0 }">style="display:none;"</c:if>>
 						<div id="product">
@@ -682,7 +717,7 @@
 					</c:forEach>
 				</div>
 			</div>
-			<div id="shiyedanwei" style="display:none;">
+			<div id="shiyedanwei" style="display:none;" class="anli_class">
 				<c:forEach items="${examples3 }" var="example" varStatus="status">
 					<div class="main-comp-const-img" id="3compimg0${status.index+1 }" <c:if test="${status.index>0 }">style="display:none;"</c:if>>
 						<div id="product">
@@ -716,7 +751,7 @@
 					</c:forEach>
 				</div>
 			</div>
-			<div id="siyouqiye" style="display:none;">
+			<div id="siyouqiye" style="display:none;" class="anli_class">
 				<c:forEach items="${examples4 }" var="example" varStatus="status">
 					<div class="main-comp-const-img" id="4compimg0${status.index+1 }" <c:if test="${status.index>0 }">style="display:none;"</c:if>>
 						<div id="product">
@@ -752,7 +787,7 @@
 			</div>
 			</c:if>
 			<c:if test="${examplesSize==0 }">
-				<div id="shijie500qiang">
+				<div id="shijie500qiang" class="anli_class">
 					<div class="main-comp-const-img" id="compimg01">
 						<div id="product">
 							<span class="prev"></span>
@@ -865,7 +900,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="guoyouqiye" style="display:none;">
+				<div id="guoyouqiye" style="display:none;" class="anli_class">
 					<div class="main-comp-const-img" id="2compimg01">
 						<div id="product">
 							<span class="prev"></span>
@@ -974,7 +1009,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="shiyedanwei" style="display:none;">
+				<div id="shiyedanwei" style="display:none;" class="anli_class">
 					<div class="main-comp-const-img" id="3compimg01">
 						<div id="product">
 							<span class="prev"></span>
@@ -1087,7 +1122,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="siyouqiye" style="display:none;">
+				<div id="siyouqiye" style="display:none;" class="anli_class">
 					<div class="main-comp-const-img" id="4compimg01">
 						<div id="product">
 							<span class="prev"></span>
@@ -1207,7 +1242,9 @@
 		</div>
 		<div class="main-evaluation">
 			<div class="main-evaluation-list">
-				<div style="width: 130px; height: 38px; position: absolute; left: 319px; top: 2150px;cursor:pointer;" title="更多" onclick="javascript:window.location.href='/cust.jhtml'"></div>
+				<a href="/cust.jhtml" target="_blank">
+					<div class="more_partner" title="更多">&nbsp;</div>
+				</a>
 				<c:if test="${partnersSize!=0 }">
 					<c:forEach items="${partners }" var="partner" varStatus="status">
 						<div class="main-evaluation-list-cont">
@@ -1220,10 +1257,19 @@
 							</div>
 						</div>
 						<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
-							<embed type="application/x-shockwave-flash" width="372" height="215" 
-								src="${partner.video }" allowfullscreen="true" 
-								quality="high" allowscriptaccess="always" align="middle" />
-								<!-- http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf -->
+							<%-- <embed type="application/x-shockwave-flash" width="372" height="215" 
+								src="/${partner.video }" allowfullscreen="true" 
+								quality="high" allowscriptaccess="always" align="middle" /> --%>
+						    <embed id="ckplayer_a1" align="middle" width="372" height="205" 
+								pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
+								<c:if test="${partner.videoLink ==null }">
+									flashvars="f=http://localhost:8080/${partner.video }" 
+								</c:if>
+								<c:if test="${partner.videoLink !=null }">
+									flashvars="f=http://localhost:8080/${partner.videoLink }" 
+								</c:if>
+								src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
+								quality="high" allowfullscreen="true" allowscriptaccess="always" />
 						</div>
 						<div id="m_img0${status.index+1 }" style="width: 132px; height: 174px; position: absolute; top: 2121px; left: 1045px;">
 							<img src="${partner.path }" width="132" height="174"/>
@@ -1289,7 +1335,7 @@
 			<div class="main-ourteam-cont">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 28px; height: 28px; background: url(/static/public/images/hxtd.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="zhizhi" style="font-size: 24px;">我们的核心团队</a>
+					<a id="zhizhi" href="/teamList.jhtml" target="_blank" style="font-size: 24px;">我们的核心团队</a>
 				</div>
 				<div class="main-ourteam-cont-const">
 					<c:if test="${tsize!=0 }">
@@ -1303,8 +1349,8 @@
 										<span style="font-size: 18px;">${team.name } | ${team.ehName }</span>
 										<p>${team.position }</p>
 									</div>
-									<div class="dis">
-										${team.content }
+									<div class="dis" title="${team.content }">
+										${fn:substring(team.content, 0, 50)}...
 									</div>
 								</div>
 							</c:if>
@@ -1360,9 +1406,9 @@
 							</div>
 						</div>
 					</c:if>
-					<img src="/static/public/images/a.png" style="position: relative; top: -81px; left: 69px;" />
-					<img src="/static/public/images/b.png" style="position: relative; top: -81px; left: 950px;" />
-					<div style="background: #ffa7a9;height: 34px;left: 105px;position: relative;top: -136px;width: 925px;" ></div>
+					<img src="/static/public/images/a.png" style="position: absolute; top: 2975px; left: 180px;" />
+					<img src="/static/public/images/b.png" style="position: absolute; top: 2975px; left: 1100px;" />
+					<div style="background: #ffa7a9;height: 34px; position: absolute; top: 2992px; left: 215px;width: 925px;" ></div>
 				</div>
 			</div>			
 		</div>
@@ -1405,14 +1451,18 @@
 						<span>第三步</span><br /><br />
 						<span>the third step</span>
 					</div>
+					<div class="img_a5">
+						<span>第四步</span><br /><br />
+						<span>the four step</span>
+					</div>
 				</c:if>
 			</div>
 		</div>
 		<div class="main-cust">
-			<div style="width:1100px;height:auto;overflow:hidden;margin:0 auto 30px;">
+			<div style="width:1100px;height:435px;overflow:hidden;margin:0 auto 30px;">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 37px; height: 28px; background: url(/static/public/images/3333.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="cust" style="font-size: 24px;">我们的客户</a>
+					<a id="cust" href="/customerList.jhtml" target="_blank" style="font-size: 24px;">我们的客户</a>
 				</div>
 				<c:if test="${customersSize!=0 }">
 					<div class="main-ourteam-cont-list">
@@ -1421,7 +1471,7 @@
 								<div class="ot">
 									<div class="main-ourteam-cont-list-img">
 										<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
-											<img src="${cust1.url }" width="75"/>
+											<img src="${cust1.url }" width="95" height="50"/>
 										</a>
 									</div>
 								</div>
@@ -1434,7 +1484,7 @@
 								<div class="ot">
 									<div class="main-ourteam-cont-list-img">
 										<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
-											<img src="${cust1.url }" width="75"/>
+											<img src="${cust1.url }" width="95" height="50"/>
 										</a>
 									</div>
 								</div>
@@ -1447,7 +1497,7 @@
 								<div class="ot">
 									<div class="main-ourteam-cont-list-img">
 										<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
-											<img src="${cust1.url }" width="75"/>
+											<img src="${cust1.url }" width="95" height="50"/>
 										</a>
 									</div>
 								</div>

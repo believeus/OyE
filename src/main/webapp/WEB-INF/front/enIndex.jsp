@@ -420,6 +420,28 @@
 			$("#embed02").hide();
 			$("#embed03").show();
 		});
+		//------------锚点滚动
+		$("#busId").click(function(){
+			$("html,body").animate({scrollTop: $("#bus").offset().top}, 500);
+		});
+		$("#anliId").click(function(){
+			$("html,body").animate({scrollTop: $("#anli").offset().top}, 500);
+		});
+		$("#zhizhiId").click(function(){
+			$("html,body").animate({scrollTop: $("#zhizhi").offset().top}, 500);
+		});
+		$("#custId").click(function(){
+			$("html,body").animate({scrollTop: $("#cust").offset().top}, 500);
+		});
+		$("#liuchengId").click(function(){
+			$("html,body").animate({scrollTop: $("#liucheng").offset().top}, 500);
+		});
+		$("#newsId").click(function(){
+			$("html,body").animate({scrollTop: $("#news").offset().top}, 500);
+		});
+		$("#zixunId").click(function(){
+			$("html,body").animate({scrollTop: $("#zixun").offset().top}, 500);
+		});
 	});
 </script>
 <script type="text/javascript">
@@ -1426,7 +1448,7 @@
 								<div class="ot">
 									<div class="main-ourteam-cont-list-img">
 										<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
-											<img src="${cust1.url }" width="75"/>
+											<img src="${cust1.url }" width="95" height="50"/>
 										</a>
 									</div>
 								</div>
@@ -1439,7 +1461,7 @@
 								<div class="ot">
 									<div class="main-ourteam-cont-list-img">
 										<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
-											<img src="${cust1.url }" width="75"/>
+											<img src="${cust1.url }" width="95" height="50"/>
 										</a>
 									</div>
 								</div>
@@ -1452,7 +1474,7 @@
 								<div class="ot">
 									<div class="main-ourteam-cont-list-img">
 										<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
-											<img src="${cust1.url }" width="75"/>
+											<img src="${cust1.url }" width="95" height="50"/>
 										</a>
 									</div>
 								</div>

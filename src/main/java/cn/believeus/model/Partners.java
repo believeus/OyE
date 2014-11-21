@@ -25,6 +25,19 @@ public class Partners extends TbaseEntity{
 	/** 视频 */
 	private String video;
 	
+	/** 视频链接 */
+	private String videoLink;
+	
+	
+	
+	public String getVideoLink() {
+		return videoLink;
+	}
+
+	public void setVideoLink(String videoLink) {
+		this.videoLink = videoLink;
+	}
+
 	/** 获取名称*/
 	public String getName() {
 		return name;

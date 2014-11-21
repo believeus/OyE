@@ -117,7 +117,7 @@ img{
 }
 .main-service{
 	width: 1165px;
-	height: auto;
+	height: 640px;
 	overflow: hidden;
 	margin: 80px auto 0;
 }
@@ -287,7 +287,7 @@ img{
 
 .dis {
     font-size: 16px;
-    height: 60px;
+    height: auto;
     padding: 5px 12px;
 }
 .main-tp{

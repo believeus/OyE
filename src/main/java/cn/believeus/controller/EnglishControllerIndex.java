@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 import cn.believeus.model.Banner;
+import cn.believeus.model.CompanyInfo;
 import cn.believeus.model.Customers;
 import cn.believeus.model.Example;
 import cn.believeus.model.News;
+import cn.believeus.model.Team;
 import cn.believeus.model.en.ENBusiness;
 import cn.believeus.model.en.ENCompanyInfo;
 import cn.believeus.model.en.ENContactusInfo;
@@ -134,5 +136,38 @@ public class EnglishControllerIndex {
 		ENCompanyInfo companyInfo = (ENCompanyInfo) baseService.findObject(ENCompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/enCust.jsp";
+	}
+	
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/english/caseList")
+	public String cases(HttpServletRequest request) {
+		List<Example> examples = (List<Example>)baseService.findObjectList(Example.class);
+		request.setAttribute("examples", examples);
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/enCaseList.jsp";
+	}
+	
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/english/teamList")
+	public String teams(HttpServletRequest request) {
+		List<ENTeam> teams = (List<ENTeam>)baseService.findObjectList(ENTeam.class);
+		request.setAttribute("teams", teams);
+		//企业信息
+		ENCompanyInfo companyInfo = (ENCompanyInfo) baseService.findObject(ENCompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/enTeamList.jsp";
+	}
+	
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/english/customerList")
+	public String customerList(HttpServletRequest request) {
+		List<Customers> customers = (List<Customers>)baseService.findObjectList(Customers.class);
+		request.setAttribute("customers", customers);
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/enCustomerList.jsp";
 	}
 }

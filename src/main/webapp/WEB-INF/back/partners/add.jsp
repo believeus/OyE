@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				,enname: "required"
 				,upload_img1: "required"
 				,upload_img2: "required"
-				,upload_img3: "required"
+				/* ,upload_img3: "required" */
 				,content: "required"
 				,encontent: "required"
 			}
@@ -87,6 +87,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<td>
 					<input type="file" name="upload_img3" onchange="checkV(this)"/>
 					<font size="2" color="#999999">只能上传 .flv 格式的视频。</font>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					视频链接:
+				</th>
+				<td>
+					<input type="text" name="videoLink" class="text" style="margin-right: 42px;" />
+					<font size="2" color="#999999">可选填第三方视频链接</font>
 				</td>
 			</tr>
 			<tr id="pathTr">

@@ -3,8 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
-<title>新闻详情页面</title>
+<title>Case List</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
@@ -13,7 +14,7 @@
 		width:1140px;height:auto;overflow:hidden;margin:0 auto;
 	}
 	.main_content_title{
-		height:40px;line-height:40px;border-bottom:1px dashed #C6C6C6;margin-bottom: 20px;
+		width:1140px;height:40px;line-height:40px;border-bottom:1px dashed #C6C6C6;margin-bottom: 20px;
 	}
 	.main_content_body {
 	    height: auto;
@@ -61,14 +62,13 @@
 	    text-align: center;	
 	}
 	.NI_duanluo{
-		width: 1100px; height: auto; overflow: hidden; margin: 30px auto;
+		width: 1100px; height: auto; overflow: hidden; margin: 30px auto 0px;
 	}
 	.NI_duanluo p {
 	    color: #fefefe;
-	    font-size: 21px;
+	    font-size: 15px;
 	    line-height: 30px;
 	    text-indent: 30px;
-	    font-family: heiti;
 	}
 	.NI_line{
 		width:1140px;height:1px;border-bottom:1px dashed #c6c6c6;margin-bottom:20px;
@@ -82,6 +82,21 @@
 	.NI_fanye a{
 		color:#FFF;
 	}
+	.anli_list{
+		width:1140px;height:auto;overflow:hidden;
+	}
+	.anli_1{
+		width:360px;height:310px;margin-right:30px;margin-bottom:30px;float:left;
+	}
+	.anli_1_img{
+		width:360px;height:245px;
+	}
+	.anli_1_3Img{
+		width:360px;height:60px; margin-top: 5px;
+	}
+	.anli_1_3Img_list{
+		width:115px;height:60px;float:left;margin-right:7px;
+	}
 </style>
 </head>
 <body>
@@ -90,29 +105,37 @@
        	时间：2014-11-04
        	描述：页头
        -->
-	<jsp:include page="header.jsp" />
+	<jsp:include page="enHeader.jsp" />
 	
-	<div class="main" style="background:#505050;">
+	<div class="main">
 		<div class="main_content">
 			<div class="main_content_title">
-				<div class="main_content_title_2">最新动态</div>
+				<div class="main_content_title_2">Case List</div>
 			</div>
-			<div class="">
-				<h1 class="NI_h1" style="text-align:center;">${news.title }</h1>
-				<p style="text-align:center;margin-bottom:30px;color:#fff;">
-					<span style="margin-right:20px;">时间：${time }</span>
-				</p>
-				<div style="text-align:center;">
-					<img src="/${news.path }" width="780"/>
-				</div>
-				<div class="NI_duanluo">
-					${news.content }
-				</div>
-			</div>
-			<div class="NI_line"></div>
-			<div class="NI_fanye">
-				<p>上一篇：<a href="#">二十国集团(G20)领导人第九次峰会</a></p>
-				<p>下一篇：<a href="#">当地时间15日下午，国家主席习近平出席第一阶段会议</a></p>
+			<div class="anli_list">
+				<c:forEach items="${examples }" var="example" varStatus="statuss">
+					<div class="anli_1" <c:if test="${(statuss.index+1)%3==0 }">style="margin-right:0;"</c:if>>
+						<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
+							<c:if test="${status.index ==0 }">
+								<div class="anli_1_img">
+									<%-- <a href="/caseInfo.jhtml?id=?">
+										<img src="${url }" width="360" height="245" />
+									</a> --%>
+									<img src="${url }" width="360" height="245" />
+								</div>
+							</c:if>
+						</c:forEach>
+						<div class="anli_1_3Img">
+							<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
+								<c:if test="${status.index <4 && status.index >0 }">
+									<div class="anli_1_3Img_list" <c:if test="${(status.index)%3==0 }">style="margin-right:0;"</c:if>>
+										<img src="${url }" width="115" height="60" />
+									</div>
+								</c:if>
+							</c:forEach>
+						</div>
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>
@@ -121,6 +144,6 @@
        	时间：2014-11-04
        	描述：页尾
        -->
-	<jsp:include page="footer.jsp" />
+	<jsp:include page="enFooter.jsp" />
 </body>
 </html>

@@ -94,7 +94,8 @@ public class ControllerIndex {
 		request.setAttribute("partners", partners);
 		request.setAttribute("partnersSize", partners.size());
 		//最新动态
-		List<News> news = (List<News>) baseService.findObjectList(News.class, "top", (short)1);
+		List<News> news = (List<News>) baseService.findObjectList(News.class);
+//		List<News> news = (List<News>) baseService.findObjectList(News.class, "top", (short)1);
 		for (News tnews : news) {
 			String content = tnews.getContent();
 			String content2 = content.replaceAll("<[^>]+>", "");
@@ -186,5 +187,38 @@ public class ControllerIndex {
 		writer.flush();
 		writer.close();
 		out.close();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/caseList")
+	public String cases(HttpServletRequest request) {
+		List<Example> examples = (List<Example>)baseService.findObjectList(Example.class);
+		request.setAttribute("examples", examples);
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/caseList.jsp";
+	}
+	
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/teamList")
+	public String teams(HttpServletRequest request) {
+		List<Team> teams = (List<Team>)baseService.findObjectList(Team.class);
+		request.setAttribute("teams", teams);
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/teamList.jsp";
+	}
+	
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/customerList")
+	public String customerList(HttpServletRequest request) {
+		List<Customers> customers = (List<Customers>)baseService.findObjectList(Customers.class);
+		request.setAttribute("customers", customers);
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/customerList.jsp";
 	}
 }

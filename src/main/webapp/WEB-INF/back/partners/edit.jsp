@@ -91,6 +91,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</font>
 				</td>
 			</tr>
+			<tr>
+				<th>
+					视频链接:
+				</th>
+				<td>
+					<input type="text" name="videoLink" class="text" value="${partners.videoLink }" style="margin-right: 42px;"/>
+					<font size="2" color="#999999">可选填第三方视频链接</font>
+				</td>
+			</tr>
 			<tr id="pathTr">
 				<th>
 					LOGO图片:

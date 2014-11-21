@@ -34,9 +34,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<div>
 		<div class="bar">
-			<a href="/admin/process/add.jhtml" class="iconButton">
+			<!-- <a href="/admin/process/add.jhtml" class="iconButton">
 				<span class="addIcon">&nbsp;</span>添加
-			</a>
+			</a> -->
 		<div class="buttonWrap">
 			<a href="javascript:;" id="deleteButton" class="iconButton disabled">
 				<span class="deleteIcon">&nbsp;</span>删除
@@ -64,26 +64,91 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="#"  class="sort">操作</a>
 				</th>
 			</tr>
-			<c:forEach var="myNew" items="${processs}" varStatus="status">
-				<tr>
-					<td>
-						<input type="checkbox" name="ids" value="${myNew.id}" />
-					</td>
-					<td>
-						<%-- ${myNew.id} --%>
-						${status.index+1 }
-					</td>
-					<td>
-						${myNew.cn}
-					</td>
-					<td>
-						${myNew.en}
-					</td>
-					<td>
-						<a href="/admin/process/edit.jhtml?id=${myNew.id}">[修改]</a>
-					</td>
-				</tr>
-			</c:forEach>
+			<tr>
+				<td>
+					<input type="checkbox" name="ids" value="1" />
+				</td>
+				<td>
+					1
+				</td>
+				<td>
+					控制流程
+				</td>
+				<td>
+					control stream
+				</td>
+				<td>
+					<a href="/admin/process/edit.jhtml?id=1">[修改]</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="ids" value="2" />
+				</td>
+				<td>
+					2
+				</td>
+				<td>
+					第一步
+				</td>
+				<td>
+					the first step
+				</td>
+				<td>
+					<a href="/admin/process/edit.jhtml?id=2">[修改]</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="ids" value="3" />
+				</td>
+				<td>
+					3
+				</td>
+				<td>
+					第二步
+				</td>
+				<td>
+					the second step
+				</td>
+				<td>
+					<a href="/admin/process/edit.jhtml?id=3">[修改]</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="ids" value="4" />
+				</td>
+				<td>
+					4
+				</td>
+				<td>
+					第三步
+				</td>
+				<td>
+					the third step
+				</td>
+				<td>
+					<a href="/admin/process/edit.jhtml?id=4">[修改]</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" name="ids" value="4" />
+				</td>
+				<td>
+					5
+				</td>
+				<td>
+					第四步
+				</td>
+				<td>
+					the four step
+				</td>
+				<td>
+					<a href="/admin/process/edit.jhtml?id=5">[修改]</a>
+				</td>
+			</tr>
 		</table>
 	</div>
 	<div>

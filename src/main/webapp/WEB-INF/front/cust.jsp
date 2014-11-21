@@ -75,10 +75,20 @@
 					</div>
 				</div>
 				<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
-					<embed type="application/x-shockwave-flash" width="556" height="311" 
+					<%-- <embed type="application/x-shockwave-flash" width="556" height="311" 
 						src="${partners.video }" allowfullscreen="true" 
 						quality="high" allowscriptaccess="always" align="middle" />
-						<!-- http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf -->
+						<!-- http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf --> --%>
+					<embed id="ckplayer_a1" align="middle" width="556" height="311" 
+						pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
+						<c:if test="${partner.videoLink == null }">
+							flashvars="f=http://localhost:8080/${partner.video }" 
+						</c:if>
+						<c:if test="${partner.videoLink != null }">
+							flashvars="f=http://localhost:8080/${partner.videoLink }" 
+						</c:if>
+						src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
+						quality="high" allowfullscreen="true" allowscriptaccess="always" />
 				</div>
 				<div id="m_img0${status.index+1 }" style="position: absolute; left: 880px; top: 391px; width: 200px; height: 265px;">
 					<img src="${partners.path }" width="200" height="265"/>
