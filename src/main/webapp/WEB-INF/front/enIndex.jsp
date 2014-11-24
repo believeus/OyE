@@ -540,17 +540,19 @@
 			<div class="main-service-list">
 				<c:if test="${bsize!=0 }">
 					<c:forEach items="${businesses }" var="bus" varStatus="status">
-						<div class="main-service-cont" <c:if test="${(status.index+1)%3==0 }">style="margin-right:0;"</c:if>>
-							<div class="main-service-cont-img">
-								<img src="${bus.path }" width="99" height="99"/>
+						<c:if test="${status.index < 5}">
+							<div class="main-service-cont" <c:if test="${(status.index+1)%3==0 }">style="margin-right:0;"</c:if>>
+								<div class="main-service-cont-img">
+									<img src="${bus.path }" width="99" height="99"/>
+								</div>
+								<div class="main-service-cont-name">
+									${bus.title }
+								</div>
+								<div class="main-service-cont-dis">
+									${bus.description }
+								</div>
 							</div>
-							<div class="main-service-cont-name">
-								${bus.title }
-							</div>
-							<div class="main-service-cont-dis">
-								${bus.description }
-							</div>
-						</div>
+						</c:if>
 					</c:forEach>
 				</c:if>
 				<c:if test="${bsize==0 }">
@@ -559,65 +561,65 @@
 							<img src="/static/public/images/bgs.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							office move
+							Office cleaning and air treatment
 						</div>
 						<div class="main-service-cont-dis">
-							aaaaafdsg dsgfdsgfd fds d fdsaf das fdasfd fdasf 
+							According to the enterprise office relocation required to provide full or partial removal, puts forward the problems need to be noticed in the removal process.
 						</div>
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/bgs.png" width="99" height="99"/>
+							<img src="/static/public/images/cc.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							office move
+							Storage
 						</div>
 						<div class="main-service-cont-dis">
-							aaaaafdsg dsgfdsgfd fds d fdsaf das fdasfd fdasf 
+							According to the enterprise office relocation required to provide full or partial removal, puts forward the problems need to be noticed in the removal process.
 						</div>
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/bgs.png" width="99" height="99"/>
+							<img src="/static/public/images/es.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							office move
+							Second-hand furniture recycling
 						</div>
 						<div class="main-service-cont-dis">
-							aaaaafdsg dsgfdsgfd fds d fdsaf das fdasfd fdasf 
+							According to the enterprise office relocation required to provide full or partial removal, puts forward the problems need to be noticed in the removal process.
 						</div>
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/bgs.png" width="99" height="99"/>
+							<img src="/static/public/images/people.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							office move
+							Private domestic city relocation
 						</div>
 						<div class="main-service-cont-dis">
-							aaaaafdsg dsgfdsgfd fds d fdsaf das fdasfd fdasf 
+							According to the enterprise office relocation required to provide full or partial removal, puts forward the problems need to be noticed in the removal process.
 						</div>
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/bgs.png" width="99" height="99"/>
+							<img src="/static/public/images/phone.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							office move
+							Office moved
 						</div>
 						<div class="main-service-cont-dis">
-							aaaaafdsg dsgfdsgfd fds d fdsaf das fdasfd fdasf 
+							According to the enterprise office relocation required to provide full or partial removal, puts forward the problems need to be noticed in the removal process.
 						</div>
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/bgs.png" width="99" height="99"/>
+							<img src="/static/public/images/es.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							office move
+							Laboratory moved
 						</div>
 						<div class="main-service-cont-dis">
-							aaaaafdsg dsgfdsgfd fds d fdsaf das fdasfd fdasf 
+							According to the enterprise office relocation required to provide full or partial removal, puts forward the problems need to be noticed in the removal process.
 						</div>
 					</div>
 				</c:if>
@@ -1235,24 +1237,38 @@
 				</a>
 				<c:if test="${partnersSize!=0 }">
 					<c:forEach items="${partners }" var="partner" varStatus="status">
-						<div class="main-evaluation-list-cont">
-							<div id="cont-img0${status.index+1 }" class="main-evaluation-list-cont-img">
-								<img src="${partner.logo }" width="115" height="50" style="margin-top: 40px;" />
+						<c:if test="${status.index < 3}">
+							<div class="main-evaluation-list-cont">
+								<div id="cont-img0${status.index+1 }" class="main-evaluation-list-cont-img">
+									<img src="${partner.logo }" width="115" height="50" style="margin-top: 40px;" />
+								</div>
+								<div class="main-evaluation-list-cont-dis">
+									<p class="main-cont-dis-title">${partner.name }</p>
+									<p class="main-cont-dis-conts">
+										${fn:substring(partner.content, 0, 20)}...
+										<c:if test="${fn:length(partner.content) > 20 }">
+						   					...
+					   					</c:if>
+									</p>
+								</div>
 							</div>
-							<div class="main-evaluation-list-cont-dis">
-								<p class="main-cont-dis-title">${partner.name }</p>
-								<p class="main-cont-dis-conts">${partner.content }</p>
+							<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
+								<embed id="ckplayer_a1" align="middle" width="372" height="205" 
+									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
+									<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
+										flashvars="f=http://localhost:8080/${partner.video }" 
+									</c:if>
+									<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
+										flashvars="f=${partner.videoLink }"
+									</c:if>
+									src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
+									quality="high" allowfullscreen="true" allowscriptaccess="always" />
+									<!-- http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf -->
 							</div>
-						</div>
-						<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
-							<embed type="application/x-shockwave-flash" width="372" height="215" 
-								src="${partner.video }" allowfullscreen="true" 
-								quality="high" allowscriptaccess="always" align="middle" />
-								<!-- http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf -->
-						</div>
-						<div id="m_img0${status.index+1 }" style="width: 132px; height: 174px; position: absolute; top: 2121px; left: 1045px;">
-							<img src="${partner.path }" width="132" height="174"/>
-						</div>
+							<div id="m_img0${status.index+1 }" style="width: 132px; height: 174px; position: absolute; top: 2121px; left: 1045px;">
+								<img src="${partner.path }" width="132" height="174"/>
+							</div>
+						</c:if>
 					</c:forEach>
 				</c:if>
 				<c:if test="${partnersSize==0 }">

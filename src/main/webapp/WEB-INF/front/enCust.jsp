@@ -67,7 +67,7 @@
 			<c:forEach var="partners" items="${partners}" varStatus="status">
 				<div class="main-evaluation-list-cont">
 					<div id="cont-img0${status.index+1 }" class="main-evaluation-list-cont-img">
-						<img src="/${partners.path }" width="120px" height="50px" style="margin-top: 40px;" />
+						<img src="/${partners.logo }" width="120px" height="50px" style="margin-top: 40px;" />
 					</div>
 					<div class="main-evaluation-list-cont-dis">
 						<p class="main-cont-dis-title">${partners.name }</p>
@@ -75,9 +75,16 @@
 					</div>
 				</div>
 				<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
-					<embed type="application/x-shockwave-flash" width="556" height="311" 
-						src="${partners.video }" allowfullscreen="true" 
-						quality="high" allowscriptaccess="always" align="middle" />
+					<embed id="ckplayer_a1" align="middle" width="556" height="311" 
+						pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
+						<c:if test="${partner.videoLink == null || partner.videoLink == ''}">
+							flashvars="f=http://localhost:8080/${partner.video }" 
+						</c:if>
+						<c:if test="${partner.videoLink != null }">
+							flashvars="f=${partner.videoLink }" 
+						</c:if>
+						src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
+						quality="high" allowfullscreen="true" allowscriptaccess="always" />
 						<!-- http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf -->
 				</div>
 				<div id="m_img0${status.index+1 }" style="position: absolute; left: 880px; top: 391px; width: 200px; height: 265px;">
@@ -85,6 +92,9 @@
 				</div>
 			</c:forEach>
 		</div>
+		<form action="/enCust.jhtml" id="listForm">
+			<jsp:include page="/WEB-INF/back/include/pagination.jsp" flush="true" />
+		</form>
 	</div>
 	<!--
        	作者：1213569843@qq.com

@@ -7,9 +7,13 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
+import cn.believeus.PaginationUtil.Page;
+import cn.believeus.PaginationUtil.Pageable;
+import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Banner;
 import cn.believeus.model.CompanyInfo;
 import cn.believeus.model.ContactusInfo;
@@ -131,8 +135,22 @@ public class EnglishControllerIndex {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/english/enCust")
 	public String cust(HttpServletRequest request) {
-		List<ENPartners> Partners = (List<ENPartners>)baseService.findObjectList(ENPartners.class);
-		request.setAttribute("partners", Partners);
+//		List<ENPartners> Partners = (List<ENPartners>)baseService.findObjectList(ENPartners.class);
+//		request.setAttribute("partners", Partners);
+		
+		String pageNumber = request.getParameter("pageNumber");
+		// 如果为空，则设置为1
+		if (StringUtils.isEmpty(pageNumber)) {
+			pageNumber="1";
+		}
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),20);
+		String hql= "from ENPartners as entity order by editTime desc";
+		Page<?> page = baseService.findObjectList(hql, pageable);
+		request.setAttribute("partners", page.getContent());
+		request.setAttribute("size",page.getTotal());
+		// 分页
+		PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
+		
 		//企业信息
 		ENCompanyInfo companyInfo = (ENCompanyInfo) baseService.findObject(ENCompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);

@@ -484,7 +484,7 @@
 			$("html,body").animate({scrollTop: $("#zhizhi").offset().top}, 500);
 		});
 		$("#custId").click(function(){
-			$("html,body").animate({scrollTop: $("#cust").offset().top}, 500);
+			$("html,body").animate({scrollTop: $("#cust").offset().top - 440}, 500);
 		});
 		$("#liuchengId").click(function(){
 			$("html,body").animate({scrollTop: $("#liucheng").offset().top}, 500);
@@ -499,7 +499,6 @@
 </script>
 </head>
 <body>
-	<!-- <img src="/static/public//static/public/images/background.png" width="100%" alt="" /> -->
 	<!--
        	作者：1213569843@qq.com
        	时间：2014-11-04
@@ -522,22 +521,22 @@
                 	</c:if>
                 	<c:if test="${bannersSize==0 }">
 	                    <li>
-	                    	<a href="http://www.baidu.com" title="http://www.baidu.com">
+	                    	<a href="http://www.believeus.cn" title="http://www.believeus.cn" target="_blank">
 	                    		<img src="/static/public/images/img1.jpg" width="100%"/>
                     		</a>
                    		</li>
 	                    <li>
-	                    	<a href="http://www.baidu.com" title="http://www.baidu.com">
+	                    	<a href="http://www.believeus.cn" title="http://www.believeus.cn" target="_blank">
 	                    		<img src="/static/public/images/img1.jpg" width="100%"/>
                     		</a>
                    		</li>
 	                    <li>
-	                    	<a href="http://www.baidu.com" title="http://www.baidu.com">
+	                    	<a href="http://www.believeus.cn" title="http://www.believeus.cn" target="_blank">
 	                    		<img src="/static/public/images/img1.jpg" width="100%"/>
                     		</a>
                    		</li>
 	                    <li>
-	                    	<a href="http://www.baidu.com" title="http://www.baidu.com">
+	                    	<a href="http://www.believeus.cn" title="http://www.believeus.cn" target="_blank">
 	                    		<img src="/static/public/images/img1.jpg" width="100%"/>
                     		</a>
                    		</li>
@@ -553,17 +552,19 @@
 			<div class="main-service-list">
 				<c:if test="${bsize!=0 }">
 					<c:forEach items="${businesses }" var="bus" varStatus="status">
-						<div class="main-service-cont" <c:if test="${(status.index+1)%3==0 }">style="margin-right:0;"</c:if>>
-							<div class="main-service-cont-img">
-								<img src="${bus.path }" width="99" height="99"/>
+						<c:if test="${status.index < 5}">
+							<div class="main-service-cont" <c:if test="${(status.index+1)%3==0 }">style="margin-right:0;"</c:if>>
+								<div class="main-service-cont-img">
+									<img src="${bus.path }" width="99" height="99"/>
+								</div>
+								<div class="main-service-cont-name">
+									${bus.title }
+								</div>
+								<div class="main-service-cont-dis">
+									${bus.description }
+								</div>
 							</div>
-							<div class="main-service-cont-name">
-								${bus.title }
-							</div>
-							<div class="main-service-cont-dis">
-								${bus.description }
-							</div>
-						</div>
+						</c:if>
 					</c:forEach>
 				</c:if>
 				<c:if test="${bsize==0 }">
@@ -572,10 +573,10 @@
 							<img src="/static/public/images/bgs.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							办公室搬迁
+							办公室整体清洁及空气治理
 						</div>
 						<div class="main-service-cont-dis">
-							谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破
+							办公室搬迁根据企业所需提供全面或局部搬迁，和企业性质，提出搬迁过程中所需注意事项，并向企业提出详细完整搬迁计划书
 						</div>
 					</div>
 					<div class="main-service-cont">
@@ -583,10 +584,10 @@
 							<img src="/static/public/images/cc.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							办公室搬迁
+							仓储
 						</div>
 						<div class="main-service-cont-dis">
-							谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破
+							办公室搬迁根据企业所需提供全面或局部搬迁，和企业性质，提出搬迁过程中所需注意事项，并向企业提出详细完整搬迁计划书
 						</div>
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
@@ -594,10 +595,10 @@
 							<img src="/static/public/images/es.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							办公室搬迁
+							二手家具回收及出售
 						</div>
 						<div class="main-service-cont-dis">
-							谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破
+							办公室搬迁根据企业所需提供全面或局部搬迁，和企业性质，提出搬迁过程中所需注意事项，并向企业提出详细完整搬迁计划书
 						</div>
 					</div>
 					<div class="main-service-cont">
@@ -605,10 +606,10 @@
 							<img src="/static/public/images/people.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							办公室搬迁
+							国内市内私人搬迁
 						</div>
 						<div class="main-service-cont-dis">
-							谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破
+							办公室搬迁根据企业所需提供全面或局部搬迁，和企业性质，提出搬迁过程中所需注意事项，并向企业提出详细完整搬迁计划书
 						</div>
 					</div>
 					<div class="main-service-cont">
@@ -619,7 +620,7 @@
 							办公室搬迁
 						</div>
 						<div class="main-service-cont-dis">
-							谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破
+							办公室搬迁根据企业所需提供全面或局部搬迁，和企业性质，提出搬迁过程中所需注意事项，并向企业提出详细完整搬迁计划书
 						</div>
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
@@ -627,10 +628,10 @@
 							<img src="/static/public/images/sys.png" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
-							办公室搬迁
+							实验室搬迁
 						</div>
 						<div class="main-service-cont-dis">
-							谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破谁在用琵琶弹奏一曲东风破
+							办公室搬迁根据企业所需提供全面或局部搬迁，和企业性质，提出搬迁过程中所需注意事项，并向企业提出详细完整搬迁计划书
 						</div>
 					</div>
 				</c:if>
@@ -1242,38 +1243,45 @@
 		</div>
 		<div class="main-evaluation">
 			<div class="main-evaluation-list">
-				<a href="/cust.jhtml" target="_blank">
+				<a id="cust" href="/cust.jhtml" target="_blank">
 					<div class="more_partner" title="更多">&nbsp;</div>
 				</a>
 				<c:if test="${partnersSize!=0 }">
 					<c:forEach items="${partners }" var="partner" varStatus="status">
-						<div class="main-evaluation-list-cont">
-							<div id="cont-img0${status.index+1 }" class="main-evaluation-list-cont-img">
-								<img src="${partner.logo }" width="115" height="50" style="margin-top: 40px;" />
+						<c:if test="${status.index < 3}">
+							<div class="main-evaluation-list-cont">
+								<div id="cont-img0${status.index+1 }" class="main-evaluation-list-cont-img">
+									<img src="${partner.logo }" width="115" height="50" style="margin-top: 40px;" />
+								</div>
+								<div class="main-evaluation-list-cont-dis" style="height:130px;">
+									<p class="main-cont-dis-title">${partner.name }</p>
+									<p class="main-cont-dis-conts">
+										${fn:substring(partner.content, 0, 20)}...
+										<c:if test="${fn:length(partner.content) > 20 }">
+						   					...
+					   					</c:if>
+									</p>
+								</div>
 							</div>
-							<div class="main-evaluation-list-cont-dis">
-								<p class="main-cont-dis-title">${partner.name }</p>
-								<p class="main-cont-dis-conts">${partner.content }</p>
+							<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
+								<%-- <embed type="application/x-shockwave-flash" width="372" height="215" 
+									src="/${partner.video }" allowfullscreen="true" 
+									quality="high" allowscriptaccess="always" align="middle" /> --%>
+							    <embed id="ckplayer_a1" align="middle" width="372" height="205" 
+									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
+									<c:if test="${partner.videoLink ==null }">
+										flashvars="f=http://localhost:8080/${partner.video }" 
+									</c:if>
+									<c:if test="${partner.videoLink !=null }">
+										flashvars="f=http://localhost:8080/${partner.videoLink }" 
+									</c:if>
+									src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
+									quality="high" allowfullscreen="true" allowscriptaccess="always" />
 							</div>
-						</div>
-						<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
-							<%-- <embed type="application/x-shockwave-flash" width="372" height="215" 
-								src="/${partner.video }" allowfullscreen="true" 
-								quality="high" allowscriptaccess="always" align="middle" /> --%>
-						    <embed id="ckplayer_a1" align="middle" width="372" height="205" 
-								pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
-								<c:if test="${partner.videoLink ==null }">
-									flashvars="f=http://localhost:8080/${partner.video }" 
-								</c:if>
-								<c:if test="${partner.videoLink !=null }">
-									flashvars="f=http://localhost:8080/${partner.videoLink }" 
-								</c:if>
-								src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
-								quality="high" allowfullscreen="true" allowscriptaccess="always" />
-						</div>
-						<div id="m_img0${status.index+1 }" style="width: 132px; height: 174px; position: absolute; top: 2121px; left: 1045px;">
-							<img src="${partner.path }" width="132" height="174"/>
-						</div>
+							<div id="m_img0${status.index+1 }" style="width: 132px; height: 174px; position: absolute; top: 2121px; left: 1045px;">
+								<img src="${partner.path }" width="132" height="174"/>
+							</div>
+						</c:if>
 					</c:forEach>
 				</c:if>
 				<c:if test="${partnersSize==0 }">
@@ -1462,7 +1470,7 @@
 			<div style="width:1100px;height:435px;overflow:hidden;margin:0 auto 30px;">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 37px; height: 28px; background: url(/static/public/images/3333.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="cust" href="/customerList.jhtml" target="_blank" style="font-size: 24px;">我们的客户</a>
+					<a href="/customerList.jhtml" target="_blank" style="font-size: 24px;">我们的客户</a>
 				</div>
 				<c:if test="${customersSize!=0 }">
 					<div class="main-ourteam-cont-list">

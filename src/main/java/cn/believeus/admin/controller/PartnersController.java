@@ -127,6 +127,10 @@ public class PartnersController {
 			partners.setVideo(video);	
 			enPartners.setVideo(video);	
 		}
+		String videoLink = request.getParameter("videoLink"); 
+		if (videoLink==null || videoLink.equals("")) {
+			partners.setVideoLink(null);
+		}
 		baseService.saveOrUpdata(partners);
 		baseService.saveOrUpdata(enPartners);
 		return "redirect:/admin/partners/list.jhtml";
