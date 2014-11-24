@@ -7,6 +7,7 @@
 <title>Testimonials</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
+<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
 <style type="text/css">

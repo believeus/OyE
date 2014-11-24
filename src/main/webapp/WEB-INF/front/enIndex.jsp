@@ -628,7 +628,7 @@
 		<div class="main-comp-const">
 			<div class="main-ourteam-cont-title" style="position: absolute; left: 120px;">
 				<i style="width: 37px; height: 28px; background: url(/static/public/images/al.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-				<a id="anli" style="font-size: 24px;" href="/english/caseList.jhtml" target="_blank">CaseShow</a>
+				<a id="anli" style="font-size: 24px;" href="/caseList.jhtml" target="_blank">CaseShow</a>
 			</div>
 			<div class="main-comp-const-title" style="width:790px;">
 				<div id="shijie" class="main-comp-const-title-list current" style="width: 230px;">The World 500 Strong</div>
@@ -1330,7 +1330,7 @@
 			<div class="main-ourteam-cont">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 28px; height: 28px; background: url(/static/public/images/hxtd.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="zhizhi" style="font-size: 24px;" href="/english/teamList.jhtml">CompanyTeam</a>
+					<a id="zhizhi" style="font-size: 24px;" href="/teamList.jhtml">CompanyTeam</a>
 				</div>
 				<div class="main-ourteam-cont-const">
 					<c:if test="${tsize!=0 }">
@@ -1532,7 +1532,7 @@
 						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
 							<a id="news" style="color:#ef738b;">StationNews</a>
 						</div>
-						<a href="/english/newsList.jhtml" style="float: right; position: relative; top: -46px;color:#fff;">MORE&gt;&gt;</a>
+						<a href="/newsList.jhtml?type=0" style="float: right; position: relative; top: -46px;color:#fff;">MORE&gt;&gt;</a>
 					</div>
 					<div style="">
 						<c:if test="${newsSize!=0 }">

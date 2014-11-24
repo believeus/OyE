@@ -29,11 +29,14 @@ public class ForwardFilter implements Filter {
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 		HttpSession session = httpRequest.getSession();
 		String currenturi = httpRequest.getRequestURI();
-		if (currenturi.equals("/" + english + ".jhtml")) {
+		if (currenturi.equals("/english.jhtml")) {
 			session.setAttribute(english, english);
+			httpRequest.getRequestDispatcher("/english.jhtml").forward(httpRequest,
+					httpResponse);
+			return;
 		}
 		if (currenturi.equals("/")) {
-			session.removeAttribute("english");
+			session.removeAttribute(english);
 		}
 		if (!StringUtils.isEmpty((String) session.getAttribute(english))) {
 			String url = "/english" + currenturi;

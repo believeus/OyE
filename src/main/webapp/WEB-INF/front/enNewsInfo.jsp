@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <head>
-<title>新闻详情页面</title>
+<title>News Info</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
@@ -90,17 +90,17 @@
        	时间：2014-11-04
        	描述：页头
        -->
-	<jsp:include page="header.jsp" />
+	<jsp:include page="enHeader.jsp" />
 	
 	<div class="main" style="background:#505050;">
 		<div class="main_content">
 			<div class="main_content_title">
-				<div class="main_content_title_2">最新动态</div>
+				<div class="main_content_title_2" style="width:120px;">Dynamic news</div>
 			</div>
 			<div class="">
 				<h1 class="NI_h1" style="text-align:center;">${news.title }</h1>
 				<p style="text-align:center;margin-bottom:30px;color:#fff;">
-					<span style="margin-right:20px;">时间：${time }</span>
+					<span style="margin-right:20px;">date：${time }</span>
 				</p>
 				<div style="text-align:center;">
 					<img src="/${news.path }" width="780"/>
@@ -121,6 +121,6 @@
        	时间：2014-11-04
        	描述：页尾
        -->
-	<jsp:include page="footer.jsp" />
+	<jsp:include page="enFooter.jsp" />
 </body>
 </html>

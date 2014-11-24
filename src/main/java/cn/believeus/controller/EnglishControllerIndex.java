@@ -128,7 +128,7 @@ public class EnglishControllerIndex {
 		//企业信息
 		ENCompanyInfo companyInfo = (ENCompanyInfo) baseService.findObject(ENCompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
-		return "/WEB-INF/front/newsInfo.jsp";
+		return "/WEB-INF/front/enNewsInfo.jsp";
 	}
 	
 	

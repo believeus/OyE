@@ -78,6 +78,10 @@
 		<filter-name>forwardFilter</filter-name>
 		<url-pattern>*.jhtml</url-pattern>
 	</filter-mapping>
+	<filter-mapping>
+		<filter-name>forwardFilter</filter-name>
+		<url-pattern>/index</url-pattern>
+	</filter-mapping>
 	<!-- begin:spring 配置 tomcat启动实例化 spring配置文件 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
