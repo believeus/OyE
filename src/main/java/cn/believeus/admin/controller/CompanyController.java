@@ -48,6 +48,7 @@ public class CompanyController {
 		request.setAttribute("encompanyInfo", enCompanyInfo);
 		return "/WEB-INF/back/company/companyMsg.jsp";
 	}
+	
 	/**
 	 * 企业信息修改
 	 * @return

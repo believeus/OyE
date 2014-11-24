@@ -7,7 +7,9 @@
 <title>客户感言</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
+<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/public/js/list.js"></script>
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
 <style type="text/css">
 	.main-evaluation-list-cont-img{
@@ -95,6 +97,9 @@
 				</div>
 			</c:forEach>
 		</div>
+		<form action="/cust.jhtml" id="listForm">
+			<jsp:include page="/WEB-INF/back/include/pagination.jsp" flush="true" />
+		</form>
 	</div>
 	<!--
        	作者：1213569843@qq.com

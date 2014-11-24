@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -48,7 +48,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				title: "required",
 				content: "required",
 				entitle: "required",
-				encontent: "required"
+				encontent: "required",
+				type:"required"
 			}
 		});
 		
@@ -66,6 +67,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<input type="hidden" name="id" value="${news.id }"/>
 		<input type="hidden" name="path" value="${news.path}"/>
 		<table class="input">
+			<tr>
+				<th>
+					新闻分类:
+				</th>
+				<td>
+					<select name="type">
+						<c:if test="${news.type==null }">
+							<option value="" selected="selected">--请选择--</option>
+							<option value="0">最新动态</option>
+							<option value="1">媒体报道</option>
+							<option value="2">常见问题</option>
+						</c:if>
+						<c:if test="${news.type==0 }">
+							<option value="">--请选择--</option>
+							<option value="0" selected="selected">最新动态</option>
+							<option value="1">媒体报道</option>
+							<option value="2">常见问题</option>
+						</c:if>
+						<c:if test="${news.type==1 }">
+							<option value="">--请选择--</option>
+							<option value="0">最新动态</option>
+							<option value="1" selected="selected">媒体报道</option>
+							<option value="2">常见问题</option>
+						</c:if>
+						<c:if test="${news.type==2 }">
+							<option value="">--请选择--</option>
+							<option value="0">最新动态</option>
+							<option value="1">媒体报道</option>
+							<option value="2" selected="selected">常见问题</option>
+						</c:if>
+					</select>
+				</td>
+			</tr>
 			<tr>
 				<th>
 					新闻中文标题:

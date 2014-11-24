@@ -5,7 +5,7 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
-<title>站内新闻</title>
+<title>About Us</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
@@ -92,47 +92,6 @@
 		
 	}
 </style>
-<style type="text/css">
-#banner {position:relative; width:600px; height:330px; border:1px solid #666; overflow:hidden;}
-#banner_list img {border:0px;}
-#banner_bg {position:absolute; bottom:0;background-color:#000;height:30px;filter: Alpha(Opacity=30);opacity:0.3;z-index:1000;
-cursor:pointer; width:600px; }
-#banner_info{position:absolute; bottom:0; left:5px;height:22px;color:#fff;z-index:1001;cursor:pointer}
-#banner_text {position:absolute;width:120px;z-index:1002; right:3px; bottom:3px;}
-#banner ul {position:absolute;list-style-type:none;filter: Alpha(Opacity=80);opacity:0.8; border:1px solid #fff;z-index:1002;
-margin:0; padding:0; bottom:3px; right:5px;}
-#banner ul li { padding:0px 8px;float:left;display:block;color:#FFF;border:#e5eaff 1px solid;background:#6f4f67;cursor:pointer}
-#banner ul li.on { background:#900}
-#banner_list a{position:absolute;} <!-- 让四张图片都可以重叠在一起-->
-</style>
-<script type="text/javascript">
-var t = n = 0, count;
-$(document).ready(function(){
-count=$("#banner_list a").length;
-$("#banner_list a:not(:first-child)").hide();
-$("#banner_info").html($("#banner_list a:first-child").find("img").attr('alt'));
-$("#banner_info").click(function(){window.open($("#banner_list a:first-child").attr('href'), "_blank")});
-$("#banner li").click(function() {
-var i = $(this).text() - 1;//获取Li元素内的值，即1，2，3，4
-n = i;
-if (i >= count) return;
-$("#banner_info").html($("#banner_list a").eq(i).find("img").attr('alt'));
-$("#banner_info").unbind().click(function(){window.open($("#banner_list a").eq(i).attr('href'), "_blank")})
-$("#banner_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
-document.getElementById("banner").style.background="";
-$(this).toggleClass("on");
-$(this).siblings().removeAttr("class");
-});
-t = setInterval("showAuto()", 4000);
-$("#banner").hover(function(){clearInterval(t)}, function(){t = setInterval("showAuto()", 4000);});
-})
-
-function showAuto()
-{
-n = n >=(count - 1) ? 0 : ++n;
-$("#banner li").eq(n).trigger('click');
-}
-</script>
 </head>
 <body>
 	<!--
@@ -140,37 +99,35 @@ $("#banner li").eq(n).trigger('click');
        	时间：2014-11-04
        	描述：页头
        -->
-	<jsp:include page="header.jsp" />
+	<jsp:include page="enHeader.jsp" />
 	
 	<div class="main">
 		<!-- <img src="/static/public/images/news_list.jpg" width="100%"/> -->
 		<div class="main_content">
 			<div class="main_content_title">
-				<div class="main_content_title_2">最新动态</div>
+				<div class="main_content_title_2">About Us</div>
 			</div>
 			<div class="main_content_body">
 				
 				<div style="width:180px;height:300px;overflow:hidden;float:left;margin-right:50px;border: 2px solid #e4e4e4;margin-bottom:50px;">
 					<ul class="newstitle">
 						<li>
-							<a href="/newsList.jhtml?type=0" title="最新动态">最新动态</a>
+							<a href="/english/contactusInfo.jhtml?type=0" title="Dynamic company">Dynamic company</a>
 						</li>
 						<li>
-							<a href="/newsList.jhtml?type=1" title="媒体报道">媒体报道</a>
+							<a href="/english/contactusInfo.jhtml?type=1" title="Enterprise Qualification">Enterprise Qualify</a>
 						</li>
 						<li>
-							<a href="/newsList.jhtml?type=2" title="常见问题">常见问题</a>
+							<a href="/english/contactusInfo.jhtml?type=2" title="Ours Feature">Ours Feature</a>
 						</li>
 					</ul>
 				</div>
 				<div style="width:900px;height:auto;overflow: hidden;float:left;">
 					<ul class="newscontent">
-						<c:forEach items="${news }" var="news">
-							<li>
-								<a href="/newsInfo.jhtml?id=${news.id }" title="${news.title }" style="float: left;">${news.content }</a>
-								<%-- <span style="float:right;">${news.createTime }</span> --%>
-								<span style="float:right;">2014-11-22</span>
-							</li>
+						<c:forEach items="${contactusInfos }" var="news" varStatus="status">
+							<c:if test="${status.index==0 }">
+								<div>${news.content }</div>
+							</c:if>
 						</c:forEach>
 					</ul>
 				</div>
@@ -292,6 +249,6 @@ $("#banner li").eq(n).trigger('click');
        	时间：2014-11-04
        	描述：页尾
        -->
-	<jsp:include page="footer.jsp" />
+	<jsp:include page="enFooter.jsp" />
 </body>
 </html>

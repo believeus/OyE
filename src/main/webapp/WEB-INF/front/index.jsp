@@ -1514,8 +1514,11 @@
 			<div style="width: 1180px;height: auto;overflow: hidden;margin: 0 auto;">
 				<div class="aboutus" style="width: 380px;height: auto;overflow: hidden;float: left; margin-bottom: 50px;">
 					<div style="height: 45px;line-height: 45px;color: #EF738B;border-bottom: 1px solid #868686;">
-						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
+						<div style="float:left;width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
 							关于我们
+						</div>
+						<div style="float:right;width:50px;">
+							<a href="/contactusInfo.jhtml?type=0" style="color:#fff;">更多&gt;&gt;</a>
 						</div>
 					</div>
 						<div style="">
@@ -1534,7 +1537,7 @@
 						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
 							<a id="news" style="color:#ef738b;">最新动态</a>
 						</div>
-						<a href="/newsList.jhtml" style="float: right; position: relative; top: -46px;color:#fff;">更多&gt;&gt;</a>
+						<a href="/newsList.jhtml?type=0" style="float: right; position: relative; top: -46px;color:#fff;">更多&gt;&gt;</a>
 					</div>
 					<div style="">
 						<c:if test="${newsSize!=0 }">

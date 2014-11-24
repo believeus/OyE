@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>添加新闻 - Powered By believeus</title>
+	<title>添加关于我们 - Powered By believeus</title>
 	<meta name="author" content="believeus Team" />
 	<meta name="copyright" content="believeus" />
 	<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
@@ -32,27 +32,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        this.sync();
 	        $('textarea').valid();
 	    });
-	    
-	    var editor1 = new UE.ui.Editor();
-	    editor1.render('editor1');
-	    editor1.addListener('contentchange',function(){
-	        this.sync();
-	        $('#editor1').valid();
-	    });
 	
 		var $inputForm = $("#inputForm");
 		// 表单验证
 		$inputForm.validate({
 			rules: {
 				title: "required",
+				entitle: "required",
 				upload_img: "required",
 				content: "required",
-				entitle: "required",
 				encontent: "required",
 				type:"required"
 			}
 		});
-		
 	});
 	
 	</script>
@@ -60,26 +52,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div class="path">
-		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 添加新闻
+		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 添加关于我们
 	</div>
-	<form id="inputForm" action="/admin/news/save.jhtml" method="post" enctype="multipart/form-data">
+	<form id="inputForm" action="/admin/conSave.jhtml" method="post" enctype="multipart/form-data">
 		<table class="input">
 			<tr>
 				<th>
-					新闻分类:
+					选择分类:
 				</th>
 				<td>
 					<select name="type">
 						<option value="">--请选择--</option>
-						<option value="0">最新动态</option>
-						<option value="1">媒体报道</option>
-						<option value="2">常见问题</option>
+						<option value="0">公司介绍</option>
+						<option value="1">企业资质</option>
+						<option value="2">我们特色</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
 				<th>
-					新闻中文标题:
+					中文标题:
 				</th>
 				<td>
 					<input type="text" name="title" class="text" maxlength="200" />
@@ -87,13 +79,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr>
 				<th>
-					新闻英文标题:
+					英文标题:
 				</th>
 				<td>
 					<input type="text" name="entitle" class="text" maxlength="200" />
 				</td>
 			</tr>
-			
 			<tr id="pathTr">
 				<th>
 					相关图片:
@@ -115,13 +106,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</td>
 			</tr>
-			
 			<tr id="contentTr">
 				<th>
 					中文内容:
 				</th>
 				<td colspan="3">
-					<textarea id="editor" name="content" class="editor"></textarea>
+					<textarea id="" name="content" class="editor" style="height: 100px;width: 400px"></textarea>
 				</td>
 			</tr>
 			<tr id="contentTr">
@@ -129,7 +119,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					英文内容:
 				</th>
 				<td colspan="3">
-					<textarea id="editor1" name="encontent" ></textarea>
+					<textarea id="" name="encontent" class="editor" style="width: 400px;height: 100px"></textarea>
 				</td>
 			</tr>
 			<tr>

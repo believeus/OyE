@@ -38,9 +38,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<span class="addIcon">&nbsp;</span>添加
 			</a> -->
 		<div class="buttonWrap">
-			<a href="javascript:;" id="deleteButton" class="iconButton disabled">
+			<!-- <a href="javascript:;" id="deleteButton" class="iconButton disabled">
 				<span class="deleteIcon">&nbsp;</span>删除
-			</a>
+			</a> -->
 				<a href="javascript:;" id="refreshButton" class="iconButton">
 					<span class="refreshIcon">&nbsp;</span>刷新
 				</a>
@@ -48,9 +48,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		<table id="listTable" class="list">
 			<tr>
-				<th class="check">
+				<!-- <th class="check">
 					<input type="checkbox" id="selectAll" />
-				</th>
+				</th> -->
 				<th>
 					<a href="javascript:;" class="sort" name="id">排序编号</a>
 				</th>
@@ -65,88 +65,88 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</th>
 			</tr>
 			<tr>
-				<td>
-					<input type="checkbox" name="ids" value="1" />
-				</td>
+				<%-- <td>
+					<input type="checkbox" name="ids" value="${pro1.id }" />
+				</td> --%>
 				<td>
 					1
 				</td>
 				<td>
-					控制流程
+					${pro1.cn }
 				</td>
 				<td>
-					control stream
+					${pro1.en }
 				</td>
 				<td>
-					<a href="/admin/process/edit.jhtml?id=1">[修改]</a>
+					<a href="/admin/process/edit.jhtml?id=${pro1.id }">[修改]</a>
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<input type="checkbox" name="ids" value="2" />
-				</td>
+				<%-- <td>
+					<input type="checkbox" name="ids" value="${pro2.id }" />
+				</td> --%>
 				<td>
 					2
 				</td>
 				<td>
-					第一步
+					${pro2.cn }
 				</td>
 				<td>
-					the first step
+					${pro2.en }
 				</td>
 				<td>
-					<a href="/admin/process/edit.jhtml?id=2">[修改]</a>
+					<a href="/admin/process/edit.jhtml?id=${pro2.id }">[修改]</a>
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<input type="checkbox" name="ids" value="3" />
-				</td>
+				<%-- <td>
+					<input type="checkbox" name="ids" value="${pro3.id }" />
+				</td> --%>
 				<td>
 					3
 				</td>
 				<td>
-					第二步
+					${pro3.cn }
 				</td>
 				<td>
-					the second step
+					${pro3.en }
 				</td>
 				<td>
-					<a href="/admin/process/edit.jhtml?id=3">[修改]</a>
+					<a href="/admin/process/edit.jhtml?id=${pro3.id }">[修改]</a>
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<input type="checkbox" name="ids" value="4" />
-				</td>
+				<%-- <td>
+					<input type="checkbox" name="ids" value="${pro4.id }" />
+				</td> --%>
 				<td>
 					4
 				</td>
 				<td>
-					第三步
+					${pro4.cn }
 				</td>
 				<td>
-					the third step
+					${pro4.en }
 				</td>
 				<td>
-					<a href="/admin/process/edit.jhtml?id=4">[修改]</a>
+					<a href="/admin/process/edit.jhtml?id=${pro4.id }">[修改]</a>
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<input type="checkbox" name="ids" value="4" />
-				</td>
+				<%-- <td>
+					<input type="checkbox" name="ids" value="${pro5.id }" />
+				</td> --%>
 				<td>
 					5
 				</td>
 				<td>
-					第四步
+					${pro5.cn }
 				</td>
 				<td>
-					the four step
+					${pro5.en }
 				</td>
 				<td>
-					<a href="/admin/process/edit.jhtml?id=5">[修改]</a>
+					<a href="/admin/process/edit.jhtml?id=${pro5.id }">[修改]</a>
 				</td>
 			</tr>
 		</table>

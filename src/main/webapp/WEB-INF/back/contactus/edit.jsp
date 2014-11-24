@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -52,12 +52,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
      <div class="path">
 		<a href="/admin/manager.jhtml" target="_parent">首页</a> &raquo; 编辑企业信息
-	</div>
+	 </div>
 	<form id="inputForm" action="/admin/contactusUpdate.jhtml" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="id" value="${contactusInfo.id}">
 		<input type="hidden" name="path" value="${contactusInfo.path}"/>
 		<input type="hidden" name="enpath" value="${enontactusInfo.path}"/>
 		<table class="input">
+			<tr>
+				<th>
+					选择分类:
+				</th>
+				<td>
+					<select name="type">
+						<c:if test="${contactusInfo.type==null }">
+							<option value="">--请选择--</option>
+							<option value="0">公司介绍</option>
+							<option value="1">企业资质</option>
+							<option value="2">我们特色</option>
+						</c:if>
+						<c:if test="${contactusInfo.type==0 }">
+							<option value="">--请选择--</option>
+							<option value="0" selected="selected">公司介绍</option>
+							<option value="1">企业资质</option>
+							<option value="2">我们特色</option>
+						</c:if>
+						<c:if test="${contactusInfo.type==1 }">
+							<option value="">--请选择--</option>
+							<option value="0">公司介绍</option>
+							<option value="1" selected="selected">企业资质</option>
+							<option value="2">我们特色</option>
+						</c:if>
+						<c:if test="${contactusInfo.type==2 }">
+							<option value="">--请选择--</option>
+							<option value="0">公司介绍</option>
+							<option value="1">企业资质</option>
+							<option value="2" selected="selected">我们特色</option>
+						</c:if>
+					</select>
+				</td>
+			</tr>
 			<tr>
 				<th>
 					中文标题:

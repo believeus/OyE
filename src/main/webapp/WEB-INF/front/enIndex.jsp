@@ -626,7 +626,7 @@
 		<div class="main-comp-const">
 			<div class="main-ourteam-cont-title" style="position: absolute; left: 120px;">
 				<i style="width: 37px; height: 28px; background: url(/static/public/images/al.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-				<a id="anli" style="font-size: 24px;">CaseShow</a>
+				<a id="anli" style="font-size: 24px;" href="/english/caseList.jhtml" target="_blank">CaseShow</a>
 			</div>
 			<div class="main-comp-const-title" style="width:790px;">
 				<div id="shijie" class="main-comp-const-title-list current" style="width: 230px;">The World 500 Strong</div>
@@ -1230,7 +1230,9 @@
 		</div>
 		<div class="main-evaluation">
 			<div class="main-evaluation-list">
-				<div style="width: 130px; height: 38px; position: absolute; left: 319px; top: 2150px;cursor:pointer;" title="more" onclick="javascript:window.location.href='/enCust.jhtml'"></div>
+				<a href="/enCust.jhtml" target="_blank" title="more">
+					<div style="width: 130px; height: 38px; position: absolute; left: 319px; top: 2150px;cursor:pointer;"></div>
+				</a>
 				<c:if test="${partnersSize!=0 }">
 					<c:forEach items="${partners }" var="partner" varStatus="status">
 						<div class="main-evaluation-list-cont">
@@ -1312,7 +1314,7 @@
 			<div class="main-ourteam-cont">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 28px; height: 28px; background: url(/static/public/images/hxtd.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="zhizhi" style="font-size: 24px;">CompanyTeam</a>
+					<a id="zhizhi" style="font-size: 24px;" href="/english/teamList.jhtml">CompanyTeam</a>
 				</div>
 				<div class="main-ourteam-cont-const">
 					<c:if test="${tsize!=0 }">
@@ -1491,11 +1493,14 @@
 			<div style="width: 1180px;height: auto;overflow: hidden;margin: 0 auto;">
 				<div class="aboutus" style="width: 380px;height: auto;overflow: hidden;float: left; margin-bottom: 50px;">
 					<div style="height: 45px;line-height: 45px;color: #EF738B;border-bottom: 1px solid #868686;">
-						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
+						<div style="float:left;width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
 							AboutUs
 						</div>
+						<div style="float:right;width:75px;">
+							<a href="english/contactusInfo.jhtml?type=0" style="color:#fff;">MORE&gt;&gt;</a>
+						</div>
 					</div>
-						<div style="">
+						<div style="height:auto;overflow:hidden;">
 							<c:if test="${contactusInfo!=null }">
 								<img src="${contactusInfo.path }" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />
 								<span style="color: #d6d6d6;line-height: 27px;">${contactusInfo.content }</span>
@@ -1569,7 +1574,7 @@
 								<div style="float: left;width: 240px;margin-top: 10px;">
 									<p style="color: #FBFBFB;font-size: 15px;">fcdsdsa gfdas fdsa fds</p>
 									<p style="color: #FBFBFB;font-size: 14px;">
-										gas fda dfsa fds  fgffsada fdsafdas fdas...
+										gas fda dfsa fds fgffsada fdsafdas fdas...
 									</p>
 									<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;float: right;margin-right: 20px;">
 										<a href="#" title="更多">

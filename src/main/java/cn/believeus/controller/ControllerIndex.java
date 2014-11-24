@@ -16,12 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 import mydfs.storage.server.MydfsTrackerServer;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 
+import cn.believeus.PaginationUtil.Page;
+import cn.believeus.PaginationUtil.Pageable;
+import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Banner;
 import cn.believeus.model.Business;
 import cn.believeus.model.CompanyInfo;
@@ -113,14 +117,20 @@ public class ControllerIndex {
 	}
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/newsList")
-	public String news(HttpServletRequest request) {
-		List<News> news = (List<News>)baseService.findObjectList(News.class);
-		request.setAttribute("news", news);
-		for (News news2 : news) {
-			SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
-			List<String> dates =  new ArrayList<String>();
-			dates.add(sdf.format(news2.getCreateTime()));
-			request.setAttribute("times", dates);
+	public String news(HttpServletRequest request,Integer type) {
+		List<News> news;
+		if (type ==0) {
+			news = (List<News>)baseService.findObjectList(News.class,"type",type);
+			request.setAttribute("news", news);
+		}else if (type ==1) {
+			news = (List<News>)baseService.findObjectList(News.class,"type",type);
+			request.setAttribute("news", news);
+		}else if (type ==2) {
+			news = (List<News>)baseService.findObjectList(News.class,"type",type);
+			request.setAttribute("news", news);
+		}else {
+			news = new ArrayList<News>();
+			request.setAttribute("news", news);
 		}
 		//企业信息
 		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
@@ -140,11 +150,24 @@ public class ControllerIndex {
 	}
 	
 	
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/cust")
 	public String cust(HttpServletRequest request) {
-		List<Partners> Partners = (List<Partners>)baseService.findObjectList(Partners.class);
-		request.setAttribute("partners", Partners);
+//		List<Partners> Partners = (List<Partners>)baseService.findObjectList(Partners.class);
+//		request.setAttribute("partners", Partners);
+		
+		String pageNumber = request.getParameter("pageNumber");
+		// 如果为空，则设置为1
+		if (StringUtils.isEmpty(pageNumber)) {
+			pageNumber="1";
+		}
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),20);
+		String hql= "from Partners as entity order by editTime desc";
+		Page<?> page = baseService.findObjectList(hql, pageable);
+		request.setAttribute("partners", page.getContent());
+		request.setAttribute("size",page.getTotal());
+		// 分页
+		PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
+		
 		//企业信息
 		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
@@ -210,7 +233,11 @@ public class ControllerIndex {
 		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/teamList.jsp";
 	}
-	
+	/**
+	 * 客户列表
+	 * @param request
+	 * @return
+	 */
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/customerList")
 	public String customerList(HttpServletRequest request) {
@@ -220,5 +247,32 @@ public class ControllerIndex {
 		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/customerList.jsp";
+	}
+	/**
+	 * 关于我们列表
+	 * @param request
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/contactusInfo")
+	public String contactusInfoList(HttpServletRequest request,Integer type) {
+		List<ContactusInfo> contactusInfos;
+		if (type==0) {
+			contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class,"type",type);
+			request.setAttribute("contactusInfos", contactusInfos);
+		}else if (type==1) {
+			contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class,"type",type);
+			request.setAttribute("contactusInfos", contactusInfos);
+		}else if (type==2) {
+			contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class,"type",type);
+			request.setAttribute("contactusInfos", contactusInfos);
+		}else {
+			contactusInfos = new ArrayList<ContactusInfo>();
+			request.setAttribute("contactusInfos", contactusInfos);
+		}
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/contactusInfo.jsp";
 	}
 }

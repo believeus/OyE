@@ -17,6 +17,19 @@ public class ENNews extends TbaseEntity{
 	
 	private String content;
 	
+	/**
+	 * 0:最新动态 1:媒体报道 2:常见问题
+	 */
+	private Integer type;
+	
+	
+	public Integer getType() {
+		return type;
+	}
+	public void setType(Integer type) {
+		this.type = type;
+	}
+	
 	/** 1:置顶   0:非置顶   */
 	private Short top;
 	

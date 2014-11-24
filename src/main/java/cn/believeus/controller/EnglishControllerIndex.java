@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.believeus.model.Banner;
 import cn.believeus.model.CompanyInfo;
+import cn.believeus.model.ContactusInfo;
 import cn.believeus.model.Customers;
 import cn.believeus.model.Example;
 import cn.believeus.model.News;
@@ -169,5 +170,33 @@ public class EnglishControllerIndex {
 		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/enCustomerList.jsp";
+	}
+	
+	/**
+	 * 关于我们列表
+	 * @param request
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/english/contactusInfo")
+	public String contactusInfoList(HttpServletRequest request,Integer type) {
+		List<ENContactusInfo> encontactusInfos;
+		if (type==0) {
+			encontactusInfos = (List<ENContactusInfo>)baseService.findObjectList(ENContactusInfo.class,"type",type);
+			request.setAttribute("contactusInfos", encontactusInfos);
+		}else if (type==1) {
+			encontactusInfos = (List<ENContactusInfo>)baseService.findObjectList(ENContactusInfo.class,"type",type);
+			request.setAttribute("contactusInfos", encontactusInfos);
+		}else if (type==2) {
+			encontactusInfos = (List<ENContactusInfo>)baseService.findObjectList(ENContactusInfo.class,"type",type);
+			request.setAttribute("contactusInfos", encontactusInfos);
+		}else {
+			encontactusInfos = new ArrayList<ENContactusInfo>();
+			request.setAttribute("contactusInfos", encontactusInfos);
+		}
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/enContactusInfo.jsp";
 	}
 }

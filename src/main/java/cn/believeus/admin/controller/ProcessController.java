@@ -3,6 +3,7 @@ package cn.believeus.admin.controller;
 
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,6 +38,7 @@ public class ProcessController {
 	 * 流程
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/admin/process/list")
 	public String exampleList(HttpServletRequest request){
 		String pageNumber = request.getParameter("pageNumber");
@@ -51,6 +53,45 @@ public class ProcessController {
 		request.setAttribute("size",page.getTotal());
 		// 分页
 		PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
+		Processs pro1 = (Processs) baseService.findObject(Processs.class, 1);
+		Processs pro2 = (Processs) baseService.findObject(Processs.class, 2);
+		Processs pro3 = (Processs) baseService.findObject(Processs.class, 3);
+		Processs pro4 = (Processs) baseService.findObject(Processs.class, 4);
+		Processs pro5 = (Processs) baseService.findObject(Processs.class, 5);
+		List<Processs> pros =  (List<Processs>) baseService.findObjectList(Processs.class);
+		for (Processs pross : pros) {
+			Integer id = pross.getId();
+			List<Integer> ids = new ArrayList<Integer>();
+			ids.add(id);
+			baseService.delete(Processs.class, ids);
+		}
+		if (pro1==null&&pro2==null&&pro3==null&&pro4==null&&pro5==null) {
+			pro1 = new Processs();
+			pro2 = new Processs();
+			pro3 = new Processs();
+			pro4 = new Processs();
+			pro5 = new Processs();
+			pro1.setCn("控制流程");
+			pro1.setEn("control process");
+			baseService.saveOrUpdata(pro1);
+			pro2.setCn("第一步");
+			pro2.setEn("the first step");
+			baseService.saveOrUpdata(pro2);
+			pro3.setCn("第二步");
+			pro3.setEn("the second step");
+			baseService.saveOrUpdata(pro3);
+			pro4.setCn("第三步");
+			pro4.setEn("the third step");
+			baseService.saveOrUpdata(pro4);
+			pro5.setCn("第四步");
+			pro5.setEn("the four step");
+			baseService.saveOrUpdata(pro5);
+		}
+		request.setAttribute("pro1", pro1);
+		request.setAttribute("pro2", pro2);
+		request.setAttribute("pro3", pro3);
+		request.setAttribute("pro4", pro4);
+		request.setAttribute("pro5", pro5);
 		return "/WEB-INF/back/process/list.jsp";
 	}
 	/** 

@@ -18,6 +18,19 @@ public class ContactusInfo extends TbaseEntity{
 	/** 关于我们-内容*/
 	public String content;
 	
+	/**
+	 * 0:公司介绍 1:企业资质 2:我们特色
+	 */
+	private Integer type;
+	
+	
+	public Integer getType() {
+		return type;
+	}
+	public void setType(Integer type) {
+		this.type = type;
+	}
+	
 	/** 关于我们-获取标题*/
 	public String getTitle() {
 		return title;

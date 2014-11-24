@@ -104,7 +104,6 @@ public class OurCustomerController {
 		}else {
 			customers.setUrl(request.getParameter("filename0"));
 		}
-		System.out.println(request.getParameter("filename0"));
 		customers.setClink(clink);
 		customers.setType(Integer.parseInt(type));
 		baseService.saveOrUpdata(customers);

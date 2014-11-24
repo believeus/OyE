@@ -110,7 +110,7 @@
 	<div class="main">
 		<div class="main_content">
 			<div class="main_content_title">
-				<div class="main_content_title_2">Case List</div>
+				<div class="main_content_title_2" style="width:100px;">Case List</div>
 			</div>
 			<div class="anli_list">
 				<c:forEach items="${examples }" var="example" varStatus="statuss">
