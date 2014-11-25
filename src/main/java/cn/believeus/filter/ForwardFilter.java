@@ -37,6 +37,16 @@ public class ForwardFilter implements Filter {
 		}
 		if (currenturi.equals("/")) {
 			session.removeAttribute(english);
+		}else if (currenturi.contains("/admin")) {
+			String url = currenturi;
+			httpRequest.getRequestDispatcher(url).forward(httpRequest,
+					httpResponse);
+			return;
+		}else if (currenturi.contains("/UEupload")) {
+			String url = currenturi;
+			httpRequest.getRequestDispatcher(url).forward(httpRequest,
+					httpResponse);
+			return;
 		}
 		if (!StringUtils.isEmpty((String) session.getAttribute(english))) {
 			String url = "/english" + currenturi;

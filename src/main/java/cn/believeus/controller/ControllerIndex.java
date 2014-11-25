@@ -160,7 +160,7 @@ public class ControllerIndex {
 		if (StringUtils.isEmpty(pageNumber)) {
 			pageNumber="1";
 		}
-		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),20);
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),6);
 		String hql= "from Partners as entity order by editTime desc";
 		Page<?> page = baseService.findObjectList(hql, pageable);
 		request.setAttribute("partners", page.getContent());
@@ -274,5 +274,61 @@ public class ControllerIndex {
 		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/contactusInfo.jsp";
+	}
+	
+	/**
+	 * 流程控制
+	 * @param request
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/serviceProcess")
+	public String serviceProcess(HttpServletRequest request) {
+		List<Processs> pros = (List<Processs>) baseService.findObjectList(Processs.class);
+		request.setAttribute("pros", pros);
+		request.setAttribute("prosSize", pros.size());
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/serviceProcess.jsp";
+	}
+	
+	/**
+	 * 业务范围
+	 * @param request
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/ourBussiness")
+	public String businesss(HttpServletRequest request) {
+		List<Business> businesses = (List<Business>) baseService.findObjectList(Business.class);
+		request.setAttribute("businesses", businesses);
+		request.setAttribute("bsize", businesses.size());
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/ourBusiness.jsp";
+	}
+	
+	/**
+	 * 案例详情
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/caseInfo")
+	public String caseInfo(HttpServletRequest request,Integer id) {
+		Example example = (Example) baseService.findObject(Example.class, id);
+		String[] path = example.getPaths().split("#");
+		List<String> paths = new ArrayList<String>();
+		for (int i = 0; i < path.length; i++) {
+			paths.add(path[i]);
+		}
+		request.setAttribute("paths", paths);
+		
+		request.setAttribute("example", example);
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/caseInfo.jsp";
 	}
 }

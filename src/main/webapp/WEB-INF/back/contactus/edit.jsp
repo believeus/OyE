@@ -32,6 +32,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        this.sync();
 	        $('textarea').valid();
 	    });
+		var editor2 = new UE.ui.Editor();
+		editor2.render('editor2');
+		editor2.addListener('contentchange',function(){
+	        this.sync();
+	        $('textarea').valid();
+	    });
 	
 		var $inputForm = $("#inputForm");
 		// 表单验证
@@ -134,7 +140,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					中文内容:
 				</th>
 				<td colspan="3">
-					<textarea name="content" style="width: 400px;height: 100px">${contactusInfo.content }</textarea>
+					<textarea id="editor" name="content" style="width: 400px;height: 100px">${contactusInfo.content }</textarea>
 				</td>
 			</tr>
 			<tr id="contentTr">
@@ -142,7 +148,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					英文内容:
 				</th>
 				<td colspan="3">
-					<textarea name="encontent" style="width: 400px;height: 100px">${encontactusInfo.content }</textarea>
+					<textarea id="editor2" name="encontent" style="width: 400px;height: 100px">${encontactusInfo.content }</textarea>
 				</td>
 			</tr>
 			<tr>

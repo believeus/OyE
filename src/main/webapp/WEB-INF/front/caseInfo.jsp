@@ -3,18 +3,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
-<title>Case List</title>
+<title>案例详情页面</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
+<link rel="stylesheet" href="/static/public/css/jquery.bxslider.css"/>
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
+<script src="/static/public/js/jquery.bxslider.min.js"></script>
 <style type="text/css">
 	.main_content{
 		width:1140px;height:auto;overflow:hidden;margin:0 auto;
 	}
 	.main_content_title{
-		width:1140px;height:40px;line-height:40px;border-bottom:1px dashed #C6C6C6;margin-bottom: 20px;
+		height:40px;line-height:40px;border-bottom:1px dashed #C6C6C6;margin-bottom: 20px;
 	}
 	.main_content_body {
 	    height: auto;
@@ -62,13 +63,14 @@
 	    text-align: center;	
 	}
 	.NI_duanluo{
-		width: 1100px; height: auto; overflow: hidden; margin: 30px auto 0px;
+		width: 1100px; height: auto; overflow: hidden; margin: 30px auto;font-size: 21px;color:#fff;
 	}
 	.NI_duanluo p {
 	    color: #fefefe;
-	    font-size: 15px;
+	    font-size: 21px;
 	    line-height: 30px;
 	    text-indent: 30px;
+	    font-family: heiti;
 	}
 	.NI_line{
 		width:1140px;height:1px;border-bottom:1px dashed #c6c6c6;margin-bottom:20px;
@@ -82,22 +84,30 @@
 	.NI_fanye a{
 		color:#FFF;
 	}
-	.anli_list{
-		width:1140px;height:auto;overflow:hidden;
-	}
-	.anli_1{
-		width:360px;height:310px;margin-right:30px;margin-bottom:30px;float:left;
-	}
-	.anli_1_img{
-		width:360px;height:245px;
-	}
-	.anli_1_3Img{
-		width:360px;height:60px; margin-top: 5px;font-size:21px;text-align:center;
-	}
-	.anli_1_3Img_list{
-		width:115px;height:60px;float:left;margin-right:7px;
-	}
+	/* ************* */
+	.banner_main{width:100%;margin:0 auto;position: relative;}
+    .banner_nav{width:210px;height:370px;position:absolute;top:0;left:0;z-index:100;background:#cccccc}
+    .banner_slider{position: relative;overflow: hidden;height:500px;z-index: 50;}
+    .banner_slider img{width:100%;height:500px;}
+    .banner_slider .bx-wrapper .bx-controls-direction a{width:40px;height: 40px;background:#000000;opacity: .3;}
+    .banner_slider .bx-wrapper .bx-controls-direction a.bx-prev:before{
+        content:'';position: absolute;top:8px;left:12px; width: 16px; height: 24px;
+        background: url(/static/public/images/zy.png) no-repeat -200px 0;}
+    .banner_slider .bx-wrapper .bx-controls-direction a.bx-next:before{
+        content:'';position: absolute;top:8px;left:12px; width: 16px;height: 24px;
+        background: url(/static/public/images/zy.png) no-repeat -200px -24px; }
+    .banner_slider .bx-wrapper .bx-controls-direction a:hover{opacity: .6}
 </style>
+<script type="text/javascript">
+	$(function(){
+		$('.banner_slider ul').bxSlider({
+            auto:true,
+            autoHover:true,
+             pager:false,
+             touch:false
+        });
+	});
+</script>
 </head>
 <body>
 	<!--
@@ -106,46 +116,36 @@
        	描述：页头
        -->
 	<div style="width:100%;height:80px;text-align:center;font-size:25px;line-height:80px;">
-		Case show
+		案例详情
 	</div>
-	<jsp:include page="enHeader.jsp" />
+	<jsp:include page="header.jsp" />
 	
-	<div class="main">
+	<div class="main" style="background:#505050;">
 		<div class="main_content">
 			<div class="main_content_title">
-				<div class="main_content_title_2" style="width:100px;">Case List</div>
+				<div class="main_content_title_2">案例详情</div>
 			</div>
-			<div class="anli_list">
-				<c:forEach items="${examples }" var="example" varStatus="statuss">
-					<div class="anli_1" <c:if test="${(statuss.index+1)%3==0 }">style="margin-right:0;"</c:if>>
-						<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
-							<c:if test="${status.index ==0 }">
-								<div class="anli_1_img">
-									<%-- <a href="/caseInfo.jhtml?id=?">
-										<img src="${url }" width="360" height="245" />
-									</a> --%>
-									<a href="/caseInfo.jhtml?id=${example.id }" >
-										<img src="${url }" width="360" height="245" />
-									</a>
-								</div>
-								<div class="anli_1_3Img">
-									${example.enName }
-								</div>
-							</c:if>
-						</c:forEach>
-						<%-- <div class="anli_1_3Img">
-							${example.enName }
-							<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
-								<c:if test="${status.index <4 && status.index >0 }">
-									<div class="anli_1_3Img_list" <c:if test="${(status.index)%3==0 }">style="margin-right:0;"</c:if>>
-										<img src="${url }" width="115" height="60" />
-									</div>
-								</c:if>
-							</c:forEach>
-						</div> --%>
-					</div>
-				</c:forEach>
+			<div class="">
+				<h1 class="NI_h1" style="text-align:center;">${example.name }</h1>
+				<%-- <p style="text-align:center;margin-bottom:30px;color:#fff;">
+					<span style="margin-right:20px;">时间：${time }</span>
+				</p> --%>
+				<%-- <div style="text-align:center;">
+					<div class="banner_slider">
+		                <ul>
+		                	<c:forEach items="${paths }" var="path">
+			                    <li>
+		                    		<img src="${path }" width="780"/>
+		                   		</li>
+		                	</c:forEach>
+		                </ul>
+		            </div>
+				</div> --%>
+				<div class="NI_duanluo">
+					${example.content }
+				</div>
 			</div>
+			<div class="NI_line"></div>
 		</div>
 	</div>
 	<!--
@@ -153,6 +153,6 @@
        	时间：2014-11-04
        	描述：页尾
        -->
-	<jsp:include page="enFooter.jsp" />
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

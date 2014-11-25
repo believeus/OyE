@@ -92,7 +92,7 @@
 		width:360px;height:245px;
 	}
 	.anli_1_3Img{
-		width:360px;height:60px; margin-top: 5px;
+		width:360px;height:60px; margin-top: 5px;font-size:21px;text-align:center;
 	}
 	.anli_1_3Img_list{
 		width:115px;height:60px;float:left;margin-right:7px;
@@ -105,6 +105,9 @@
        	时间：2014-11-04
        	描述：页头
        -->
+	<div style="width:100%;height:80px;text-align:center;font-size:25px;line-height:80px;">
+		案例列表
+	</div>
 	<jsp:include page="header.jsp" />
 	
 	<div class="main">
@@ -121,11 +124,17 @@
 									<%-- <a href="/caseInfo.jhtml?id=?">
 										<img src="${url }" width="360" height="245" />
 									</a> --%>
-									<img src="${url }" width="360" height="245" />
+									<a href="/caseInfo.jhtml?id=${example.id }" >
+										<img src="${url }" width="360" height="245" />
+									</a>
 								</div>
+								<div class="anli_1_3Img">
+									${example.name }
+								</div>	
 							</c:if>
 						</c:forEach>
-						<div class="anli_1_3Img">
+						<%-- <div class="anli_1_3Img">
+							${example.name }
 							<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
 								<c:if test="${status.index <4 && status.index >0 }">
 									<div class="anli_1_3Img_list" <c:if test="${(status.index)%3==0 }">style="margin-right:0;"</c:if>>
@@ -133,7 +142,7 @@
 									</div>
 								</c:if>
 							</c:forEach>
-						</div>
+						</div> --%>
 					</div>
 				</c:forEach>
 				<!-- <div class="anli_1">

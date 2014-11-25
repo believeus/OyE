@@ -5,7 +5,7 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
-<title>我们的客户列表</title>
+<title>客户列表</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
@@ -22,7 +22,7 @@
 	    width: 1140px;
 	}
 	.main_content_title_2{
-		width:130px;height:40px;line-height:40px;border-bottom:1px solid #FFA9B0;font-size:17px;color:#FFA9B0;font-weight:bold;font-family: songti;
+		width:80px;height:40px;line-height:40px;border-bottom:1px solid #FFA9B0;font-size:17px;color:#FFA9B0;font-weight:bold;font-family: songti;
 	}
 	.main_content_body_img{
 		width:600px;height:330px;float:left;margin-right: 20px; margin-bottom: 20px;
@@ -74,12 +74,15 @@
        	时间：2014-11-04
        	描述：页头
        -->
+	<div style="width:100%;height:80px;text-align:center;font-size:25px;line-height:80px;">
+		我们的客户
+	</div>
 	<jsp:include page="header.jsp" />
 	
 	<div class="main">
 		<div class="main_content">
 			<div class="main_content_title">
-				<div class="main_content_title_2">我们的客户列表</div>
+				<div class="main_content_title_2">客户列表</div>
 			</div>
 			<div class="anli_list">
 				<c:forEach items="${customers }" var="customer" varStatus="status">

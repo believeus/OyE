@@ -535,7 +535,7 @@
 		<div class="main-service">
 			<p class="">
 				<i style="width: 22px; height: 26px; background: url(/static/public/images/ser.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-				<a id="bus" style="font-size: 24px;">Our Business</a>
+				<a id="bus" style="font-size: 24px;" href="/ourBusiness.jhtml" target="_blank">Our Business</a>
 			</p>
 			<div class="main-service-list">
 				<c:if test="${bsize!=0 }">
@@ -1330,7 +1330,7 @@
 			<div class="main-ourteam-cont">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 28px; height: 28px; background: url(/static/public/images/hxtd.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="zhizhi" style="font-size: 24px;" href="/teamList.jhtml">CompanyTeam</a>
+					<a id="zhizhi" style="font-size: 24px;" href="/teamList.jhtml" target="_blank">CompanyTeam</a>
 				</div>
 				<div class="main-ourteam-cont-const">
 					<c:if test="${tsize!=0 }">
@@ -1411,7 +1411,7 @@
 			<div class="main-tp-cont">
 				<p class="main-tp-title">
 					<i style="width: 31px; height: 28px; background: url(/static/public/images/lc.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="liucheng" style="font-size: 24px;">ServiceProcess</a>
+					<a id="liucheng" style="font-size: 24px;" href="/serviceProcess.jhtml" target="_blank">ServiceProcess</a>
 				</p>
 				<div style="">
 					<img src="/static/public/images/img06.png" style="position: relative; left: 500px;" />
@@ -1454,10 +1454,10 @@
 			</div>
 		</div>
 		<div class="main-cust">
-			<div style="width:1100px;height:auto;overflow:hidden;margin:0 auto 30px;">
+			<div style="width:1100px;height:435px;overflow:hidden;margin:0 auto 30px;">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 37px; height: 28px; background: url(/static/public/images/3333.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="cust" style="font-size: 24px;">OurCustomers</a>
+					<a id="cust" style="font-size: 24px;" href="/customerList.jhtml" target="_blank">OurCustomers</a>
 				</div>
 				<c:if test="${customersSize!=0 }">
 					<div class="main-ourteam-cont-list">
@@ -1513,7 +1513,7 @@
 							AboutUs
 						</div>
 						<div style="float:right;width:75px;">
-							<a href="english/contactusInfo.jhtml?type=0" style="color:#fff;">MORE&gt;&gt;</a>
+							<a href="/contactusInfo.jhtml?type=0" target="_blank" style="color:#fff;">MORE&gt;&gt;</a>
 						</div>
 					</div>
 						<div style="height:auto;overflow:hidden;">
@@ -1532,7 +1532,7 @@
 						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
 							<a id="news" style="color:#ef738b;">StationNews</a>
 						</div>
-						<a href="/newsList.jhtml?type=0" style="float: right; position: relative; top: -46px;color:#fff;">MORE&gt;&gt;</a>
+						<a href="/newsList.jhtml?type=0" target="_blank" style="float: right; position: relative; top: -46px;color:#fff;">MORE&gt;&gt;</a>
 					</div>
 					<div style="">
 						<c:if test="${newsSize!=0 }">

@@ -22,7 +22,7 @@
 	    width: 1140px;
 	}
 	.main_content_title_2{
-		width:115px;height:40px;line-height:40px;border-bottom:1px solid #FFA9B0;font-size:17px;color:#FFA9B0;font-weight:bold;font-family: songti;
+		width:130px;height:40px;line-height:40px;border-bottom:1px solid #FFA9B0;font-size:17px;color:#FFA9B0;font-weight:bold;font-family: songti;
 	}
 	.main_content_body_img{
 		width:600px;height:330px;float:left;margin-right: 20px; margin-bottom: 20px;
@@ -81,6 +81,9 @@
        	时间：2014-11-04
        	描述：页头
        -->
+	<div style="width:100%;height:80px;text-align:center;font-size:25px;line-height:80px;">
+		Company Teams
+	</div>
 	<jsp:include page="enHeader.jsp" />
 	
 	<div class="main">
@@ -95,7 +98,7 @@
 							<img src="${team.path }" width="105" height="105" />
 						</div>
 						<div class="team_list_name">
-							${team.name }
+							${team.ehName }
 						</div>
 						<div class="team_list_position" title="${team.position }">
 							${fn:substring(team.position, 0, 17)}

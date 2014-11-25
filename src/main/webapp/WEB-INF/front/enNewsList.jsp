@@ -65,7 +65,7 @@
 		text-decoration: underline;
 	}
 	.newstitle a {
-	    color: #000;
+	    /* color: #000; */
 	    font-weight: bold;
 	}
 	.newstitle li{
@@ -79,6 +79,7 @@
 	    line-height: 30px;
 	    text-align: left;
 	    height: 35px;
+	     padding-left:20px;
 	}
 	.newstitle a:hover{
 		color:#ff5900;
@@ -99,6 +100,9 @@
        	时间：2014-11-04
        	描述：页头
        -->
+	<div style="width:100%;height:80px;text-align:center;font-size:25px;line-height:80px;">
+		StationsNews
+	</div>
 	<jsp:include page="enHeader.jsp" />
 	
 	<div class="main">
@@ -108,8 +112,8 @@
 				<div class="main_content_title_2" style="width:120px;">Dynamic News</div>
 			</div>
 			<div class="main_content_body">
-				
 				<div style="width:180px;height:300px;overflow:hidden;float:left;margin-right:50px;border: 2px solid #e4e4e4;margin-bottom:50px;">
+					<div style="background:#dd2a2a;color: #fff;font-size: 15px;font-weight: bold; height: 30px;line-height: 30px;padding-left: 20px;">Information</div>
 					<ul class="newstitle">
 						<li>
 							<a href="/newsList.jhtml?type=0" title="Dynamic News">Dynamic News</a>
@@ -122,11 +126,15 @@
 						</li>
 					</ul>
 				</div>
+				<div style="width:900px;height:30px;overflow: hidden;float:left;border-bottom:1px solid #eee;line-height:30px;margin-bottom: 10px;">
+					&gt;&gt;  your position：<a href="/newsList.jhtml?type=0">stationNews</a>
+				</div>
 				<div style="width:900px;height:auto;overflow: hidden;float:left;">
 					<ul class="newscontent">
 						<c:forEach items="${news }" var="news">
 							<li>
-								<a href="/newsInfo.jhtml?id=${news.id }" title="${news.title }" style="float: left;">${news.content }</a>
+								<span style="float:left;margin-right:10px;">&gt;&gt;</span>
+								<a href="/newsInfo.jhtml?id=${news.id }" title="${news.title }" style="float: left;">${news.title }</a>
 								<%-- <span style="float:right;">${news.createTime }</span> --%>
 								<span style="float:right;">2014-11-22</span>
 							</li>

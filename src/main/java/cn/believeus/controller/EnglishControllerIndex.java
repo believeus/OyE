@@ -15,6 +15,7 @@ import cn.believeus.PaginationUtil.Page;
 import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Banner;
+import cn.believeus.model.Business;
 import cn.believeus.model.CompanyInfo;
 import cn.believeus.model.ContactusInfo;
 import cn.believeus.model.Customers;
@@ -86,7 +87,8 @@ public class EnglishControllerIndex {
 		request.setAttribute("partners", partners);
 		request.setAttribute("partnersSize", partners.size());
 		//最新动态
-		List<ENNews> news = (List<ENNews>) baseService.findObjectList(ENNews.class, "top", (short)1);
+//		List<ENNews> news = (List<ENNews>) baseService.findObjectList(ENNews.class, "top", (short)1);
+		List<ENNews> news = (List<ENNews>) baseService.findObjectList(ENNews.class);
 		for (ENNews tnews : news) {
 			String content = tnews.getContent();
 			String content2 = content.replaceAll("<[^>]+>", "");
@@ -104,9 +106,21 @@ public class EnglishControllerIndex {
 	}
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/english/newsList")
-	public String news(HttpServletRequest request) {
-		List<ENNews> news = (List<ENNews>)baseService.findObjectList(ENNews.class);
-		request.setAttribute("news", news);
+	public String news(HttpServletRequest request,Integer type) {
+		List<ENNews> news;
+		if (type ==0) {
+			news = (List<ENNews>)baseService.findObjectList(ENNews.class,"type",type);
+			request.setAttribute("news", news);
+		}else if (type ==1) {
+			news = (List<ENNews>)baseService.findObjectList(ENNews.class,"type",type);
+			request.setAttribute("news", news);
+		}else if (type ==2) {
+			news = (List<ENNews>)baseService.findObjectList(ENNews.class,"type",type);
+			request.setAttribute("news", news);
+		}else {
+			news = new ArrayList<ENNews>();
+			request.setAttribute("news", news);
+		}
 		for (ENNews news2 : news) {
 			SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
 			List<String> dates =  new ArrayList<String>();
@@ -122,7 +136,7 @@ public class EnglishControllerIndex {
 	@RequestMapping(value = "/english/newsInfo")
 	public String newsInfo(Integer id,HttpServletRequest request) {
 		ENNews news = (ENNews)baseService.findObject(ENNews.class, id);
-		request.setAttribute("news", news);
+		request.setAttribute("news", news); 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
 		request.setAttribute("time", sdf.format(news.getCreateTime()));
 		//企业信息
@@ -143,7 +157,7 @@ public class EnglishControllerIndex {
 		if (StringUtils.isEmpty(pageNumber)) {
 			pageNumber="1";
 		}
-		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),20);
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),6);
 		String hql= "from ENPartners as entity order by editTime desc";
 		Page<?> page = baseService.findObjectList(hql, pageable);
 		request.setAttribute("partners", page.getContent());
@@ -216,5 +230,60 @@ public class EnglishControllerIndex {
 		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/enContactusInfo.jsp";
+	}
+	
+	/**
+	 * 流程控制
+	 * @param request
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/english/serviceProcess")
+	public String serviceProcess(HttpServletRequest request) {
+		List<Processs> pros = (List<Processs>) baseService.findObjectList(Processs.class);
+		request.setAttribute("pros", pros);
+		request.setAttribute("prosSize", pros.size());
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/enServiceProcess.jsp";
+	}
+	
+	/**
+	 * 业务范围
+	 * @param request
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/english/ourBusiness")
+	public String businesss(HttpServletRequest request) {
+		List<ENBusiness> businesses = (List<ENBusiness>) baseService.findObjectList(ENBusiness.class);
+		request.setAttribute("businesses", businesses);
+		request.setAttribute("bsize", businesses.size());
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/enOurBusiness.jsp";
+	}
+	
+	/**
+	 * 案例详情
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/english/caseInfo")
+	public String caseInfo(HttpServletRequest request,Integer id) {
+		Example example = (Example) baseService.findObject(Example.class, id);
+		String[] path = example.getPaths().split("#");
+		List<String> paths = new ArrayList<String>();
+		for (int i = 0; i < path.length; i++) {
+			paths.add(path[i]);
+		}
+		request.setAttribute("paths", paths);
+		request.setAttribute("example", example);
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
+		return "/WEB-INF/front/enCaseInfo.jsp";
 	}
 }

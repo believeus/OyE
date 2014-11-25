@@ -65,7 +65,7 @@
 		text-decoration: underline;
 	}
 	.newstitle a {
-	    color: #000;
+	    /* color: #000; */
 	    font-weight: bold;
 	}
 	.newstitle li{
@@ -91,6 +91,9 @@
 		text-decoration: underline;
 		
 	}
+	.current_au{
+		color:#DD2A2A;
+	}
 </style>
 </head>
 <body>
@@ -99,6 +102,9 @@
        	时间：2014-11-04
        	描述：页头
        -->
+	<div style="width:100%;height:80px;text-align:center;font-size:25px;line-height:80px;">
+		关于我们
+	</div>
 	<jsp:include page="header.jsp" />
 	
 	<div class="main">
@@ -110,26 +116,28 @@
 			<div class="main_content_body">
 				
 				<div style="width:180px;height:300px;overflow:hidden;float:left;margin-right:50px;border: 2px solid #e4e4e4;margin-bottom:50px;">
+					<div style="background:#dd2a2a;color: #fff;font-size: 15px;font-weight: bold; height: 30px;line-height: 30px;padding-left: 20px;">栏目导航</div>
 					<ul class="newstitle">
 						<li>
-							<a href="/contactusInfo.jhtml?type=0" title="公司动态">公司动态</a>
+							<a id="dt" class="current_au" href="/contactusInfo.jhtml?type=0" title="公司介绍">公司介绍</a>
 						</li>
 						<li>
-							<a href="/contactusInfo.jhtml?type=1" title="企业资质">企业资质</a>
+							<a id="ry" href="/contactusInfo.jhtml?type=1" title="企业资质">企业资质</a>
 						</li>
 						<li>
-							<a href="/contactusInfo.jhtml?type=2" title="我们特色">我们特色</a>
+							<a id="wh" href="/contactusInfo.jhtml?type=2" title="我们特色">我们特色</a>
 						</li>
 					</ul>
 				</div>
+				<div style="width:900px;height:30px;overflow: hidden;float:left;border-bottom:1px solid #eee;line-height:30px;margin-bottom: 10px;">
+					&gt;&gt;  您的位置：<a href="/contactusInfo.jhtml?type=0">关于我们</a>
+				</div>
 				<div style="width:900px;height:auto;overflow: hidden;float:left;">
-					<ul class="newscontent">
-						<c:forEach items="${contactusInfos }" var="news" varStatus="status">
-							<c:if test="${status.index==0 }">
-								<div>${news.content }</div>
-							</c:if>
-						</c:forEach>
-					</ul>
+					<c:forEach items="${contactusInfos }" var="news" varStatus="status">
+						<c:if test="${status.index==0 }">
+							<div>${news.content }</div>
+						</c:if>
+					</c:forEach>
 				</div>
 				<%-- <div class="main_content_body_img">
 					<div id="bigImg">
@@ -250,5 +258,28 @@
        	描述：页尾
        -->
 	<jsp:include page="footer.jsp" />
+	<script type="text/javascript">
+		$(function(){
+			//alert(window.location.href.substring(window.location.href.length-1));
+			var type = window.location.href.substring(window.location.href.length-1);
+			if(type==0){
+				$("#dt").removeClass("current_au");
+				$("#ry").removeClass("current_au");
+				$("#wh").removeClass("current_au");
+				$("#dt").addClass("current_au");
+			}else if(type==1){
+				$("#dt").removeClass("current_au");
+				$("#ry").removeClass("current_au");
+				$("#wh").removeClass("current_au");
+				$("#ry").addClass("current_au");
+			}else if(type==2){
+				$("#dt").removeClass("current_au");
+				$("#ry").removeClass("current_au");
+				$("#wh").removeClass("current_au");
+				$("#wh").addClass("current_au");
+			}
+			
+		});
+	</script>
 </body>
 </html>

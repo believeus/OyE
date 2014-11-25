@@ -74,9 +74,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<th>
 					<a href="javascript:;" class="sort" name="title">标题</a>
 				</th>
-				<th>
+				<!-- <th>
 					<a href="javascript:;" class="sort" name="top">中文内容</a>
-				</th>
+				</th> -->
 				<th>
 					<a href="#"  class="sort">操作</a>
 				</th>
@@ -106,9 +106,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<td>
 						${myNew.title}
 					</td>
-					<td>
+					<%-- <td>
 					   ${myNew.content}
-					</td>
+					</td> --%>
 					<td>
 						<a href="/admin/contactusEdit.jhtml?id=${myNew.id}">[修改]</a>
 					</td>

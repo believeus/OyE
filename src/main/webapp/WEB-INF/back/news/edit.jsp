@@ -140,7 +140,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			<tr id="contentTr">
 				<th>
-					内容:
+					中文内容:
 				</th>
 				<td colspan="3">
 					<textarea id="editor" name="content" class="editor">${news.content}</textarea>
@@ -148,7 +148,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr id="contentTr">
 				<th>
-					内容:
+					英文内容:
 				</th>
 				<td colspan="3">
 					<textarea id="editor1" name="encontent" class="editor">${ennews.content}</textarea>

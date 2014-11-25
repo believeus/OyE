@@ -14,6 +14,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="/static/public/js/jquery.js"></script>
 	<script type="text/javascript" src="/static/public/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="/static/public/js/admin/ueditor1_2_6_2/ueditor.config.js"></script>
+	<script type="text/javascript" src="/static/public/js/admin/ueditor1_2_6_2/ueditor.all.js"></script>
 	<script type="text/javascript" src="/static/public/js/common.js"></script>
 	<script type="text/javascript" src="/static/public/js/input.js"></script>
 	<style type="text/css">
@@ -31,14 +33,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</style>
 	<script type="text/javascript">
 	$().ready(function() {
-	
+		
+		var editor = new UE.ui.Editor();
+	    editor.render('editor');
+	    editor.addListener('contentchange',function(){
+	        this.sync();
+	        $('textarea').valid();
+	    });
+		var editor2 = new UE.ui.Editor();
+	    editor2.render('editor2');
+	    editor2.addListener('contentchange',function(){
+	        this.sync();
+	        $('textarea').valid();
+	    });
+		
 		$("#category").val(""+${example.category});
 		var $inputForm = $("#inputForm");
 		
 		// 表单验证
 		$inputForm.validate({
 			rules: {
-				//upload_img2: "required"
+				/* upload_img2: "required" */
+				name: "required",
+				enName: "required",
+				content: "required",
+				enContent: "required"
 			}
 		});
 		var index =${size}+8;
@@ -127,6 +146,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</select>
 				</td>
 			</tr>
+			<tr>
+				<th>
+					案例名称:
+				</th>
+				<td>
+					<input type="text" name="name" value="${example.name }"/>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					案例英文名称:
+				</th>
+				<td>
+					<input type="text" name="enName" value="${example.enName }" />
+				</td>
+			</tr>
 			<tr id="pathTr">
 				<th>
 					LOGO图片:
@@ -173,6 +208,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</div>
 							</div>
 					</c:forEach>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					案例介绍:
+				</th>
+				<td colspan="3">
+					<textarea id="editor" name="content" style="width: 600px; height: 200px;">${example.content }</textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					案例英文介绍:
+				</th>
+				<td colspan="3">
+					<textarea id="editor2" name="enContent" style="width: 600px; height: 200px;">${example.enContent }</textarea>
 				</td>
 			</tr>
 			<tr>

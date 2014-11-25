@@ -18,10 +18,10 @@
 		margin-bottom: 30px;
 	}
 	.em_video{
-	    height: 311px;
+	    height: 315px;
 	    left: 178px;
 	    position: absolute;
-	    top: 239px;
+	    top: 317px;
 	    width: 556px;
 	}
 </style>
@@ -60,6 +60,9 @@
        	时间：2014-11-04
        	描述：页头
        -->
+	<div style="width:100%;height:80px;text-align:center;font-size:25px;line-height:80px;">
+		Testimonials
+	</div>
 	<jsp:include page="enHeader.jsp" />
 	
 	<div class="main" style="background: #eaeaea;">
@@ -76,19 +79,19 @@
 					</div>
 				</div>
 				<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
-					<embed id="ckplayer_a1" align="middle" width="556" height="311" 
+					<embed id="ckplayer_a1" align="middle" width="556" height="315" 
 						pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
-						<c:if test="${partner.videoLink == null || partner.videoLink == ''}">
-							flashvars="f=http://localhost:8080/${partner.video }" 
+						<c:if test="${partners.videoLink ==null || partners.videoLink =='' }">
+							flashvars="f=http://localhost:8080/${partners.video }" 
 						</c:if>
-						<c:if test="${partner.videoLink != null }">
-							flashvars="f=${partner.videoLink }" 
+						<c:if test="${partners.videoLink !=null && partners.videoLink !='' }">
+							flashvars="f=${partners.videoLink }" 
 						</c:if>
 						src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
 						quality="high" allowfullscreen="true" allowscriptaccess="always" />
 						<!-- http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf -->
 				</div>
-				<div id="m_img0${status.index+1 }" style="position: absolute; left: 880px; top: 391px; width: 200px; height: 265px;">
+				<div id="m_img0${status.index+1 }" style="position: absolute; left: 880px; top: 470px; width: 200px; height: 265px;">
 					<img src="${partners.path }" width="200" height="265"/>
 				</div>
 			</c:forEach>

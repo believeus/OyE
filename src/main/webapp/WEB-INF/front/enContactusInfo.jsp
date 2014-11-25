@@ -65,7 +65,6 @@
 		text-decoration: underline;
 	}
 	.newstitle a {
-	    color: #000;
 	    font-weight: bold;
 	}
 	.newstitle li{
@@ -89,7 +88,9 @@
 	.newscontent p:hover{
 		color:#ff5900 !important;
 		text-decoration: underline;
-		
+	}
+	.current_au{
+		color:#DD2A2A;
 	}
 </style>
 </head>
@@ -99,6 +100,9 @@
        	时间：2014-11-04
        	描述：页头
        -->
+	<div style="width:100%;height:80px;text-align:center;font-size:25px;line-height:80px;">
+		AboutUs
+	</div>
 	<jsp:include page="enHeader.jsp" />
 	
 	<div class="main">
@@ -108,140 +112,31 @@
 				<div class="main_content_title_2">About Us</div>
 			</div>
 			<div class="main_content_body">
-				
 				<div style="width:180px;height:300px;overflow:hidden;float:left;margin-right:50px;border: 2px solid #e4e4e4;margin-bottom:50px;">
+					<div style="background:#dd2a2a;color: #fff;font-size: 15px;font-weight: bold; height: 30px;line-height: 30px;padding-left: 20px;">Column navigation</div>
 					<ul class="newstitle">
 						<li>
-							<a href="/english/contactusInfo.jhtml?type=0" title="Dynamic company">Dynamic company</a>
+							<a id="dt" href="/contactusInfo.jhtml?type=0" title="Company introduction">CompanyIntroduct</a>
 						</li>
 						<li>
-							<a href="/english/contactusInfo.jhtml?type=1" title="Enterprise Qualification">Enterprise Qualify</a>
+							<a id="ry" href="/contactusInfo.jhtml?type=1" title="company qualification">companyQualify</a>
 						</li>
 						<li>
-							<a href="/english/contactusInfo.jhtml?type=2" title="Ours Feature">Ours Feature</a>
+							<a id="wh" href="/contactusInfo.jhtml?type=2" title="company feature">companyFeature</a>
 						</li>
 					</ul>
+				</div>
+				<div style="width:900px;height:30px;overflow: hidden;float:left;border-bottom:1px solid #eee;line-height:30px;margin-bottom: 10px;">
+					&gt;&gt;  your position：<a href="/contactusInfo.jhtml?type=0">About Us</a>
 				</div>
 				<div style="width:900px;height:auto;overflow: hidden;float:left;">
-					<ul class="newscontent">
-						<c:forEach items="${contactusInfos }" var="news" varStatus="status">
-							<c:if test="${status.index==0 }">
-								<div>${news.content }</div>
-							</c:if>
-						</c:forEach>
-					</ul>
-				</div>
-				<%-- <div class="main_content_body_img">
-					<div id="bigImg">
-						<div id="banner" style="margin:0 auto;">
-							<div id="banner_bg"></div> <!--标题背景-->
-							<div id="banner_info"></div> <!--标题-->
-							<ul>
-								<c:forEach var="newx" items="${news}" varStatus="status">
-									<li <c:if test="${status.index==0 }">class="on"</c:if> >${status.index+1 }</li>
-								</c:forEach>
-							</ul>
-							<div id="banner_list">
-								<c:forEach var="newx" items="${news}" varStatus="status">
-									<a href="/newsInfo.jhtml?id=${newx.id }" target="_blank">
-										<img src="${newx.path }" title="${newx.title }" alt="${newx.title }" width="600" height="330"/>
-									</a>
-								</c:forEach>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_link">
-				<c:forEach var="newx" items="${news}" varStatus="status">
-					<p class="link_title">
-						<a href="/newsInfo.jhtml?id=${newx.id }">${newx.title }</a>
-					</p>									
-				</c:forEach>				
-				</div>
-				<c:forEach var="newx" items="${news}" varStatus="status">
-					<c:forEach var="time" items="${times}" varStatus="status2">
-						<div class="main_content_body_list">
-							<div class="list_date">
-								${time }
-							</div>
-							<div class="list_dis">
-								<div class="list_title">
-									<a href="/newsInfo.jhtml?id=${newx.id }">${newx.title }</a>
-								</div>
-								<div class="list_content">
-									${newx.content }
-								</div>
-							</div>
-						</div>
+					<c:forEach items="${contactusInfos }" var="news" varStatus="status">
+						<c:if test="${status.index==0 }">
+							<div>${news.content }</div>
+						</c:if>
 					</c:forEach>
-				</c:forEach> --%>
-				<!-- <div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
 				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div> -->
 			</div>
-			<!-- <div style="width:1140px;height:1px;border-bottom:1px dashed #c6c6c6;margin-bottom:30px;"></div> -->
 		</div>
 	</div>
 	<!--
@@ -250,5 +145,27 @@
        	描述：页尾
        -->
 	<jsp:include page="enFooter.jsp" />
+	<script type="text/javascript">
+		$(function(){
+			//alert(window.location.href.substring(window.location.href.length-1));
+			var type = window.location.href.substring(window.location.href.length-1);
+			if(type==0){
+				$("#dt").removeClass("current_au");
+				$("#ry").removeClass("current_au");
+				$("#wh").removeClass("current_au");
+				$("#dt").addClass("current_au");
+			}else if(type==1){
+				$("#dt").removeClass("current_au");
+				$("#ry").removeClass("current_au");
+				$("#wh").removeClass("current_au");
+				$("#ry").addClass("current_au");
+			}else if(type==2){
+				$("#dt").removeClass("current_au");
+				$("#ry").removeClass("current_au");
+				$("#wh").removeClass("current_au");
+				$("#wh").addClass("current_au");
+			}
+		});
+	</script>
 </body>
 </html>

@@ -181,6 +181,14 @@
 	color:#ff5900;
 	text-decoration: underline;
 }
+.main-tp-title a:hover{
+	color:#ff5900;
+	text-decoration: underline;
+}
+#bus:hover{
+	color:#ff5900;
+	text-decoration: underline;
+}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -547,7 +555,7 @@
 		<div class="main-service">
 			<p class="">
 				<i style="width: 22px; height: 26px; background: url(/static/public/images/ser.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-				<a id="bus" style="font-size: 24px;">服务范围Our Business</a>
+				<a id="bus" style="font-size: 24px;" href="/ourBussiness.jhtml" target="_blank">服务范围Our Business</a>
 			</p>
 			<div class="main-service-list">
 				<c:if test="${bsize!=0 }">
@@ -1269,11 +1277,11 @@
 									quality="high" allowscriptaccess="always" align="middle" /> --%>
 							    <embed id="ckplayer_a1" align="middle" width="372" height="205" 
 									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
-									<c:if test="${partner.videoLink ==null }">
+									<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
 										flashvars="f=http://localhost:8080/${partner.video }" 
 									</c:if>
-									<c:if test="${partner.videoLink !=null }">
-										flashvars="f=http://localhost:8080/${partner.videoLink }" 
+									<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
+										flashvars="f=${partner.videoLink }" 
 									</c:if>
 									src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
 									quality="high" allowfullscreen="true" allowscriptaccess="always" />
@@ -1424,7 +1432,7 @@
 			<div class="main-tp-cont">
 				<p class="main-tp-title">
 					<i style="width: 31px; height: 28px; background: url(/static/public/images/lc.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="liucheng" style="font-size: 24px;">我们的流程</a>
+					<a id="liucheng" style="font-size: 24px;" href="/serviceProcess.jhtml" target="_blank">我们的流程</a>
 				</p>
 				<div style="">
 					<img src="/static/public/images/img06.png" style="position: relative; left: 500px;" />
@@ -1526,7 +1534,7 @@
 							关于我们
 						</div>
 						<div style="float:right;width:50px;">
-							<a href="/contactusInfo.jhtml?type=0" style="color:#fff;">更多&gt;&gt;</a>
+							<a href="/contactusInfo.jhtml?type=0" style="color:#fff;" target="_blank">更多&gt;&gt;</a>
 						</div>
 					</div>
 						<div style="">
@@ -1545,7 +1553,7 @@
 						<div style="width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
 							<a id="news" style="color:#ef738b;">最新动态</a>
 						</div>
-						<a href="/newsList.jhtml?type=0" style="float: right; position: relative; top: -46px;color:#fff;">更多&gt;&gt;</a>
+						<a href="/newsList.jhtml?type=0" target="_blank" style="float: right; position: relative; top: -46px;color:#fff;">更多&gt;&gt;</a>
 					</div>
 					<div style="">
 						<c:if test="${newsSize!=0 }">

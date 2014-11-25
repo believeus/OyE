@@ -111,6 +111,8 @@ public class NewsController {
 			enNews.setPath(storepath);
 		}
 		baseService.saveOrUpdata(news);
+		enNews.setType(news.getType());
+		enNews.setTop(news.getTop());
 		baseService.saveOrUpdata(enNews);
 		return "redirect:/admin/news/list.jhtml";
 	}
