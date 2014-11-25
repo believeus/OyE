@@ -31,13 +31,13 @@
 			<div class="nav">
 				<ul>
 					<li><a href="/">首页</a></li>
-					<li><a id="busId" href="#bus">业务范围</a></li>
-					<li><a id="anliId" href="#anli">案例展示</a></li>
-					<li><a id="zhizhiId" href="#zhizhi">企业资质</a></li>
-					<li><a id="custId" href="#cust">客户感言</a></li>
-					<li><a id="liuchengId" href="#liucheng">服务流程</a></li>
-					<li><a id="newsId" href="#news">站内新闻</a></li>
-					<li><a id="zixunId" href="#zixun">联系我们</a></li>
+					<li><a id="busId" href="/#bus">业务范围</a></li>
+					<li><a id="anliId" href="/#anli">案例展示</a></li>
+					<li><a id="zhizhiId" href="/#zhizhi">企业资质</a></li>
+					<li><a id="custId" href="/#cust">客户感言</a></li>
+					<li><a id="liuchengId" href="/#liucheng">服务流程</a></li>
+					<li><a id="newsId" href="/#news">站内新闻</a></li>
+					<li><a id="zixunId" href="/#zixun">联系我们</a></li>
 				</ul>
 			</div>
 		</div>

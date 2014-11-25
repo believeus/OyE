@@ -82,6 +82,9 @@
 	.NI_fanye a{
 		color:#FFF;
 	}
+	.NI_duanluo p{
+		background: none !important;
+	}
 </style>
 </head>
 <body>
