@@ -114,6 +114,7 @@ public class BusinessController {
 			enBusiness.setPath(storepath);
 		}
 		baseService.saveOrUpdata(business);
+		enBusiness.setPath(business.getPath());
 		baseService.saveOrUpdata(enBusiness);
 		return "redirect:/admin/business/list.jhtml";
 	}

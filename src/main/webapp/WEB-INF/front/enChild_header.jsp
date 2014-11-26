@@ -7,8 +7,8 @@
 <style type="text/css">
 	.nav a {
 	    color: #999;
-	    font-size: 20px;
-	    padding: 8px 10px;
+	    font-size: 16px;
+	    padding: 8px 20px;
 	}
 </style>
 <script type="text/javascript">
@@ -42,14 +42,14 @@
 			</div>
 			<div class="nav">
 				<ul>
-					<li><a href="/english.jhtml">Home</a></li>
-					<li><a id="busId" href="/english.jhtml#bus">BusinessScope</a></li>
-					<li><a id="anliId" href="/english.jhtml#anli">CaseShow</a></li>
-					<li><a id="zhizhiId" href="/english.jhtml#zhizhi">CompanyTeam</a></li>
-					<li><a id="custId" href="/english.jhtml#cust">Testimonials</a></li>
-					<li><a id="liuchengId" href="/english.jhtml#liucheng">ServiceProcess</a></li>
-					<li><a id="newsId" href="/english.jhtml#news">StationNews</a></li>
-					<li><a id="zixunId" href="/english.jhtml#zixun">ContactUs</a></li>
+					<li><a href="/" target="_blank">Home</a></li>
+					<li><a id="busId" href="/ourBussiness.jhtml" target="_blank">BusinessScope</a></li>
+					<li><a id="anliId" href="/caseList.jhtml" target="_blank">CaseShow</a></li>
+					<li><a id="zhizhiId" href="/teamList.jhtml" target="_blank">CompanyTeam</a></li>
+					<li><a id="custId" href="/enCust.jhtml" target="_blank">Testimonials</a></li>
+					<li><a id="liuchengId" href="/serviceProcess.jhtml" target="_blank">ServiceProcess</a></li>
+					<li><a id="newsId" href="/newsList.jhtml?type=0" target="_blank">StationNews</a></li>
+					<li><a id="zixunId" href="/contactusInfo.jhtml?type=0" target="_blank">ContactUs</a></li>
 				</ul>
 			</div>
 		</div>

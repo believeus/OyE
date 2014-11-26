@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    String domain = request.getHeader("Host");
+    //domain = domain.substring(domain.indexOf("."), domain.length());
+    request.setAttribute("www_prefix", "http://" + domain);
+%>
 <script type="text/javascript">
 	$(function(){
 		/* $(".nav a").click(function(){

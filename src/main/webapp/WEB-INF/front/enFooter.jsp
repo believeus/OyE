@@ -20,6 +20,11 @@
 	    overflow: hidden;
 	    width: 585px;
 	}
+	.f-table a {
+	    color: #7e7e7e;
+	    font-size: 11px;
+	    font-weight: bold;
+	}
 </style>
 <div class="footer">
 		<div class="footer-dis">

@@ -74,10 +74,7 @@
        	时间：2014-11-04
        	描述：页头
        -->
-	<div style="width:100%;height:80px;text-align:center;font-size:25px;line-height:80px;">
-		我们的客户
-	</div>
-	<jsp:include page="header.jsp" />
+	<jsp:include page="child_header.jsp" />
 	
 	<div class="main">
 		<div class="main_content">

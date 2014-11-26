@@ -566,10 +566,16 @@
 									<img src="${bus.path }" width="99" height="99"/>
 								</div>
 								<div class="main-service-cont-name">
-									${bus.title }
+									${fn:substring(bus.title, 0, 12)}
+									<c:if test="${fn:length(bus.title) > 12 }">
+					   					...
+				   					</c:if>
 								</div>
 								<div class="main-service-cont-dis">
-									${bus.description }
+									${fn:substring(bus.description, 0, 100)}
+									<c:if test="${fn:length(bus.description) > 100 }">
+					   					...
+				   					</c:if>
 								</div>
 							</div>
 						</c:if>
@@ -1264,7 +1270,7 @@
 								<div class="main-evaluation-list-cont-dis" style="height:130px;">
 									<p class="main-cont-dis-title">${partner.name }</p>
 									<p class="main-cont-dis-conts">
-										${fn:substring(partner.content, 0, 20)}...
+										${fn:substring(partner.content, 0, 20)}
 										<c:if test="${fn:length(partner.content) > 20 }">
 						   					...
 					   					</c:if>
@@ -1278,7 +1284,7 @@
 							    <embed id="ckplayer_a1" align="middle" width="372" height="205" 
 									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
 									<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
-										flashvars="f=http://localhost:8080/${partner.video }" 
+										flashvars="f=${www_prefix}/${partner.video }" 
 									</c:if>
 									<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
 										flashvars="f=${partner.videoLink }" 
@@ -1366,7 +1372,10 @@
 										<p>${team.position }</p>
 									</div>
 									<div class="dis" title="${team.content }">
-										${fn:substring(team.content, 0, 50)}...
+										${fn:substring(team.content, 0, 50)}
+										<c:if test="${fn:length(team.content) > 50 }">
+						   					...
+					   					</c:if>
 									</div>
 								</div>
 							</c:if>
@@ -1634,7 +1643,7 @@
 						<input class="input" type="text" id="phone" name="phone" placeholder="手机" />
 						<input class="input" type="text" id="email" name="email" placeholder="邮箱" />
 						<input class="input" type="text" id="title" name="title" placeholder="标题" />
-						<textarea class="input" id="content_a" name="content" style="height: 125px;resize: none;overflow-y: hidden;" placeholder="内容填写"></textarea>
+						<textarea class="input" id="content_a" name="content" maxlength="300" style="height: 125px;resize: none;overflow-y: hidden;" placeholder="内容填写"></textarea>
 						<input class="botton" type="submit" value="提交" />
 						<script type="text/javascript">
 							$(function(){

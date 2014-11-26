@@ -431,7 +431,7 @@
 			$("html,body").animate({scrollTop: $("#zhizhi").offset().top}, 500);
 		});
 		$("#custId").click(function(){
-			$("html,body").animate({scrollTop: $("#cust").offset().top}, 500);
+			$("html,body").animate({scrollTop: $("#cust").offset().top - 440}, 500);
 		});
 		$("#liuchengId").click(function(){
 			$("html,body").animate({scrollTop: $("#liucheng").offset().top}, 500);
@@ -1232,7 +1232,7 @@
 		</div>
 		<div class="main-evaluation">
 			<div class="main-evaluation-list">
-				<a href="/enCust.jhtml" target="_blank" title="more">
+				<a id="cust" href="/enCust.jhtml" target="_blank" title="more">
 					<div style="width: 130px; height: 38px; position: absolute; left: 319px; top: 2150px;cursor:pointer;"></div>
 				</a>
 				<c:if test="${partnersSize!=0 }">
@@ -1256,7 +1256,7 @@
 								<embed id="ckplayer_a1" align="middle" width="372" height="205" 
 									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
 									<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
-										flashvars="f=http://localhost:8080/${partner.video }" 
+										flashvars="f=${www_prefix }/${partner.video }" 
 									</c:if>
 									<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
 										flashvars="f=${partner.videoLink }"
@@ -1457,7 +1457,7 @@
 			<div style="width:1100px;height:435px;overflow:hidden;margin:0 auto 30px;">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 37px; height: 28px; background: url(/static/public/images/3333.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="cust" style="font-size: 24px;" href="/customerList.jhtml" target="_blank">OurCustomers</a>
+					<a style="font-size: 24px;" href="/customerList.jhtml" target="_blank">OurCustomers</a>
 				</div>
 				<c:if test="${customersSize!=0 }">
 					<div class="main-ourteam-cont-list">
@@ -1613,7 +1613,7 @@
 						<input class="input" type="text" id="phone" name="phone" placeholder="phone" />
 						<input class="input" type="text" id="email" name="email" placeholder="email" />
 						<input class="input" type="text" id="title" name="title" placeholder="title" />
-						<textarea class="input" id="content_a" name="content" style="height: 125px;resize: none;overflow-y: hidden;" placeholder="content"></textarea>
+						<textarea class="input" id="content_a" name="content" maxlength="300" style="height: 125px;resize: none;overflow-y: hidden;" placeholder="content"></textarea>
 						<input class="botton" type="submit" value="SUBMIT" />
 						<script type="text/javascript">
 							$(function(){

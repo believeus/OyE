@@ -100,10 +100,7 @@
        	时间：2014-11-04
        	描述：页头
        -->
-	<div style="width:100%;height:80px;text-align:center;font-size:25px;line-height:80px;">
-		AboutUs
-	</div>
-	<jsp:include page="enHeader.jsp" />
+	<jsp:include page="enChild_header.jsp" />
 	
 	<div class="main">
 		<!-- <img src="/static/public/images/news_list.jpg" width="100%"/> -->

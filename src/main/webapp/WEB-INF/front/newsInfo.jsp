@@ -93,7 +93,7 @@
        	时间：2014-11-04
        	描述：页头
        -->
-	<jsp:include page="header.jsp" />
+	<jsp:include page="child_header.jsp" />
 	
 	<div class="main" style="background:#505050;">
 		<div class="main_content">

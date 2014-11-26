@@ -4,13 +4,6 @@
     //domain = domain.substring(domain.indexOf("."), domain.length());
     request.setAttribute("www_prefix", "http://" + domain);
 %>
-<style type="text/css">
-	.nav a {
-	    color: #999;
-	    font-size: 20px;
-	    padding: 8px 10px;
-	}
-</style>
 <script type="text/javascript">
 	$(function(){
 		/* $(".nav a").click(function(){
@@ -42,14 +35,14 @@
 			</div>
 			<div class="nav">
 				<ul>
-					<li><a href="/english.jhtml">Home</a></li>
-					<li><a id="busId" href="/english.jhtml#bus">BusinessScope</a></li>
-					<li><a id="anliId" href="/english.jhtml#anli">CaseShow</a></li>
-					<li><a id="zhizhiId" href="/english.jhtml#zhizhi">CompanyTeam</a></li>
-					<li><a id="custId" href="/english.jhtml#cust">Testimonials</a></li>
-					<li><a id="liuchengId" href="/english.jhtml#liucheng">ServiceProcess</a></li>
-					<li><a id="newsId" href="/english.jhtml#news">StationNews</a></li>
-					<li><a id="zixunId" href="/english.jhtml#zixun">ContactUs</a></li>
+					<li><a href="/" target="_blank">首页</a></li>
+					<li><a id="busId" href="/ourBussiness.jhtml" target="_blank">业务范围</a></li>
+					<li><a id="anliId" href="/caseList.jhtml" target="_blank">案例展示</a></li>
+					<li><a id="zhizhiId" href="/teamList.jhtml" target="_blank">企业资质</a></li>
+					<li><a id="custId" href="/cust.jhtml" target="_blank">客户感言</a></li>
+					<li><a id="liuchengId" href="/serviceProcess.jhtml" target="_blank">服务流程</a></li>
+					<li><a id="newsId" href="/newsList.jhtml?type=0" target="_blank">站内新闻</a></li>
+					<li><a id="zixunId" href="/contactusInfo.jhtml?type=0" target="_blank">联系我们</a></li>
 				</ul>
 			</div>
 		</div>

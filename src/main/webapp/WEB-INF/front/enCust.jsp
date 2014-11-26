@@ -21,7 +21,7 @@
 	    height: 315px;
 	    left: 178px;
 	    position: absolute;
-	    top: 317px;
+	    top: 235px;
 	    width: 556px;
 	}
 </style>
@@ -60,10 +60,7 @@
        	时间：2014-11-04
        	描述：页头
        -->
-	<div style="width:100%;height:80px;text-align:center;font-size:25px;line-height:80px;">
-		Testimonials
-	</div>
-	<jsp:include page="enHeader.jsp" />
+	<jsp:include page="enChild_header.jsp" />
 	
 	<div class="main" style="background: #eaeaea;">
 		<img src="/static/public/images/customer_img.jpg" width="100%"/>
@@ -82,7 +79,7 @@
 					<embed id="ckplayer_a1" align="middle" width="556" height="315" 
 						pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
 						<c:if test="${partners.videoLink ==null || partners.videoLink =='' }">
-							flashvars="f=http://localhost:8080/${partners.video }" 
+							flashvars="f=${www_prefix }/${partners.video }" 
 						</c:if>
 						<c:if test="${partners.videoLink !=null && partners.videoLink !='' }">
 							flashvars="f=${partners.videoLink }" 
@@ -91,7 +88,7 @@
 						quality="high" allowfullscreen="true" allowscriptaccess="always" />
 						<!-- http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf -->
 				</div>
-				<div id="m_img0${status.index+1 }" style="position: absolute; left: 880px; top: 470px; width: 200px; height: 265px;">
+				<div id="m_img0${status.index+1 }" style="position: absolute; left: 880px; top: 392px; width: 200px; height: 265px;">
 					<img src="${partners.path }" width="200" height="265"/>
 				</div>
 			</c:forEach>
