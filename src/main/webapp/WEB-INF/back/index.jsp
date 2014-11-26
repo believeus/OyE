@@ -60,6 +60,10 @@
 						<shiro:hasPermission name="contactus:view">  	
 						{"menuname":"关于我们管理","icon":"icon-nav","url":"/admin/contactus/conlist.jhtml"},
 						</shiro:hasPermission>
+						
+						<shiro:hasPermission name="contactus:view">  	
+						{"menuname":"关于我们分类管理","icon":"icon-nav","url":"/admin/category/list.jhtml"},
+						</shiro:hasPermission>
 					]
 			}
 			,{"menuid":"2","icon":"icon-sys","menuname":"系统管理",

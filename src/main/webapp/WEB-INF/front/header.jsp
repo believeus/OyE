@@ -31,7 +31,7 @@
 	<div class="logo">
 		<div style="width:1300px;height: auto;overflow: hidden;margin: 0 auto;">
 			<div class="logo-img">
-				<img src="/static/public/images/logo.png" width="160" />
+				<img src="/static/public/images/logo2.png" width="160" />
 			</div>
 			<div class="nav">
 				<ul>

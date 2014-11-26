@@ -104,6 +104,8 @@
     left: 30px;
     position: relative;
     top: 60px;
+    display: block;
+    width:300px;
 }
 .img_a2{
     height: 305px;
@@ -118,6 +120,8 @@
     left: 90px;
     position: relative;
     top: 100px;
+    display: block;
+    width:300px;
 }
 .img_a3{
     height: 299px;
@@ -132,6 +136,8 @@
     left: 30px;
     position: relative;
     top: 100px;
+    display: block;
+    width:300px;
 }
 .img_a4{
     height: 285px;
@@ -146,6 +152,8 @@
     left: 70px;
     position: relative;
     top: 100px;
+    display: block;
+    width:300px;
 }
 .img_a5{
     height: 327px;
@@ -160,6 +168,8 @@
     left: 35px;
     position: relative;
     top: 120px;
+    display: block;
+    width:300px;
 }
 .img {
     text-align: center;

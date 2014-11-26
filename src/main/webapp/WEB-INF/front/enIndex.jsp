@@ -102,6 +102,8 @@
     left: 30px;
     position: relative;
     top: 60px;
+    display: block;
+    width:300px;
 }
 .img_a2{
     height: 305px;
@@ -116,6 +118,8 @@
     left: 90px;
     position: relative;
     top: 100px;
+    display: block;
+    width:300px;
 }
 .img_a3{
     height: 299px;
@@ -130,6 +134,8 @@
     left: 30px;
     position: relative;
     top: 100px;
+    display: block;
+    width:300px;
 }
 .img_a4{
     height: 285px;
@@ -144,6 +150,8 @@
     left: 70px;
     position: relative;
     top: 100px;
+    display: block;
+    width:300px;
 }
 .img_a5{
     height: 327px;
@@ -158,6 +166,8 @@
     left: 35px;
     position: relative;
     top: 120px;
+    display: block;
+    width:300px;
 }
 .img {
     text-align: center;
@@ -1424,8 +1434,18 @@
 				<c:if test="${prosSize!=0 }">
 					<c:forEach items="${pros }" var="pro" varStatus="status">
 						<div class="img_a${status.index+1 }">
-							<span>${pro.cn }</span><br /><br />
-							<span>${pro.en }</span>
+							<span>
+								${fn:substring(pro.cn, 0, 30)}
+								<c:if test="${fn:length(pro.cn) > 30 }">
+				   					...
+			   					</c:if>
+							</span><br /><br />
+							<span>
+								${fn:substring(pro.en, 0, 30)}
+								<c:if test="${fn:length(pro.en) > 30 }">
+				   					...
+			   					</c:if>
+							</span>
 						</div>
 					</c:forEach>
 				</c:if>
