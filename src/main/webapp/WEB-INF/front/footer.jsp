@@ -15,23 +15,23 @@
 						<tr>
 							<td><a href="#">整体搬迁</a></td>
 							<td><a href="#">整体搬迁</a></td>
-							<td><a href="#">视频见证</a></td>
-							<td><a href="#">最新动态</a></td>
-							<td><a href="#">公司介绍</a></td>
+							<td><a href="/cust.jhtml">视频见证</a></td>
+							<td><a href="/newsList.jhtml?type=0">最新动态</a></td>
+							<td><a href="/contactusInfo.jhtml?type=0">公司介绍</a></td>
 						</tr>
 						<tr>
 							<td><a href="#">仓储服务</a></td>
 							<td><a href="#">仓储服务</a></td>
-							<td><a href="#">合作见证</a></td>
-							<td><a href="#">媒体报道</a></td>
-							<td><a href="#">企业资质</a></td>
+							<td><a href="/cust.jhtml">合作见证</a></td>
+							<td><a href="/newsList.jhtml?type=1">媒体报道</a></td>
+							<td><a href="/contactusInfo.jhtml?type=1">企业资质</a></td>
 						</tr>
 						<tr>
 							<td><a href="#">家具回收</a></td>
 							<td><a href="#">家具回收</a></td>
-							<td><a href="#">客户感言</a></td>
-							<td><a href="#">常见问题</a></td>
-							<td><a href="#">我们特色</a></td>
+							<td><a href="/cust.jhtml">客户感言</a></td>
+							<td><a href="/newsList.jhtml?type=2">常见问题</a></td>
+							<td><a href="/contactusInfo.jhtml?type=2">我们特色</a></td>
 						</tr>
 						<tr>
 							<td><a href="#">环境保洁</a></td>
@@ -43,7 +43,7 @@
 						<tr>
 							<td><a href="#">绿化服务</a></td>
 							<td><a href="#">绿化服务</a></td>
-							<td><a href="#">服务流程</a></td>
+							<td><a href="/serviceProcess.jhtml">服务流程</a></td>
 							<td></td>
 							<td></td>
 						</tr>

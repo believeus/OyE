@@ -118,7 +118,7 @@
 	<div style="width:100%;height:80px;text-align:center;font-size:25px;line-height:80px;">
 		Case show
 	</div>
-	<jsp:include page="header.jsp" />
+	<jsp:include page="enHeader.jsp" />
 	
 	<div class="main" style="background:#505050;">
 		<div class="main_content">
@@ -153,6 +153,6 @@
        	时间：2014-11-04
        	描述：页尾
        -->
-	<jsp:include page="footer.jsp" />
+	<jsp:include page="enFooter.jsp" />
 </body>
 </html>

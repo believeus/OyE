@@ -92,48 +92,10 @@
 		text-decoration: underline;
 		
 	}
+	.current_au{
+		color:#DD2A2A;
+	}
 </style>
-<style type="text/css">
-#banner {position:relative; width:600px; height:330px; border:1px solid #666; overflow:hidden;}
-#banner_list img {border:0px;}
-#banner_bg {position:absolute; bottom:0;background-color:#000;height:30px;filter: Alpha(Opacity=30);opacity:0.3;z-index:1000;
-cursor:pointer; width:600px; }
-#banner_info{position:absolute; bottom:0; left:5px;height:22px;color:#fff;z-index:1001;cursor:pointer}
-#banner_text {position:absolute;width:120px;z-index:1002; right:3px; bottom:3px;}
-#banner ul {position:absolute;list-style-type:none;filter: Alpha(Opacity=80);opacity:0.8; border:1px solid #fff;z-index:1002;
-margin:0; padding:0; bottom:3px; right:5px;}
-#banner ul li { padding:0px 8px;float:left;display:block;color:#FFF;border:#e5eaff 1px solid;background:#6f4f67;cursor:pointer}
-#banner ul li.on { background:#900}
-#banner_list a{position:absolute;} <!-- 让四张图片都可以重叠在一起-->
-</style>
-<script type="text/javascript">
-var t = n = 0, count;
-$(document).ready(function(){
-count=$("#banner_list a").length;
-$("#banner_list a:not(:first-child)").hide();
-$("#banner_info").html($("#banner_list a:first-child").find("img").attr('alt'));
-$("#banner_info").click(function(){window.open($("#banner_list a:first-child").attr('href'), "_blank")});
-$("#banner li").click(function() {
-var i = $(this).text() - 1;//获取Li元素内的值，即1，2，3，4
-n = i;
-if (i >= count) return;
-$("#banner_info").html($("#banner_list a").eq(i).find("img").attr('alt'));
-$("#banner_info").unbind().click(function(){window.open($("#banner_list a").eq(i).attr('href'), "_blank")})
-$("#banner_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
-document.getElementById("banner").style.background="";
-$(this).toggleClass("on");
-$(this).siblings().removeAttr("class");
-});
-t = setInterval("showAuto()", 4000);
-$("#banner").hover(function(){clearInterval(t)}, function(){t = setInterval("showAuto()", 4000);});
-})
-
-function showAuto()
-{
-n = n >=(count - 1) ? 0 : ++n;
-$("#banner li").eq(n).trigger('click');
-}
-</script>
 </head>
 <body>
 	<!--
@@ -158,13 +120,13 @@ $("#banner li").eq(n).trigger('click');
 					<div style="background:#dd2a2a;color: #fff;font-size: 15px;font-weight: bold; height: 30px;line-height: 30px;padding-left: 20px;">资讯导航</div>
 					<ul class="newstitle">
 						<li>
-							<a href="/newsList.jhtml?type=0" title="最新动态">最新动态</a>
+							<a class="current_au" id="dt" href="/newsList.jhtml?type=0" title="最新动态">最新动态</a>
 						</li>
 						<li>
-							<a href="/newsList.jhtml?type=1" title="媒体报道">媒体报道</a>
+							<a id="bd" href="/newsList.jhtml?type=1" title="媒体报道">媒体报道</a>
 						</li>
 						<li>
-							<a href="/newsList.jhtml?type=2" title="常见问题">常见问题</a>
+							<a id="wt" href="/newsList.jhtml?type=2" title="常见问题">常见问题</a>
 						</li>
 					</ul>
 				</div>
@@ -183,117 +145,7 @@ $("#banner li").eq(n).trigger('click');
 						</c:forEach>
 					</ul>
 				</div>
-				<%-- <div class="main_content_body_img">
-					<div id="bigImg">
-						<div id="banner" style="margin:0 auto;">
-							<div id="banner_bg"></div> <!--标题背景-->
-							<div id="banner_info"></div> <!--标题-->
-							<ul>
-								<c:forEach var="newx" items="${news}" varStatus="status">
-									<li <c:if test="${status.index==0 }">class="on"</c:if> >${status.index+1 }</li>
-								</c:forEach>
-							</ul>
-							<div id="banner_list">
-								<c:forEach var="newx" items="${news}" varStatus="status">
-									<a href="/newsInfo.jhtml?id=${newx.id }" target="_blank">
-										<img src="${newx.path }" title="${newx.title }" alt="${newx.title }" width="600" height="330"/>
-									</a>
-								</c:forEach>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_link">
-				<c:forEach var="newx" items="${news}" varStatus="status">
-					<p class="link_title">
-						<a href="/newsInfo.jhtml?id=${newx.id }">${newx.title }</a>
-					</p>									
-				</c:forEach>				
-				</div>
-				<c:forEach var="newx" items="${news}" varStatus="status">
-					<c:forEach var="time" items="${times}" varStatus="status2">
-						<div class="main_content_body_list">
-							<div class="list_date">
-								${time }
-							</div>
-							<div class="list_dis">
-								<div class="list_title">
-									<a href="/newsInfo.jhtml?id=${newx.id }">${newx.title }</a>
-								</div>
-								<div class="list_content">
-									${newx.content }
-								</div>
-							</div>
-						</div>
-					</c:forEach>
-				</c:forEach> --%>
-				<!-- <div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div> -->
 			</div>
-			<!-- <div style="width:1140px;height:1px;border-bottom:1px dashed #c6c6c6;margin-bottom:30px;"></div> -->
 		</div>
 	</div>
 	<!--
@@ -302,5 +154,27 @@ $("#banner li").eq(n).trigger('click');
        	描述：页尾
        -->
 	<jsp:include page="footer.jsp" />
+	<script type="text/javascript">
+		$(function(){
+			//alert(window.location.href.substring(window.location.href.length-1));
+			var type = window.location.href.substring(window.location.href.length-1);
+			if(type==0){
+				$("#dt").removeClass("current_au");
+				$("#bd").removeClass("current_au");
+				$("#wt").removeClass("current_au");
+				$("#dt").addClass("current_au");
+			}else if(type==1){
+				$("#dt").removeClass("current_au");
+				$("#bd").removeClass("current_au");
+				$("#wt").removeClass("current_au");
+				$("#bd").addClass("current_au");
+			}else if(type==2){
+				$("#dt").removeClass("current_au");
+				$("#bd").removeClass("current_au");
+				$("#wt").removeClass("current_au");
+				$("#wt").addClass("current_au");
+			}
+		});
+	</script>
 </body>
 </html>

@@ -36,23 +36,23 @@
 						<tr>
 							<td><a href="#">Relocation</a></td>
 							<td><a href="#">Relocation</a></td>
-							<td><a href="#">Testimony</a></td>
-							<td><a href="#">Developments</a></td>
-							<td><a href="#">Introduction</a></td>
+							<td><a href="/cust.jhtml">Testimony</a></td>
+							<td><a href="/newsList.jhtml?type=0">Developments</a></td>
+							<td><a href="/contactusInfo.jhtml?type=0">Introduction</a></td>
 						</tr>
 						<tr>
 							<td><a href="#">Warehousing</a></td>
 							<td><a href="#">Warehousing</a></td>
-							<td><a href="#">Cooperative</a></td>
-							<td><a href="#">MediaReports</a></td>
-							<td><a href="#">CompanyTeam</a></td>
+							<td><a href="/cust.jhtml">Cooperative</a></td>
+							<td><a href="/newsList.jhtml?type=1">MediaReports</a></td>
+							<td><a href="/contactusInfo.jhtml?type=1">CompanyTeam</a></td>
 						</tr>
 						<tr>
 							<td><a href="#">Furniture</a></td>
 							<td><a href="#">Furniture</a></td>
-							<td><a href="#">Testimonials</a></td>
-							<td><a href="#">CommonProblem</a></td>
-							<td><a href="#">OursFeature</a></td>
+							<td><a href="/cust.jhtml">Testimonials</a></td>
+							<td><a href="/newsList.jhtml?type=2">CommonProblem</a></td>
+							<td><a href="/contactusInfo.jhtml?type=2">OursFeature</a></td>
 						</tr>
 						<tr>
 							<td><a href="#">Environmental</a></td>
@@ -64,7 +64,7 @@
 						<tr>
 							<td><a href="#">GreenService</a></td>
 							<td><a href="#">GreenService</a></td>
-							<td><a href="#">ServiceProcess</a></td>
+							<td><a href="/serviceProcess.jhtml">ServiceProcess</a></td>
 							<td></td>
 							<td></td>
 						</tr>
