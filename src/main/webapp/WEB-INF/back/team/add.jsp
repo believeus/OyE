@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					中文姓名:
 				</th>
 				<td>
-					<input type="text" name="name" class="text" maxlength="200" />
+					<input type="text" name="name" class="text" maxlength="100" />
 				</td>
 			</tr>
 			<tr>
@@ -64,7 +64,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					英文姓名:
 				</th>
 				<td>
-					<input type="text" name="ehName" class="text" maxlength="200" />
+					<input type="text" name="ehName" class="text" maxlength="100" />
 				</td>
 			</tr>
 			<tr>
@@ -72,7 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					成员职位:
 				</th>
 				<td>
-					<input type="text" name="position" class="text" maxlength="200" />
+					<input type="text" name="position" class="text" maxlength="100" />
 				</td>
 			</tr>
 			<tr id="pathTr">
@@ -101,7 +101,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					中文描述:
 				</th>
 				<td colspan="3">
-					<textarea id="" name="content" class="editor" style="width: 400px;height: 100px"></textarea>
+					<textarea id="" name="content" class="editor" style="width: 400px;height: 100px" maxlength="26"></textarea>
 				</td>
 			</tr>
 			<tr id="contentTr">
@@ -109,7 +109,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					英文描述:
 				</th>
 				<td colspan="3">
-					<textarea id="" name="encontent" class="editor" style="width: 400px;height: 100px"></textarea>
+					<textarea id="" name="encontent" class="editor" style="width: 400px;height: 100px" maxlength="26"></textarea>
 				</td>
 			</tr>
 			<tr>

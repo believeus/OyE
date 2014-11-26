@@ -60,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					服务中文名称:
 				</th>
 				<td>
-					<input type="text" name="title" class="text" maxlength="200" />
+					<input type="text" name="title" class="text" maxlength="16" />
 				</td>
 			</tr>
 			<tr>
@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					服务英文名称:
 				</th>
 				<td>
-					<input type="text" name="entitle" class="text" maxlength="200" />
+					<input type="text" name="entitle" class="text" maxlength="16" />
 				</td>
 			</tr>
 			<tr id="pathTr">
@@ -97,7 +97,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					中文描述:
 				</th>
 				<td colspan="3">
-					<textarea id="" name="description" class="editor" style="height: 100px;width: 400px"></textarea>
+					<textarea id="" name="description" class="editor" style="height: 100px;width: 400px" maxlength="150"></textarea>
 				</td>
 			</tr>
 			<tr id="contentTr">
@@ -105,7 +105,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					英文描述:
 				</th>
 				<td colspan="3">
-					<textarea id="" name="endescription" class="editor" style="width: 400px;height: 100px"></textarea>
+					<textarea id="" name="endescription" class="editor" style="width: 400px;height: 100px" maxlength="150"></textarea>
 				</td>
 			</tr>
 			<tr>

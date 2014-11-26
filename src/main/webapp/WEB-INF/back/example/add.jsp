@@ -129,7 +129,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					案例名称:
 				</th>
 				<td>
-					<input type="text" name="name" />
+					<input type="text" name="name" maxlength="200" />
 				</td>
 			</tr>
 			<tr>
@@ -137,7 +137,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					案例英文名称:
 				</th>
 				<td>
-					<input type="text" name="enName" />
+					<input type="text" name="enName" maxlength="200" />
 				</td>
 			</tr>
 			<tr id="pathTr">
@@ -189,7 +189,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					案例介绍:
 				</th>
 				<td colspan="3">
-					<textarea id="editor" name="content" style="width: 600px; height: 200px;"></textarea>
+					<textarea id="editor" name="content" style="width: 600px; height: 200px;" maxlength="200"></textarea>
 				</td>
 			</tr>
 			<tr>
@@ -197,7 +197,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					案例英文介绍:
 				</th>
 				<td colspan="3">
-					<textarea id="editor2" name="enContent" style="width: 600px; height: 200px;"></textarea>
+					<textarea id="editor2" name="enContent" style="width: 600px; height: 200px;" maxlength="200"></textarea>
 				</td>
 			</tr>
 			<tr>

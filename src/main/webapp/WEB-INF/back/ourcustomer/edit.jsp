@@ -109,7 +109,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					链接:
 				</th>
 				<td colspan="3">
-					<input type="text" name="clink" value="${customers.clink }" style="width:192px;">
+					<input type="text" name="clink" value="${customers.clink }" style="width:192px;" maxlength="200">
 				</td>
 			</tr>
 			<tr>

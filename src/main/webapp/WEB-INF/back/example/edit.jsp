@@ -151,7 +151,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					案例名称:
 				</th>
 				<td>
-					<input type="text" name="name" value="${example.name }"/>
+					<input type="text" name="name" value="${example.name }" maxlength="200"/>
 				</td>
 			</tr>
 			<tr>
@@ -159,7 +159,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					案例英文名称:
 				</th>
 				<td>
-					<input type="text" name="enName" value="${example.enName }" />
+					<input type="text" name="enName" value="${example.enName }" maxlength="200"/>
 				</td>
 			</tr>
 			<tr id="pathTr">

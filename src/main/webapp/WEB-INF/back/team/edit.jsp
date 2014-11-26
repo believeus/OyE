@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					成员姓名:
 				</th>
 				<td>
-					<input type="text" name="name" class="text" maxlength="200" value="${team.name}"/>
+					<input type="text" name="name" class="text" maxlength="100" value="${team.name}"/>
 				</td>
 			</tr>
 			<tr>
@@ -65,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					英文姓名:
 				</th>
 				<td>
-					<input type="text" name="ehName" class="text" maxlength="200" value="${team.ehName}"/>
+					<input type="text" name="ehName" class="text" maxlength="100" value="${team.ehName}"/>
 				</td>
 			</tr>
 			<tr>
@@ -73,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					成员职位:
 				</th>
 				<td>
-					<input type="text" name="position" class="text" maxlength="200" value="${team.position}"/>
+					<input type="text" name="position" class="text" maxlength="100" value="${team.position}"/>
 				</td>
 			</tr>
 			<tr id="pathTr">
@@ -102,7 +102,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					内容:
 				</th>
 				<td colspan="3">
-					<textarea id="" name="content" class="editor" style="width: 400px;height: 100px">${team.content}</textarea>
+					<textarea id="" name="content" class="editor" style="width: 400px;height: 100px" maxlength="26">${team.content}</textarea>
 				</td>
 			</tr>
 			<tr id="contentTr">
@@ -110,7 +110,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					内容:
 				</th>
 				<td colspan="3">
-					<textarea id="" name="encontent" class="editor" style="width: 400px;height: 100px">${enteam.content}</textarea>
+					<textarea id="" name="encontent" class="editor" style="width: 400px;height: 100px" maxlength="26">${enteam.content}</textarea>
 				</td>
 			</tr>
 			<tr>
