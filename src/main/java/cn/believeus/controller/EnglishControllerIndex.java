@@ -104,26 +104,55 @@ public class EnglishControllerIndex {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/english/newsList")
 	public String news(HttpServletRequest request,Integer type) {
-		List<ENNews> news;
-		if (type ==0) {
-			news = (List<ENNews>)baseService.findObjectList(ENNews.class,"type",type);
-			request.setAttribute("news", news);
+		
+		String pageNumber = request.getParameter("pageNumber");
+		// 如果为空，则设置为1
+		if (StringUtils.isEmpty(pageNumber)) {
+			pageNumber="1";
+		}
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),2);
+		String hql;
+		if (type==0) {
+			hql= "from ENNews as entity where entity.type=0 order by editTime desc";
+			Page<?> page = baseService.findObjectList(hql, pageable);
+			request.setAttribute("news", page.getContent());
+			request.setAttribute("size",page.getTotal());
+			PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
 		}else if (type ==1) {
-			news = (List<ENNews>)baseService.findObjectList(ENNews.class,"type",type);
-			request.setAttribute("news", news);
-		}else if (type ==2) {
-			news = (List<ENNews>)baseService.findObjectList(ENNews.class,"type",type);
-			request.setAttribute("news", news);
-		}else {
-			news = new ArrayList<ENNews>();
-			request.setAttribute("news", news);
+			hql= "from ENNews as entity where entity.type=1 order by editTime desc";
+			Page<?> page = baseService.findObjectList(hql, pageable);
+			request.setAttribute("news", page.getContent());
+			request.setAttribute("size",page.getTotal());
+			PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
+		}else if (type==2) {
+			hql= "from ENNews as entity where entity.type=2 order by editTime desc";
+			Page<?> page = baseService.findObjectList(hql, pageable);
+			request.setAttribute("news", page.getContent());
+			request.setAttribute("size",page.getTotal());
+			PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
 		}
-		for (ENNews news2 : news) {
-			SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
-			List<String> dates =  new ArrayList<String>();
-			dates.add(sdf.format(news2.getCreateTime()));
-			request.setAttribute("times", dates);
-		}
+		request.setAttribute("type", type);
+		
+//		List<ENNews> news;
+//		if (type ==0) {
+//			news = (List<ENNews>)baseService.findObjectList(ENNews.class,"type",type);
+//			request.setAttribute("news", news);
+//		}else if (type ==1) {
+//			news = (List<ENNews>)baseService.findObjectList(ENNews.class,"type",type);
+//			request.setAttribute("news", news);
+//		}else if (type ==2) {
+//			news = (List<ENNews>)baseService.findObjectList(ENNews.class,"type",type);
+//			request.setAttribute("news", news);
+//		}else {
+//			news = new ArrayList<ENNews>();
+//			request.setAttribute("news", news);
+//		}
+//		for (ENNews news2 : news) {
+//			SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
+//			List<String> dates =  new ArrayList<String>();
+//			dates.add(sdf.format(news2.getCreateTime()));
+//			request.setAttribute("times", dates);
+//		}
 		//企业信息
 		ENCompanyInfo companyInfo = (ENCompanyInfo) baseService.findObject(ENCompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
@@ -211,10 +240,11 @@ public class EnglishControllerIndex {
 		ENContactusInfo  contactusInfo=new ENContactusInfo();
 		if (id!=null&&id!=0) {
 			contactusInfo= (ENContactusInfo)baseService.findObject(ENContactusInfo.class, id);
+			request.setAttribute("contactusInfo", contactusInfo);
 		}else {
-			contactusInfo= (ENContactusInfo)baseService.findObject(ENContactusInfo.class, 1);
+			List<ENContactusInfo> contactusInfos= (List<ENContactusInfo>)baseService.findObjectList(ENContactusInfo.class);
+			request.setAttribute("contactusInfo", contactusInfos.get(0));
 		}
-		request.setAttribute("contactusInfo", contactusInfo);
 		List<ENContactusInfo> contactusInfos = (List<ENContactusInfo>)baseService.findObjectList(ENContactusInfo.class);
 		request.setAttribute("categories", contactusInfos);
 		return "/WEB-INF/front/enContactusInfo.jsp";

@@ -8,7 +8,9 @@
 <title>站内新闻</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
+<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/public/js/list.js"></script>
 <style type="text/css">
 	.main_content{
 		width:1140px;height:auto;overflow:hidden;margin:0 auto;
@@ -142,6 +144,10 @@
 						</c:forEach>
 					</ul>
 				</div>
+				<form action="/newsList.jhtml" id="listForm">
+					<input type="hidden" name="type" value="${type }" />
+					<jsp:include page="/WEB-INF/back/include/pagination.jsp" flush="true" />
+				</form>
 			</div>
 		</div>
 	</div>
@@ -154,7 +160,8 @@
 	<script type="text/javascript">
 		$(function(){
 			//alert(window.location.href.substring(window.location.href.length-1));
-			var type = window.location.href.substring(window.location.href.length-1);
+			var type = window.location.href.substring(window.location.href.indexOf("?")+6,window.location.href.indexOf("?")+7);
+			//alert(type);
 			if(type==0){
 				$("#dt").removeClass("current_au");
 				$("#bd").removeClass("current_au");

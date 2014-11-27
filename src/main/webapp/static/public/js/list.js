@@ -169,11 +169,11 @@ $().ready( function() {
 		return false;
 	};
 	
-	// 列表查询
-	if (location.search != "") {
-		addCookie("listQuery", location.search);
-	} else {
-		//removeCookie("listQuery");
-	}
+//	// 列表查询
+//	if (location.search != "") {
+//		addCookie("listQuery", location.search);
+//	} else {
+//		//removeCookie("listQuery");
+//	}
 
 });

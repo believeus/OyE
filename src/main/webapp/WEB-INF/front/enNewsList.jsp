@@ -8,7 +8,9 @@
 <title>Station News</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
+<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/public/js/list.js"></script>
 <style type="text/css">
 	.main_content{
 		width:1140px;height:auto;overflow:hidden;margin:0 auto;
@@ -92,6 +94,9 @@
 		text-decoration: underline;
 		
 	}
+	.current_au{
+		color:#DD2A2A;
+	}
 </style>
 </head>
 <body>
@@ -113,13 +118,13 @@
 					<div style="background:#dd2a2a;color: #fff;font-size: 15px;font-weight: bold; height: 30px;line-height: 30px;padding-left: 20px;">Information</div>
 					<ul class="newstitle">
 						<li>
-							<a href="/newsList.jhtml?type=0" title="Dynamic News">Dynamic News</a>
+							<a id="dt" href="/newsList.jhtml?type=0" title="Dynamic News">Dynamic News</a>
 						</li>
 						<li>
-							<a href="/newsList.jhtml?type=1" title="Media Reports">Media Reports</a>
+							<a id="bd" href="/newsList.jhtml?type=1" title="Media Reports">Media Reports</a>
 						</li>
 						<li>
-							<a href="/newsList.jhtml?type=2" title="Common Problem">Common Problem</a>
+							<a id="wt" href="/newsList.jhtml?type=2" title="Common Problem">Common Problem</a>
 						</li>
 					</ul>
 				</div>
@@ -138,117 +143,12 @@
 						</c:forEach>
 					</ul>
 				</div>
-				<%-- <div class="main_content_body_img">
-					<div id="bigImg">
-						<div id="banner" style="margin:0 auto;">
-							<div id="banner_bg"></div> <!--标题背景-->
-							<div id="banner_info"></div> <!--标题-->
-							<ul>
-								<c:forEach var="newx" items="${news}" varStatus="status">
-									<li <c:if test="${status.index==0 }">class="on"</c:if> >${status.index+1 }</li>
-								</c:forEach>
-							</ul>
-							<div id="banner_list">
-								<c:forEach var="newx" items="${news}" varStatus="status">
-									<a href="/newsInfo.jhtml?id=${newx.id }" target="_blank">
-										<img src="${newx.path }" title="${newx.title }" alt="${newx.title }" width="600" height="330"/>
-									</a>
-								</c:forEach>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_link">
-				<c:forEach var="newx" items="${news}" varStatus="status">
-					<p class="link_title">
-						<a href="/newsInfo.jhtml?id=${newx.id }">${newx.title }</a>
-					</p>									
-				</c:forEach>				
-				</div>
-				<c:forEach var="newx" items="${news}" varStatus="status">
-					<c:forEach var="time" items="${times}" varStatus="status2">
-						<div class="main_content_body_list">
-							<div class="list_date">
-								${time }
-							</div>
-							<div class="list_dis">
-								<div class="list_title">
-									<a href="/newsInfo.jhtml?id=${newx.id }">${newx.title }</a>
-								</div>
-								<div class="list_content">
-									${newx.content }
-								</div>
-							</div>
-						</div>
-					</c:forEach>
-				</c:forEach> --%>
-				<!-- <div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div> -->
+				
+				<form action="/newsList.jhtml" id="listForm">
+					<input type="hidden" name="type" value="${type }" />
+					<jsp:include page="/WEB-INF/back/include/pagination.jsp" flush="true" />
+				</form>
 			</div>
-			<!-- <div style="width:1140px;height:1px;border-bottom:1px dashed #c6c6c6;margin-bottom:30px;"></div> -->
 		</div>
 	</div>
 	<!--
@@ -257,5 +157,28 @@
        	描述：页尾
        -->
 	<jsp:include page="enFooter.jsp" />
+	<script type="text/javascript">
+		$(function(){
+			//alert(window.location.href.substring(window.location.href.length-1));
+			var type = window.location.href.substring(window.location.href.indexOf("?")+6,window.location.href.indexOf("?")+7);
+			//alert(type);
+			if(type==0){
+				$("#dt").removeClass("current_au");
+				$("#bd").removeClass("current_au");
+				$("#wt").removeClass("current_au");
+				$("#dt").addClass("current_au");
+			}else if(type==1){
+				$("#dt").removeClass("current_au");
+				$("#bd").removeClass("current_au");
+				$("#wt").removeClass("current_au");
+				$("#bd").addClass("current_au");
+			}else if(type==2){
+				$("#dt").removeClass("current_au");
+				$("#bd").removeClass("current_au");
+				$("#wt").removeClass("current_au");
+				$("#wt").addClass("current_au");
+			}
+		});
+	</script>
 </body>
 </html>

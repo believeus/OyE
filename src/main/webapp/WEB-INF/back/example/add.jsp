@@ -189,7 +189,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					案例介绍:
 				</th>
 				<td colspan="3">
-					<textarea id="editor" name="content" style="width: 600px; height: 200px;" maxlength="200"></textarea>
+					<textarea id="editor" name="content" maxlength="200" style="width: 600px; height: 200px;" maxlength="200"></textarea>
 				</td>
 			</tr>
 			<tr>
@@ -197,7 +197,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					案例英文介绍:
 				</th>
 				<td colspan="3">
-					<textarea id="editor2" name="enContent" style="width: 600px; height: 200px;" maxlength="200"></textarea>
+					<textarea id="editor2" name="enContent" maxlength="200" style="width: 600px; height: 200px;" maxlength="200"></textarea>
 				</td>
 			</tr>
 			<tr>

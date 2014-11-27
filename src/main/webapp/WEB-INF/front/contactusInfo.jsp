@@ -121,14 +121,16 @@
 									<c:if test="${status.index==0}">id="dt" </c:if>
 									<c:if test="${status.index==1}">id="ry" </c:if>
 									<c:if test="${status.index==2}">id="wh" </c:if>
+									<c:if test="${status.index==3}">id="wh2" </c:if>
+									<c:if test="${status.index==4}">id="wh3" </c:if>
 									<c:if test="${status.index==0}"> class="current_au" </c:if> 
-									href="/contactusInfo.jhtml?id=${category.id }" title="${category.category }">${category.category }</a>
+									href="/contactusInfo.jhtml?id=${category.id }#${status.index}" title="${category.category }">${category.category }</a>
 							</li>
 						</c:forEach>
 					</ul>
 				</div>
 				<div style="width:900px;height:30px;overflow: hidden;float:left;border-bottom:1px solid #eee;line-height:30px;margin-bottom: 10px;">
-					&gt;&gt;  您的位置：<a href="/contactusInfo.jhtml?type=0">${contactusInfo.category}</a>
+					&gt;&gt;  您的位置：&gt;&gt;关于我们&gt;&gt;<a href="/contactusInfo.jhtml?type=0">${contactusInfo.category}</a>
 				</div>
 				<div style="width:900px;height:auto;overflow: hidden;float:left;">
 					<div>${contactusInfo.content }</div>
@@ -150,17 +152,37 @@
 				$("#dt").removeClass("current_au");
 				$("#ry").removeClass("current_au");
 				$("#wh").removeClass("current_au");
+				$("#wh2").removeClass("current_au");
+				$("#wh3").removeClass("current_au");
 				$("#dt").addClass("current_au");
 			}else if(type==1){
 				$("#dt").removeClass("current_au");
 				$("#ry").removeClass("current_au");
 				$("#wh").removeClass("current_au");
+				$("#wh2").removeClass("current_au");
+				$("#wh3").removeClass("current_au");
 				$("#ry").addClass("current_au");
 			}else if(type==2){
 				$("#dt").removeClass("current_au");
 				$("#ry").removeClass("current_au");
 				$("#wh").removeClass("current_au");
+				$("#wh2").removeClass("current_au");
+				$("#wh3").removeClass("current_au");
 				$("#wh").addClass("current_au");
+			}else if(type==3){
+				$("#dt").removeClass("current_au");
+				$("#ry").removeClass("current_au");
+				$("#wh").removeClass("current_au");
+				$("#wh2").removeClass("current_au");
+				$("#wh3").removeClass("current_au");
+				$("#wh2").addClass("current_au");
+			}else if(type==3){
+				$("#dt").removeClass("current_au");
+				$("#ry").removeClass("current_au");
+				$("#wh").removeClass("current_au");
+				$("#wh2").removeClass("current_au");
+				$("#wh3").removeClass("current_au");
+				$("#wh3").addClass("current_au");
 			}
 			
 		});

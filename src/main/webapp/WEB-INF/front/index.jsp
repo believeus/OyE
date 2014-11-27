@@ -199,6 +199,10 @@
 	color:#ff5900;
 	text-decoration: underline;
 }
+.abus img{
+	width:100px;
+	float:left;
+}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -1559,7 +1563,12 @@
 						<div style="">
 							<c:if test="${contactusInfo!=null }">
 								<img src="${contactusInfo.path }" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />
-								<span style="color: #d6d6d6;line-height: 27px;">${contactusInfo.content }</span>
+								<span class="abus" style="color: #d6d6d6;line-height: 27px;">
+									${fn:substring(contactusInfo.content, 0, 120)}
+									<c:if test="${fn:length(contactusInfo.content) > 120 }">
+					   					...
+				   					</c:if>
+								</span>
 							</c:if>
 							<c:if test="${contactusInfo==null }">
 								<img src="/static/public/images/img08.jpg" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />

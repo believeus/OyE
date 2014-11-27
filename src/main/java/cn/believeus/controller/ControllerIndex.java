@@ -110,15 +110,44 @@ public class ControllerIndex {
 		List<News> news2 = (List<News>) baseService.findObjectList(News.class);
 		request.setAttribute("newsSize", news2.size());
 		//关于我们
-		ContactusInfo contactusInfo = (ContactusInfo)baseService.findObject(ContactusInfo.class, 1);
-		request.setAttribute("contactusInfo", contactusInfo);
+		List<ContactusInfo> contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class);
+		request.setAttribute("contactusInfo", contactusInfos.get(0));
 		
 		return "/WEB-INF/front/index.jsp";
 	}
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/newsList")
 	public String news(HttpServletRequest request,Integer type) {
-		List<News> news;
+		
+		String pageNumber = request.getParameter("pageNumber");
+		// 如果为空，则设置为1
+		if (StringUtils.isEmpty(pageNumber)) {
+			pageNumber="1";
+		}
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),10);
+		String hql;
+		if (type==0) {
+			hql= "from News as entity where entity.type=0 order by editTime desc";
+			Page<?> page = baseService.findObjectList(hql, pageable);
+			request.setAttribute("news", page.getContent());
+			request.setAttribute("size",page.getTotal());
+			PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
+		}else if (type ==1) {
+			hql= "from News as entity where entity.type=1 order by editTime desc";
+			Page<?> page = baseService.findObjectList(hql, pageable);
+			request.setAttribute("news", page.getContent());
+			request.setAttribute("size",page.getTotal());
+			PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
+		}else if (type==2) {
+			hql= "from News as entity where entity.type=2 order by editTime desc";
+			Page<?> page = baseService.findObjectList(hql, pageable);
+			request.setAttribute("news", page.getContent());
+			request.setAttribute("size",page.getTotal());
+			PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
+		}
+		request.setAttribute("type", type);
+		// 分页
+		
+		/*List<News> news;
 		if (type ==0) {
 			news = (List<News>)baseService.findObjectList(News.class,"type",type);
 			request.setAttribute("news", news);
@@ -131,7 +160,7 @@ public class ControllerIndex {
 		}else {
 			news = new ArrayList<News>();
 			request.setAttribute("news", news);
-		}
+		}*/
 		//企业信息
 		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
@@ -212,11 +241,24 @@ public class ControllerIndex {
 		out.close();
 	}
 	
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/caseList")
 	public String cases(HttpServletRequest request) {
-		List<Example> examples = (List<Example>)baseService.findObjectList(Example.class);
-		request.setAttribute("examples", examples);
+		
+		String pageNumber = request.getParameter("pageNumber");
+		// 如果为空，则设置为1
+		if (StringUtils.isEmpty(pageNumber)) {
+			pageNumber="1";
+		}
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),12);
+		String hql="From Example example order by example.editTime desc";
+		Page<?> page = baseService.findObjectList(hql, pageable);
+		request.setAttribute("examples", page.getContent());
+		request.setAttribute("size",page.getTotal());
+		// 分页
+		PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
+		
+//		List<Example> examples = (List<Example>)baseService.findObjectList(Example.class);
+//		request.setAttribute("examples", examples);
 		//企业信息
 		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
@@ -259,10 +301,11 @@ public class ControllerIndex {
 		ContactusInfo  contactusInfo=new ContactusInfo();
 		if (id!=null&&id!=0) {
 			contactusInfo= (ContactusInfo)baseService.findObject(ContactusInfo.class, id);
+			request.setAttribute("contactusInfo", contactusInfo);
 		}else {
-			contactusInfo= (ContactusInfo)baseService.findObject(ContactusInfo.class, 1);
+			List<ContactusInfo> contactusInfos= (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class);
+			request.setAttribute("contactusInfo", contactusInfos.get(0));
 		}
-		request.setAttribute("contactusInfo", contactusInfo);
 		List<ContactusInfo> contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class);
 		request.setAttribute("categories", contactusInfos);
 		return "/WEB-INF/front/contactusInfo.jsp";

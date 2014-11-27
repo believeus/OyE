@@ -8,7 +8,9 @@
 <title>案例列表页面</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
+<link href="/static/public/css/common_s.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/public/js/list.js"></script>
 <style type="text/css">
 	.main_content{
 		width:1140px;height:auto;overflow:hidden;margin:0 auto;
@@ -239,6 +241,9 @@
 					</div>
 				</div> -->
 			</div>
+			<form action="/caseList.jhtml" id="listForm">
+				<jsp:include page="/WEB-INF/back/include/pagination.jsp" flush="true" />
+			</form>
 		</div>
 	</div>
 	<!--
