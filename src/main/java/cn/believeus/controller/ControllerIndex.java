@@ -28,7 +28,6 @@ import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Banner;
 import cn.believeus.model.Business;
-import cn.believeus.model.Category;
 import cn.believeus.model.CompanyInfo;
 import cn.believeus.model.ContactusInfo;
 import cn.believeus.model.Customers;
@@ -256,26 +255,16 @@ public class ControllerIndex {
 	 */
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/contactusInfo")
-	public String contactusInfoList(HttpServletRequest request,Integer type) {
-		List<ContactusInfo> contactusInfos;
-		if (type==0) {
-			contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class,"type",type);
-			request.setAttribute("contactusInfos", contactusInfos);
-		}else if (type==1) {
-			contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class,"type",type);
-			request.setAttribute("contactusInfos", contactusInfos);
-		}else if (type==2) {
-			contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class,"type",type);
-			request.setAttribute("contactusInfos", contactusInfos);
+	public String contactusInfoList(HttpServletRequest request,Integer id) {
+		ContactusInfo  contactusInfo=new ContactusInfo();
+		if (id!=null&&id!=0) {
+			contactusInfo= (ContactusInfo)baseService.findObject(ContactusInfo.class, id);
 		}else {
-			contactusInfos = new ArrayList<ContactusInfo>();
-			request.setAttribute("contactusInfos", contactusInfos);
+			contactusInfo= (ContactusInfo)baseService.findObject(ContactusInfo.class, 1);
 		}
-		List<Category> categories = (List<Category>) baseService.findObjectList(Category.class);
-		request.setAttribute("categories", categories);
-		//企业信息
-		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
-		request.setAttribute("companyInfo", companyInfo);
+		request.setAttribute("contactusInfo", contactusInfo);
+		List<ContactusInfo> contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class);
+		request.setAttribute("categories", contactusInfos);
 		return "/WEB-INF/front/contactusInfo.jsp";
 	}
 	

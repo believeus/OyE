@@ -1553,7 +1553,7 @@
 							关于我们
 						</div>
 						<div style="float:right;width:50px;">
-							<a href="/contactusInfo.jhtml?type=0" style="color:#fff;" target="_blank">更多&gt;&gt;</a>
+							<a href="/contactusInfo.jhtml" style="color:#fff;" target="_blank">更多&gt;&gt;</a>
 						</div>
 					</div>
 						<div style="">

@@ -106,32 +106,29 @@
 		<!-- <img src="/static/public/images/news_list.jpg" width="100%"/> -->
 		<div class="main_content">
 			<div class="main_content_title">
-				<div class="main_content_title_2">About Us</div>
+				<div class="main_content_title_2">${contactusInfo.category}</div>
 			</div>
 			<div class="main_content_body">
 				<div style="width:180px;height:300px;overflow:hidden;float:left;margin-right:50px;border: 2px solid #e4e4e4;margin-bottom:50px;">
 					<div style="background:#dd2a2a;color: #fff;font-size: 15px;font-weight: bold; height: 30px;line-height: 30px;padding-left: 20px;">Column navigation</div>
 					<ul class="newstitle">
-						<li>
-							<a id="dt" href="/contactusInfo.jhtml?type=0" title="Company introduction">CompanyIntroduct</a>
-						</li>
-						<li>
-							<a id="ry" href="/contactusInfo.jhtml?type=1" title="company qualification">companyQualify</a>
-						</li>
-						<li>
-							<a id="wh" href="/contactusInfo.jhtml?type=2" title="company feature">companyFeature</a>
-						</li>
+						<c:forEach items="${categories }" var="category" varStatus="status">
+							<li>
+								<a
+									<c:if test="${status.index==0}">id="dt" </c:if>
+									<c:if test="${status.index==1}">id="ry" </c:if>
+									<c:if test="${status.index==2}">id="wh" </c:if>
+									<c:if test="${status.index==0}"> class="current_au" </c:if> 
+									href="/contactusInfo.jhtml?id=${category.id }" title="${category.category }">${category.category }</a>
+							</li>
+						</c:forEach>
 					</ul>
 				</div>
 				<div style="width:900px;height:30px;overflow: hidden;float:left;border-bottom:1px solid #eee;line-height:30px;margin-bottom: 10px;">
-					&gt;&gt;  your position：<a href="/contactusInfo.jhtml?type=0">About Us</a>
+					&gt;&gt;  your position：<a href="/contactusInfo.jhtml?type=0">${contactusInfo.category}</a>
 				</div>
 				<div style="width:900px;height:auto;overflow: hidden;float:left;">
-					<c:forEach items="${contactusInfos }" var="news" varStatus="status">
-						<c:if test="${status.index==0 }">
-							<div>${news.content }</div>
-						</c:if>
-					</c:forEach>
+					<div>${contactusInfo.content }</div>
 				</div>
 			</div>
 		</div>

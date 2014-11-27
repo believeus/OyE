@@ -108,7 +108,7 @@
 		<!-- <img src="/static/public/images/news_list.jpg" width="100%"/> -->
 		<div class="main_content">
 			<div class="main_content_title">
-				<div class="main_content_title_2">关于我们</div>
+				<div class="main_content_title_2">${contactusInfo.category}</div>
 			</div>
 			<div class="main_content_body">
 				
@@ -122,29 +122,16 @@
 									<c:if test="${status.index==1}">id="ry" </c:if>
 									<c:if test="${status.index==2}">id="wh" </c:if>
 									<c:if test="${status.index==0}"> class="current_au" </c:if> 
-									href="${category.link }" title="${category.name }">${category.name }</a>
+									href="/contactusInfo.jhtml?id=${category.id }" title="${category.category }">${category.category }</a>
 							</li>
 						</c:forEach>
-						<!-- <li>
-							<a id="dt" class="current_au" href="/contactusInfo.jhtml?type=0" title="公司介绍">公司介绍</a>
-						</li>
-						<li>
-							<a id="ry" href="/contactusInfo.jhtml?type=1" title="企业资质">企业资质</a>
-						</li>
-						<li>
-							<a id="wh" href="/contactusInfo.jhtml?type=2" title="我们特色">我们特色</a>
-						</li> -->
 					</ul>
 				</div>
 				<div style="width:900px;height:30px;overflow: hidden;float:left;border-bottom:1px solid #eee;line-height:30px;margin-bottom: 10px;">
-					&gt;&gt;  您的位置：<a href="/contactusInfo.jhtml?type=0">关于我们</a>
+					&gt;&gt;  您的位置：<a href="/contactusInfo.jhtml?type=0">${contactusInfo.category}</a>
 				</div>
 				<div style="width:900px;height:auto;overflow: hidden;float:left;">
-					<c:forEach items="${contactusInfos }" var="news" varStatus="status">
-						<c:if test="${status.index==0 }">
-							<div>${news.content }</div>
-						</c:if>
-					</c:forEach>
+					<div>${contactusInfo.content }</div>
 				</div>
 			</div>
 		</div>

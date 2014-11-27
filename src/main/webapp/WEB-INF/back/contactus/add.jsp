@@ -45,10 +45,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			rules: {
 				title: "required",
 				entitle: "required",
-				upload_img: "required",
 				content: "required",
 				encontent: "required",
-				type:"required"
+				category:"required",
+				encategory:"required"
 			}
 		});
 	});
@@ -64,18 +64,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table class="input">
 			<tr>
 				<th>
-					选择分类:
+					中文分类名:
 				</th>
 				<td>
-					<select name="type">
-						<option value="">--请选择--</option>
-						<option value="0">公司介绍</option>
-						<option value="1">企业资质</option>
-						<option value="2">我们特色</option>
-					</select>
+					<input type="text" name="category" class="text" maxlength="200" />
 				</td>
 			</tr>
 			<tr>
+				<th>
+					英文分类名:
+				</th>
+				<td>
+					<input type="text" name="encategory" class="text" maxlength="200" />
+				</td>
+			</tr>
+			<!-- <tr>
 				<th>
 					中文标题:
 				</th>
@@ -90,8 +93,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<td>
 					<input type="text" name="entitle" class="text" maxlength="200" />
 				</td>
-			</tr>
-			<tr id="pathTr">
+			</tr> -->
+			 <tr id="pathTr">
 				<th>
 					相关图片:
 				</th>
@@ -111,7 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</span>
 					</div>
 				</td>
-			</tr>
+			</tr> 
 			<tr id="contentTr">
 				<th>
 					中文内容:

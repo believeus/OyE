@@ -46,7 +46,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				title: "required",
 				content: "required",
 				entitle: "required",
-				encontent: "required"
+				encontent: "required",
+				category:"required",
+				encategory:"required"
 			}
 		});
 		
@@ -66,38 +68,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table class="input">
 			<tr>
 				<th>
-					选择分类:
+					中文分类名:
 				</th>
 				<td>
-					<select name="type">
-						<c:if test="${contactusInfo.type==null }">
-							<option value="">--请选择--</option>
-							<option value="0">公司介绍</option>
-							<option value="1">企业资质</option>
-							<option value="2">我们特色</option>
-						</c:if>
-						<c:if test="${contactusInfo.type==0 }">
-							<option value="">--请选择--</option>
-							<option value="0" selected="selected">公司介绍</option>
-							<option value="1">企业资质</option>
-							<option value="2">我们特色</option>
-						</c:if>
-						<c:if test="${contactusInfo.type==1 }">
-							<option value="">--请选择--</option>
-							<option value="0">公司介绍</option>
-							<option value="1" selected="selected">企业资质</option>
-							<option value="2">我们特色</option>
-						</c:if>
-						<c:if test="${contactusInfo.type==2 }">
-							<option value="">--请选择--</option>
-							<option value="0">公司介绍</option>
-							<option value="1">企业资质</option>
-							<option value="2" selected="selected">我们特色</option>
-						</c:if>
-					</select>
+					<input type="text" name="category" class="text" maxlength="200" value="${contactusInfo.category }"/>
 				</td>
 			</tr>
 			<tr>
+				<th>
+					英文分类名:
+				</th>
+				<td>
+					<input type="text" name="encategory" class="text" maxlength="200" value="${encontactusInfo.category }"/>
+				</td>
+			</tr>
+			<%-- <tr>
 				<th>
 					中文标题:
 				</th>
@@ -112,8 +97,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<td>
 					<input type="text" name="entitle" class="text" maxlength="200" value="${encontactusInfo.title }"/>
 				</td>
-			</tr>
-			<tr id="pathTr">
+			</tr> --%>
+			 <tr id="pathTr">
 				<th>
 					<span class="requiredField"></span>相关图片:
 				</th>

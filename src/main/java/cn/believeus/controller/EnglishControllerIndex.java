@@ -15,13 +15,10 @@ import cn.believeus.PaginationUtil.Page;
 import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Banner;
-import cn.believeus.model.Business;
 import cn.believeus.model.CompanyInfo;
-import cn.believeus.model.ContactusInfo;
 import cn.believeus.model.Customers;
 import cn.believeus.model.Example;
 import cn.believeus.model.News;
-import cn.believeus.model.Team;
 import cn.believeus.model.en.ENBusiness;
 import cn.believeus.model.en.ENCompanyInfo;
 import cn.believeus.model.en.ENContactusInfo;
@@ -146,7 +143,6 @@ public class EnglishControllerIndex {
 	}
 	
 	
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/english/enCust")
 	public String cust(HttpServletRequest request) {
 //		List<ENPartners> Partners = (List<ENPartners>)baseService.findObjectList(ENPartners.class);
@@ -211,24 +207,16 @@ public class EnglishControllerIndex {
 	 */
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/english/contactusInfo")
-	public String contactusInfoList(HttpServletRequest request,Integer type) {
-		List<ENContactusInfo> encontactusInfos;
-		if (type==0) {
-			encontactusInfos = (List<ENContactusInfo>)baseService.findObjectList(ENContactusInfo.class,"type",type);
-			request.setAttribute("contactusInfos", encontactusInfos);
-		}else if (type==1) {
-			encontactusInfos = (List<ENContactusInfo>)baseService.findObjectList(ENContactusInfo.class,"type",type);
-			request.setAttribute("contactusInfos", encontactusInfos);
-		}else if (type==2) {
-			encontactusInfos = (List<ENContactusInfo>)baseService.findObjectList(ENContactusInfo.class,"type",type);
-			request.setAttribute("contactusInfos", encontactusInfos);
+	public String contactusInfoList(HttpServletRequest request,Integer id) {
+		ENContactusInfo  contactusInfo=new ENContactusInfo();
+		if (id!=null&&id!=0) {
+			contactusInfo= (ENContactusInfo)baseService.findObject(ENContactusInfo.class, id);
 		}else {
-			encontactusInfos = new ArrayList<ENContactusInfo>();
-			request.setAttribute("contactusInfos", encontactusInfos);
+			contactusInfo= (ENContactusInfo)baseService.findObject(ENContactusInfo.class, 1);
 		}
-		//企业信息
-		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
-		request.setAttribute("companyInfo", companyInfo);
+		request.setAttribute("contactusInfo", contactusInfo);
+		List<ENContactusInfo> contactusInfos = (List<ENContactusInfo>)baseService.findObjectList(ENContactusInfo.class);
+		request.setAttribute("categories", contactusInfos);
 		return "/WEB-INF/front/enContactusInfo.jsp";
 	}
 	

@@ -1,6 +1,7 @@
 package cn.believeus.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -8,6 +9,9 @@ import javax.persistence.Table;
 public class ContactusInfo extends TbaseEntity{
 	
 	private static final long serialVersionUID = 6424344384956825199L;
+	
+	/** 分类名称 */
+	public String category;
 	
 	/** 关于我们-标题*/
 	public String title;
@@ -17,19 +21,6 @@ public class ContactusInfo extends TbaseEntity{
 	
 	/** 关于我们-内容*/
 	public String content;
-	
-	/**
-	 * 0:公司介绍 1:企业资质 2:我们特色
-	 */
-	private Integer type;
-	
-	
-	public Integer getType() {
-		return type;
-	}
-	public void setType(Integer type) {
-		this.type = type;
-	}
 	
 	/** 关于我们-获取标题*/
 	public String getTitle() {
@@ -50,11 +41,20 @@ public class ContactusInfo extends TbaseEntity{
 	}
 	
 	/** 关于我们-获取内容*/
+	@Lob
 	public String getContent() {
 		return content;
 	}
 	/** 关于我们-设置内容*/
 	public void setContent(String content) {
 		this.content = content;
+	}
+	/** 关于我们-设置分类*/
+	public String getCategory() {
+		return category;
+	}
+	/** 关于我们-设置分类*/
+	public void setCategory(String category) {
+		this.category = category;
 	}
 }

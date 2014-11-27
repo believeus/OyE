@@ -69,10 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;" class="sort" name="id">排序编号</a>
 				</th>
 				<th>
-					<a href="javascript:;" class="sort" name="type">分类</a>
-				</th>
-				<th>
-					<a href="javascript:;" class="sort" name="title">标题</a>
+					<a href="javascript:;" class="sort" name="type">分类标题</a>
 				</th>
 				<!-- <th>
 					<a href="javascript:;" class="sort" name="top">中文内容</a>
@@ -90,22 +87,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<span>${status.index+1}</span>
 					</td>
 					<td>
-						<c:if test="${myNew.type==0}">
-							公司介绍
-						</c:if>
-						<c:if test="${myNew.type==1}">
-							企业资质
-						</c:if>
-						<c:if test="${myNew.type==2}">
-							我们特色
-						</c:if>
-						<c:if test="${myNew.type==null}">
-							暂无
-						</c:if>
+						${myNew.category}
 					</td>
-					<td>
+					<%-- <td>
 						${myNew.title}
-					</td>
+					</td> --%>
 					<%-- <td>
 					   ${myNew.content}
 					</td> --%>

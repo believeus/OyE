@@ -1533,7 +1533,7 @@
 							AboutUs
 						</div>
 						<div style="float:right;width:75px;">
-							<a href="/contactusInfo.jhtml?type=0" target="_blank" style="color:#fff;">MORE&gt;&gt;</a>
+							<a href="/contactusInfo.jhtml" target="_blank" style="color:#fff;">MORE&gt;&gt;</a>
 						</div>
 					</div>
 						<div style="height:auto;overflow:hidden;">

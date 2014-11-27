@@ -77,6 +77,7 @@ public class ContactusController {
 	public String save(HttpServletRequest request,ContactusInfo contactusInfo){
 		contactusInfo.setContent(request.getParameter("content"));
 		contactusInfo.setTitle(request.getParameter("title"));
+		contactusInfo.setTitle(request.getParameter("category"));
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		String storepath = "";
 		Map<String, MultipartFile> files = multipartRequest.getFileMap();
@@ -104,11 +105,10 @@ public class ContactusController {
 		baseService.saveOrUpdata(contactusInfo);
 		
 		ENContactusInfo enContactusInfo = new ENContactusInfo();
-		enContactusInfo.setType(contactusInfo.getType());
 		enContactusInfo.setPath(contactusInfo.getPath());
 		enContactusInfo.setContent(request.getParameter("encontent"));
 		enContactusInfo.setTitle(request.getParameter("entitle"));
-		System.out.println(enContactusInfo);
+		enContactusInfo.setCategory(request.getParameter("encategory"));
 		baseService.saveOrUpdata(enContactusInfo);
 		return "redirect:/admin/contactus/conlist.jhtml";
 	}
@@ -138,6 +138,7 @@ public class ContactusController {
 		enContactusInfo.setTitle(request.getParameter("entitle"));
 		enContactusInfo.setContent(request.getParameter("encontent"));
 		enContactusInfo.setPath(request.getParameter("enpath"));
+		enContactusInfo.setCategory(request.getParameter("encategory"));
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		String storepath = "";
 		Map<String, MultipartFile> files = multipartRequest.getFileMap();
@@ -171,6 +172,7 @@ public class ContactusController {
 	public @ResponseBody String contactus(Integer[] ids){
 		List<Integer> list = Arrays.asList(ids);
 		baseService.delete(ContactusInfo.class, list);
+		baseService.delete(ENContactusInfo.class, list);
 		return "{\"type\":\"success\"}";
 	}
 }
