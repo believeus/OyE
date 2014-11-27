@@ -22,7 +22,7 @@
 	    height: 315px;
 	    left: 178px;
 	    position: absolute;
-	    top: 317px;
+	    top: 236px;
 	    width: 556px;
 	}
 </style>
@@ -92,7 +92,7 @@
 						src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
 						quality="high" allowfullscreen="true" allowscriptaccess="always" />
 				</div>
-				<div id="m_img0${status.index+1 }" style="position: absolute; left: 880px; top: 470px; width: 200px; height: 265px;">
+				<div id="m_img0${status.index+1 }" style="position: absolute; left: 880px; top: 392px; width: 200px; height: 265px;">
 					<img src="${partners.path }" width="200" height="265"/>
 				</div>
 			</c:forEach>
