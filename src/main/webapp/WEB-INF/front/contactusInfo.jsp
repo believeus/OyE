@@ -115,7 +115,17 @@
 				<div style="width:180px;height:300px;overflow:hidden;float:left;margin-right:50px;border: 2px solid #e4e4e4;margin-bottom:50px;">
 					<div style="background:#dd2a2a;color: #fff;font-size: 15px;font-weight: bold; height: 30px;line-height: 30px;padding-left: 20px;">栏目导航</div>
 					<ul class="newstitle">
-						<li>
+						<c:forEach items="${categories }" var="category" varStatus="status">
+							<li>
+								<a
+									<c:if test="${status.index==0}">id="dt" </c:if>
+									<c:if test="${status.index==1}">id="ry" </c:if>
+									<c:if test="${status.index==2}">id="wh" </c:if>
+									<c:if test="${status.index==0}"> class="current_au" </c:if> 
+									href="${category.link }" title="${category.name }">${category.name }</a>
+							</li>
+						</c:forEach>
+						<!-- <li>
 							<a id="dt" class="current_au" href="/contactusInfo.jhtml?type=0" title="公司介绍">公司介绍</a>
 						</li>
 						<li>
@@ -123,7 +133,7 @@
 						</li>
 						<li>
 							<a id="wh" href="/contactusInfo.jhtml?type=2" title="我们特色">我们特色</a>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 				<div style="width:900px;height:30px;overflow: hidden;float:left;border-bottom:1px solid #eee;line-height:30px;margin-bottom: 10px;">
@@ -136,117 +146,7 @@
 						</c:if>
 					</c:forEach>
 				</div>
-				<%-- <div class="main_content_body_img">
-					<div id="bigImg">
-						<div id="banner" style="margin:0 auto;">
-							<div id="banner_bg"></div> <!--标题背景-->
-							<div id="banner_info"></div> <!--标题-->
-							<ul>
-								<c:forEach var="newx" items="${news}" varStatus="status">
-									<li <c:if test="${status.index==0 }">class="on"</c:if> >${status.index+1 }</li>
-								</c:forEach>
-							</ul>
-							<div id="banner_list">
-								<c:forEach var="newx" items="${news}" varStatus="status">
-									<a href="/newsInfo.jhtml?id=${newx.id }" target="_blank">
-										<img src="${newx.path }" title="${newx.title }" alt="${newx.title }" width="600" height="330"/>
-									</a>
-								</c:forEach>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_link">
-				<c:forEach var="newx" items="${news}" varStatus="status">
-					<p class="link_title">
-						<a href="/newsInfo.jhtml?id=${newx.id }">${newx.title }</a>
-					</p>									
-				</c:forEach>				
-				</div>
-				<c:forEach var="newx" items="${news}" varStatus="status">
-					<c:forEach var="time" items="${times}" varStatus="status2">
-						<div class="main_content_body_list">
-							<div class="list_date">
-								${time }
-							</div>
-							<div class="list_dis">
-								<div class="list_title">
-									<a href="/newsInfo.jhtml?id=${newx.id }">${newx.title }</a>
-								</div>
-								<div class="list_content">
-									${newx.content }
-								</div>
-							</div>
-						</div>
-					</c:forEach>
-				</c:forEach> --%>
-				<!-- <div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div>
-				<div class="main_content_body_list">
-					<div class="list_date">
-						07.11.2014
-					</div>
-					<div class="list_dis">
-						<div class="list_title">
-							南大通用与oye联手，在中国创建自主创新的数据库
-						</div>
-						<div class="list_content">
-							oye与天津南大通用数据技术股份公司（一下简称南大通用）今日宣布将在中国创建自主创新的数据库产品。为支持国家科技规划，南大通用将基于oye技术开发并销售这种本地创新的解决方案。
-						</div>
-					</div>
-				</div> -->
 			</div>
-			<!-- <div style="width:1140px;height:1px;border-bottom:1px dashed #c6c6c6;margin-bottom:30px;"></div> -->
 		</div>
 	</div>
 	<!--

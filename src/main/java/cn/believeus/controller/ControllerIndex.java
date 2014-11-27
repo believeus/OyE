@@ -28,6 +28,7 @@ import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Banner;
 import cn.believeus.model.Business;
+import cn.believeus.model.Category;
 import cn.believeus.model.CompanyInfo;
 import cn.believeus.model.ContactusInfo;
 import cn.believeus.model.Customers;
@@ -270,6 +271,8 @@ public class ControllerIndex {
 			contactusInfos = new ArrayList<ContactusInfo>();
 			request.setAttribute("contactusInfos", contactusInfos);
 		}
+		List<Category> categories = (List<Category>) baseService.findObjectList(Category.class);
+		request.setAttribute("categories", categories);
 		//企业信息
 		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);
