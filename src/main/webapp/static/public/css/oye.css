@@ -23,6 +23,8 @@ img{
 	height: 35px;
 	line-height: 35px;
 	text-align: right;
+	width: 1366px;
+	margin: 0 auto;
 }
 .sel-languages a {
     color: #999;
@@ -54,7 +56,8 @@ img{
 	border-radius: 3px;
 }
 .footer{
-	width:100%;
+	margin: 0 auto;
+    width: 1366px;
 	height:285px;
 	background: #1F1F1F;
 }
@@ -121,6 +124,10 @@ img{
 	overflow: hidden;
 	margin: 80px auto 0;
 }
+.main-img{
+	margin: 0 auto;
+    width: 1366px;	
+}
 .main-service p {
     font-size: 28px;
     color: #999999;
@@ -157,6 +164,8 @@ img{
 .main-comp-const{
 	 background: #f1f4f9;
 	 height: 580px;
+	 width:1366px;
+	 margin:0 auto;
 }
 .main-comp-const-title{
 	width: 470px;
@@ -200,6 +209,8 @@ img{
 .main-evaluation{
 	margin-top: 30px;
 	margin-bottom: 50px;
+	width:1366px;
+	margin:0 auto 20px;
 }
 .main-evaluation-list{
 	width: 1200px;
@@ -232,9 +243,10 @@ img{
     margin: 15px 3px;
 }
 .main-ourteam{
-	width: 100%;
+	width: 1366px;
 	height: 625px;
-	background: #F3F3F3;
+	background: #fefafa;
+	margin:0 auto;
 }
 .main-ourteam-cont{
 	width: 1160px;height: 625px;margin: 0 auto;
@@ -243,10 +255,13 @@ img{
 	font-size: 24px;
     height: 60px;
     line-height: 60px;
+    margin: 0 auto;
+    width: 1150px;
 }
 .main-cust{
 	background: #F1F4F9;
-	width: 100%;
+	width: 1366px;
+	margin:0 auto;
 	height:auto;
 	overflow: hidden;
 }
@@ -313,4 +328,41 @@ img{
 }
 .botton{
 	background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;text-align: center;border-radius: 4px;float: right;border: 1px solid #ff6569;margin-right: 20px;margin-top: 10px;cursor: pointer;
+}
+#zuojiantou{
+	left: 102px;
+    position: relative;
+    top: -80px;
+}
+#youjiantou{
+	left: 935px;
+    position: relative;
+    top: -80px;
+}
+#hengxian{
+	background: #ffa7a9;
+    height: 34px;
+    left: 125px;
+    position: relative;
+    top: -135px;
+    width: 925px;
+}
+.anli_class {
+    height: 460px;
+    margin-top: 0;
+    position: relative;
+    width: 100%;
+}
+.main-aboutus {
+    margin: 0 auto;
+    width: 1366px;
+}
+.main-partner{
+	width:1366px;margin:0 auto;height:auto;overflow:hidden;
+}
+.m_img{
+	width: 132px; height: 174px; position: absolute; top: 2242px; left: 1045px;
+}
+.em_video{
+	width: 381px; height: 215px; left: 660px; position: absolute; top: 2073px;
 }

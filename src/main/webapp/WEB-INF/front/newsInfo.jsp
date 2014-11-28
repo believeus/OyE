@@ -64,7 +64,7 @@
 		width: 1100px; height: auto; overflow: hidden; margin: 30px auto;
 	}
 	.NI_duanluo p {
-	    color: #fefefe;
+	    color: #fefefe !important;
 	    font-size: 21px;
 	    line-height: 30px;
 	    text-indent: 30px;

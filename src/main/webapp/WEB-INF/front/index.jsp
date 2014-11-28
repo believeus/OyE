@@ -177,9 +177,6 @@
 .img img{
     border-radius:100px;
 }
-.em_video{
-	width: 372px; height: 215px; left: 662px; position: absolute; top: 1952px;
-}
 .anli_class {
     height: 460px;
     width: 100%;
@@ -204,6 +201,20 @@
 	float:left;
 }
 </style>
+<script src="/static/public/js/jquery.lazyload.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	//懒加载
+	$(function() {
+		$("img").lazyload({
+			threshold:0,
+            failure_limit:0,
+            event:"scroll",
+            effect:"fadeIn",
+            container:window,
+            skip_invisible:true
+		});
+	});
+</script>
 <script type="text/javascript">
 	$(function(){
 		$(".main-comp-const-title-list").click(function(){
@@ -517,6 +528,27 @@
 		$("#zixunId").click(function(){
 			$("html,body").animate({scrollTop: $("#zixun").offset().top}, 500);
 		});
+		
+		var swidth = window.screen.width;
+		//alert(swidth);
+		if(swidth == 1440){
+			$(".main-partner").css("width",swidth);
+			$(".main-partner img").css("width",swidth);
+			$(".em_video").css({"top":"1952px","left":"695px","width":"403px","height":"231px"});
+			$(".em_video embed").css({"width":"403px","height":"231px"});
+			$(".m_img").css({"top":"2137px","left":"1102px","width":"138px","height":"181px"});
+			$(".m_img img").css({"width":"138px","height":"181px"});
+		}else if(swidth == 1920){
+			$(".main-partner").css("width",swidth);
+			$(".main-partner img").css("width",swidth);
+			$(".em_video").css({"top":"1971px","left":"927px","width":"537px","height":"303px"});
+			$(".em_video embed").css({"width":"537px","height":"303px"});
+			$(".m_img").css({"top":"2215px","left":"1470px","width":"182px","height":"238px"});
+			$(".m_img img").css({"width":"182px","height":"238px"});
+			$("#zuojiantou").css({"top":"3160px","left":"435px"});
+			$("#youjiantou").css({"top":"3160px","left":"1400px"});
+			$("#hengxian").css({"top":"3177px","left":"501px"});
+		}
 	});
 </script>
 </head>
@@ -529,14 +561,13 @@
 	<jsp:include page="header.jsp" />
 	<div class="main">
 		<div class="main-img">
-			<!-- <img src="/static/public/images/img1.png" width="100%" /> -->
 			<div class="banner_slider">
                 <ul>
                 	<c:if test="${bannersSize!=0 }">
 	                	<c:forEach items="${banners }" var="banner">
 		                    <li>
 		                    	<a href="${banner.link }" title="${banner.link }">
-		                    		<img src="${banner.path }" width="100%"/>
+		                    		<img data-original="${banner.path }" src="/static/public/images/grey.gif" width="100%"/>
 	                    		</a>
 	                   		</li>
 	                	</c:forEach>
@@ -544,22 +575,22 @@
                 	<c:if test="${bannersSize==0 }">
 	                    <li>
 	                    	<a href="http://www.believeus.cn" title="http://www.believeus.cn" target="_blank">
-	                    		<img src="/static/public/images/img1.jpg" width="100%"/>
+	                    		<img data-original="/static/public/images/img1.jpg" src="/static/public/images/grey.gif" width="100%"/>
                     		</a>
                    		</li>
 	                    <li>
 	                    	<a href="http://www.believeus.cn" title="http://www.believeus.cn" target="_blank">
-	                    		<img src="/static/public/images/img1.jpg" width="100%"/>
+	                    		<img data-original="/static/public/images/img1.jpg" src="/static/public/images/grey.gif" width="100%"/>
                     		</a>
                    		</li>
 	                    <li>
 	                    	<a href="http://www.believeus.cn" title="http://www.believeus.cn" target="_blank">
-	                    		<img src="/static/public/images/img1.jpg" width="100%"/>
+	                    		<img data-original="/static/public/images/img1.jpg" src="/static/public/images/grey.gif" width="100%"/>
                     		</a>
                    		</li>
 	                    <li>
 	                    	<a href="http://www.believeus.cn" title="http://www.believeus.cn" target="_blank">
-	                    		<img src="/static/public/images/img1.jpg" width="100%"/>
+	                    		<img data-original="/static/public/images/img1.jpg" src="/static/public/images/grey.gif" width="100%"/>
                     		</a>
                    		</li>
                 	</c:if>
@@ -574,10 +605,10 @@
 			<div class="main-service-list">
 				<c:if test="${bsize!=0 }">
 					<c:forEach items="${businesses }" var="bus" varStatus="status">
-						<c:if test="${status.index < 5}">
+						<c:if test="${status.index < 6}">
 							<div class="main-service-cont" <c:if test="${(status.index+1)%3==0 }">style="margin-right:0;"</c:if>>
 								<div class="main-service-cont-img">
-									<img src="${bus.path }" width="99" height="99"/>
+									<img data-original="${bus.path }" src="/static/public/images/grey.gif" width="99" height="99"/>
 								</div>
 								<div class="main-service-cont-name">
 									${fn:substring(bus.title, 0, 12)}
@@ -598,7 +629,7 @@
 				<c:if test="${bsize==0 }">
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/bgs.png" width="99" height="99"/>
+							<img data-original="/static/public/images/bgs.png" src="/static/public/images/grey.gif" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
 							办公室整体清洁及空气治理
@@ -609,7 +640,7 @@
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/cc.png" width="99" height="99"/>
+							<img data-original="/static/public/images/cc.png" src="/static/public/images/grey.gif" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
 							仓储
@@ -620,7 +651,7 @@
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/es.png" width="99" height="99"/>
+							<img data-original="/static/public/images/es.png" src="/static/public/images/grey.gif" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
 							二手家具回收及出售
@@ -631,7 +662,7 @@
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/people.png" width="99" height="99"/>
+							<img data-original="/static/public/images/people.png" src="/static/public/images/grey.gif" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
 							国内市内私人搬迁
@@ -642,7 +673,7 @@
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/phone.png" width="99" height="99"/>
+							<img data-original="/static/public/images/phone.png" src="/static/public/images/grey.gif" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
 							办公室搬迁
@@ -653,7 +684,7 @@
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
 						<div class="main-service-cont-img">
-							<img src="/static/public/images/sys.png" width="99" height="99"/>
+							<img data-original="/static/public/images/sys.png" src="/static/public/images/grey.gif" width="99" height="99"/>
 						</div>
 						<div class="main-service-cont-name">
 							实验室搬迁
@@ -665,11 +696,11 @@
 				</c:if>
 			</div>
 		</div>
+		<div class="main-ourteam-cont-title">
+			<i style="width: 37px; height: 28px; background: url(/static/public/images/al.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
+			<a id="anli" href="/caseList.jhtml" style="font-size: 24px;" target="_blank">我们的案例</a>
+		</div>
 		<div class="main-comp-const">
-			<div class="main-ourteam-cont-title" style="position: absolute; left: 120px;">
-				<i style="width: 37px; height: 28px; background: url(/static/public/images/al.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-				<a id="anli" href="/caseList.jhtml" style="font-size: 24px;" target="_blank">我们的案例</a>
-			</div>
 			<div class="main-comp-const-title" style="width:460px;">
 				<div id="shijie" class="main-comp-const-title-list current" style="width: 130px;">世界500强</div>
 				<div id="guoyou" class="main-comp-const-title-list">国有企业</div>
@@ -687,7 +718,7 @@
 								<div id="content_list">
 									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
 										<dl>
-											<dt><img src="${url }"/></dt>
+											<dt><img data-original="${url }" src="/static/public/images/grey.gif"/></dt>
 										</dl>
 									</c:forEach>
 								</div>
@@ -698,7 +729,7 @@
 				</c:forEach>
 				<div class="ico">
 					<div style="width:100%;height:28px;border-top:5px solid #000;margin-top: 30px;">
-						<img id="xx_img01" src="/static/public/images/xx.png" style="position: relative; top: -5px;"/>
+						<img id="xx_img01" data-original="/static/public/images/xx.png" src="/static/public/images/grey.gif" style="position: relative; top: -5px;"/>
 					</div>
 				</div>
 				<div class="main-comps">
@@ -706,7 +737,7 @@
 						<c:if test="${status.index<5 }">
 							<div class="main-comps-list" id="list0${status.index+1 }">
 								<img src="/static/public/images/cry.png" />
-								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
+								<img data-original="${example.logo }" src="/static/public/images/grey.gif" width="88" height="30" style="position: relative; top: -65px;"/>
 							</div>
 						</c:if>
 					</c:forEach>
@@ -721,7 +752,7 @@
 								<div id="content_list">
 									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
 										<dl>
-											<dt><img src="${url }"/></dt>
+											<dt><img data-original="${url }" src="/static/public/images/grey.gif"/></dt>
 										</dl>
 									</c:forEach>
 								</div>
@@ -740,7 +771,7 @@
 						<c:if test="${status.index<5 }">
 							<div class="main-comps-list" id="2list0${status.index+1 }">
 								<img src="/static/public/images/cry.png" />
-								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
+								<img data-original="${example.logo }" src="/static/public/images/grey.gif" width="88" height="30" style="position: relative; top: -65px;"/>
 							</div>
 						</c:if>
 					</c:forEach>
@@ -755,7 +786,7 @@
 								<div id="content_list">
 									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
 										<dl>
-											<dt><img src="${url }"/></dt>
+											<dt><img data-original="${url }" src="/static/public/images/grey.gif"/></dt>
 										</dl>
 									</c:forEach>
 								</div>
@@ -774,7 +805,7 @@
 						<c:if test="${status.index<5 }">
 							<div class="main-comps-list" id="3list0${status.index+1 }">
 								<img src="/static/public/images/cry.png" />
-								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
+								<img data-original="${example.logo }" src="/static/public/images/grey.gif" width="88" height="30" style="position: relative; top: -65px;"/>
 							</div>
 						</c:if>
 					</c:forEach>
@@ -789,7 +820,7 @@
 								<div id="content_list">
 									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
 										<dl>
-											<dt><img src="${url }"/></dt>
+											<dt><img data-original="${url }" src="/static/public/images/grey.gif" /></dt>
 										</dl>
 									</c:forEach>
 								</div>
@@ -823,16 +854,16 @@
 							<div id="content">
 								<div id="content_list">
 									<dl>
-										<dt><img src="/static/public/images/b1.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b1.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b2.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b2.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b3.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b3.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b4.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b4.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 								</div>
 							</div>
@@ -845,16 +876,16 @@
 							<div id="content">
 								<div id="content_list">
 									<dl>
-										<dt><img src="/static/public/images/b1.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b1.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b2.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b2.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b3.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b3.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b4.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b4.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 								</div>
 							</div>
@@ -867,16 +898,16 @@
 							<div id="content">
 								<div id="content_list">
 									<dl>
-										<dt><img src="/static/public/images/b1.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b1.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b2.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b2.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b3.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b3.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b4.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b4.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 								</div>
 							</div>
@@ -889,16 +920,16 @@
 							<div id="content">
 								<div id="content_list">
 									<dl>
-										<dt><img src="/static/public/images/b1.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b1.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b2.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b2.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b3.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b3.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b4.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b4.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 								</div>
 							</div>
@@ -936,16 +967,16 @@
 							<div id="content">
 								<div id="content_list">
 									<dl>
-										<dt><img src="/static/public/images/b1.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b1.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b2.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b2.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b3.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b3.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b4.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b4.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 								</div>
 							</div>
@@ -957,16 +988,16 @@
 							<div id="content">
 								<div id="content_list">
 									<dl>
-										<dt><img src="/static/public/images/b1.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b1.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b2.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b2.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b3.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b3.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b4.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b4.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 								</div>
 							</div>
@@ -978,16 +1009,16 @@
 							<div id="content">
 								<div id="content_list">
 									<dl>
-										<dt><img src="/static/public/images/b1.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b1.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b2.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b2.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b3.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b3.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b4.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b4.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 								</div>
 							</div>
@@ -999,16 +1030,16 @@
 							<div id="content">
 								<div id="content_list">
 									<dl>
-										<dt><img src="/static/public/images/b1.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b1.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b2.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b2.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b3.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b3.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 									<dl>
-										<dt><img src="/static/public/images/b4.jpg"/></dt>
+										<dt><img data-original="/static/public/images/b4.jpg" src="/static/public/images/grey.gif"/></dt>
 									</dl>
 								</div>
 							</div>
@@ -1266,20 +1297,24 @@
 				</div>
 			</c:if>
 		</div>
+		<div class="main-ourteam-cont-title">
+			<i style="width: 32px; height: 22px; background: url(/static/public/images/ic2.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
+			<a id="anli" href="/cust.jhtml" style="font-size: 24px;" target="_blank">客户感言见证</a>
+		</div>
 		<div class="main-partner">
 			<img src="/static/public/images/img03.jpg" width="1366" />
 		</div>
 		<div class="main-evaluation">
 			<div class="main-evaluation-list">
-				<a id="cust" href="/cust.jhtml" target="_blank">
+				<!-- <a id="cust" href="/cust.jhtml" target="_blank">
 					<div class="more_partner" title="更多">&nbsp;</div>
-				</a>
+				</a> -->
 				<c:if test="${partnersSize!=0 }">
 					<c:forEach items="${partners }" var="partner" varStatus="status">
 						<c:if test="${status.index < 3}">
 							<div class="main-evaluation-list-cont">
 								<div id="cont-img0${status.index+1 }" class="main-evaluation-list-cont-img">
-									<img src="${partner.logo }" width="115" height="50" style="margin-top: 40px;" />
+									<img data-original="${partner.logo }" src="/static/public/images/grey.gif" width="115" height="50" style="margin-top: 40px;" />
 								</div>
 								<div class="main-evaluation-list-cont-dis" style="height:130px;">
 									<p class="main-cont-dis-title">${partner.name }</p>
@@ -1295,7 +1330,7 @@
 								<%-- <embed type="application/x-shockwave-flash" width="372" height="215" 
 									src="/${partner.video }" allowfullscreen="true" 
 									quality="high" allowscriptaccess="always" align="middle" /> --%>
-							    <embed id="ckplayer_a1" align="middle" width="372" height="205" 
+							   <%--  <embed id="ckplayer_a1" align="middle" width="381" height="215" 
 									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
 									<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
 										flashvars="f=${www_prefix}/${partner.video }" 
@@ -1304,10 +1339,10 @@
 										flashvars="f=${partner.videoLink }" 
 									</c:if>
 									src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
-									quality="high" allowfullscreen="true" allowscriptaccess="always" />
+									quality="high" allowfullscreen="true" allowscriptaccess="always" /> --%>
 							</div>
-							<div id="m_img0${status.index+1 }" style="width: 132px; height: 174px; position: absolute; top: 2121px; left: 1045px;">
-								<img src="${partner.path }" width="132" height="174"/>
+							<div id="m_img0${status.index+1 }" class="m_img">
+								<%-- <img data-original="${partner.path }" src="/static/public/images/grey.gif" width="132" height="174"/> --%>
 							</div>
 						</c:if>
 					</c:forEach>
@@ -1370,7 +1405,7 @@
 		<div class="main-ourteam">
 			<div class="main-ourteam-cont">
 				<div class="main-ourteam-cont-title">
-					<i style="width: 28px; height: 28px; background: url(/static/public/images/hxtd.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
+					<i style="width: 34px; height: 35px; background: url(/static/public/images/hxtd.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
 					<a id="zhizhi" href="/teamList.jhtml" target="_blank" style="font-size: 24px;">我们的核心团队</a>
 				</div>
 				<div class="main-ourteam-cont-const">
@@ -1379,7 +1414,7 @@
 							<c:if test="${status.index < 4 }">
 								<div class="main-ourteam-cont-const-list" <c:if test="${status.index ==3 }">style="margin-right:0;"</c:if>>
 									<div class="img">
-										<img src="${team.path }" width="165" height="165" style="margin-top: 35px;" />
+										<img data-original="${team.path }" src="/static/public/images/grey.gif" width="165" height="165" style="margin-top: 35px;" />
 									</div>
 									<div class="name">
 										<span style="font-size: 18px;">${team.name } | ${team.ehName }</span>
@@ -1445,9 +1480,9 @@
 							</div>
 						</div>
 					</c:if>
-					<img src="/static/public/images/a.png" style="position: absolute; top: 2975px; left: 180px;" />
-					<img src="/static/public/images/b.png" style="position: absolute; top: 2975px; left: 1100px;" />
-					<div style="background: #ffa7a9;height: 34px; position: absolute; top: 2992px; left: 215px;width: 925px;" ></div>
+					<img id="zuojiantou" src="/static/public/images/a.png" />
+					<img id="youjiantou" src="/static/public/images/b.png" />
+					<div id="hengxian"></div>
 				</div>
 			</div>			
 		</div>
@@ -1459,11 +1494,11 @@
 				</p>
 				<div style="">
 					<img src="/static/public/images/img06.png" style="position: relative; left: 500px;" />
-					<img src="/static/public/images/a1.jpg"  style="position: relative; left: 507px; top: -875px;"/>
-					<img src="/static/public/images/a2.jpg"  style="margin-top: 50px; position: relative; top: -650px; left: -355px;"/>
-					<img src="/static/public/images/a3.jpg"  style="position: relative; left: 560px; top: -770px;"/>
-			 		<img src="/static/public/images/a4.jpg"  style="position: relative; left: -315px; top: -575px;"/>
-					<img src="/static/public/images/a5.jpg"  style="position: relative; top: -675px; left: 555px;"/>
+					<img data-original="/static/public/images/a1.jpg" src="/static/public/images/grey.gif"  style="position: relative; left: 507px; top: -875px;"/>
+					<img data-original="/static/public/images/a2.jpg" src="/static/public/images/grey.gif"   style="margin-top: 50px; position: relative; top: -650px; left: -355px;"/>
+					<img data-original="/static/public/images/a3.jpg" src="/static/public/images/grey.gif"   style="position: relative; left: 560px; top: -770px;"/>
+			 		<img data-original="/static/public/images/a4.jpg" src="/static/public/images/grey.gif"   style="position: relative; left: -315px; top: -575px;"/>
+					<img data-original="/static/public/images/a5.jpg" src="/static/public/images/grey.gif"   style="position: relative; top: -675px; left: 555px;"/>
 				</div>
 				<c:if test="${prosSize!=0 }">
 					<c:forEach items="${pros }" var="pro" varStatus="status">
@@ -1510,7 +1545,7 @@
 								<div class="ot">
 									<div class="main-ourteam-cont-list-img">
 										<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
-											<img src="${cust1.url }" width="95" height="50"/>
+											<img data-original="${cust1.url }" src="/static/public/images/grey.gif" width="95" height="50"/>
 										</a>
 									</div>
 								</div>
@@ -1523,7 +1558,7 @@
 								<div class="ot">
 									<div class="main-ourteam-cont-list-img">
 										<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
-											<img src="${cust1.url }" width="95" height="50"/>
+											<img data-original="${cust1.url }" src="/static/public/images/grey.gif" width="95" height="50"/>
 										</a>
 									</div>
 								</div>
@@ -1536,7 +1571,7 @@
 								<div class="ot">
 									<div class="main-ourteam-cont-list-img">
 										<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
-											<img src="${cust1.url }" width="95" height="50"/>
+											<img data-original="${cust1.url }" src="/static/public/images/grey.gif" width="95" height="50"/>
 										</a>
 									</div>
 								</div>
@@ -1545,7 +1580,7 @@
 					</div>
 				</c:if>
 				<c:if test="${customersSize==0 }">
-					<img src="/static/public/images/Customer.jpg" width="1100px"/>
+					<img data-original="/static/public/images/Customer.jpg" src="/static/public/images/grey.gif" width="1100px"/>
 				</c:if>
 			</div>
 		</div>
@@ -1562,7 +1597,7 @@
 					</div>
 						<div style="">
 							<c:if test="${contactusInfo!=null }">
-								<img src="${contactusInfo.path }" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />
+								<img data-original="${contactusInfo.path }" src="/static/public/images/grey.gif" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />
 								<span class="abus" style="color: #d6d6d6;line-height: 27px;">
 									${fn:substring(contactusInfo.content, 0, 120)}
 									<c:if test="${fn:length(contactusInfo.content) > 120 }">
@@ -1571,7 +1606,7 @@
 								</span>
 							</c:if>
 							<c:if test="${contactusInfo==null }">
-								<img src="/static/public/images/img08.jpg" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />
+								<img data-original="/static/public/images/img08.jpg" src="/static/public/images/grey.gif" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />
 								<span style="color: #d6d6d6;line-height: 27px;">萨芬的该罚的过分的是光的反射热二期飞洒范德萨发大水地方撒电范德萨发大水芬的该罚的过分的是光的反射热二期飞洒范德萨发大水地方撒电范德萨发大水芬的该罚的过分的是光的反射热二期飞洒范德萨发大水地方撒电范德萨发大水芬的该萨发大水地方撒电范德萨发大水地方撒电范德萨发大水地方撒电范德萨发大水地方撒电范德萨发大水地方撒电风扇</span>
 							</c:if>
 						</div>
@@ -1588,7 +1623,7 @@
 							<c:forEach items="${news }" var="news" varStatus="status">
 								<c:if test="${status.index < 3 }">
 									<div style="width: 365px;height: auto;overflow: hidden;">
-										<img src="${news.path }" width="100" height="80" style="float: left; margin: 15px 20px 10px 0px;"/>
+										<img data-original="${news.path }" src="/static/public/images/grey.gif" width="100" height="80" style="float: left; margin: 15px 20px 10px 0px;"/>
 										<div style="float: left;width: 240px;margin-top: 10px;">
 											<p style="color: #FBFBFB;font-size: 15px;">${news.title }</p>
 											<p style="color: #FBFBFB;font-size: 14px;">

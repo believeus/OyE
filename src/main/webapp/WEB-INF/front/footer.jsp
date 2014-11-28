@@ -53,7 +53,7 @@
 					<img src="/static/public/images/footer-img.png" />
 				</div>
 				<div class="footer-main-3">
-					<h1 style="font-family: 黑体; font-weight: bold;letter-spacing: 5px;">恭候您的垂询</h1>
+					<h1 style=" font-weight: bold;letter-spacing: 5px;margin-top:0;">恭候您的垂询</h1>
 					<p>${companyInfo.address }</p>
 					<p>T:${companyInfo.phone }</p>
 					<!-- <p>+86 21 5032 1196</p> -->
