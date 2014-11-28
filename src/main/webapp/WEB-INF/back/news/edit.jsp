@@ -105,7 +105,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					新闻中文标题:
 				</th>
 				<td>
-					<input type="text" name="title" class="text" maxlength="200" value="${news.title}"/>
+					<input type="text" name="title" class="text" maxlength="10000" value="${news.title}"/>
 				</td>
 			</tr>
 			<tr>
@@ -113,7 +113,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					新闻英文标题:
 				</th>
 				<td>
-					<input type="text" name="entitle" class="text" maxlength="200" value="${ennews.title}"/>
+					<input type="text" name="entitle" class="text" maxlength="10000" value="${ennews.title}"/>
 				</td>
 			</tr>
 			<tr id="pathTr">
