@@ -175,6 +175,9 @@
 .img img{
     border-radius:100px;
 }
+.more_partner{
+	width: 130px; height: 38px; position: relative; left: 319px; top: -143px;cursor:pointer;
+}
 </style>
 <script src="/static/public/js/jquery.lazyload.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
@@ -452,7 +455,7 @@
 			$("html,body").animate({scrollTop: $("#zhizhi").offset().top}, 500);
 		});
 		$("#custId").click(function(){
-			$("html,body").animate({scrollTop: $("#cust").offset().top - 440}, 500);
+			$("html,body").animate({scrollTop: $("#cust").offset().top}, 500);
 		});
 		$("#liuchengId").click(function(){
 			$("html,body").animate({scrollTop: $("#liucheng").offset().top}, 500);
@@ -556,7 +559,7 @@
 		<div class="main-service">
 			<p class="">
 				<i style="width: 22px; height: 26px; background: url(/static/public/images/ser.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-				<a id="bus" style="font-size: 24px;" href="/ourBusiness.jhtml" target="_blank">Our Business</a>
+				<a id="bus" style="font-size: 24px;" href="/ourBussiness.jhtml" target="_blank">Our Business</a>
 			</p>
 			<div class="main-service-list">
 				<c:if test="${bsize!=0 }">
@@ -1250,16 +1253,37 @@
 		</div>
 		<div class="main-ourteam-cont-title">
 			<i style="width: 32px; height: 22px; background: url(/static/public/images/ic2.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-			<a id="anli" href="/enCust.jhtml" style="font-size: 24px;" target="_blank">Testimonials witness</a>
+			<a id="cust" href="/enCust.jhtml" style="font-size: 24px;" target="_blank">Testimonials witness</a>
 		</div>
 		<div class="main-partner">
-			<img src="/static/public/images/img03.jpg" width="1366" />
+			<!-- <img src="/static/public/images/img03.jpg" width="1366" /> -->
+			<c:if test="${partnersSize!=0 }">
+				<c:forEach items="${partners }" var="partner" varStatus="status">
+					<c:if test="${status.index < 3}">
+						<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_div">
+							 <embed id="ckplayer_a1" align="middle" width="381" height="215" 
+								pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
+								<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
+									flashvars="f=${www_prefix}/${partner.video }" 
+								</c:if>
+								<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
+									flashvars="f=${partner.videoLink }" 
+								</c:if>
+								src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
+								quality="high" allowfullscreen="true" allowscriptaccess="always" />
+						</div>
+						<div id="m_img0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_img">
+							<img data-original="${partner.path }" src="/static/public/images/grey.gif" width="132" height="174"/>
+						</div>
+					</c:if>
+				</c:forEach>
+			</c:if>
+			<a id="cust" href="/enCust.jhtml" target="_blank" title="more">
+				<div class="more_partner">&nbsp;</div>
+			</a>
 		</div>
 		<div class="main-evaluation">
 			<div class="main-evaluation-list">
-				<!-- <a id="cust" href="/enCust.jhtml" target="_blank" title="more">
-					<div style="width: 130px; height: 38px; position: absolute; left: 319px; top: 2150px;cursor:pointer;"></div>
-				</a> -->
 				<c:if test="${partnersSize!=0 }">
 					<c:forEach items="${partners }" var="partner" varStatus="status">
 						<c:if test="${status.index < 3}">
@@ -1277,8 +1301,8 @@
 									</p>
 								</div>
 							</div>
-							<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
-								<%-- <embed id="ckplayer_a1" align="middle" width="381" height="215" 
+							<%-- <div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
+								<embed id="ckplayer_a1" align="middle" width="381" height="215" 
 									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
 									<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
 										flashvars="f=${www_prefix }/${partner.video }" 
@@ -1287,12 +1311,12 @@
 										flashvars="f=${partner.videoLink }"
 									</c:if>
 									src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
-									quality="high" allowfullscreen="true" allowscriptaccess="always" /> --%>
+									quality="high" allowfullscreen="true" allowscriptaccess="always" />
 									<!-- http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf -->
 							</div>
 							<div id="m_img0${status.index+1 }" class="m_img">
-								<img src="${partner.path }" width="132" height="174"/>
-							</div>
+								<img src="/static/public/images/grey.gif" data-original="${partner.path }" width="132" height="174"/>
+							</div> --%>
 						</c:if>
 					</c:forEach>
 				</c:if>

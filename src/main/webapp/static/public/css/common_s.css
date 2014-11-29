@@ -22,8 +22,8 @@ body {
 	_height: 100%;
 	min-width: 1000px;
 	_width: expression(document.body.clientWidth <= 1000 ? "1000px": "auto");
-	font: 12px tahoma, Arial, Verdana, sans-serif;
-	color: #666666;
+/* 	font: 12px tahoma, Arial, Verdana, sans-serif;
+	color: #666666; */
 	background-color: #ffffff;
 	_background-image: url(about: blank);
 	_background-attachment: fixed;

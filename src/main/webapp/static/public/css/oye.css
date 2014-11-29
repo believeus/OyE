@@ -16,15 +16,17 @@ img{
 }
 .header{
 	width: 100%;
-	height: 105px;
+	height: 150px;
 	background: #FFFFFF;
 }
 .sel-languages{
-	height: 35px;
-	line-height: 35px;
-	text-align: right;
-	width: 1366px;
-	margin: 0 auto;
+	border-left: 1px solid #e4e4e4;
+    float: right;
+    height: 50px;
+    margin: 10px 0;
+    /* text-align: right; */
+    width: 1000px;
+    padding-left:10px;
 }
 .sel-languages a {
     color: #999;
@@ -37,10 +39,12 @@ img{
 .logo-img{
 	float: left;
 	height: 70px;
+	width:160px;
 }
 .nav{
-	float: left;
-	margin-left: 45px;
+	height: auto;
+    margin: 0 auto;
+    width: 1180px;
 }
 .nav li{
 	float: left;
@@ -48,7 +52,10 @@ img{
 .nav a{
 	color: #999;
     font-size: 20px;
-    padding: 8px 30px;
+    padding: 8px 35px;
+}
+.nav a:hover{
+	color:#FE3F44;
 }
 .current{
 	background: #FE3F44;
@@ -56,8 +63,7 @@ img{
 	border-radius: 3px;
 }
 .footer{
-	margin: 0 auto;
-    width: 1366px;
+    width: 100%;
 	height:285px;
 	background: #1F1F1F;
 }
@@ -164,7 +170,7 @@ img{
 .main-comp-const{
 	 background: #f1f4f9;
 	 height: 580px;
-	 width:1366px;
+	 width: 100%;
 	 margin:0 auto;
 }
 .main-comp-const-title{
@@ -243,7 +249,7 @@ img{
     margin: 15px 3px;
 }
 .main-ourteam{
-	width: 1366px;
+	width: 100%;
 	height: 625px;
 	background: #fefafa;
 	margin:0 auto;
@@ -260,7 +266,7 @@ img{
 }
 .main-cust{
 	background: #F1F4F9;
-	width: 1366px;
+	width: 100%;
 	margin:0 auto;
 	height:auto;
 	overflow: hidden;
@@ -355,14 +361,26 @@ img{
 }
 .main-aboutus {
     margin: 0 auto;
-    width: 1366px;
+    width: 100%;
 }
 .main-partner{
-	width:1366px;margin:0 auto;height:auto;overflow:hidden;
+	width:1366px;margin:0 auto;height:410px;overflow:hidden;
+	background:url(/static/public/images/img03.jpg);
 }
 .m_img{
 	width: 132px; height: 174px; position: absolute; top: 2242px; left: 1045px;
 }
 .em_video{
 	width: 381px; height: 215px; left: 660px; position: absolute; top: 2073px;
+}
+
+.m_img img {
+    position: relative;
+    top: -132px;
+}
+.video_div{
+	width: 381px; height: 215px; position: relative; left: 660px; top: 48px;
+}
+.video_img{
+	width: 132px; height: 174px; position: relative; left: 1046px; top: 2px;
 }

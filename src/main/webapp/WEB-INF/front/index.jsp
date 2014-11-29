@@ -182,7 +182,7 @@
     width: 100%;
 }
 .more_partner{
-	width: 130px; height: 38px; position: absolute; left: 319px; top: 2151px;cursor:pointer;
+	width: 130px; height: 38px; position: relative; left: 319px; top: -143px;cursor:pointer;
 }
 .main-ourteam-cont-title a:hover{
 	color:#ff5900;
@@ -443,25 +443,25 @@
 		});
 		//-------------------
 		$("#cont-img01").click(function(){
-			$("#m_img01").css("z-index","99");
-			$("#m_img02").css("z-index","88");
-			$("#m_img03").css("z-index","77");
+			$("#m_img01").show();
+			$("#m_img02").hide();
+			$("#m_img03").hide();
 			$("#embed01").show();
 			$("#embed02").hide();
 			$("#embed03").hide();
 		});
 		$("#cont-img02").click(function(){
-			$("#m_img02").css("z-index","99");
-			$("#m_img01").css("z-index","88");
-			$("#m_img03").css("z-index","77");
+			$("#m_img02").show();
+			$("#m_img01").hide();
+			$("#m_img03").hide();
 			$("#embed01").hide();
 			$("#embed02").show();
 			$("#embed03").hide();
 		});
 		$("#cont-img03").click(function(){
-			$("#m_img01").css("z-index","77");
-			$("#m_img02").css("z-index","88");
-			$("#m_img03").css("z-index","99");
+			$("#m_img01").hide();
+			$("#m_img02").hide();
+			$("#m_img03").show();
 			$("#embed01").hide();
 			$("#embed02").hide();
 			$("#embed03").show();
@@ -517,7 +517,7 @@
 			$("html,body").animate({scrollTop: $("#zhizhi").offset().top}, 500);
 		});
 		$("#custId").click(function(){
-			$("html,body").animate({scrollTop: $("#cust").offset().top - 440}, 500);
+			$("html,body").animate({scrollTop: $("#cust").offset().top}, 500);
 		});
 		$("#liuchengId").click(function(){
 			$("html,body").animate({scrollTop: $("#liucheng").offset().top}, 500);
@@ -532,14 +532,14 @@
 		var swidth = window.screen.width;
 		//alert(swidth);
 		if(swidth == 1440){
-			$(".main-partner").css("width",swidth);
+			/* $(".main-partner").css("width",swidth);
 			$(".main-partner img").css("width",swidth);
 			$(".em_video").css({"top":"1952px","left":"695px","width":"403px","height":"231px"});
 			$(".em_video embed").css({"width":"403px","height":"231px"});
 			$(".m_img").css({"top":"2137px","left":"1102px","width":"138px","height":"181px"});
-			$(".m_img img").css({"width":"138px","height":"181px"});
+			$(".m_img img").css({"width":"138px","height":"181px"}); */
 		}else if(swidth == 1920){
-			$(".main-partner").css("width",swidth);
+			/* $(".main-partner").css("width",swidth);
 			$(".main-partner img").css("width",swidth);
 			$(".em_video").css({"top":"1971px","left":"927px","width":"537px","height":"303px"});
 			$(".em_video embed").css({"width":"537px","height":"303px"});
@@ -547,7 +547,7 @@
 			$(".m_img img").css({"width":"182px","height":"238px"});
 			$("#zuojiantou").css({"top":"3160px","left":"435px"});
 			$("#youjiantou").css({"top":"3160px","left":"1400px"});
-			$("#hengxian").css({"top":"3177px","left":"501px"});
+			$("#hengxian").css({"top":"3177px","left":"501px"}); */
 		}
 	});
 </script>
@@ -1299,16 +1299,37 @@
 		</div>
 		<div class="main-ourteam-cont-title">
 			<i style="width: 32px; height: 22px; background: url(/static/public/images/ic2.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-			<a id="anli" href="/cust.jhtml" style="font-size: 24px;" target="_blank">客户感言见证</a>
+			<a id="cust" href="/cust.jhtml" style="font-size: 24px;" target="_blank">客户感言见证</a>
 		</div>
 		<div class="main-partner">
-			<img src="/static/public/images/img03.jpg" width="1366" />
+			<!-- <img src="/static/public/images/img03.jpg" width="1366" /> -->
+			<c:if test="${partnersSize!=0 }">
+				<c:forEach items="${partners }" var="partner" varStatus="status">
+					<c:if test="${status.index < 3}">
+						<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_div">
+							 <embed id="ckplayer_a1" align="middle" width="381" height="215" 
+								pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
+								<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
+									flashvars="f=${www_prefix}/${partner.video }" 
+								</c:if>
+								<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
+									flashvars="f=${partner.videoLink }" 
+								</c:if>
+								src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
+								quality="high" allowfullscreen="true" allowscriptaccess="always" />
+						</div>
+						<div id="m_img0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_img">
+							<img data-original="${partner.path }" src="/static/public/images/grey.gif" width="132" height="174"/>
+						</div>
+					</c:if>
+				</c:forEach>
+			</c:if>
+			<a href="/cust.jhtml" target="_blank">
+				<div class="more_partner" title="更多">&nbsp;</div>
+			</a>
 		</div>
 		<div class="main-evaluation">
 			<div class="main-evaluation-list">
-				<!-- <a id="cust" href="/cust.jhtml" target="_blank">
-					<div class="more_partner" title="更多">&nbsp;</div>
-				</a> -->
 				<c:if test="${partnersSize!=0 }">
 					<c:forEach items="${partners }" var="partner" varStatus="status">
 						<c:if test="${status.index < 3}">
@@ -1326,11 +1347,8 @@
 									</p>
 								</div>
 							</div>
-							<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
-								<%-- <embed type="application/x-shockwave-flash" width="372" height="215" 
-									src="/${partner.video }" allowfullscreen="true" 
-									quality="high" allowscriptaccess="always" align="middle" /> --%>
-							   <%--  <embed id="ckplayer_a1" align="middle" width="381" height="215" 
+							<%-- <div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
+							    <embed id="ckplayer_a1" align="middle" width="381" height="215" 
 									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
 									<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
 										flashvars="f=${www_prefix}/${partner.video }" 
@@ -1339,11 +1357,11 @@
 										flashvars="f=${partner.videoLink }" 
 									</c:if>
 									src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
-									quality="high" allowfullscreen="true" allowscriptaccess="always" /> --%>
+									quality="high" allowfullscreen="true" allowscriptaccess="always" />
 							</div>
 							<div id="m_img0${status.index+1 }" class="m_img">
-								<%-- <img data-original="${partner.path }" src="/static/public/images/grey.gif" width="132" height="174"/> --%>
-							</div>
+								<img data-original="${partner.path }" src="/static/public/images/grey.gif" width="132" height="174"/>
+							</div> --%>
 						</c:if>
 					</c:forEach>
 				</c:if>

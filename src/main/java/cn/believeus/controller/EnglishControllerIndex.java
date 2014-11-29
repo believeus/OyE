@@ -273,7 +273,7 @@ public class EnglishControllerIndex {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "/english/ourBusiness")
+	@RequestMapping(value = "/english/ourBussiness")
 	public String businesss(HttpServletRequest request) {
 		List<ENBusiness> businesses = (List<ENBusiness>) baseService.findObjectList(ENBusiness.class);
 		request.setAttribute("businesses", businesses);
