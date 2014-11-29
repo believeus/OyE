@@ -421,25 +421,25 @@
 		});
 		//-------------------
 		$("#cont-img01").click(function(){
-			$("#m_img01").css("z-index","99");
-			$("#m_img02").css("z-index","88");
-			$("#m_img03").css("z-index","77");
+			$("#m_img01").show();
+			$("#m_img02").hide();
+			$("#m_img03").hide();
 			$("#embed01").show();
 			$("#embed02").hide();
 			$("#embed03").hide();
 		});
 		$("#cont-img02").click(function(){
-			$("#m_img02").css("z-index","99");
-			$("#m_img01").css("z-index","88");
-			$("#m_img03").css("z-index","77");
+			$("#m_img02").show();
+			$("#m_img01").hide();
+			$("#m_img03").hide();
 			$("#embed01").hide();
 			$("#embed02").show();
 			$("#embed03").hide();
 		});
 		$("#cont-img03").click(function(){
-			$("#m_img01").css("z-index","77");
-			$("#m_img02").css("z-index","88");
-			$("#m_img03").css("z-index","99");
+			$("#m_img01").hide();
+			$("#m_img02").hide();
+			$("#m_img03").show();
 			$("#embed01").hide();
 			$("#embed02").hide();
 			$("#embed03").show();

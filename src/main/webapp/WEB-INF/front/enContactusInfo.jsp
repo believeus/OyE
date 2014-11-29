@@ -23,7 +23,7 @@
 	    width: 1140px;
 	}
 	.main_content_title_2{
-		width:150px;height:40px;line-height:40px;border-bottom:1px solid #FFA9B0;font-size:17px;color:#FFA9B0;font-weight:bold;font-family: songti;
+		width:210px;height:40px;line-height:40px;border-bottom:1px solid #FFA9B0;font-size:17px;color:#FFA9B0;font-weight:bold;font-family: songti;
 	}
 	.main_content_body_img{
 		width:600px;height:330px;float:left;margin-right: 20px; margin-bottom: 20px;
