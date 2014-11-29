@@ -110,7 +110,7 @@ public class EnglishControllerIndex {
 		if (StringUtils.isEmpty(pageNumber)) {
 			pageNumber="1";
 		}
-		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),2);
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),20);
 		String hql;
 		if (type==0) {
 			hql= "from ENNews as entity where entity.type=0 order by editTime desc";

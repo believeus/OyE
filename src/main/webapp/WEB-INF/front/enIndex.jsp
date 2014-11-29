@@ -569,11 +569,17 @@
 								<div class="main-service-cont-img">
 									<img data-original="${bus.path }" src="/static/public/images/grey.gif" width="99" height="99"/>
 								</div>
-								<div class="main-service-cont-name">
-									${bus.title }
+								<div class="main-service-cont-name" title="bus.title">
+									${fn:substring(bus.title, 0, 12)}
+									<c:if test="${fn:length(bus.title) > 12 }">
+					   					...
+				   					</c:if>
 								</div>
 								<div class="main-service-cont-dis">
-									${bus.description }
+									${fn:substring(bus.description, 0, 100)}
+									<c:if test="${fn:length(bus.description) > 100 }">
+					   					...
+				   					</c:if>
 								</div>
 							</div>
 						</c:if>
@@ -1393,8 +1399,11 @@
 										<span style="font-size: 18px;">${team.name } | ${team.ehName }</span>
 										<p>${team.position }</p>
 									</div>
-									<div class="dis">
-										${team.content }
+									<div class="dis" title="${team.content }">
+										${fn:substring(team.content, 0, 50)}
+										<c:if test="${fn:length(team.content) > 50 }">
+						   					...
+					   					</c:if>
 									</div>
 								</div>
 							</c:if>

@@ -8,6 +8,9 @@ html,body,ul,li,a,p{
 	/*font: 12px/1.5 tahoma,arial,"Hiragino Sans GB",宋体,sans-serif;*/
 	color: #999999;
 }
+* {
+	padding:0px;margin:0px;
+} 
 body{
 	overflow-x: hidden;
 }

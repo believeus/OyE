@@ -124,7 +124,8 @@
 									<c:if test="${status.index==3}">id="wh2" </c:if>
 									<c:if test="${status.index==4}">id="wh3" </c:if>
 									<c:if test="${status.index==0}"> class="current_au" </c:if> 
-									href="/contactusInfo.jhtml?id=${category.id }#${status.index}" title="${category.category }">${category.category }</a>
+									href="/contactusInfo.jhtml?id=${category.id }#${status.index}" title="${category.category }">${category.category }
+								</a>
 							</li>
 						</c:forEach>
 					</ul>

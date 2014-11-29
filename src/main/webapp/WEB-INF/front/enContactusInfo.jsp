@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
 <title>About Us</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -22,7 +23,7 @@
 	    width: 1140px;
 	}
 	.main_content_title_2{
-		width:80px;height:40px;line-height:40px;border-bottom:1px solid #FFA9B0;font-size:17px;color:#FFA9B0;font-weight:bold;font-family: songti;
+		width:150px;height:40px;line-height:40px;border-bottom:1px solid #FFA9B0;font-size:17px;color:#FFA9B0;font-weight:bold;font-family: songti;
 	}
 	.main_content_body_img{
 		width:600px;height:330px;float:left;margin-right: 20px; margin-bottom: 20px;
@@ -106,7 +107,12 @@
 		<!-- <img src="/static/public/images/news_list.jpg" width="100%"/> -->
 		<div class="main_content">
 			<div class="main_content_title">
-				<div class="main_content_title_2">${contactusInfo.category}</div>
+				<div class="main_content_title_2" style="">
+					${fn:substring(contactusInfo.category, 0, 20)}
+					<c:if test="${fn:length(contactusInfo.category) > 20 }">
+	   					...
+   					</c:if>
+				</div>
 			</div>
 			<div class="main_content_body">
 				<div style="width:180px;height:300px;overflow:hidden;float:left;margin-right:50px;border: 2px solid #e4e4e4;margin-bottom:50px;">
@@ -118,8 +124,11 @@
 									<c:if test="${status.index==0}">id="dt" </c:if>
 									<c:if test="${status.index==1}">id="ry" </c:if>
 									<c:if test="${status.index==2}">id="wh" </c:if>
+									<c:if test="${status.index==3}">id="wh2" </c:if>
+									<c:if test="${status.index==4}">id="wh3" </c:if>
 									<c:if test="${status.index==0}"> class="current_au" </c:if> 
-									href="/contactusInfo.jhtml?id=${category.id }" title="${category.category }">${category.category }</a>
+									href="/contactusInfo.jhtml?id=${category.id }#${status.index}" title="${category.category }">${category.category }
+								</a>
 							</li>
 						</c:forEach>
 					</ul>
@@ -147,18 +156,39 @@
 				$("#dt").removeClass("current_au");
 				$("#ry").removeClass("current_au");
 				$("#wh").removeClass("current_au");
+				$("#wh2").removeClass("current_au");
+				$("#wh3").removeClass("current_au");
 				$("#dt").addClass("current_au");
 			}else if(type==1){
 				$("#dt").removeClass("current_au");
 				$("#ry").removeClass("current_au");
 				$("#wh").removeClass("current_au");
+				$("#wh2").removeClass("current_au");
+				$("#wh3").removeClass("current_au");
 				$("#ry").addClass("current_au");
 			}else if(type==2){
 				$("#dt").removeClass("current_au");
 				$("#ry").removeClass("current_au");
 				$("#wh").removeClass("current_au");
+				$("#wh2").removeClass("current_au");
+				$("#wh3").removeClass("current_au");
 				$("#wh").addClass("current_au");
+			}else if(type==3){
+				$("#dt").removeClass("current_au");
+				$("#ry").removeClass("current_au");
+				$("#wh").removeClass("current_au");
+				$("#wh2").removeClass("current_au");
+				$("#wh3").removeClass("current_au");
+				$("#wh2").addClass("current_au");
+			}else if(type==3){
+				$("#dt").removeClass("current_au");
+				$("#ry").removeClass("current_au");
+				$("#wh").removeClass("current_au");
+				$("#wh2").removeClass("current_au");
+				$("#wh3").removeClass("current_au");
+				$("#wh3").addClass("current_au");
 			}
+			
 		});
 	</script>
 </body>
