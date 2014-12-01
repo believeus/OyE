@@ -71,7 +71,7 @@
 	}
 	.team_list_img img {
 	    border-radius: 55px;
-	    border:2px solid #5685CE;
+	    border:2px solid #e4e4e4;
 	}
 </style>
 </head>

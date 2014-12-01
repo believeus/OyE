@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
 <title>Testimonials</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -132,16 +133,16 @@
 				<c:forEach items="${partners }" var="partners" varStatus="status">
 					<c:if test="${status.index < 6}">
 						<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
-							<embed id="ckplayer_a1" align="middle" width="567" height="320" 
-								pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
-								<c:if test="${partners.videoLink ==null || partners.videoLink =='' }">
-									flashvars="f=${www_prefix }/${partners.video }" 
-								</c:if>
-								<c:if test="${partners.videoLink !=null && partners.videoLink !='' }">
-									flashvars="f=${partners.videoLink }" 
-								</c:if>
-								src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
-								quality="high" allowfullscreen="true" allowscriptaccess="always" />
+							<c:if test="${partners.videoLink ==null || partners.videoLink =='' }">
+								 <embed id="ckplayer_a1" align="middle" width="381" height="215" 
+									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
+									flashvars="f=${www_prefix}/${partners.video }" 
+									src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
+									quality="high" allowfullscreen="true" allowscriptaccess="always" />
+							</c:if>
+							<c:if test="${partners.videoLink !=null && partners.videoLink !='' }">
+								<embed src="${partners.videoLink }" style="width:567px;height:320px;"/>
+							</c:if>
 						</div>
 						<div id="m_img0${status.index+1 }" class="m_imgs" <c:if test="${status.index > 0 }">style="display:none;"</c:if>>
 							<img src="${partners.path }" width="203" height="267"/>
@@ -158,25 +159,14 @@
 					</div>
 					<div class="main-evaluation-list-cont-dis">
 						<p class="main-cont-dis-title">${partners.name }</p>
-						<p class="main-cont-dis-conts">${partners.content }</p>
+						<p class="main-cont-dis-conts">
+							${fn:substring(partners.content, 0, 30)}
+							<c:if test="${fn:length(partners.content) > 30 }">
+			   					...
+		   					</c:if>
+						</p>
 					</div>
 				</div>
-				<%-- <div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
-					<embed id="ckplayer_a1" align="middle" width="556" height="315" 
-						pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
-						<c:if test="${partners.videoLink ==null || partners.videoLink =='' }">
-							flashvars="f=${www_prefix }/${partners.video }" 
-						</c:if>
-						<c:if test="${partners.videoLink !=null && partners.videoLink !='' }">
-							flashvars="f=${partners.videoLink }" 
-						</c:if>
-						src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
-						quality="high" allowfullscreen="true" allowscriptaccess="always" />
-						<!-- http://player.youku.com/player.php/sid/XMzI1ODcwODQw/v.swf -->
-				</div>
-				<div id="m_img0${status.index+1 }" style="position: absolute; left: 880px; top: 392px; width: 200px; height: 265px;">
-					<img src="${partners.path }" width="200" height="265"/>
-				</div> --%>
 			</c:forEach>
 			<form action="/enCust.jhtml" id="listForm">
 				<jsp:include page="/WEB-INF/back/include/pagination.jsp" flush="true" />

@@ -564,7 +564,7 @@
 			<div class="main-service-list">
 				<c:if test="${bsize!=0 }">
 					<c:forEach items="${businesses }" var="bus" varStatus="status">
-						<c:if test="${status.index < 5}">
+						<c:if test="${status.index < 6}">
 							<div class="main-service-cont" <c:if test="${(status.index+1)%3==0 }">style="margin-right:0;"</c:if>>
 								<div class="main-service-cont-img">
 									<img data-original="${bus.path }" src="/static/public/images/grey.gif" width="99" height="99"/>
@@ -711,7 +711,7 @@
 								<div id="content_list">
 									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
 										<dl>
-											<dt><img data-original="${url }" src="/static/public/images/grey.gif"/></dt>
+											<dt><img src="${url }" /></dt>
 										</dl>
 									</c:forEach>
 								</div>
@@ -730,7 +730,7 @@
 						<c:if test="${status.index<5 }">
 							<div class="main-comps-list" id="2list0${status.index+1 }">
 								<img src="/static/public/images/cry.png" />
-								<img data-original="${example.logo }" src="/static/public/images/grey.gif" width="88" height="30" style="position: relative; top: -65px;"/>
+								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
 							</div>
 						</c:if>
 					</c:forEach>
@@ -745,7 +745,7 @@
 								<div id="content_list">
 									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
 										<dl>
-											<dt><img data-original="${url }" src="/static/public/images/grey.gif"/></dt>
+											<dt><img src="${url }" /></dt>
 										</dl>
 									</c:forEach>
 								</div>
@@ -764,7 +764,7 @@
 						<c:if test="${status.index<5 }">
 							<div class="main-comps-list" id="3list0${status.index+1 }">
 								<img src="/static/public/images/cry.png" />
-								<img data-original="${example.logo }" src="/static/public/images/grey.gif" width="88" height="30" style="position: relative; top: -65px;"/>
+								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
 							</div>
 						</c:if>
 					</c:forEach>
@@ -779,7 +779,7 @@
 								<div id="content_list">
 									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
 										<dl>
-											<dt><img data-original="${url }" src="/static/public/images/grey.gif"/></dt>
+											<dt><img src="${url }" /></dt>
 										</dl>
 									</c:forEach>
 								</div>
@@ -1267,16 +1267,16 @@
 				<c:forEach items="${partners }" var="partner" varStatus="status">
 					<c:if test="${status.index < 3}">
 						<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_div">
-							 <embed id="ckplayer_a1" align="middle" width="381" height="215" 
-								pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
-								<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
+							<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
+								 <embed id="ckplayer_a1" align="middle" width="381" height="215" 
+									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
 									flashvars="f=${www_prefix}/${partner.video }" 
-								</c:if>
-								<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
-									flashvars="f=${partner.videoLink }" 
-								</c:if>
-								src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
-								quality="high" allowfullscreen="true" allowscriptaccess="always" />
+									src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
+									quality="high" allowfullscreen="true" allowscriptaccess="always" />
+							</c:if>
+							<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
+								<embed src="${partner.videoLink }" style="width:381px;height:215px;"/>
+							</c:if>
 						</div>
 						<div id="m_img0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_img">
 							<img data-original="${partner.path }" src="/static/public/images/grey.gif" width="132" height="174"/>
@@ -1690,8 +1690,12 @@
 										alert("place enter name");
 									}else if($("#phone").val() == ""){
 										alert("place enter phone");
+									}else if(!$("#phone").val().match(/^1[3|4|5|8][0-9]\d{4,8}$/)){
+										alert("phone number is not in the correct format.");
 									}else if($("#email").val() == ""){
 										alert("place enter email");
+									}else if (!$("#email").val().match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)){
+										alert("email is not in the correct format.");
 									}else if($("#title").val() == ""){
 										alert("place enter title");
 									}else if($("#content_a").val() == ""){

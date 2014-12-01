@@ -252,5 +252,12 @@
        	描述：页尾
        -->
 	<jsp:include page="footer.jsp" />
+	<script type="text/javascript">
+		$(function(){
+			//alert($(".footer-cn").offset().top);
+			//var height = $(".footer-cn").offset().top +50;
+			//$("body").css("height",height);
+		});
+	</script>
 </body>
 </html>

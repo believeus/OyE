@@ -87,12 +87,12 @@
 						<div class="team_list_img">
 							<img src="${customer.url }" width="85" height="55" />
 						</div>
-						<div class="team_list_name" title="${customer.clink }">
+						<%-- <div class="team_list_name" title="${customer.clink }">
 							${fn:substring(customer.clink, 0, 17)}
 							<c:if test="${fn:length(customer.clink) > 9 }">
 			   					...
 		   					</c:if>
-						</div>
+						</div> --%>
 					</div>
 				</c:forEach>
 			</div>

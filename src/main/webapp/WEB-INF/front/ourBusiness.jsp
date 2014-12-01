@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
 <title>业务范围</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -146,7 +147,7 @@
 				<div class="main-service-list">
 					<c:if test="${bsize!=0 }">
 						<c:forEach items="${businesses }" var="bus" varStatus="status">
-							<c:if test="${status.index < 5}">
+							<c:if test="${status.index < 6}">
 								<div class="main-service-cont" <c:if test="${(status.index+1)%3==0 }">style="margin-right:0;"</c:if>>
 									<div class="main-service-cont-img">
 										<img src="${bus.path }" width="99" height="99"/>
@@ -155,7 +156,10 @@
 										${bus.title }
 									</div>
 									<div class="main-service-cont-dis">
-										${bus.description }
+										${fn:substring(bus.description, 0, 100)}
+										<c:if test="${fn:length(bus.description) > 100 }">
+						   					...
+					   					</c:if>
 									</div>
 								</div>
 							</c:if>
