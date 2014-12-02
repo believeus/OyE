@@ -50,7 +50,7 @@
 				<li><a href="/" target="_blank">Home</a></li>
 				<li><a id="busId" href="/ourBussiness.jhtml" target="_blank">BusinessScope</a></li>
 				<li><a id="anliId" href="/caseList.jhtml" target="_blank">CaseShow</a></li>
-				<li><a id="zhizhiId" href="/teamList.jhtml" target="_blank">CompanyTeam</a></li>
+				<li><a id="zhizhiId" href="/teamList.jhtml" target="_blank">About Oye</a></li>
 				<li><a id="custId" href="/enCust.jhtml" target="_blank">Testimonials</a></li>
 				<li><a id="liuchengId" href="/serviceProcess.jhtml" target="_blank">ServiceProcess</a></li>
 				<li><a id="newsId" href="/newsList.jhtml?type=0" target="_blank">StationNews</a></li>

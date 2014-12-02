@@ -40,10 +40,10 @@
 	<div style="background:#E9E9E9;width:100%;height:60px;line-height: 60px;">
 		<div class="nav">
 			<ul>
-				<li><a href="/">首页</a></li>
+				<li><a href="/">首&nbsp;&nbsp;页</a></li>
 				<li><a id="busId" href="/#bus">业务范围</a></li>
 				<li><a id="anliId" href="/#anli">案例展示</a></li>
-				<li><a id="zhizhiId" href="/#zhizhi">企业资质</a></li>
+				<li><a id="zhizhiId" href="/#zhizhi">关于欧耶</a></li>
 				<li><a id="custId" href="/#cust">客户感言</a></li>
 				<li><a id="liuchengId" href="/#liucheng">服务流程</a></li>
 				<li><a id="newsId" href="/#news">站内新闻</a></li>
