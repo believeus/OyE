@@ -134,14 +134,14 @@
 					<c:if test="${status.index < 6}">
 						<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
 							<c:if test="${partners.videoLink ==null || partners.videoLink =='' }">
-								 <embed id="ckplayer_a1" align="middle" width="567" height="320" 
+								 <embed id="ckplayer_a1" align="middle" width="572" height="321" 
 									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
 									flashvars="f=${www_prefix}/${partners.video }" 
 									src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
 									quality="high" allowfullscreen="true" allowscriptaccess="always" />
 							</c:if>
 							<c:if test="${partners.videoLink !=null && partners.videoLink !='' }">
-								<embed src="${partners.videoLink }" style="width:567px;height:320px;"/>
+								<embed src="${partners.videoLink }" style="width:572px;height:321px;"/>
 							</c:if>
 						</div>
 						<div id="m_img0${status.index+1 }" class="m_imgs" <c:if test="${status.index > 0 }">style="display:none;"</c:if>>

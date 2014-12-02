@@ -16,9 +16,17 @@
 			var url = $(this).attr("href");
 			//alert(url.substring(0,url.indexOf("?")));
 			var uri = url.substring(0,url.indexOf("?"));
+			
 			if(href == $(this).attr("href") || href == uri){
 				$(this).parent().parent().find("a").removeClass("current");
 				$(this).addClass("current");
+			}
+			var anli = "/caseInfo.jhtml";
+			var news = "/newsInfo.jhtml";
+			if(anli == href){
+				$("#anliId").addClass("current");
+			}else if(news == href){
+				$("#newsId").addClass("current");
 			}
 		});
 	});

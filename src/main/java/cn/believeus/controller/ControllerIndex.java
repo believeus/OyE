@@ -119,9 +119,6 @@ public class ControllerIndex {
 			info=new ContactusInfo();
 		}
 		request.setAttribute("contactusInfo", info);
-		//关于欧耶
-		List<OyEInfo> oyEInfos = (List<OyEInfo>) baseService.findObjectList(OyEInfo.class); 
-		request.setAttribute("oyEInfo", oyEInfos.get(0));
 		
 		return "/WEB-INF/front/index.jsp";
 	}
@@ -314,7 +311,13 @@ public class ControllerIndex {
 			request.setAttribute("contactusInfo", contactusInfo);
 		}else {
 			List<ContactusInfo> contactusInfos= (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class);
-			request.setAttribute("contactusInfo", contactusInfos.get(0));
+			ContactusInfo info =null;
+			if (contactusInfos.size()!=0) {
+				info = contactusInfos.get(0);
+			}else {
+				info=new ContactusInfo();
+			}
+			request.setAttribute("contactusInfo", info);
 		}
 		List<ContactusInfo> contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class);
 		request.setAttribute("categories", contactusInfos);

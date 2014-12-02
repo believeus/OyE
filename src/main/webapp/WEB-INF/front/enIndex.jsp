@@ -1270,14 +1270,14 @@
 						<c:if test="${status.index < 3}">
 							<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_div">
 								<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
-									 <embed id="ckplayer_a1" align="middle" width="370" height="210" 
+									 <embed id="ckplayer_a1" align="middle" width="352" height="201" 
 										pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
 										flashvars="f=${www_prefix}/${partner.video }" 
 										src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
-										quality="high" allowfullscreen="true" allowscriptaccess="always" style="position: relative; top: 3px; left: 5px;" />
+										quality="high" allowfullscreen="true" allowscriptaccess="always" style="position: relative; top: 13px; left: 13px;" />
 								</c:if>
 								<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
-									<embed src="${partner.videoLink }" style="width:370px;height:210px;" style="position: relative; top: 3px; left: 5px;"/>
+									<embed src="${partner.videoLink }" style="width:352px;height:201px;" style="position: relative; top: 13px; left: 13px;"/>
 								</c:if>
 							</div>
 							<div id="m_img0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_img">

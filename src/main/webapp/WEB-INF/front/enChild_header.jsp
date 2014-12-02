@@ -26,6 +26,13 @@
 				$(this).parent().parent().find("a").removeClass("current");
 				$(this).addClass("current");
 			}
+			var anli = "/caseInfo.jhtml";
+			var news = "/newsInfo.jhtml";
+			if(anli == href){
+				$("#anliId").addClass("current");
+			}else if(news == href){
+				$("#newsId").addClass("current");
+			}
 		});
 	});
 </script>
