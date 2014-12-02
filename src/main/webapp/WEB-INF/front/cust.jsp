@@ -135,7 +135,7 @@
 					<c:if test="${status.index < 6}">
 						<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
 							<c:if test="${partners.videoLink ==null || partners.videoLink =='' }">
-								 <embed id="ckplayer_a1" align="middle" width="381" height="215" 
+								 <embed id="ckplayer_a1" align="middle" width="567" height="320" 
 									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
 									flashvars="f=${www_prefix}/${partners.video }" 
 									src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
