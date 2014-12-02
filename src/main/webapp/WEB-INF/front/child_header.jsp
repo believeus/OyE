@@ -55,9 +55,9 @@
 				<li><a href="/" target="_blank">首&nbsp;&nbsp;页</a></li>
 				<li><a id="busId" href="/ourBussiness.jhtml" target="_blank">业务范围</a></li>
 				<li><a id="anliId" href="/caseList.jhtml" target="_blank">案例展示</a></li>
-				<li><a id="zhizhiId" href="/oyeInfo.jhtml" target="_blank">关于欧耶</a></li>
 				<li><a id="custId" href="/cust.jhtml" target="_blank">客户感言</a></li>
 				<li><a id="liuchengId" href="/serviceProcess.jhtml" target="_blank">服务流程</a></li>
+				<li><a id="zhizhiId" href="/oyeInfo.jhtml" target="_blank">关于欧耶</a></li>
 				<li><a id="newsId" href="/newsList.jhtml?type=0" target="_blank">站内新闻</a></li>
 				<li><a id="zixunId" href="/contactusInfo.jhtml?type=0" target="_blank">联系我们</a></li>
 			</ul>

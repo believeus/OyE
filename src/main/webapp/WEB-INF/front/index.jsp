@@ -1613,7 +1613,7 @@
 							关于我们
 						</div>
 						<div style="float:right;width:50px;">
-							<a href="/contactusInfo.jhtml" style="color:#fff;" target="_blank">更多&gt;&gt;</a>
+							<a href="/oyeInfo.jhtml" style="color:#fff;" target="_blank">更多&gt;&gt;</a>
 						</div>
 					</div>
 						<div style="">

@@ -58,7 +58,7 @@
 						</shiro:hasPermission>
 						
 						<shiro:hasPermission name="contactus:view">  	
-						{"menuname":"关于我们管理","icon":"icon-nav","url":"/admin/contactus/conlist.jhtml"},
+						{"menuname":"联系我们管理","icon":"icon-nav","url":"/admin/contactus/conlist.jhtml"},
 						</shiro:hasPermission>
 						
 						<shiro:hasPermission name="oye:view">  	

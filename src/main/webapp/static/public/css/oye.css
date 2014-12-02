@@ -419,6 +419,10 @@ img{
 .about_content img {
 	width:100px;
 }
+.video_div2{
+	width: 615px; height: 509px; position: relative; left: 660px; top: 48px;
+	background:url(/static/public/images/macbg2.png);
+}
 @media screen and (min-width:1700px){
 	.partner_img{
 		margin:0 auto;

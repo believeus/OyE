@@ -284,7 +284,13 @@ public class EnglishControllerIndex {
 			request.setAttribute("contactusInfo", oyEInfo);
 		}else {
 			List<ENOyEInfo> contactusInfos= (List<ENOyEInfo>)baseService.findObjectList(ENOyEInfo.class);
-			request.setAttribute("contactusInfo", contactusInfos.get(0));
+			ENOyEInfo info =null;
+			if (contactusInfos.size()!=0) {
+				info = contactusInfos.get(0);
+			}else {
+				info=new ENOyEInfo();
+			}
+			request.setAttribute("contactusInfo", info);
 		}
 		List<ENOyEInfo> contactusInfos = (List<ENOyEInfo>)baseService.findObjectList(ENOyEInfo.class);
 		request.setAttribute("categories", contactusInfos);

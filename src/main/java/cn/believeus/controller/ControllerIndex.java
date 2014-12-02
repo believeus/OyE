@@ -337,7 +337,13 @@ public class ControllerIndex {
 			request.setAttribute("contactusInfo", oyEInfo);
 		}else {
 			List<OyEInfo> contactusInfos= (List<OyEInfo>)baseService.findObjectList(OyEInfo.class);
-			request.setAttribute("contactusInfo", contactusInfos.get(0));
+			OyEInfo info =null;
+			if (contactusInfos.size()!=0) {
+				info = contactusInfos.get(0);
+			}else {
+				info=new OyEInfo();
+			}
+			request.setAttribute("contactusInfo", info);
 		}
 		List<OyEInfo> contactusInfos = (List<OyEInfo>)baseService.findObjectList(OyEInfo.class);
 		request.setAttribute("categories", contactusInfos);

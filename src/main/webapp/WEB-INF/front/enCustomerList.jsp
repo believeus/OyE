@@ -85,7 +85,9 @@
 				<c:forEach items="${customers }" var="customer" varStatus="status">
 					<div class="team_list" <c:if test="${(status.index+1)%11==0 }">style="margin-right:0;"</c:if>>
 						<div class="team_list_img">
-							<img src="${customer.url }" width="85" height="55" />
+							<a href="${customer.clink }" title="${customer.clink }">
+								<img src="${customer.url }" width="85" height="55" />
+							</a>
 						</div>
 						<%-- <div class="team_list_name" title="${customer.clink }">
 							${fn:substring(customer.clink, 0, 17)}

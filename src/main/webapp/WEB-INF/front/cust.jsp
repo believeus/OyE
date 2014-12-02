@@ -129,28 +129,37 @@
 	
 	<div class="main" style="background: #eaeaea;">
 		<!-- <img src="/static/public/images/customer_img.jpg" width="1366"/> -->
-		<div style="width:1366px;height:614px;background:url(/static/public/images/customer_img.jpg);margin:0 auto;">
-			<c:if test="${partnersSize!=0 }">
-				<c:forEach items="${partners }" var="partners" varStatus="status">
-					<c:if test="${status.index < 6}">
-						<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
-							<c:if test="${partners.videoLink ==null || partners.videoLink =='' }">
-								 <embed id="ckplayer_a1" align="middle" width="572" height="321" 
-									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
-									flashvars="f=${www_prefix}/${partners.video }" 
-									src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
-									quality="high" allowfullscreen="true" allowscriptaccess="always" />
-							</c:if>
-							<c:if test="${partners.videoLink !=null && partners.videoLink !='' }">
-								<embed src="${partners.videoLink }" style="width:572px;height:321px;"/>
-							</c:if>
-						</div>
-						<div id="m_img0${status.index+1 }" class="m_imgs" <c:if test="${status.index > 0 }">style="display:none;"</c:if>>
-							<img src="${partners.path }" width="203" height="267"/>
-						</div>
-					</c:if>
-				</c:forEach>
-			</c:if>
+		<div style="width:1920px;height:380px;overflow:hidden;margin:0 auto;">
+			<div class="main-partner">
+				<div class="partner_img">
+				<!-- <img src="/static/public/images/img03.jpg" width="1366" /> -->
+				<c:if test="${partnersSize!=0 }">
+					<c:forEach items="${partners }" var="partner" varStatus="status">
+						<c:if test="${status.index < 6}">
+							<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_div">
+								<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
+									 <embed id="ckplayer_a1" align="middle" width="352" height="201" 
+										pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
+										flashvars="f=${www_prefix}/${partner.video }" 
+										src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
+										quality="high" allowfullscreen="true" allowscriptaccess="always" style="width: 352px; height: 201px; position: relative; left: 14px; top: 12px;"/>
+								</c:if>
+								<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
+									<embed src="${partner.videoLink }" style="width: 352px; height: 201px; position: relative; left: 14px; top: 12px;" />
+								</c:if>
+							</div>
+							<div id="m_img0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_img">
+								<img src="${partner.path }" width="123" height="160"/>
+							</div>
+						</c:if>
+					</c:forEach>
+				</c:if>
+				<img src="/static/public/images/pingjiawenzi.png" style="position: relative; top: -450px; left: 90px;"/>
+				<a href="/cust.jhtml" target="_blank">
+					<div class="more_partner" title="更多">&nbsp;</div>
+				</a>
+				</div>
+			</div>
 		</div>
 		<div class="main-evaluation-list" style="margin:30px auto;">
 			<c:forEach var="partners" items="${partners}" varStatus="status">
