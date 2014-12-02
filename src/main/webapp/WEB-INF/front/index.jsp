@@ -1718,7 +1718,7 @@
 						<input class="input" type="text" id="phone" name="phone" placeholder="手机" />
 						<input class="input" type="text" id="email" name="email" placeholder="邮箱" />
 						<input class="input" type="text" id="title" name="title" placeholder="标题" />
-						<textarea class="input" id="content_a" name="content" maxlength="300" style="height: 125px;resize: none;overflow-y: hidden;" placeholder="内容填写"></textarea>
+						<textarea class="input" id="content_a" name="content" maxlength="1000" style="height: 125px;resize: none;overflow-y: hidden;" placeholder="内容填写"></textarea>
 						<input class="botton" type="submit" value="提交" />
 						<script type="text/javascript">
 							$(function(){

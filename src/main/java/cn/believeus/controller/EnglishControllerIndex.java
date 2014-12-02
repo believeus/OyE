@@ -18,7 +18,6 @@ import cn.believeus.model.CompanyInfo;
 import cn.believeus.model.Customers;
 import cn.believeus.model.Example;
 import cn.believeus.model.News;
-import cn.believeus.model.OyEInfo;
 import cn.believeus.model.Processs;
 import cn.believeus.model.en.ENBusiness;
 import cn.believeus.model.en.ENCompanyInfo;
@@ -202,11 +201,20 @@ public class EnglishControllerIndex {
 		return "/WEB-INF/front/enCust.jsp";
 	}
 	
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/english/caseList")
 	public String cases(HttpServletRequest request) {
-		List<Example> examples = (List<Example>)baseService.findObjectList(Example.class);
-		request.setAttribute("examples", examples);
+		String pageNumber = request.getParameter("pageNumber");
+		// 如果为空，则设置为1
+		if (StringUtils.isEmpty(pageNumber)) {
+			pageNumber="1";
+		}
+		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),12);
+		String hql="From Example example order by example.editTime desc";
+		Page<?> page = baseService.findObjectList(hql, pageable);
+		request.setAttribute("examples", page.getContent());
+		request.setAttribute("size",page.getTotal());
+		// 分页
+		PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
 		//企业信息
 		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
 		request.setAttribute("companyInfo", companyInfo);

@@ -147,7 +147,6 @@
 				<div class="main-service-list">
 					<c:if test="${bsize!=0 }">
 						<c:forEach items="${businesses }" var="bus" varStatus="status">
-							<c:if test="${status.index < 6}">
 								<div class="main-service-cont" <c:if test="${(status.index+1)%3==0 }">style="margin-right:0;"</c:if>>
 									<div class="main-service-cont-img">
 										<img src="${bus.path }" width="99" height="99"/>
@@ -162,7 +161,6 @@
 					   					</c:if>
 									</div>
 								</div>
-							</c:if>
 						</c:forEach>
 					</c:if>
 					<c:if test="${bsize==0 }">

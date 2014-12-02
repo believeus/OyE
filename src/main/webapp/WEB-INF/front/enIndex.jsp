@@ -1699,7 +1699,7 @@
 						<input class="input" type="text" id="phone" name="phone" placeholder="phone" />
 						<input class="input" type="text" id="email" name="email" placeholder="email" />
 						<input class="input" type="text" id="title" name="title" placeholder="title" />
-						<textarea class="input" id="content_a" name="content" maxlength="300" style="height: 125px;resize: none;overflow-y: hidden;" placeholder="content"></textarea>
+						<textarea class="input" id="content_a" name="content" maxlength="1000" style="height: 125px;resize: none;overflow-y: hidden;" placeholder="content"></textarea>
 						<input class="botton" type="submit" value="SUBMIT" />
 						<script type="text/javascript">
 							$(function(){
