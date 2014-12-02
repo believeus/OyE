@@ -111,7 +111,13 @@ public class ControllerIndex {
 		request.setAttribute("newsSize", news2.size());
 		//关于我们
 		List<ContactusInfo> contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class);
-		request.setAttribute("contactusInfo", contactusInfos.get(0));
+		ContactusInfo info =null;
+		if (contactusInfos.size()!=0) {
+			info = contactusInfos.get(0);
+		}else {
+			info=new ContactusInfo();
+		}
+		request.setAttribute("contactusInfo", info);
 		
 		return "/WEB-INF/front/index.jsp";
 	}
