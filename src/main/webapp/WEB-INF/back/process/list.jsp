@@ -64,91 +64,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="#"  class="sort">操作</a>
 				</th>
 			</tr>
-			<tr>
+			<c:forEach var="processs" items="${processs}" varStatus="status">
+					<tr>
 				<%-- <td>
 					<input type="checkbox" name="ids" value="${pro1.id }" />
 				</td> --%>
 				<td>
-					1
+					<span>${status.index+1}</span>
 				</td>
 				<td>
-					${pro1.cn }
+					${processs.cn }
 				</td>
 				<td>
-					${pro1.en }
+					${processs.en }
 				</td>
 				<td>
-					<a href="/admin/process/edit.jhtml?id=${pro1.id }">[修改]</a>
+					<a href="/admin/process/edit.jhtml?id=${processs.id }">[修改]</a>
 				</td>
 			</tr>
-			<tr>
-				<%-- <td>
-					<input type="checkbox" name="ids" value="${pro2.id }" />
-				</td> --%>
-				<td>
-					2
-				</td>
-				<td>
-					${pro2.cn }
-				</td>
-				<td>
-					${pro2.en }
-				</td>
-				<td>
-					<a href="/admin/process/edit.jhtml?id=${pro2.id }">[修改]</a>
-				</td>
-			</tr>
-			<tr>
-				<%-- <td>
-					<input type="checkbox" name="ids" value="${pro3.id }" />
-				</td> --%>
-				<td>
-					3
-				</td>
-				<td>
-					${pro3.cn }
-				</td>
-				<td>
-					${pro3.en }
-				</td>
-				<td>
-					<a href="/admin/process/edit.jhtml?id=${pro3.id }">[修改]</a>
-				</td>
-			</tr>
-			<tr>
-				<%-- <td>
-					<input type="checkbox" name="ids" value="${pro4.id }" />
-				</td> --%>
-				<td>
-					4
-				</td>
-				<td>
-					${pro4.cn }
-				</td>
-				<td>
-					${pro4.en }
-				</td>
-				<td>
-					<a href="/admin/process/edit.jhtml?id=${pro4.id }">[修改]</a>
-				</td>
-			</tr>
-			<tr>
-				<%-- <td>
-					<input type="checkbox" name="ids" value="${pro5.id }" />
-				</td> --%>
-				<td>
-					5
-				</td>
-				<td>
-					${pro5.cn }
-				</td>
-				<td>
-					${pro5.en }
-				</td>
-				<td>
-					<a href="/admin/process/edit.jhtml?id=${pro5.id }">[修改]</a>
-				</td>
-			</tr>
+			</c:forEach>
 		</table>
 	</div>
 	<div>

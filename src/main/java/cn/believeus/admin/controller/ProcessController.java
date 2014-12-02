@@ -38,7 +38,6 @@ public class ProcessController {
 	 * 流程
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/admin/process/list")
 	public String exampleList(HttpServletRequest request){
 		String pageNumber = request.getParameter("pageNumber");
@@ -49,28 +48,16 @@ public class ProcessController {
 		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),20);
 		String hql="From Processs processs order by processs.editTime desc";
 		Page<?> page = baseService.findObjectList(hql, pageable);
-		request.setAttribute("processs", page.getContent());
 		request.setAttribute("size",page.getTotal());
 		// 分页
 		PaginationUtil.pagination(request, page.getPageNumber(),page.getTotalPages(), 0);
-		Processs pro1 = (Processs) baseService.findObject(Processs.class, 1);
-		Processs pro2 = (Processs) baseService.findObject(Processs.class, 2);
-		Processs pro3 = (Processs) baseService.findObject(Processs.class, 3);
-		Processs pro4 = (Processs) baseService.findObject(Processs.class, 4);
-		Processs pro5 = (Processs) baseService.findObject(Processs.class, 5);
-		List<Processs> pros =  (List<Processs>) baseService.findObjectList(Processs.class);
-		for (Processs pross : pros) {
-			Integer id = pross.getId();
-			List<Integer> ids = new ArrayList<Integer>();
-			ids.add(id);
-			baseService.delete(Processs.class, ids);
-		}
-		if (pro1==null&&pro2==null&&pro3==null&&pro4==null&&pro5==null) {
-			pro1 = new Processs();
-			pro2 = new Processs();
-			pro3 = new Processs();
-			pro4 = new Processs();
-			pro5 = new Processs();
+		List<Processs> processses=new ArrayList<Processs>();
+		if (page.getContent().size()==0) {
+			Processs pro1 = new Processs();
+			Processs pro2 = new Processs();
+			Processs pro3 = new Processs();
+			Processs pro4 = new Processs();
+			Processs pro5 = new Processs();
 			pro1.setCn("控制流程");
 			pro1.setEn("control process");
 			baseService.saveOrUpdata(pro1);
@@ -86,12 +73,15 @@ public class ProcessController {
 			pro5.setCn("第四步");
 			pro5.setEn("the four step");
 			baseService.saveOrUpdata(pro5);
+			processses.add(pro1);
+			processses.add(pro2);
+			processses.add(pro3);
+			processses.add(pro4);
+			processses.add(pro5);
+			request.setAttribute("processs", processses);
+		}else {
+			request.setAttribute("processs", page.getContent());
 		}
-		request.setAttribute("pro1", pro1);
-		request.setAttribute("pro2", pro2);
-		request.setAttribute("pro3", pro3);
-		request.setAttribute("pro4", pro4);
-		request.setAttribute("pro5", pro5);
 		return "/WEB-INF/back/process/list.jsp";
 	}
 	/** 
