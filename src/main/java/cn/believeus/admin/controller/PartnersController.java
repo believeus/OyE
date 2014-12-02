@@ -132,6 +132,7 @@ public class PartnersController {
 			partners.setVideoLink(null);
 		}
 		baseService.saveOrUpdata(partners);
+		enPartners.setVideoLink(partners.getVideoLink());
 		baseService.saveOrUpdata(enPartners);
 		return "redirect:/admin/partners/list.jhtml";
 	}

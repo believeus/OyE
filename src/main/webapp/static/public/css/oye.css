@@ -23,13 +23,11 @@ img{
 	background: #FFFFFF;
 }
 .sel-languages{
-	border-left: 1px solid #e4e4e4;
     float: right;
     height: 50px;
     margin: 10px 0;
-    /* text-align: right; */
-    width: 1000px;
-    padding-left:10px;
+    padding-left: 10px;
+    width: 500px;
 }
 .sel-languages a {
     color: #999;
@@ -42,7 +40,7 @@ img{
 .logo-img{
 	float: left;
 	height: 70px;
-	width:160px;
+	width:356px;
 }
 .nav{
 	height: auto;

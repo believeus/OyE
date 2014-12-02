@@ -23,16 +23,17 @@
 	<div class="logo">
 		<div style="width:1180px;height: auto;overflow: hidden;margin: 10px auto 0;">
 			<div class="logo-img">
-				<a href="/"><img src="/static/public/images/logo2.png" width="160" /></a>
+				<a href="/">
+					<!-- <img src="/static/public/images/logo2.png" width="160" /> -->
+					<img src="/static/public/images/oyelogo.png" width="356" />
+				</a>
 			</div>
 			<div class="sel-languages">
-					<span style="color:#EA3838; position: relative; top: -30px; font-weight: bold; font-size: 15px;">您身边最专业的搬迁专家</span>
-					<span style="position: relative; left: 685px; top: -30px;">
-						<a href="/">中文</a> |
-						<a href="/english.jhtml" style="margin-right: 57px;">English</a>
-					</span>
-					<span style="position: relative; left: -320px; font-size: 12px; color: #888;">SPFE + PROFESSIONAL + FAST</span>
-					<span style="position: relative; left: 285px;">服务热线：400-7681867</span>
+				<span style="position: relative; top: -30px; left: 355px;">
+					<a href="/">中文</a> |
+					<a href="/english.jhtml" style="margin-right: 57px;">English</a>
+				</span>
+				<span style="position: relative; left: 135px;">服务热线：400-7681867</span>
 			</div>
 		</div>
 	</div>
