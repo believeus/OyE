@@ -17,13 +17,13 @@
 			$(this).parent().parent().find("a").removeClass("current");
 			$(this).addClass("current");
 		}); */
-		var href = window.location.pathname;
+		/* var href = window.location.pathname;
 		$(".nav a").each(function(){
 			if(href == $(this).attr("href")){
 				$(this).parent().parent().find("a").removeClass("current");
 				$(this).addClass("current");
 			}
-		});
+		}); */
 	});
 </script>
 <div class="header">
@@ -50,7 +50,7 @@
 				<li><a href="/english.jhtml">Home</a></li>
 				<li><a id="busId" href="/english.jhtml#bus">BusinessScope</a></li>
 				<li><a id="anliId" href="/english.jhtml#anli">CaseShow</a></li>
-				<li><a id="zhizhiId" href="/english.jhtml#zhizhi">About Oye</a></li>
+				<li><a id="zhizhiId" href="/oyeInfo.jhtml" target="_blank">About Oye</a></li>
 				<li><a id="custId" href="/english.jhtml#cust">Testimonials</a></li>
 				<li><a id="liuchengId" href="/english.jhtml#liucheng">ServiceProcess</a></li>
 				<li><a id="newsId" href="/english.jhtml#news">StationNews</a></li>

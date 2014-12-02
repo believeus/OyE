@@ -10,22 +10,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 import cn.believeus.PaginationUtil.Page;
 import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Banner;
 import cn.believeus.model.CompanyInfo;
-import cn.believeus.model.ContactusInfo;
 import cn.believeus.model.Customers;
 import cn.believeus.model.Example;
 import cn.believeus.model.News;
+import cn.believeus.model.OyEInfo;
+import cn.believeus.model.Processs;
 import cn.believeus.model.en.ENBusiness;
 import cn.believeus.model.en.ENCompanyInfo;
 import cn.believeus.model.en.ENContactusInfo;
 import cn.believeus.model.en.ENNews;
+import cn.believeus.model.en.ENOyEInfo;
 import cn.believeus.model.en.ENPartners;
-import cn.believeus.model.Processs;
 import cn.believeus.model.en.ENTeam;
 import cn.believeus.service.BaseService;
 import cn.believeus.variables.Variables;
@@ -254,6 +254,27 @@ public class EnglishControllerIndex {
 		List<ENContactusInfo> contactusInfos = (List<ENContactusInfo>)baseService.findObjectList(ENContactusInfo.class);
 		request.setAttribute("categories", contactusInfos);
 		return "/WEB-INF/front/enContactusInfo.jsp";
+	}
+	
+	/**
+	 * 关于欧耶列表
+	 * @param request
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/english/oyeInfo")
+	public String oyeInfoList(HttpServletRequest request,Integer id) {
+		ENOyEInfo  oyEInfo=new ENOyEInfo();
+		if (id!=null&&id!=0) {
+			oyEInfo= (ENOyEInfo)baseService.findObject(ENOyEInfo.class, id);
+			request.setAttribute("contactusInfo", oyEInfo);
+		}else {
+			List<ENOyEInfo> contactusInfos= (List<ENOyEInfo>)baseService.findObjectList(ENOyEInfo.class);
+			request.setAttribute("contactusInfo", contactusInfos.get(0));
+		}
+		List<ENOyEInfo> contactusInfos = (List<ENOyEInfo>)baseService.findObjectList(ENOyEInfo.class);
+		request.setAttribute("categories", contactusInfos);
+		return "/WEB-INF/front/enOyeInfo.jsp";
 	}
 	
 	/**

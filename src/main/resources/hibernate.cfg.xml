@@ -61,6 +61,8 @@
 		<mapping class="cn.believeus.model.en.ENNews"/>
 		<mapping class="cn.believeus.model.en.ENPartners"/>
 		<mapping class="cn.believeus.model.en.ENTeam"/>
+		<mapping class="cn.believeus.model.OyEInfo"/>
+		<mapping class="cn.believeus.model.en.ENOyEInfo"/>
 		
 	</session-factory>
 

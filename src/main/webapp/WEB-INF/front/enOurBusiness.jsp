@@ -140,10 +140,6 @@
 				<div class="main_content_title_2" style="width: 130px;">Our Business</div>
 			</div>
 			<div class="main-service" style="margin-top:30px;">
-				<p class="">
-					<i style="width: 22px; height: 26px; background: url(/static/public/images/ser.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="bus" style="font-size: 24px;" href="/ourBusiness.jhtml" target="_blank">Our Business</a>
-				</p>
 				<div class="main-service-list">
 					<c:if test="${bsize!=0 }">
 						<c:forEach items="${businesses }" var="bus" varStatus="status">

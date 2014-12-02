@@ -33,6 +33,7 @@ import cn.believeus.model.ContactusInfo;
 import cn.believeus.model.Customers;
 import cn.believeus.model.Example;
 import cn.believeus.model.News;
+import cn.believeus.model.OyEInfo;
 import cn.believeus.model.Partners;
 import cn.believeus.model.Processs;
 import cn.believeus.model.Team;
@@ -118,6 +119,9 @@ public class ControllerIndex {
 			info=new ContactusInfo();
 		}
 		request.setAttribute("contactusInfo", info);
+		//关于欧耶
+		List<OyEInfo> oyEInfos = (List<OyEInfo>) baseService.findObjectList(OyEInfo.class); 
+		request.setAttribute("oyEInfo", oyEInfos.get(0));
 		
 		return "/WEB-INF/front/index.jsp";
 	}
@@ -315,6 +319,26 @@ public class ControllerIndex {
 		List<ContactusInfo> contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class);
 		request.setAttribute("categories", contactusInfos);
 		return "/WEB-INF/front/contactusInfo.jsp";
+	}
+	/**
+	 * 关于欧耶列表
+	 * @param request
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/oyeInfo")
+	public String oyeInfoList(HttpServletRequest request,Integer id) {
+		OyEInfo  oyEInfo=new OyEInfo();
+		if (id!=null&&id!=0) {
+			oyEInfo= (OyEInfo)baseService.findObject(OyEInfo.class, id);
+			request.setAttribute("contactusInfo", oyEInfo);
+		}else {
+			List<OyEInfo> contactusInfos= (List<OyEInfo>)baseService.findObjectList(OyEInfo.class);
+			request.setAttribute("contactusInfo", contactusInfos.get(0));
+		}
+		List<OyEInfo> contactusInfos = (List<OyEInfo>)baseService.findObjectList(OyEInfo.class);
+		request.setAttribute("categories", contactusInfos);
+		return "/WEB-INF/front/oyeInfo.jsp";
 	}
 	
 	/**

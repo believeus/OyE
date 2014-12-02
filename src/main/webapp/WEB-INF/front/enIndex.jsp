@@ -448,9 +448,9 @@
 		$("#anliId").click(function(){
 			$("html,body").animate({scrollTop: $("#anli").offset().top}, 500);
 		});
-		$("#zhizhiId").click(function(){
+		/* $("#zhizhiId").click(function(){
 			$("html,body").animate({scrollTop: $("#zhizhi").offset().top}, 500);
-		});
+		}); */
 		$("#custId").click(function(){
 			$("html,body").animate({scrollTop: $("#cust").offset().top}, 500);
 		});
@@ -1527,7 +1527,7 @@
 				</c:if>
 			</div>
 		</div>
-		<div class="main-oye">
+		<%-- <div class="main-oye">
 			<div style="width:1100px;height:auto;overflow:hidden;margin:0 auto 30px;">
 				<div class="main-ourteam-cont-title">
 					<i style="width: 31px; height: 28px; background: url(/static/public/images/lc.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
@@ -1537,7 +1537,7 @@
 					${contactusInfo.content }
 				</div>
 			</div>
-		</div>
+		</div> --%>
 		<div class="main-cust">
 			<div style="width:1100px;height:435px;overflow:hidden;margin:0 auto 30px;">
 				<div class="main-ourteam-cont-title">
