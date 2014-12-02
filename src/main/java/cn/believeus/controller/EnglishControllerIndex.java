@@ -16,6 +16,7 @@ import cn.believeus.PaginationUtil.Pageable;
 import cn.believeus.PaginationUtil.PaginationUtil;
 import cn.believeus.model.Banner;
 import cn.believeus.model.CompanyInfo;
+import cn.believeus.model.ContactusInfo;
 import cn.believeus.model.Customers;
 import cn.believeus.model.Example;
 import cn.believeus.model.News;
@@ -96,12 +97,17 @@ public class EnglishControllerIndex {
 		List<News> news2 = (List<News>) baseService.findObjectList(News.class);
 		request.setAttribute("newsSize", news2.size());
 		//关于我们
-		ENContactusInfo enContactusInfo = (ENContactusInfo)baseService.findObject(ENContactusInfo.class, 1);
-		request.setAttribute("contactusInfo", enContactusInfo);
+		List<ENContactusInfo> contactusInfos = (List<ENContactusInfo>)baseService.findObjectList(ENContactusInfo.class);
+		ENContactusInfo info =null;
+		if (contactusInfos.size()!=0) {
+			info = contactusInfos.get(0);
+		}else {
+			info=new ENContactusInfo();
+		}
+		request.setAttribute("contactusInfo", info);
 		
 		return "/WEB-INF/front/enIndex.jsp";
 	}
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/english/newsList")
 	public String news(HttpServletRequest request,Integer type) {
 		

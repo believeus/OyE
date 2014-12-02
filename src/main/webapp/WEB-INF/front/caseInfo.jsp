@@ -127,7 +127,7 @@
 				<%-- <p style="text-align:center;margin-bottom:30px;color:#fff;">
 					<span style="margin-right:20px;">时间：${time }</span>
 				</p> --%>
-				<%-- <div style="text-align:center;">
+				<div style="text-align:center;">
 					<div class="banner_slider">
 		                <ul>
 		                	<c:forEach items="${paths }" var="path">
@@ -137,7 +137,7 @@
 		                	</c:forEach>
 		                </ul>
 		            </div>
-				</div> --%>
+				</div>
 				<div class="NI_duanluo">
 					${example.content }
 				</div>

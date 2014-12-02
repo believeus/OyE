@@ -217,7 +217,7 @@ img{
 	margin-top: 30px;
 	margin-bottom: 50px;
 	width:1366px;
-	margin:0 auto 20px;
+	margin:20px auto;
 }
 .main-evaluation-list{
 	width: 1200px;
@@ -260,7 +260,7 @@ img{
 }
 .main-ourteam-cont-title{
 	font-size: 24px;
-    height: 60px;
+    height: 80px;
     line-height: 60px;
     margin: 0 auto;
     width: 1150px;
@@ -365,8 +365,8 @@ img{
     width: 100%;
 }
 .main-partner{
-	width:1366px;margin:0 auto;height:410px;overflow:hidden;
-	background:url(/static/public/images/img03.jpg);
+	width:100%;margin:0 auto;height:380px;overflow:hidden;
+	background:url(/static/public/images/ganyan_bg.png);
 }
 .m_img{
 	width: 132px; height: 174px; position: absolute; top: 2242px; left: 1045px;
@@ -380,8 +380,47 @@ img{
     top: -132px;
 }
 .video_div{
-	width: 381px; height: 215px; position: relative; left: 660px; top: 48px;
+	width: 379px; height: 314px; position: relative; left: 660px; top: 48px;
+	background:url(/static/public/images/macbg.png);
 }
 .video_img{
-	width: 132px; height: 174px; position: relative; left: 1046px; top: 2px;
+	width: 141px; height: 189px; position: relative; left: 1091px; top: -130px;
+	background:url(/static/public/images/ipadbg.png);
+}
+.video_img img {
+	left: 9px;
+    position: relative;
+    top: 13px;
+}
+.more_partner{
+	cursor: pointer;
+    height: 38px;
+    left: 270px;
+    position: relative;
+    top: -487px;
+    width: 122px;
+}
+.partner_img{
+	width:1366px;height:380px;overflow:hidden;
+}
+.main-oye{
+	background: none repeat scroll 0 0 #fefafa;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    overflow:hidden;
+}
+.main-oye-content{
+	
+}
+.main-oye-content img {
+    width: 200px;
+}
+.about_content img {
+	width:100px;
+}
+@media screen and (min-width:1700px){
+	.partner_img{
+		margin:0 auto;
+	}
 }

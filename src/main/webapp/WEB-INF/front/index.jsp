@@ -181,9 +181,6 @@
     height: 460px;
     width: 100%;
 }
-.more_partner{
-	width: 130px; height: 38px; position: relative; left: 319px; top: -143px;cursor:pointer;
-}
 .main-ourteam-cont-title a:hover{
 	color:#ff5900;
 	text-decoration: underline;
@@ -599,7 +596,7 @@
 		</div>
 		<div class="main-service">
 			<p class="">
-				<i style="width: 22px; height: 26px; background: url(/static/public/images/ser.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
+				<i style="width: 64px; height: 63px; background: url(/static/public/images/ser.png); display: inline-block; position: relative; top: 22px; margin-right: 5px;"></i>
 				<a id="bus" style="font-size: 24px;" href="/ourBussiness.jhtml" target="_blank">服务范围Our Business</a>
 			</p>
 			<div class="main-service-list">
@@ -697,8 +694,8 @@
 			</div>
 		</div>
 		<div class="main-ourteam-cont-title">
-			<i style="width: 37px; height: 28px; background: url(/static/public/images/al.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-			<a id="anli" href="/caseList.jhtml" style="font-size: 24px;" target="_blank">我们的案例</a>
+			<i style="width: 64px; height: 58px; background: url(/static/public/images/al.png); display: inline-block; position: relative; top: 0px; margin-right: 5px;"></i>
+			<a id="anli" href="/caseList.jhtml" style="font-size: 24px; position: relative; top: -20px;" target="_blank">我们的案例</a>
 		</div>
 		<div class="main-comp-const">
 			<div class="main-comp-const-title" style="width:460px;">
@@ -1298,35 +1295,40 @@
 			</c:if>
 		</div>
 		<div class="main-ourteam-cont-title">
-			<i style="width: 32px; height: 22px; background: url(/static/public/images/ic2.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-			<a id="cust" href="/cust.jhtml" style="font-size: 24px;" target="_blank">客户感言见证</a>
+			<i style="width: 56px; height: 64px; background: url(/static/public/images/ic2.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
+			<a id="cust" href="/cust.jhtml" style="font-size: 24px; position: relative; top: -13px;" target="_blank">客户感言见证</a>
 		</div>
-		<div class="main-partner">
-			<!-- <img src="/static/public/images/img03.jpg" width="1366" /> -->
-			<c:if test="${partnersSize!=0 }">
-				<c:forEach items="${partners }" var="partner" varStatus="status">
-					<c:if test="${status.index < 3}">
-						<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_div">
-							<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
-								 <embed id="ckplayer_a1" align="middle" width="381" height="215" 
-									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
-									flashvars="f=${www_prefix}/${partner.video }" 
-									src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
-									quality="high" allowfullscreen="true" allowscriptaccess="always" />
-							</c:if>
-							<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
-								<embed src="${partner.videoLink }" style="width:381px;height:215px;"/>
-							</c:if>
-						</div>
-						<div id="m_img0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_img">
-							<img data-original="${partner.path }" src="/static/public/images/grey.gif" width="132" height="174"/>
-						</div>
-					</c:if>
-				</c:forEach>
-			</c:if>
-			<a href="/cust.jhtml" target="_blank">
-				<div class="more_partner" title="更多">&nbsp;</div>
-			</a>
+		<div style="width:1920px;height:380px;overflow:hidden;margin:0 auto;">
+			<div class="main-partner">
+				<div class="partner_img">
+				<!-- <img src="/static/public/images/img03.jpg" width="1366" /> -->
+				<c:if test="${partnersSize!=0 }">
+					<c:forEach items="${partners }" var="partner" varStatus="status">
+						<c:if test="${status.index < 3}">
+							<div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_div">
+								<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
+									 <embed id="ckplayer_a1" align="middle" width="378" height="215" 
+										pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
+										flashvars="f=${www_prefix}/${partner.video }" 
+										src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
+										quality="high" allowfullscreen="true" allowscriptaccess="always" />
+								</c:if>
+								<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
+									<embed src="${partner.videoLink }" style="width:378px;height:215px;"/>
+								</c:if>
+							</div>
+							<div id="m_img0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_img">
+								<img data-original="${partner.path }" src="/static/public/images/grey.gif" width="123" height="160"/>
+							</div>
+						</c:if>
+					</c:forEach>
+				</c:if>
+				<img src="/static/public/images/pingjiawenzi.png" style="position: relative; top: -450px; left: 90px;"/>
+				<a href="/cust.jhtml" target="_blank">
+					<div class="more_partner" title="更多">&nbsp;</div>
+				</a>
+				</div>
+			</div>
 		</div>
 		<div class="main-evaluation">
 			<div class="main-evaluation-list">
@@ -1347,21 +1349,6 @@
 									</p>
 								</div>
 							</div>
-							<%-- <div id="embed0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="em_video">
-							    <embed id="ckplayer_a1" align="middle" width="381" height="215" 
-									pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="ckplayer_a1" 
-									<c:if test="${partner.videoLink ==null || partner.videoLink =='' }">
-										flashvars="f=${www_prefix}/${partner.video }" 
-									</c:if>
-									<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
-										flashvars="f=${partner.videoLink }" 
-									</c:if>
-									src="http://www.ckplayer.com/ckplayer/6.5/ckplayer.swf" wmode="transparent" bgcolor="#FFF" 
-									quality="high" allowfullscreen="true" allowscriptaccess="always" />
-							</div>
-							<div id="m_img0${status.index+1 }" class="m_img">
-								<img data-original="${partner.path }" src="/static/public/images/grey.gif" width="132" height="174"/>
-							</div> --%>
 						</c:if>
 					</c:forEach>
 				</c:if>
@@ -1423,8 +1410,8 @@
 		<div class="main-ourteam">
 			<div class="main-ourteam-cont">
 				<div class="main-ourteam-cont-title">
-					<i style="width: 34px; height: 35px; background: url(/static/public/images/hxtd.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a id="zhizhi" href="/teamList.jhtml" target="_blank" style="font-size: 24px;">我们的核心团队</a>
+					<i style="width: 54px; height: 65px; background: url(/static/public/images/hxtd.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
+					<a id="zhizhi" href="/teamList.jhtml" target="_blank" style="font-size: 24px; position: relative; top: -15px;">我们的核心团队</a>
 				</div>
 				<div class="main-ourteam-cont-const">
 					<c:if test="${tsize!=0 }">
@@ -1550,11 +1537,22 @@
 				</c:if>
 			</div>
 		</div>
+		<div class="main-oye">
+			<div style="width:1100px;height:auto;overflow:hidden;margin:0 auto 30px;">
+				<div class="main-ourteam-cont-title">
+					<i style="width: 31px; height: 28px; background: url(/static/public/images/lc.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
+					<a href="/contactusInfo.jhtml" target="_blank" style="font-size: 24px;">关于欧耶</a>
+				</div>
+				<div class="main-oye-content">
+					${contactusInfo.content }
+				</div>
+			</div>
+		</div>
 		<div class="main-cust">
 			<div style="width:1100px;height:435px;overflow:hidden;margin:0 auto 30px;">
 				<div class="main-ourteam-cont-title">
-					<i style="width: 37px; height: 28px; background: url(/static/public/images/3333.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
-					<a href="/customerList.jhtml" target="_blank" style="font-size: 24px;">我们的客户</a>
+					<i style="width: 64px; height: 54px; background: url(/static/public/images/3333.png); display: inline-block; position: relative; top: 5px; margin-right: 5px;"></i>
+					<a href="/customerList.jhtml" target="_blank" style="font-size: 24px; position: relative; top: -15px;">我们的客户</a>
 				</div>
 				<c:if test="${customersSize!=0 }">
 					<div class="main-ourteam-cont-list">
@@ -1748,6 +1746,9 @@
 										alert("提交成功，等待审核!");
 									}
 								});
+								$(".bx-prev").css("margin-left","100px");
+								$(".bx-next").css("margin-right","100px");
+								//alert(screen.width);
 							});
 						</script>
 					</div>
