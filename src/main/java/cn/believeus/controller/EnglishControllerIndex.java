@@ -18,6 +18,7 @@ import cn.believeus.model.CompanyInfo;
 import cn.believeus.model.Customers;
 import cn.believeus.model.Example;
 import cn.believeus.model.News;
+import cn.believeus.model.OyEInfo;
 import cn.believeus.model.Processs;
 import cn.believeus.model.en.ENBusiness;
 import cn.believeus.model.en.ENCompanyInfo;
@@ -95,13 +96,15 @@ public class EnglishControllerIndex {
 		request.setAttribute("news", news);
 		List<News> news2 = (List<News>) baseService.findObjectList(News.class);
 		request.setAttribute("newsSize", news2.size());
-		//关于我们
-		List<ENContactusInfo> contactusInfos = (List<ENContactusInfo>)baseService.findObjectList(ENContactusInfo.class);
-		ENContactusInfo info =null;
+		//关于欧耶
+//		List<ENOyEInfo> contactusInfos = (List<ENOyEInfo>)baseService.findObjectList(ENOyEInfo.class);
+		String hql = "from ENOyEInfo info order by info.id asc";
+		List<ENOyEInfo> contactusInfos = (List<ENOyEInfo>)baseService.findObjectList(hql, 1);
+		ENOyEInfo info =null;
 		if (contactusInfos.size()!=0) {
 			info = contactusInfos.get(0);
 		}else {
-			info=new ENContactusInfo();
+			info=new ENOyEInfo();
 		}
 		request.setAttribute("contactusInfo", info);
 		

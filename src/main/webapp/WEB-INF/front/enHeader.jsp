@@ -24,6 +24,15 @@
 				$(this).addClass("current");
 			}
 		}); */
+		//导航浮动
+		$(window).scroll(function() { 
+			//alert($(document).scrollTop());
+			if($(document).scrollTop() > 82){
+				$("#oye_nav").css({"position":"fixed","top":"0px","z-index":"999"});
+			}else{
+				$("#oye_nav").css({"position":"static"});
+			}
+		});
 	});
 </script>
 <div class="header">
@@ -40,11 +49,11 @@
 					<a href="/">中文</a> |
 					<a href="/english.jhtml" style="margin-right: 57px;">English</a>
 				</span>
-				<span style="position: relative; left: 135px;">Service hotline：400-7681867</span>
+				<span style="position: relative; left: 95px;">Service hotline：400-7681867</span>
 			</div>
 		</div>
 	</div> 
-	<div style="background:#E9E9E9;width:100%;height:60px;line-height: 60px;">
+	<div id="oye_nav" style="background:#E9E9E9;width:100%;height:60px;line-height: 60px;">
 		<div class="nav">
 			<ul>
 				<li><a href="/english.jhtml">Home</a></li>

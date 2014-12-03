@@ -58,6 +58,7 @@ public class ProcessController {
 			Processs pro3 = new Processs();
 			Processs pro4 = new Processs();
 			Processs pro5 = new Processs();
+			Processs pro6 = new Processs();
 			pro1.setCn("控制流程");
 			pro1.setEn("control process");
 			baseService.saveOrUpdata(pro1);
@@ -73,11 +74,15 @@ public class ProcessController {
 			pro5.setCn("第四步");
 			pro5.setEn("the four step");
 			baseService.saveOrUpdata(pro5);
+			pro6.setCn("第五步");
+			pro6.setEn("the five step");
+			baseService.saveOrUpdata(pro6);
 			processses.add(pro1);
 			processses.add(pro2);
 			processses.add(pro3);
 			processses.add(pro4);
 			processses.add(pro5);
+			processses.add(pro6);
 			request.setAttribute("processs", processses);
 		}else {
 			request.setAttribute("processs", page.getContent());

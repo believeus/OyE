@@ -110,13 +110,15 @@ public class ControllerIndex {
 		request.setAttribute("news", news);
 		List<News> news2 = (List<News>) baseService.findObjectList(News.class);
 		request.setAttribute("newsSize", news2.size());
-		//关于我们
-		List<ContactusInfo> contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class);
-		ContactusInfo info =null;
+		//关于欧耶
+//		List<OyEInfo> contactusInfos = (List<OyEInfo>)baseService.findObjectList(OyEInfo.class);
+		String hql = "from OyEInfo info order by info.id asc";
+		List<OyEInfo> contactusInfos = (List<OyEInfo>)baseService.findObjectList(hql, 1);
+		OyEInfo info =null;
 		if (contactusInfos.size()!=0) {
 			info = contactusInfos.get(0);
 		}else {
-			info=new ContactusInfo();
+			info=new OyEInfo();
 		}
 		request.setAttribute("contactusInfo", info);
 		

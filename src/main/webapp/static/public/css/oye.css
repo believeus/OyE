@@ -313,10 +313,10 @@ img{
     padding: 5px 12px;
 }
 .main-tp{
-	width: 100%;height: 1065px;
+	width: 100%;height: 1170px;
 }
 .main-tp-cont{
-	width: 1120px;height: 1065px;overflow: hidden;margin: 0 auto;
+	width: 1120px;height: 1170px;overflow: hidden;margin: 0 auto;
 }
 .main-tp-title{
 	text-align: left; font-size: 30px; margin: 20px 0px;/*  letter-spacing: 5px; */

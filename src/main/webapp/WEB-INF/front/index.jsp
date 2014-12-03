@@ -95,7 +95,7 @@
     height: 127px;
     left: 557px;
     position: relative;
-    top: -1637px;
+    top: -1720px;
     width: 374px;
 }
 .img_a1 span {
@@ -111,7 +111,7 @@
     height: 305px;
     left: 73px;
     position: relative;
-    top: -1719px;
+    top: -1785px;
     width: 410px;
 }
 .img_a2 span {
@@ -127,7 +127,7 @@
     height: 299px;
     left: 559px;
     position: relative;
-    top: -1837px;
+    top: -1920px;
     width: 402px;
 }
 .img_a3 span {
@@ -143,7 +143,7 @@
     height: 285px;
     left: 90px;
     position: relative;
-    top: -1929px;
+    top: -2005px;
     width: 394px;
 }
 .img_a4 span {
@@ -159,7 +159,7 @@
     height: 327px;
     left: 554px;
     position: relative;
-    top: -2027px;
+    top: -2090px;
     width: 531px;
 }
 .img_a5 span {
@@ -170,6 +170,22 @@
     top: 120px;
     display: block;
     width:300px;
+}
+.img_a6 {
+    height: 236px;
+    left: 70px;
+    position: relative;
+    top: -2197px;
+    width: 420px;
+}
+.img_a6 span {
+    color: #ffffff;
+    display: block;
+    font-size: 16px;
+    left: 100px;
+    position: relative;
+    top: 110px;
+    width: 300px;
 }
 .img {
     text-align: center;
@@ -505,25 +521,25 @@
 		});
 		//------------锚点滚动
 		$("#busId").click(function(){
-			$("html,body").animate({scrollTop: $("#bus").offset().top}, 500);
+			$("html,body").animate({scrollTop: $("#bus").offset().top - 82}, 500);
 		});
 		$("#anliId").click(function(){
-			$("html,body").animate({scrollTop: $("#anli").offset().top}, 500);
+			$("html,body").animate({scrollTop: $("#anli").offset().top - 82}, 500);
 		});
 		/* $("#zhizhiId").click(function(){
 			$("html,body").animate({scrollTop: $("#zhizhi").offset().top}, 500);
 		}); */
 		$("#custId").click(function(){
-			$("html,body").animate({scrollTop: $("#cust").offset().top}, 500);
+			$("html,body").animate({scrollTop: $("#cust").offset().top - 82}, 500);
 		});
 		$("#liuchengId").click(function(){
-			$("html,body").animate({scrollTop: $("#liucheng").offset().top}, 500);
+			$("html,body").animate({scrollTop: $("#liucheng").offset().top - 82}, 500);
 		});
 		$("#newsId").click(function(){
-			$("html,body").animate({scrollTop: $("#news").offset().top}, 500);
+			$("html,body").animate({scrollTop: $("#news").offset().top - 82}, 500);
 		});
 		$("#zixunId").click(function(){
-			$("html,body").animate({scrollTop: $("#zixun").offset().top}, 500);
+			$("html,body").animate({scrollTop: $("#zixun").offset().top - 82}, 500);
 		});
 		
 		var swidth = window.screen.width;
@@ -1503,40 +1519,43 @@
 				</p>
 				<div style="">
 					<img src="/static/public/images/img06.png" style="position: relative; left: 500px;" />
-					<img data-original="/static/public/images/a1.jpg" src="/static/public/images/grey.gif"  style="position: relative; left: 507px; top: -875px;"/>
-					<img data-original="/static/public/images/a2.jpg" src="/static/public/images/grey.gif"   style="margin-top: 50px; position: relative; top: -650px; left: -355px;"/>
-					<img data-original="/static/public/images/a3.jpg" src="/static/public/images/grey.gif"   style="position: relative; left: 560px; top: -770px;"/>
-			 		<img data-original="/static/public/images/a4.jpg" src="/static/public/images/grey.gif"   style="position: relative; left: -315px; top: -575px;"/>
-					<img data-original="/static/public/images/a5.jpg" src="/static/public/images/grey.gif"   style="position: relative; top: -675px; left: 555px;"/>
+					<img data-original="/static/public/images/a1.jpg" src="/static/public/images/grey.gif"  style="position: relative; left: 507px; top: -965px;"/>
+					<img data-original="/static/public/images/a2.jpg" src="/static/public/images/grey.gif"   style="margin-top: 50px; position: relative; top: -725px; left: -355px;"/>
+					<img data-original="/static/public/images/a3.jpg" src="/static/public/images/grey.gif"   style="position: relative; left: 560px; top: -870px;"/>
+			 		<img data-original="/static/public/images/a4.jpg" src="/static/public/images/grey.gif"   style="position: relative; left: -315px; top: -660px;"/>
+					<img data-original="/static/public/images/a5.jpg" src="/static/public/images/grey.gif"   style="position: relative; top: -760px; left: 555px;"/>
+					<img data-original="/static/public/images/a6.jpg" src="/static/public/images/grey.gif"   style="position: relative; left: -437px; top: -615px;"/>
 				</div>
 				<c:if test="${prosSize!=0 }">
 					<c:forEach items="${pros }" var="pro" varStatus="status">
 						<div class="img_a${status.index+1 }">
-							<span>${pro.cn }</span><br /><br />
-							<span>${pro.en }</span>
+							<span>
+								${fn:substring(pro.cn, 0, 30)}
+								<c:if test="${fn:length(pro.cn) > 30 }">
+				   					...
+			   					</c:if>
+							</span>
 						</div>
 					</c:forEach>
 				</c:if>
 				<c:if test="${prosSize==0 }">
 					<div class="img_a1">
-						<span>控制流程</span><br /><br />
-						<span>control stream</span>
+						<span>控制流程</span>
 					</div>
 					<div class="img_a2">
-						<span>第一步</span><br /><br />
-						<span>the first step</span>
+						<span>第一步</span>tep</span>
 					</div>
 					<div class="img_a3">
-						<span>第二步</span><br /><br />
-						<span>the second step</span>
+						<span>第二步</span>
 					</div>
 					<div class="img_a4">
-						<span>第三步</span><br /><br />
-						<span>the third step</span>
+						<span>第三步</span>
 					</div>
 					<div class="img_a5">
-						<span>第四步</span><br /><br />
-						<span>the four step</span>
+						<span>第四步</span>
+					</div>
+					<div class="img_a6">
+						<span>第五步</span>
 					</div>
 				</c:if>
 			</div>
@@ -1610,7 +1629,7 @@
 				<div class="aboutus" style="width: 380px;height: auto;overflow: hidden;float: left; margin-bottom: 50px;">
 					<div style="height: 45px;line-height: 45px;color: #EF738B;border-bottom: 1px solid #868686;">
 						<div style="float:left;width: 80px;height:45px;line-height: 45px;border-bottom: 1px solid #EF738B;text-align: center;">
-							关于我们
+							关于欧耶
 						</div>
 						<div style="float:right;width:50px;">
 							<a href="/oyeInfo.jhtml" style="color:#fff;" target="_blank">更多&gt;&gt;</a>

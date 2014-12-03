@@ -5,7 +5,7 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
-<title>关于我们</title>
+<title>联系我们</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
 <script type="text/javascript" src="/static/public/js/jquery-1.9.1.min.js"></script>
@@ -131,7 +131,7 @@
 					</ul>
 				</div>
 				<div style="width:900px;height:30px;overflow: hidden;float:left;border-bottom:1px solid #eee;line-height:30px;margin-bottom: 10px;">
-					&gt;&gt;  您的位置：&gt;&gt;关于我们&gt;&gt;<a href="/contactusInfo.jhtml?type=0">${contactusInfo.category}</a>
+					&gt;&gt;  您的位置：&gt;&gt;联系我们&gt;&gt;<a href="/contactusInfo.jhtml?type=0">${contactusInfo.category}</a>
 				</div>
 				<div style="width:900px;height:auto;overflow: hidden;float:left;">
 					<div>${contactusInfo.content }</div>

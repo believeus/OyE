@@ -17,6 +17,17 @@
 				$(this).addClass("current");
 			}
 		}); */
+		//导航浮动
+		$(window).scroll(function() { 
+			//$("#oye_nav").css("display","none");
+			//alert($(document).scrollTop());
+			if($(document).scrollTop() > 82){
+				$("#oye_nav").css({"position":"fixed","top":"0px","z-index":"999"});
+			}else{
+				$("#oye_nav").css({"position":"static"});
+			}
+		});
+		
 	});
 </script>
 <div class="header">
@@ -37,7 +48,7 @@
 			</div>
 		</div>
 	</div>
-	<div style="background:#E9E9E9;width:100%;height:60px;line-height: 60px;">
+	<div id="oye_nav" style="background:#E9E9E9;width:100%;height:60px;line-height: 60px;">
 		<div class="nav">
 			<ul>
 				<li><a href="/">首&nbsp;&nbsp;页</a></li>

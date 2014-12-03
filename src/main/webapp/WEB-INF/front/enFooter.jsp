@@ -79,7 +79,9 @@
 					<img src="/static/public/images/footer-img.png" />
 				</div>
 				<div class="footer-main-3">
-					<h1 style="font-family: 黑体; font-weight: bold; font-size: 20px;">Waiting for your call</h1>
+					<h1 style="font-family: 黑体; font-weight: bold; font-size: 20px;">
+						<a href="/oyeInfo.jhtml" style="font-size: 21px;">Waiting for your call</a>
+					</h1>
 					<p>${companyInfo.address }</p>
 					<p>T:${companyInfo.phone }</p>
 					<!-- <p>+86 21 5032 1196</p> -->
