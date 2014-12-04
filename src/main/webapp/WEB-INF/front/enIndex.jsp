@@ -15,8 +15,8 @@
 <style type="text/css">
 	.banner_main{width:100%;margin:0 auto;position: relative;}
     .banner_nav{width:210px;height:370px;position:absolute;top:0;left:0;z-index:100;background:#cccccc}
-    .banner_slider{position: relative;overflow: hidden;height:500px;z-index: 50;}
-    .banner_slider img{width:100%;height:500px;}
+    .banner_slider{position: relative;overflow: hidden;height:550px;z-index: 50;}
+    .banner_slider img{width:100%;height:550px;}
     .banner_slider .bx-wrapper .bx-controls-direction a{width:40px;height: 40px;background:#000000;opacity: .3;}
     .banner_slider .bx-wrapper .bx-controls-direction a.bx-prev:before{
         content:'';position: absolute;top:8px;left:12px; width: 16px; height: 24px;
@@ -215,8 +215,8 @@
 		$('.banner_slider ul').bxSlider({
             auto:true,
             autoHover:true,
-             pager:false,
-             touch:false
+            pager:false,
+            touch:false
         });
 		$("#xx_img01").css("left",$("#list01").offset().left+78);
 		$("#xx_img02").css("left",$("#list01").offset().left+78);
@@ -519,6 +519,14 @@
 				}
 			}
 		});
+		//banner宽度
+		//alert(window.screen.width);
+		$("#banner_img").css("width",window.screen.width);
+		$(".banner_slider img").css("width",window.screen.width);
+		if(window.screen.width >= 2000){
+			$("#banner_img").css("width",2000);
+			$(".banner_slider img").css("width",2000);
+		}
 	});
 </script>
 </head>
@@ -531,8 +539,8 @@
        -->
 	<jsp:include page="enHeader.jsp" />
 	<div class="main">
+		<div id="banner_img" style="width:2000px;height:auto;overflow:hidden;margin:0 auto;">
 		<div class="main-img">
-			<!-- <img src="/static/public/images/img1.png" width="100%" /> -->
 			<div class="banner_slider">
                 <ul>
                 	<c:if test="${bannersSize!=0 }">
@@ -568,6 +576,7 @@
                 	</c:if>
                 </ul>
             </div>
+		</div>
 		</div>
 		<div class="main-service">
 			<p class="">
@@ -1422,8 +1431,8 @@
 										<p>${team.position }</p>
 									</div>
 									<div class="dis" title="${team.content }">
-										${fn:substring(team.content, 0, 50)}
-										<c:if test="${fn:length(team.content) > 50 }">
+										${fn:substring(team.content, 0, 100)}
+										<c:if test="${fn:length(team.content) > 100 }">
 						   					...
 					   					</c:if>
 									</div>

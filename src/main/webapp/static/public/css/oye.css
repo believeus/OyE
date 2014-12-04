@@ -133,7 +133,7 @@ img{
 }
 .main-img{
 	margin: 0 auto;
-    width: 1366px;	
+    width: 100%;	
 }
 .main-service p {
     font-size: 28px;

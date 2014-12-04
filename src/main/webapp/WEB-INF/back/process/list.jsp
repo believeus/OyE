@@ -4,6 +4,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -73,10 +74,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span>${status.index+1}</span>
 				</td>
 				<td>
-					${processs.cn }
+					${fn:substring(processs.cn, 0, 30)}
+					<c:if test="${fn:length(processs.cn) > 30 }">
+	   					...
+   					</c:if>
 				</td>
 				<td>
-					${processs.en }
+					${fn:substring(processs.en, 0, 30)}
+					<c:if test="${fn:length(processs.en) > 30 }">
+	   					...
+   					</c:if>
 				</td>
 				<td>
 					<a href="/admin/process/edit.jhtml?id=${processs.id }">[修改]</a>

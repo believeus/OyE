@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
 <title>关于欧耶</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -124,7 +125,11 @@
 									<c:if test="${status.index==3}">id="wh2" </c:if>
 									<c:if test="${status.index==4}">id="wh3" </c:if>
 									<c:if test="${status.index==0}"> class="current_au" </c:if> 
-									href="/oyeInfo.jhtml?id=${category.id }#${status.index}" title="${category.category }">${category.category }
+									href="/oyeInfo.jhtml?id=${category.id }#${status.index}" title="${category.category }">
+										${fn:substring(category.category, 0, 8)}
+										<c:if test="${fn:length(category.category) > 8 }">
+						   					...
+					   					</c:if>
 								</a>
 							</li>
 						</c:forEach>

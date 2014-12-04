@@ -17,8 +17,8 @@
 <style type="text/css">
 	.banner_main{width:100%;margin:0 auto;position: relative;}
     .banner_nav{width:210px;height:370px;position:absolute;top:0;left:0;z-index:100;background:#cccccc}
-    .banner_slider{position: relative;overflow: hidden;height:500px;z-index: 50;}
-    .banner_slider img{width:100%;height:500px;}
+    .banner_slider{position: relative;overflow: hidden;height:550px;z-index: 50;}
+    .banner_slider img{width:100%;height:550px;}
     .banner_slider .bx-wrapper .bx-controls-direction a{width:40px;height: 40px;background:#000000;opacity: .3;}
     .banner_slider .bx-wrapper .bx-controls-direction a.bx-prev:before{
         content:'';position: absolute;top:8px;left:12px; width: 16px; height: 24px;
@@ -542,25 +542,14 @@
 			$("html,body").animate({scrollTop: $("#zixun").offset().top - 82}, 500);
 		});
 		
-		var swidth = window.screen.width;
-		//alert(swidth);
-		if(swidth == 1440){
-			/* $(".main-partner").css("width",swidth);
-			$(".main-partner img").css("width",swidth);
-			$(".em_video").css({"top":"1952px","left":"695px","width":"403px","height":"231px"});
-			$(".em_video embed").css({"width":"403px","height":"231px"});
-			$(".m_img").css({"top":"2137px","left":"1102px","width":"138px","height":"181px"});
-			$(".m_img img").css({"width":"138px","height":"181px"}); */
-		}else if(swidth == 1920){
-			/* $(".main-partner").css("width",swidth);
-			$(".main-partner img").css("width",swidth);
-			$(".em_video").css({"top":"1971px","left":"927px","width":"537px","height":"303px"});
-			$(".em_video embed").css({"width":"537px","height":"303px"});
-			$(".m_img").css({"top":"2215px","left":"1470px","width":"182px","height":"238px"});
-			$(".m_img img").css({"width":"182px","height":"238px"});
-			$("#zuojiantou").css({"top":"3160px","left":"435px"});
-			$("#youjiantou").css({"top":"3160px","left":"1400px"});
-			$("#hengxian").css({"top":"3177px","left":"501px"}); */
+		//var swidth = window.screen.width;
+		//banner宽度
+		//alert(window.screen.width);
+		$("#banner_img").css("width",window.screen.width);
+		$(".banner_slider img").css("width",window.screen.width);
+		if(window.screen.width >= 2000){
+			$("#banner_img").css("width",2000);
+			$(".banner_slider img").css("width",2000);
 		}
 	});
 </script>
@@ -573,6 +562,7 @@
        -->
 	<jsp:include page="header.jsp" />
 	<div class="main">
+		<div id="banner_img" style="width:2000px;height:auto;overflow:hidden;margin:0 auto;">
 		<div class="main-img">
 			<div class="banner_slider">
                 <ul>
@@ -609,6 +599,7 @@
                 	</c:if>
                 </ul>
             </div>
+		</div>
 		</div>
 		<div class="main-service">
 			<p class="">
