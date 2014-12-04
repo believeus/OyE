@@ -464,9 +464,9 @@
 		$("#anliId").click(function(){
 			$("html,body").animate({scrollTop: $("#anli").offset().top - 82}, 500);
 		});
-		/* $("#zhizhiId").click(function(){
-			$("html,body").animate({scrollTop: $("#zhizhi").offset().top}, 500);
-		}); */
+		$("#zhizhiId").click(function(){
+			$("html,body").animate({scrollTop: $("#news").offset().top - 82}, 500);
+		});
 		$("#custId").click(function(){
 			$("html,body").animate({scrollTop: $("#cust").offset().top - 82}, 500);
 		});
@@ -1750,8 +1750,8 @@
 										alert("提交成功，等待审核!");
 									}
 								});
-								$(".bx-prev").css("margin-left","100px");
-								$(".bx-next").css("margin-right","100px");
+								/* $(".bx-prev").css("margin-left","100px");
+								$(".bx-next").css("margin-right","100px"); */
 							});
 						</script>
 					</div>

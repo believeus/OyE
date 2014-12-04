@@ -138,7 +138,7 @@
 					</ul>
 				</div>
 				<div style="width:900px;height:30px;overflow: hidden;float:left;border-bottom:1px solid #eee;line-height:30px;margin-bottom: 10px;">
-					&gt;&gt;  your position：<a href="/contactusInfo.jhtml?type=0">${contactusInfo.category}</a>
+					&gt;&gt;  your position：<a href="/oyeInfo.jhtml?id=${category.id }#${status.index}">${contactusInfo.category}</a>
 				</div>
 				<div style="width:900px;height:auto;overflow: hidden;float:left;">
 					<div>${contactusInfo.content }</div>

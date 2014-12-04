@@ -19,7 +19,6 @@
 		}); */
 		//导航浮动
 		$(window).scroll(function() { 
-			//$("#oye_nav").css("display","none");
 			//alert($(document).scrollTop());
 			if($(document).scrollTop() > 82){
 				$("#oye_nav").css({"position":"fixed","top":"0px","z-index":"999"});
@@ -56,7 +55,7 @@
 				<li><a id="anliId" href="/#anli">案例展示</a></li>
 				<li><a id="custId" href="/#cust">客户感言</a></li>
 				<li><a id="liuchengId" href="/#liucheng">服务流程</a></li>
-				<li><a id="zhizhiId" href="/oyeInfo.jhtml" target="_blank">关于欧耶</a></li>
+				<li><a id="zhizhiId" href="/#news">关于欧耶</a></li>
 				<li><a id="newsId" href="/#news">站内新闻</a></li>
 				<li><a id="zixunId" href="/#zixun">联系我们</a></li>
 			</ul>

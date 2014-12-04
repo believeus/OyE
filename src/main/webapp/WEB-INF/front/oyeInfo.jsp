@@ -136,7 +136,7 @@
 					</ul>
 				</div>
 				<div style="width:900px;height:30px;overflow: hidden;float:left;border-bottom:1px solid #eee;line-height:30px;margin-bottom: 10px;">
-					&gt;&gt;  您的位置：&gt;&gt;关于欧耶&gt;&gt;<a href="/contactusInfo.jhtml?type=0">${contactusInfo.category}</a>
+					&gt;&gt;  您的位置：&gt;&gt;关于欧耶&gt;&gt;<a href="/oyeInfo.jhtml?id=${category.id }#${status.index}">${contactusInfo.category}</a>
 				</div>
 				<div style="width:900px;height:auto;overflow: hidden;float:left;">
 					<div>${contactusInfo.content }</div>

@@ -61,7 +61,7 @@
 				<li><a id="anliId" href="/english.jhtml#anli">CaseShow</a></li>
 				<li><a id="custId" href="/english.jhtml#cust">Testimonials</a></li>
 				<li><a id="liuchengId" href="/english.jhtml#liucheng">ServiceProcess</a></li>
-				<li><a id="zhizhiId" href="/oyeInfo.jhtml" target="_blank">About Oye</a></li>
+				<li><a id="zhizhiId" href="/english.jhtml#news">About Oye</a></li>
 				<li><a id="newsId" href="/english.jhtml#news">StationNews</a></li>
 				<li><a id="zixunId" href="/english.jhtml#zixun">ContactUs</a></li>
 			</ul>
