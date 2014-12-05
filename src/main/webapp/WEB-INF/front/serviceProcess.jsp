@@ -161,7 +161,7 @@
 	<jsp:include page="child_header.jsp" />
 	
 	<div class="main">
-		<div class="main_content" style="height: 1190px;">
+		<div class="main_content" style="height: 1090px;">
 			<div class="main_content_title">
 				<div class="main_content_title_2">服务流程</div>
 			</div>

@@ -189,7 +189,7 @@
        -->
 	<jsp:include page="enChild_header.jsp" />
 	
-	<div class="main" style="height:1170px;">
+	<div class="main" style="height:1070px;">
 		<div class="main_content">
 			<div class="main_content_title">
 				<div class="main_content_title_2">ServiceProcess</div>

@@ -717,7 +717,7 @@
 				</div>
 				<div class="main-comps">
 					<c:forEach items="${examples1 }" var="example" varStatus="status">
-						<c:if test="${status.index<5 }">
+						<c:if test="${status.index<4 }">
 							<div class="main-comps-list" id="list0${status.index+1 }">
 								<img src="/static/public/images/cry.png" />
 								<img data-original="${example.logo }" src="/static/public/images/grey.gif" width="88" height="30" style="position: relative; top: -65px;"/>
@@ -751,7 +751,7 @@
 				</div>
 				<div class="main-comps">
 					<c:forEach items="${examples2 }" var="example" varStatus="status">
-						<c:if test="${status.index<5 }">
+						<c:if test="${status.index<4 }">
 							<div class="main-comps-list" id="2list0${status.index+1 }">
 								<img src="/static/public/images/cry.png" />
 								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
@@ -785,7 +785,7 @@
 				</div>
 				<div class="main-comps">
 					<c:forEach items="${examples3 }" var="example" varStatus="status">
-						<c:if test="${status.index<5 }">
+						<c:if test="${status.index<4 }">
 							<div class="main-comps-list" id="3list0${status.index+1 }">
 								<img src="/static/public/images/cry.png" />
 								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
@@ -819,7 +819,7 @@
 				</div>
 				<div class="main-comps">
 					<c:forEach items="${examples4 }" var="example" varStatus="status">
-						<c:if test="${status.index<5 }">
+						<c:if test="${status.index<4 }">
 							<div class="main-comps-list" id="4list0${status.index+1 }">
 								<img src="/static/public/images/cry.png" />
 								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
