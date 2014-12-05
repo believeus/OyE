@@ -95,7 +95,7 @@
     height: 127px;
     left: 557px;
     position: relative;
-    top: -1720px;
+    top: -1565px;
     width: 374px;
 }
 .img_a1 span {
@@ -108,81 +108,81 @@
     width:300px;
 }
 .img_a2{
-    height: 305px;
-    left: 73px;
+    height: 220px;
+    left: 566px;
     position: relative;
-    top: -1785px;
+    top: -1615px;
     width: 410px;
 }
 .img_a2 span {
     color: #ffffff;
-    font-size: 16px;
-    left: 90px;
-    position: relative;
-    top: 100px;
     display: block;
-    width:300px;
+    font-size: 16px;
+    left: 22px;
+    position: relative;
+    top: 110px;
+    width: 300px;
 }
 .img_a3{
-    height: 299px;
-    left: 559px;
+    height: 234px;
+    left: 73px;
     position: relative;
-    top: -1920px;
+    top: -1677px;
     width: 402px;
 }
 .img_a3 span {
     color: #ffffff;
+    display: block;
     font-size: 16px;
-    left: 30px;
+    left: 88px;
     position: relative;
     top: 100px;
-    display: block;
-    width:300px;
+    width: 300px;
 }
 .img_a4{
-    height: 285px;
-    left: 90px;
+    height: 203px;
+    left: 565px;
     position: relative;
-    top: -2005px;
+    top: -1708px;
     width: 394px;
 }
 .img_a4 span {
     color: #ffffff;
+    display: block;
+    font-size: 16px;
+    left: 25px;
+    position: relative;
+    top: 90px;
+    width: 300px;
+}
+.img_a5{
+    height: 217px;
+    left: 89px;
+    position: relative;
+    top: -1758px;
+    width: 384px;
+}
+.img_a5 span {
+    color: #ffffff;
+    display: block;
     font-size: 16px;
     left: 70px;
     position: relative;
     top: 100px;
-    display: block;
-    width:300px;
-}
-.img_a5{
-    height: 327px;
-    left: 554px;
-    position: relative;
-    top: -2090px;
-    width: 531px;
-}
-.img_a5 span {
-    color: #ffffff;
-    font-size: 16px;
-    left: 35px;
-    position: relative;
-    top: 120px;
-    display: block;
-    width:300px;
+    width: 300px;
 }
 .img_a6 {
-    height: 236px;
-    left: 70px;
+   	height: 236px;
+    left: 565px;
     position: relative;
-    top: -2197px;
+    top: -1797px;
     width: 420px;
 }
 .img_a6 span {
     color: #ffffff;
     display: block;
     font-size: 16px;
-    left: 100px;
+    left: 24px;
     position: relative;
     top: 110px;
     width: 300px;
@@ -1510,12 +1510,12 @@
 				</p>
 				<div style="">
 					<img src="/static/public/images/img06.png" style="position: relative; left: 500px;" />
-					<img data-original="/static/public/images/a1.jpg" src="/static/public/images/grey.gif"  style="position: relative; left: 507px; top: -965px;"/>
-					<img data-original="/static/public/images/a2.jpg" src="/static/public/images/grey.gif"   style="margin-top: 50px; position: relative; top: -725px; left: -355px;"/>
-					<img data-original="/static/public/images/a3.jpg" src="/static/public/images/grey.gif"   style="position: relative; left: 560px; top: -870px;"/>
-			 		<img data-original="/static/public/images/a4.jpg" src="/static/public/images/grey.gif"   style="position: relative; left: -315px; top: -660px;"/>
-					<img data-original="/static/public/images/a5.jpg" src="/static/public/images/grey.gif"   style="position: relative; top: -760px; left: 555px;"/>
-					<img data-original="/static/public/images/a6.jpg" src="/static/public/images/grey.gif"   style="position: relative; left: -437px; top: -615px;"/>
+					<img data-original="/static/public/images/a1.jpg" src="/static/public/images/grey.gif"  style="position: relative; left: 507px; top: -880px;"/>
+					<img data-original="/static/public/images/a2.jpg" src="/static/public/images/grey.gif"   style="margin-top: 50px; position: relative; top: -705px; left: 130px;"/>
+					<img data-original="/static/public/images/a3.jpg" src="/static/public/images/grey.gif"   style="position: relative; left: 90px; top: -775px;"/>
+			 		<img data-original="/static/public/images/a4.jpg" src="/static/public/images/grey.gif"   style="position: relative; left: 168px; top: -600px;"/>
+					<img data-original="/static/public/images/a5.jpg" src="/static/public/images/grey.gif"   style="position: relative; top: -750px; left: 90px;"/>
+					<img data-original="/static/public/images/a6.jpg" src="/static/public/images/grey.gif"   style="position: relative; left: 172px; top: -545px;"/>
 				</div>
 				<c:if test="${prosSize!=0 }">
 					<c:forEach items="${pros }" var="pro" varStatus="status">
