@@ -735,7 +735,7 @@
 								<div id="content_list">
 									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
 										<dl>
-											<dt><img src="${url }" /></dt>
+											<dt><img data-original="${url }" src="/static/public/images/grey.gif" /></dt>
 										</dl>
 									</c:forEach>
 								</div>
@@ -769,7 +769,7 @@
 								<div id="content_list">
 									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
 										<dl>
-											<dt><img src="${url }" /></dt>
+											<dt><img data-original="${url }" src="/static/public/images/grey.gif" /></dt>
 										</dl>
 									</c:forEach>
 								</div>
@@ -803,7 +803,7 @@
 								<div id="content_list">
 									<c:forEach items="${fn:split(example.paths, '#') }" var="url" varStatus="status">
 										<dl>
-											<dt><img src="${url }" /></dt>
+											<dt><img data-original="${url }" src="/static/public/images/grey.gif" /></dt>
 										</dl>
 									</c:forEach>
 								</div>

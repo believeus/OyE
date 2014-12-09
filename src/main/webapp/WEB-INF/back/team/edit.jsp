@@ -99,18 +99,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			<tr id="contentTr">
 				<th>
-					内容:
+					中文描述:
 				</th>
 				<td colspan="3">
-					<textarea id="" name="content" class="editor" style="width: 400px;height: 100px" maxlength="26">${team.content}</textarea>
+					<textarea id="" name="content" class="editor" style="width: 400px;height: 100px">${team.content}</textarea>
 				</td>
 			</tr>
 			<tr id="contentTr">
 				<th>
-					内容:
+					英文描述:
 				</th>
 				<td colspan="3">
-					<textarea id="" name="encontent" class="editor" style="width: 400px;height: 100px" maxlength="26">${enteam.content}</textarea>
+					<textarea id="" name="encontent" class="editor" style="width: 400px;height: 100px">${enteam.content}</textarea>
 				</td>
 			</tr>
 			<tr>

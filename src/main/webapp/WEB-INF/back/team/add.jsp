@@ -101,7 +101,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					中文描述:
 				</th>
 				<td colspan="3">
-					<textarea id="" name="content" class="editor" maxlength="200" style="width: 400px;height: 100px" maxlength="26"></textarea>
+					<textarea id="" name="content" class="editor" style="width: 400px;height: 100px" maxlength="26"></textarea>
 				</td>
 			</tr>
 			<tr id="contentTr">
@@ -109,7 +109,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					英文描述:
 				</th>
 				<td colspan="3">
-					<textarea id="" name="encontent" class="editor" maxlength="200" style="width: 400px;height: 100px" maxlength="26"></textarea>
+					<textarea id="" name="encontent" class="editor" style="width: 400px;height: 100px" maxlength="26"></textarea>
 				</td>
 			</tr>
 			<tr>
