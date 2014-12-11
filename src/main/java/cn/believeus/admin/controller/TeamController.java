@@ -107,7 +107,7 @@ public class TeamController {
 	public String teamEdit(Integer id,HttpServletRequest request){
 		Team team = (Team)baseService.findObject(Team.class, id);
 		request.setAttribute("team", team);
-		ENTeam enteam = (ENTeam)baseService.findObject(ENTeam.class, id);
+		ENTeam enteam = (ENTeam)baseService.findObject(ENTeam.class, id); 
 		request.setAttribute("enteam", enteam);
 		return "/WEB-INF/back/team/edit.jsp";
 	}
