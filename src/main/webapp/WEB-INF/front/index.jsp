@@ -743,7 +743,7 @@
 						<c:if test="${status.index<4 }">
 							<div class="main-comps-list" id="list0${status.index+1 }">
 								<img src="/static/public/images/cry.png" />
-								<img data-original="${example.logo }" src="/static/public/images/grey.gif" width="88" height="30" style="position: relative; top: -65px;"/>
+								<img data-original="${example.logo }" src="/static/public/images/grey.gif" width="100" height="100" style="position: relative; top: -102px;border-radius:100px;"/>
 							</div>
 						</c:if>
 					</c:forEach>
@@ -777,7 +777,7 @@
 						<c:if test="${status.index<4 }">
 							<div class="main-comps-list" id="2list0${status.index+1 }">
 								<img src="/static/public/images/cry.png" />
-								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
+								<img data-original="${example.logo }" src="/static/public/images/grey.gif" width="100" height="100" style="position: relative; top: -102px;border-radius:100px;"/>
 							</div>
 						</c:if>
 					</c:forEach>
@@ -811,7 +811,7 @@
 						<c:if test="${status.index<4 }">
 							<div class="main-comps-list" id="3list0${status.index+1 }">
 								<img src="/static/public/images/cry.png" />
-								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
+								<img data-original="${example.logo }" src="/static/public/images/grey.gif" width="100" height="100" style="position: relative; top: -102px;border-radius:100px;"/>
 							</div>
 						</c:if>
 					</c:forEach>
@@ -845,7 +845,7 @@
 						<c:if test="${status.index<4 }">
 							<div class="main-comps-list" id="4list0${status.index+1 }">
 								<img src="/static/public/images/cry.png" />
-								<img src="${example.logo }" width="88" height="30" style="position: relative; top: -65px;"/>
+								<img data-original="${example.logo }" src="/static/public/images/grey.gif" width="100" height="100" style="position: relative; top: -102px;border-radius:100px;"/>
 							</div>
 						</c:if>
 					</c:forEach>
@@ -1324,7 +1324,7 @@
 										quality="high" allowfullscreen="true" allowscriptaccess="always" style="position: relative; left: 13px; top: 13px;"/>
 								</c:if>
 								<c:if test="${partner.videoLink !=null && partner.videoLink !='' }">
-									<embed src="${partner.videoLink }" style="width:352px;height:201px;" style="position: relative; top: 13px; left: 13px;"/>
+									<embed src="${partner.videoLink }" style="width:352px;height:201px;position: relative; top: 13px; left: 13px;"/>
 								</c:if>
 							</div>
 							<div id="m_img0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_img">
@@ -1576,7 +1576,7 @@
 								<div class="ot">
 									<div class="main-ourteam-cont-list-img">
 										<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
-											<img data-original="${cust1.url }" src="/static/public/images/grey.gif" width="95" height="50"/>
+											<img data-original="${cust1.url }" src="/static/public/images/grey.gif" width="120" height="120" style="border-radius:100px;position: relative; top: 2px;"/>
 										</a>
 									</div>
 								</div>
@@ -1589,7 +1589,7 @@
 								<div class="ot">
 									<div class="main-ourteam-cont-list-img">
 										<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
-											<img data-original="${cust1.url }" src="/static/public/images/grey.gif" width="95" height="50"/>
+											<img data-original="${cust1.url }" src="/static/public/images/grey.gif" width="120" height="120" style="border-radius:100px;position: relative; top: 2px;"/>
 										</a>
 									</div>
 								</div>
@@ -1602,7 +1602,7 @@
 								<div class="ot">
 									<div class="main-ourteam-cont-list-img">
 										<a href="${cust1.clink }" title="${cust1.clink }" target="_blank">
-											<img data-original="${cust1.url }" src="/static/public/images/grey.gif" width="95" height="50"/>
+											<img data-original="${cust1.url }" src="/static/public/images/grey.gif" width="120" height="120" style="border-radius:100px;position: relative; top: 2px;"/>
 										</a>
 									</div>
 								</div>
