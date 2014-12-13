@@ -590,7 +590,7 @@
 						<c:if test="${status.index < 6}">
 							<div class="main-service-cont" <c:if test="${(status.index+1)%3==0 }">style="margin-right:0;"</c:if>>
 								<div class="main-service-cont-img">
-									<img data-original="${bus.path }" src="/static/public/images/grey.gif" width="99" height="99"/>
+									<img data-original="${bus.path }" src="/static/public/images/grey.gif" width="239" height="226"/>
 								</div>
 								<div class="main-service-cont-name" title="bus.title">
 									${fn:substring(bus.title, 0, 12)}
@@ -611,7 +611,7 @@
 				<c:if test="${bsize==0 }">
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img data-original="/static/public/images/bgs.png" src="/static/public/images/grey.gif" width="99" height="99"/>
+							<img data-original="/static/public/images/bgs.png" src="/static/public/images/grey.gif" width="239" height="226"/>
 						</div>
 						<div class="main-service-cont-name">
 							Office cleaning and air treatment
@@ -622,7 +622,7 @@
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img data-original="/static/public/images/cc.png" src="/static/public/images/grey.gif" width="99" height="99"/>
+							<img data-original="/static/public/images/cc.png" src="/static/public/images/grey.gif" width="239" height="226"/>
 						</div>
 						<div class="main-service-cont-name">
 							Storage
@@ -633,7 +633,7 @@
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
 						<div class="main-service-cont-img">
-							<img data-original="/static/public/images/es.png" src="/static/public/images/grey.gif" width="99" height="99"/>
+							<img data-original="/static/public/images/es.png" src="/static/public/images/grey.gif" width="239" height="226"/>
 						</div>
 						<div class="main-service-cont-name">
 							Second-hand furniture recycling
@@ -644,7 +644,7 @@
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img data-original="/static/public/images/people.png" src="/static/public/images/grey.gif" width="99" height="99"/>
+							<img data-original="/static/public/images/people.png" src="/static/public/images/grey.gif" width="239" height="226"/>
 						</div>
 						<div class="main-service-cont-name">
 							Private domestic city relocation
@@ -655,7 +655,7 @@
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img data-original="/static/public/images/phone.png" src="/static/public/images/grey.gif" width="99" height="99"/>
+							<img data-original="/static/public/images/phone.png" src="/static/public/images/grey.gif" width="239" height="226"/>
 						</div>
 						<div class="main-service-cont-name">
 							Office moved
@@ -666,7 +666,7 @@
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
 						<div class="main-service-cont-img">
-							<img data-original="/static/public/images/sys.png" src="/static/public/images/grey.gif" width="99" height="99"/>
+							<img data-original="/static/public/images/sys.png" src="/static/public/images/grey.gif" width="239" height="226"/>
 						</div>
 						<div class="main-service-cont-name">
 							Laboratory moved
@@ -1623,7 +1623,12 @@
 						<div style="height:auto;overflow:hidden;">
 							<c:if test="${contactusInfo!=null }">
 								<img data-original="${contactusInfo.path }" src="/static/public/images/grey.gif" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />
-								<span style="color: #d6d6d6;line-height: 27px;" class="about_content">${contactusInfo.content }</span>
+								<span style="color: #d6d6d6;line-height: 27px;" class="about_content">
+									${fn:substring(contactusInfo.content, 0, 380)}
+									<c:if test="${fn:length(contactusInfo.content) > 380 }">
+					   					...
+				   					</c:if>
+								</span>
 							</c:if>
 							<c:if test="${contactusInfo==null }">
 								<img src="/static/public/images/img08.jpg" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />

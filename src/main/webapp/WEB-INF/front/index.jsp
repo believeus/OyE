@@ -613,7 +613,7 @@
 						<c:if test="${status.index < 6}">
 							<div class="main-service-cont" <c:if test="${(status.index+1)%3==0 }">style="margin-right:0;"</c:if>>
 								<div class="main-service-cont-img">
-									<img data-original="${bus.path }" src="/static/public/images/grey.gif" width="99" height="99"/>
+									<img data-original="${bus.path }" src="/static/public/images/grey.gif" width="239" height="226"/>
 								</div>
 								<div class="main-service-cont-name">
 									${fn:substring(bus.title, 0, 12)}
@@ -634,7 +634,7 @@
 				<c:if test="${bsize==0 }">
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img data-original="/static/public/images/bgs.png" src="/static/public/images/grey.gif" width="99" height="99"/>
+							<img data-original="/static/public/images/bgs.png" src="/static/public/images/grey.gif" width="239" height="226"/>
 						</div>
 						<div class="main-service-cont-name">
 							办公室整体清洁及空气治理
@@ -645,7 +645,7 @@
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img data-original="/static/public/images/cc.png" src="/static/public/images/grey.gif" width="99" height="99"/>
+							<img data-original="/static/public/images/cc.png" src="/static/public/images/grey.gif" width="239" height="226"/>
 						</div>
 						<div class="main-service-cont-name">
 							仓储
@@ -656,7 +656,7 @@
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
 						<div class="main-service-cont-img">
-							<img data-original="/static/public/images/es.png" src="/static/public/images/grey.gif" width="99" height="99"/>
+							<img data-original="/static/public/images/es.png" src="/static/public/images/grey.gif" width="239" height="226"/>
 						</div>
 						<div class="main-service-cont-name">
 							二手家具回收及出售
@@ -667,7 +667,7 @@
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img data-original="/static/public/images/people.png" src="/static/public/images/grey.gif" width="99" height="99"/>
+							<img data-original="/static/public/images/people.png" src="/static/public/images/grey.gif" width="239" height="226"/>
 						</div>
 						<div class="main-service-cont-name">
 							国内市内私人搬迁
@@ -678,7 +678,7 @@
 					</div>
 					<div class="main-service-cont">
 						<div class="main-service-cont-img">
-							<img data-original="/static/public/images/phone.png" src="/static/public/images/grey.gif" width="99" height="99"/>
+							<img data-original="/static/public/images/phone.png" src="/static/public/images/grey.gif" width="239" height="226"/>
 						</div>
 						<div class="main-service-cont-name">
 							办公室搬迁
@@ -689,7 +689,7 @@
 					</div>
 					<div class="main-service-cont" style="margin-right:0;">
 						<div class="main-service-cont-img">
-							<img data-original="/static/public/images/sys.png" src="/static/public/images/grey.gif" width="99" height="99"/>
+							<img data-original="/static/public/images/sys.png" src="/static/public/images/grey.gif" width="239" height="226"/>
 						</div>
 						<div class="main-service-cont-name">
 							实验室搬迁
@@ -1630,8 +1630,8 @@
 							<c:if test="${contactusInfo!=null }">
 								<img data-original="${contactusInfo.path }" src="/static/public/images/grey.gif" width="185" height="130" style="float: left;margin: 15px 15px 15px 0;" />
 								<span class="abus" style="color: #d6d6d6;line-height: 27px;">
-									${fn:substring(contactusInfo.content, 0, 120)}
-									<c:if test="${fn:length(contactusInfo.content) > 120 }">
+									${fn:substring(contactusInfo.content, 0, 200)}
+									<c:if test="${fn:length(contactusInfo.content) > 200 }">
 					   					...
 				   					</c:if>
 								</span>
