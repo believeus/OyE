@@ -145,7 +145,7 @@
 						<c:forEach items="${businesses }" var="bus" varStatus="status">
 								<div class="main-service-cont" <c:if test="${(status.index+1)%3==0 }">style="margin-right:0;"</c:if>>
 									<div class="main-service-cont-img">
-										<img src="${bus.path }" width="99" height="99"/>
+										<img src="${bus.path }" width="239" height="226"/>
 									</div>
 									<div class="main-service-cont-name">
 										${fn:substring(bus.title, 0, 20)}
@@ -165,7 +165,7 @@
 					<c:if test="${bsize==0 }">
 						<div class="main-service-cont">
 							<div class="main-service-cont-img">
-								<img src="/static/public/images/bgs.png" width="99" height="99"/>
+								<img src="/static/public/images/bgs.png" width="239" height="226"/>
 							</div>
 							<div class="main-service-cont-name">
 								Office cleaning and air treatment
@@ -176,7 +176,7 @@
 						</div>
 						<div class="main-service-cont">
 							<div class="main-service-cont-img">
-								<img src="/static/public/images/cc.png" width="99" height="99"/>
+								<img src="/static/public/images/cc.png" width="239" height="226"/>
 							</div>
 							<div class="main-service-cont-name">
 								Storage
@@ -187,7 +187,7 @@
 						</div>
 						<div class="main-service-cont" style="margin-right:0;">
 							<div class="main-service-cont-img">
-								<img src="/static/public/images/es.png" width="99" height="99"/>
+								<img src="/static/public/images/es.png" width="239" height="226"/>
 							</div>
 							<div class="main-service-cont-name">
 								Second-hand furniture recycling
@@ -198,7 +198,7 @@
 						</div>
 						<div class="main-service-cont">
 							<div class="main-service-cont-img">
-								<img src="/static/public/images/people.png" width="99" height="99"/>
+								<img src="/static/public/images/people.png" width="239" height="226"/>
 							</div>
 							<div class="main-service-cont-name">
 								Private domestic city relocation
@@ -209,7 +209,7 @@
 						</div>
 						<div class="main-service-cont">
 							<div class="main-service-cont-img">
-								<img src="/static/public/images/phone.png" width="99" height="99"/>
+								<img src="/static/public/images/phone.png" width="239" height="226"/>
 							</div>
 							<div class="main-service-cont-name">
 								Office moved
@@ -220,7 +220,7 @@
 						</div>
 						<div class="main-service-cont" style="margin-right:0;">
 							<div class="main-service-cont-img">
-								<img src="/static/public/images/es.png" width="99" height="99"/>
+								<img src="/static/public/images/es.png" width="239" height="226"/>
 							</div>
 							<div class="main-service-cont-name">
 								Laboratory moved

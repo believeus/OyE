@@ -145,7 +145,7 @@
 						<c:forEach items="${businesses }" var="bus" varStatus="status">
 								<div class="main-service-cont" <c:if test="${(status.index+1)%3==0 }">style="margin-right:0;"</c:if>>
 									<div class="main-service-cont-img">
-										<img src="${bus.path }" width="99" height="99"/>
+										<img src="${bus.path }" width="239" height="226"/>
 									</div>
 									<div class="main-service-cont-name">
 										${bus.title }
@@ -162,7 +162,7 @@
 					<c:if test="${bsize==0 }">
 						<div class="main-service-cont">
 							<div class="main-service-cont-img">
-								<img src="/static/public/images/bgs.png" width="99" height="99"/>
+								<img src="/static/public/images/bgs.png" width="239" height="226"/>
 							</div>
 							<div class="main-service-cont-name">
 								办公室整体清洁及空气治理
@@ -173,7 +173,7 @@
 						</div>
 						<div class="main-service-cont">
 							<div class="main-service-cont-img">
-								<img src="/static/public/images/cc.png" width="99" height="99"/>
+								<img src="/static/public/images/cc.png" width="239" height="226"/>
 							</div>
 							<div class="main-service-cont-name">
 								仓储
@@ -184,7 +184,7 @@
 						</div>
 						<div class="main-service-cont" style="margin-right:0;">
 							<div class="main-service-cont-img">
-								<img src="/static/public/images/es.png" width="99" height="99"/>
+								<img src="/static/public/images/es.png" width="239" height="226"/>
 							</div>
 							<div class="main-service-cont-name">
 								二手家具回收及出售
@@ -195,7 +195,7 @@
 						</div>
 						<div class="main-service-cont">
 							<div class="main-service-cont-img">
-								<img src="/static/public/images/people.png" width="99" height="99"/>
+								<img src="/static/public/images/people.png" width="239" height="226"/>
 							</div>
 							<div class="main-service-cont-name">
 								国内市内私人搬迁
@@ -206,7 +206,7 @@
 						</div>
 						<div class="main-service-cont">
 							<div class="main-service-cont-img">
-								<img src="/static/public/images/phone.png" width="99" height="99"/>
+								<img src="/static/public/images/phone.png" width="239" height="226"/>
 							</div>
 							<div class="main-service-cont-name">
 								办公室搬迁
@@ -217,7 +217,7 @@
 						</div>
 						<div class="main-service-cont" style="margin-right:0;">
 							<div class="main-service-cont-img">
-								<img src="/static/public/images/sys.png" width="99" height="99"/>
+								<img src="/static/public/images/sys.png" width="239" height="226"/>
 							</div>
 							<div class="main-service-cont-name">
 								实验室搬迁
