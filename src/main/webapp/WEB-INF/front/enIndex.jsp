@@ -5,7 +5,9 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
-<title>OYE home page</title>
+<title>Office relocation Shanghai Ouye Office Furniture Co., Ltd., office relocation, moving companies, relocation relocation room, laboratory, factory relocation, Shanghai moving, moving company</title>
+<meta name="keywords" content="Office relocation, the relocation of the moving company, computer room, laboratory relocation, the relocation of factories" />
+<meta name="description" content="OYE is a local moving company, we have enjoyed a good reputation and rich experience in office and factory relocation areas. Our staff in a lot of people have been in the international transportation industry more than 10 of our work, in our experience to ensure that your company will be the most perfect service. At the same time, our company also can provide a broader service projects in accordance with the special requirements of your company for your company to tailor." />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
 <link rel="stylesheet" href="/static/public/css/jquery.bxslider.css"/>

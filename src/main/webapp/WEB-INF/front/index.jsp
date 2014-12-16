@@ -5,7 +5,9 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <head>
-<title>OYE首页</title>
+<title>办公室搬迁-上海欧耶办公家具有限公司,办公室搬迁,搬家公司,机房搬迁,实验室搬迁,工厂搬迁,上海搬家,公司搬家</title>
+<meta name="keywords" content="办公室搬迁,搬家公司,机房搬迁,实验室搬迁,工厂搬迁" />
+<meta name="description" content="OYE是一家本土搬迁公司，我们在办公室和工厂搬迁领域享有盛誉和丰富的经验。我们的员工中很多人已在国际搬运行业工作10以上，我们以我们的经验确保贵公司能得到最完善的服务。同时我司也可以按照贵公司的特殊要求为贵公司度身定做提供更广泛的服务项目。" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 <link rel="stylesheet" href="/static/public/css/oye.css" />
 <link rel="stylesheet" href="/static/public/css/jquery.bxslider.css"/>
