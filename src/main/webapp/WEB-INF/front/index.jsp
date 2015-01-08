@@ -544,15 +544,17 @@
 			$("html,body").animate({scrollTop: $("#zixun").offset().top - 82}, 500);
 		});
 		
-		//var swidth = window.screen.width;
-		//banner宽度
-		//alert(window.screen.width);
-		$("#banner_img").css("width",window.screen.width);
-		$(".banner_slider img").css("width",window.screen.width);
-		if(window.screen.width >= 2000){
+		//banner
+		/* var swidth = window.screen.width;
+		$("#banner_img").css("width",swidth);
+		$(".banner_slider img").css("width",swidth);
+		if(swidth >= 2000){
 			$("#banner_img").css("width",2000);
 			$(".banner_slider img").css("width",2000);
-		}
+		} */
+		var width = "1920px";
+		$("#banner_img").css("width",width);
+		$(".banner_slider img").css("width",width);
 	});
 </script>
 </head>
@@ -572,7 +574,7 @@
 	                	<c:forEach items="${banners }" var="banner">
 		                    <li>
 		                    	<a href="${banner.link }" title="${banner.link }">
-		                    		<img data-original="${banner.path }" src="/static/public/images/grey.gif" width="100%"/>
+		                    		<img src="${banner.path }" width="100%"/>
 	                    		</a>
 	                   		</li>
 	                	</c:forEach>
