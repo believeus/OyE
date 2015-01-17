@@ -523,15 +523,15 @@
 		});
 		//banner宽度
 		//alert(window.screen.width);
-		/* $("#banner_img").css("width",window.screen.width);
+		$("#banner_img").css("width",window.screen.width);
 		$(".banner_slider img").css("width",window.screen.width);
 		if(window.screen.width >= 2000){
 			$("#banner_img").css("width",2000);
 			$(".banner_slider img").css("width",2000);
-		} */
-		var width = "1920px";
+		}
+		/* var width = "1920px";
 		$("#banner_img").css("width",width);
-		$(".banner_slider img").css("width",width);
+		$(".banner_slider img").css("width",width); */
 	});
 </script>
 </head>
@@ -1311,7 +1311,7 @@
 								</c:if>
 							</div>
 							<div id="m_img0${status.index+1 }" <c:if test="${status.index > 0 }">style="display:none;"</c:if> class="video_img">
-								<img data-original="${partner.path }" src="/static/public/images/grey.gif" width="123" height="160"/>
+								<img src="${partner.path }" width="123" height="160"/>
 							</div>
 						</c:if>
 					</c:forEach>

@@ -28,8 +28,19 @@ public class Partners extends TbaseEntity{
 	/** 视频链接 */
 	private String videoLink;
 	
+	/** 是否首页显示
+	 * 0：否 1：是 */
+	private Integer showIndex;
 	
 	
+	public Integer getShowIndex() {
+		return showIndex;
+	}
+
+	public void setShowIndex(Integer showIndex) {
+		this.showIndex = showIndex;
+	}
+
 	public String getVideoLink() {
 		return videoLink;
 	}

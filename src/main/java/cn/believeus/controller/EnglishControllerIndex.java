@@ -80,8 +80,8 @@ public class EnglishControllerIndex {
 		List<Processs> pros = (List<Processs>) baseService.findObjectList(Processs.class);
 		request.setAttribute("pros", pros);
 		request.setAttribute("prosSize", pros.size());
-		//合作伙伴
-		List<ENPartners> partners = (List<ENPartners>) baseService.findObjectList(ENPartners.class);
+		//合作伙伴 首页显示
+		List<ENPartners> partners = (List<ENPartners>) baseService.findObjectList(ENPartners.class,"showIndex",1);
 		request.setAttribute("partners", partners);
 		request.setAttribute("partnersSize", partners.size());
 		//最新动态

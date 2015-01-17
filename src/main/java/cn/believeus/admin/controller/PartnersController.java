@@ -54,7 +54,7 @@ public class PartnersController {
 			pageNumber="1";
 		}
 		Pageable pageable=new Pageable(Integer.valueOf(pageNumber),20);
-		String hql= "from Partners as entity order by editTime desc";
+		String hql= "from Partners as entity order by entity.id desc";
 		Page<?> page = baseService.findObjectList(hql, pageable);
 		request.setAttribute("partnersList", page.getContent());
 		request.setAttribute("size",page.getTotal());
@@ -131,8 +131,15 @@ public class PartnersController {
 		if (videoLink==null || videoLink.equals("")) {
 			partners.setVideoLink(null);
 		}
+		String showIndex = request.getParameter("showIndex");
+		if (showIndex!=null) {
+			partners.setShowIndex(Integer.parseInt(showIndex));
+		}else {
+			partners.setShowIndex(0);
+		}
 		baseService.saveOrUpdata(partners);
 		enPartners.setVideoLink(partners.getVideoLink());
+		enPartners.setShowIndex(partners.getShowIndex());
 		baseService.saveOrUpdata(enPartners);
 		return "redirect:/admin/partners/list.jhtml";
 	}

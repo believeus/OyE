@@ -66,6 +66,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;" class="sort" name="title">视频</a>
 				</th>
 				<th>
+					<a href="javascript:;" class="sort" name="title">首页显示</a>
+				</th>
+				<th>
 					<a href="#"  class="sort">操作</a>
 				</th>
 			</tr>
@@ -88,6 +91,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</td>
 					<td>
 	   					<a href="/${partners.video }" target="_blank">点击查看视频</a>
+					</td>
+					<td>
+	   					<c:if test="${partners.showIndex==0}">否</c:if>
+	   					<c:if test="${partners.showIndex==1}">是</c:if>
 					</td>
 					<td>
 						<a href="/admin/partners/edit.jhtml?id=${partners.id}">[修改]</a>

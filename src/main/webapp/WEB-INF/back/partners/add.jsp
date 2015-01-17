@@ -66,6 +66,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table class="input">
 			<tr>
 				<th>
+					是否首页显示:
+				</th>
+				<td>
+					<select name="showIndex">
+						<option value="0">否</option>
+						<option value="1">是</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>
 					合作伙伴中文名称:
 				</th>
 				<td>

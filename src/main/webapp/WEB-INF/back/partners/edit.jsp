@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -65,6 +65,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table class="input">
 			<tr>
 				<th>
+					是否首页显示:
+				</th>
+				<td>
+					<select name="showIndex">
+						<option value="0" <c:if test="${partners.showIndex == 0}">selected=selected</c:if> >否</option>
+						<option value="1" <c:if test="${partners.showIndex == 1}">selected=selected</c:if> >是</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>
 					合作伙伴中文名称:
 				</th>
 				<td>
@@ -107,7 +118,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<td colspan="3">
 					<div>
 						<span style="float:left">
-							<div id="preview_wrapper">    
+							<div id="preview_wrapper">
 						        <div id="preview_fake" >    
 						            <img id="preview" onload="onPreviewLoad(this,190,120)" src="/${partners.logo }"/>
 						        </div>    
