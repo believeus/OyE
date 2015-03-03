@@ -323,6 +323,9 @@ public class ControllerIndex {
 		}
 		List<ContactusInfo> contactusInfos = (List<ContactusInfo>)baseService.findObjectList(ContactusInfo.class);
 		request.setAttribute("categories", contactusInfos);
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/contactusInfo.jsp";
 	}
 	/**
@@ -349,6 +352,9 @@ public class ControllerIndex {
 		}
 		List<OyEInfo> contactusInfos = (List<OyEInfo>)baseService.findObjectList(OyEInfo.class);
 		request.setAttribute("categories", contactusInfos);
+		//企业信息
+		CompanyInfo companyInfo = (CompanyInfo) baseService.findObject(CompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/oyeInfo.jsp";
 	}
 	

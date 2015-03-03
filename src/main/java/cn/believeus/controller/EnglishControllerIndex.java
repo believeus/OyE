@@ -270,6 +270,9 @@ public class EnglishControllerIndex {
 		}
 		List<ENContactusInfo> contactusInfos = (List<ENContactusInfo>)baseService.findObjectList(ENContactusInfo.class);
 		request.setAttribute("categories", contactusInfos);
+		//企业信息
+		ENCompanyInfo companyInfo = (ENCompanyInfo) baseService.findObject(ENCompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/enContactusInfo.jsp";
 	}
 	
@@ -297,6 +300,9 @@ public class EnglishControllerIndex {
 		}
 		List<ENOyEInfo> contactusInfos = (List<ENOyEInfo>)baseService.findObjectList(ENOyEInfo.class);
 		request.setAttribute("categories", contactusInfos);
+		//企业信息
+		ENCompanyInfo companyInfo = (ENCompanyInfo) baseService.findObject(ENCompanyInfo.class, Variables.compinfoId);
+		request.setAttribute("companyInfo", companyInfo);
 		return "/WEB-INF/front/enOyeInfo.jsp";
 	}
 	

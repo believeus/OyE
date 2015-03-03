@@ -34,7 +34,7 @@
 						</shiro:hasPermission>
 						
 						<shiro:hasPermission name="partners:view">  	
-						{"menuname":"合作伙伴管理","icon":"icon-set","url":"/admin/partners/list.jhtml"},
+						{"menuname":"客户感言管理","icon":"icon-set","url":"/admin/partners/list.jhtml"},
 						</shiro:hasPermission>
 						
 						<shiro:hasPermission name="companyMsg:view">  	
