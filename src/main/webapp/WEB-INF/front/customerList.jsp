@@ -58,10 +58,10 @@
 		width:1140px;height:auto;overflow:hidden;
 	}
 	.team_list{
-		width:85px;height:70px;float:left;margin-right:20px;margin-bottom:20px;
+		width:120px;height:120px;float:left;margin-right:20px;margin-bottom:20px;
 	}
 	.team_list_img{
-		width: 85px;height:55px;text-align:center;
+		width: 120px;height:120px;text-align:center;
 	}
 	.team_list_name{
 		width:85px;height:15px;line-height:25px;text-align:center;font-size:9px;font-weight:bold;color:#000;
@@ -83,10 +83,10 @@
 			</div>
 			<div class="anli_list">
 				<c:forEach items="${customers }" var="customer" varStatus="status">
-					<div class="team_list" <c:if test="${(status.index+1)%11==0 }">style="margin-right:0;"</c:if>>
+					<div class="team_list" <c:if test="${(status.index+1)%8==0 }">style="margin-right:0;"</c:if>>
 						<div class="team_list_img">
 							<a href="${customer.clink }" title="${customer.clink }">
-								<img src="${customer.url }" width="85" height="55" />
+								<img src="${customer.url }" width="120" height="120" />
 							</a>
 						</div>
 						<%-- <div class="team_list_name" title="${customer.clink }">

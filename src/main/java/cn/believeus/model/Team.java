@@ -1,6 +1,7 @@
 package cn.believeus.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -65,6 +66,7 @@ public class Team extends TbaseEntity{
 	}
 	
 	/** 获取内容 */
+	@Lob
 	public String getContent() {
 		return content;
 	}

@@ -1655,10 +1655,12 @@
 									<div style="width: 365px;height: auto;overflow: hidden;">
 										<img data-original="${news.path }" src="/static/public/images/grey.gif" width="100" height="80" style="float: left; margin: 15px 20px 10px 0px;"/>
 										<div style="float: left;width: 240px;margin-top: 10px;">
-											<p style="color: #FBFBFB;font-size: 15px;">${news.title }</p>
-											<p style="color: #FBFBFB;font-size: 14px;">
+											<p style="color: #999999;font-size: 15px;" title="${news.title }">
+												${fn:substring(news.title, 0, 10)}...
+											</p>
+											<p style="color: #999999;font-size: 14px;">
 												<%-- ${news.content } --%>
-												${fn:substring(news.content, 0, 30)}...
+												${fn:substring(news.content, 0, 60)}...
 											</p>
 											<div style="background: #FF6569;color: #FFFFFF;width: 75px;height: 27px;line-height: 27px;text-align: center;border-radius: 4px;float: right;margin-right: 20px;">
 												<a href="/newsInfo.jhtml?id=${news.id }" title="更多">
