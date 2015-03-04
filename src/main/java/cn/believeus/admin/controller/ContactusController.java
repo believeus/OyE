@@ -76,8 +76,8 @@ public class ContactusController {
 	@RequestMapping(value="/admin/conSave")
 	public String save(HttpServletRequest request,ContactusInfo contactusInfo){
 		contactusInfo.setContent(request.getParameter("content"));
-		contactusInfo.setTitle(request.getParameter("title"));
-		contactusInfo.setTitle(request.getParameter("category"));
+		//contactusInfo.setTitle(request.getParameter("title"));
+		contactusInfo.setCategory(request.getParameter("category"));
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		String storepath = "";
 		Map<String, MultipartFile> files = multipartRequest.getFileMap();
@@ -107,7 +107,7 @@ public class ContactusController {
 		ENContactusInfo enContactusInfo = new ENContactusInfo();
 		enContactusInfo.setPath(contactusInfo.getPath());
 		enContactusInfo.setContent(request.getParameter("encontent"));
-		enContactusInfo.setTitle(request.getParameter("entitle"));
+		//enContactusInfo.setTitle(request.getParameter("entitle"));
 		enContactusInfo.setCategory(request.getParameter("encategory"));
 		baseService.saveOrUpdata(enContactusInfo);
 		return "redirect:/admin/contactus/conlist.jhtml";
@@ -120,6 +120,7 @@ public class ContactusController {
 	@RequiresPermissions("contactus:update")
 	@RequestMapping(value="/admin/contactusEdit")
 	public String contactusEdit(HttpServletRequest request,Integer id){
+		System.out.println(id);
 		ContactusInfo contactusInfo = (ContactusInfo)baseService.findObject(ContactusInfo.class, id);
 		request.setAttribute("contactusInfo", contactusInfo);
 		ENContactusInfo encontactusInfo = (ENContactusInfo)baseService.findObject(ENContactusInfo.class, id);
@@ -134,7 +135,8 @@ public class ContactusController {
 	@RequiresPermissions("contactus:update")
 	@RequestMapping(value="/admin/contactusUpdate")
 	public String contactusUpdate(ContactusInfo contactusInfo,HttpServletRequest request){
-		ENContactusInfo enContactusInfo =(ENContactusInfo)baseService.findObject(ENContactusInfo.class, contactusInfo.getId());
+		String id=request.getParameter("id");
+		ENContactusInfo enContactusInfo =(ENContactusInfo)baseService.findObject(ENContactusInfo.class, Integer.parseInt(id));
 		enContactusInfo.setTitle(request.getParameter("entitle"));
 		enContactusInfo.setContent(request.getParameter("encontent"));
 		enContactusInfo.setPath(request.getParameter("enpath"));

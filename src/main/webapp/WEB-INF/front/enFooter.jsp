@@ -91,6 +91,6 @@
 			</div>
 		</div>
 		<div class="footer-cn">
-			Copyright &copy; 2014 ${companyInfo.name } All Rights Reserved 沪ICP备11000511号-34
+			Copyright &copy; 2014-2018 ${companyInfo.name } All Rights Reserved 
 		</div>
 	</div>
