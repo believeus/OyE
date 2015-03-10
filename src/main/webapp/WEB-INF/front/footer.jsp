@@ -13,22 +13,22 @@
 							<th>关于我们</th>
 						</tr>
 						<tr>
-							<td><a href="#">整体搬迁</a></td>
-							<td><a href="#">整体搬迁</a></td>
+							<td><a href="#">整体安装</a></td>
+							<td><a href="#">整体安装</a></td>
 							<td><a href="/cust.jhtml">视频见证</a></td>
 							<td><a href="/newsList.jhtml?type=0">最新动态</a></td>
 							<td><a href="/contactusInfo.jhtml?type=0">公司介绍</a></td>
 						</tr>
 						<tr>
-							<td><a href="#">仓储服务</a></td>
-							<td><a href="#">仓储服务</a></td>
+							<td><a href="#">家具出售</a></td>
+							<td><a href="#">家具出售</a></td>
 							<td><a href="/cust.jhtml">合作见证</a></td>
 							<td><a href="/newsList.jhtml?type=1">媒体报道</a></td>
 							<td><a href="/contactusInfo.jhtml?type=1">企业资质</a></td>
 						</tr>
 						<tr>
-							<td><a href="#">家具回收</a></td>
-							<td><a href="#">家具回收</a></td>
+							<td><a href="#">家具安装</a></td>
+							<td><a href="#">家具安装</a></td>
 							<td><a href="/cust.jhtml">客户感言</a></td>
 							<td><a href="/newsList.jhtml?type=2">常见问题</a></td>
 							<td><a href="/contactusInfo.jhtml?type=2">我们特色</a></td>
